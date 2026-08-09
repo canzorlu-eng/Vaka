@@ -346,14 +346,15 @@ def grade_from(pct: float) -> (str, Dict[str, str]):
     return "F", {"tr": "Tekrar Denemeli", "en": "Needs Retry"}
 
 
-def deterministic_score(s: Dict[str, Any], c: Dict[str, Any]) -> Dict[str, Any]:
+def deterministic_score(s: Dict[str, Any], c: Dict[str, Any], covered_ids=None) -> Dict[str, Any]:
     lang = s["lang"]
+    covered_ids = covered_ids or set()
     student_text = norm(" ".join(m["text"] for m in s["transcript"] if m["role"] == "student"))
 
-    # History checklist
+    # History checklist (keyword match OR AI-judged semantic coverage)
     hist = []
     for item in c["checklist"]["history"]:
-        asked = any(norm(k) in student_text for k in item["keywords"])
+        asked = (item["id"] in covered_ids) or any(norm(k) in student_text for k in item["keywords"])
         hist.append({"id": item["id"], "label": item["label"].get(lang, item["label"]["tr"]),
                      "asked": asked, "red_flag": item["red_flag"]})
     hist_asked = sum(1 for h in hist if h["asked"])
@@ -487,13 +488,37 @@ async def examiner_narrative(report: Dict[str, Any], c: Dict[str, Any], lang: st
     return " ".join(parts)
 
 
+async def history_llm_coverage(s: Dict[str, Any], c: Dict[str, Any]) -> set:
+    """Ask the LLM which history topics the student's free-text questions actually covered.
+    Compact single call; returns a set of topic ids (empty on failure -> keyword fallback)."""
+    questions = [m["text"] for m in s["transcript"] if m["role"] == "student"]
+    if not questions:
+        return set()
+    lang = s["lang"]
+    topics = "; ".join(f'{i["id"]}={i["label"].get(lang, i["label"]["tr"])}' for i in c["checklist"]["history"])
+    system = "You grade a dental student's history-taking. Output ONLY a JSON array of covered topic ids, nothing else."
+    prompt = (f"Topics: {topics}\nStudent questions: {questions}\n"
+              f"Return the ids of topics the student meaningfully asked about, as a JSON array e.g. [\"onset\",\"night\"].")
+    raw = await llm_call(system, prompt, temperature=0.0)
+    if not raw:
+        return set()
+    try:
+        start, end = raw.find("["), raw.rfind("]")
+        ids = json.loads(raw[start:end + 1]) if start != -1 and end != -1 else []
+        valid = {i["id"] for i in c["checklist"]["history"]}
+        return {str(x) for x in ids if str(x) in valid}
+    except Exception:
+        return set()
+
+
 @api_router.post("/sessions/{sid}/score")
 async def score_session(sid: str):
     s = await db.sessions.find_one({"id": sid})
     if not s:
         raise HTTPException(status_code=404, detail="Session not found")
     c = get_case(s["case_id"])
-    report = deterministic_score(s, c)
+    covered = await history_llm_coverage(s, c)
+    report = deterministic_score(s, c, covered_ids=covered)
     report["narrative"] = await examiner_narrative(report, c, s["lang"])
     report["case_title"] = c["title"].get(s["lang"], c["title"]["tr"])
     report["generated_at"] = datetime.now(timezone.utc).isoformat()

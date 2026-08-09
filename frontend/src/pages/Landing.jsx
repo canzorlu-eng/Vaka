@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import { api } from "../lib/api";
 import { useLang } from "../context/LangContext";
 import { Footer, LangToggle, Logo } from "../components/Chrome";
 import { GameButton } from "../components/GameButton";
-import { PlayCircle, ArrowRight, Stethoscope } from "lucide-react";
+import { PlayCircle, ArrowRight, Stethoscope, Sparkles } from "lucide-react";
 
 const DIFF_COLOR = { easy: "#82C3A6", moderate: "#F0B458", hard: "#E8705B" };
 const MOOD_EMOJI = { neutral: "🙂", pain: "😣", anxious: "😰" };
@@ -14,11 +15,26 @@ export default function Landing() {
   const navigate = useNavigate();
   const [cases, setCases] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     api.listCases(lang).then((d) => { setCases(d); setLoading(false); }).catch(() => setLoading(false));
   }, [lang]);
+
+  const generate = async () => {
+    setGenerating(true);
+    try {
+      const res = await api.generateCase(lang);
+      const list = await api.listCases(lang);
+      setCases(list);
+      toast.success(`✨ ${res.title}`);
+    } catch (e) {
+      toast.error(lang === "tr" ? "Vaka oluşturulamadı, tekrar deneyin" : "Could not generate a case, try again");
+    } finally {
+      setGenerating(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -46,7 +62,14 @@ export default function Landing() {
         </section>
 
         {/* case grid */}
-        <h2 className="font-head font-extrabold text-2xl text-fg mb-5">{t("choose_case")}</h2>
+        <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
+          <h2 className="font-head font-extrabold text-2xl text-fg">{t("choose_case")}</h2>
+          <GameButton variant="secondary" data-testid="generate-case-btn" onClick={generate} disabled={generating}
+            className="!px-5 !py-2.5 !text-sm flex items-center gap-2">
+            <Sparkles size={16} className={generating ? "animate-spin" : ""} />
+            {generating ? t("generating") : t("generate_case")}
+          </GameButton>
+        </div>
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[0, 1, 2, 3].map((i) => <div key={i} className="card-medkit h-52 animate-pulse" />)}
@@ -65,12 +88,19 @@ export default function Landing() {
                   <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center text-3xl">
                     {MOOD_EMOJI[c.mood] || "🙂"}
                   </div>
-                  <span
-                    className="text-[11px] font-black uppercase tracking-wide px-3 py-1 rounded-full text-white"
-                    style={{ background: DIFF_COLOR[c.difficulty] }}
-                  >
-                    {t(c.difficulty)}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {c.generated && (
+                      <span className="text-[11px] font-black uppercase tracking-wide px-2.5 py-1 rounded-full bg-clay text-white flex items-center gap-1">
+                        <Sparkles size={11} /> {t("ai_case")}
+                      </span>
+                    )}
+                    <span
+                      className="text-[11px] font-black uppercase tracking-wide px-3 py-1 rounded-full text-white"
+                      style={{ background: DIFF_COLOR[c.difficulty] }}
+                    >
+                      {t(c.difficulty)}
+                    </span>
+                  </div>
                 </div>
                 <h3 className="font-head font-extrabold text-xl text-fg mb-1">{c.title}</h3>
                 <p className="text-xs text-muted-foreground font-semibold mb-2">{c.patient_name} · {c.age} {t("age").toLowerCase()}</p>

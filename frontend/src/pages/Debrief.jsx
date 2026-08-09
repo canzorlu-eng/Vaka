@@ -5,7 +5,7 @@ import { api } from "../lib/api";
 import { useLang } from "../context/LangContext";
 import { Footer, LangToggle, Logo } from "../components/Chrome";
 import { GameButton } from "../components/GameButton";
-import { Check, X, RotateCcw, Home, Copy, AlertTriangle, FlaskConical, ClipboardList } from "lucide-react";
+import { Check, X, RotateCcw, Home, Copy, AlertTriangle, FlaskConical, ClipboardList, ScanLine } from "lucide-react";
 
 const GRADE_COLOR = { A: "#82C3A6", B: "#5AA0C3", C: "#F0B458", D: "#E89A5B", F: "#E8705B" };
 
@@ -150,6 +150,26 @@ export default function Debrief() {
               <TestGroup label={t("correct_tests")} items={r.test_stewardship.ordered_indicated} tone="ok" />
               <TestGroup label={t("missed_tests")} items={r.test_stewardship.missed_indicated} tone="warn" />
               <TestGroup label={t("over_tests")} items={r.test_stewardship.over_ordered} tone="bad" />
+              {r.test_stewardship.xray_findings && r.test_stewardship.xray_findings.length > 0 && (
+                <div className="mt-3 pt-3 border-t-2 border-border">
+                  <div className="text-xs font-bold mb-2 flex items-center gap-1.5 text-secondary">
+                    <ScanLine size={14} /> {t("xray_findings")}
+                    <span className="text-muted-foreground font-semibold">
+                      · {r.test_stewardship.xray_score.correct}/{r.test_stewardship.xray_score.total}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {r.test_stewardship.xray_findings.map((f, i) => (
+                      <div key={i} data-testid={`xray-finding-${i}`}
+                        className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium ${
+                          f.correct ? "bg-secondary/15 text-secondary" : f.answered ? "bg-[#E8705B]/12 text-[#E8705B]" : "bg-accent/60 text-muted-foreground"}`}>
+                        {f.correct ? <Check size={15} /> : f.answered ? <X size={15} /> : <span className="w-3.5 h-3.5 rounded-full border-2 border-muted-foreground/40" />}
+                        {f.label}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

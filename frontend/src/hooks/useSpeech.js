@@ -48,7 +48,18 @@ export function useSpeech(lang) {
     } catch (e) {}
   }, [ttsSupported, locale]);
 
+  const playBase64 = useCallback((b64) => {
+    try {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel();
+      const audio = new Audio(`data:audio/mp3;base64,${b64}`);
+      audio.play().catch(() => {});
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }, []);
+
   useEffect(() => () => { try { recRef.current && recRef.current.abort(); } catch (e) {} }, []);
 
-  return { listening, startListening, stopListening, speak, sttSupported, ttsSupported };
+  return { listening, startListening, stopListening, speak, playBase64, sttSupported, ttsSupported };
 }

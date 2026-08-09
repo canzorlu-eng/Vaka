@@ -15,4 +15,6 @@ export const api = {
   commit: (sid, body) => axios.post(`${API}/sessions/${sid}/commit`, body).then((r) => r.data),
   score: (sid) => axios.post(`${API}/sessions/${sid}/score`).then((r) => r.data),
   demo: (lang) => axios.get(`${API}/demo`, { params: { lang } }).then((r) => r.data),
+  tts: (text) => axios.post(`${API}/tts`, { text }).then((r) => r.data),
+  generateCase: (lang) => axios.post(`${API}/cases/generate`, null, { params: { lang } }).then((r) => r.data),
 };

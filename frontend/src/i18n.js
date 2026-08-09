@@ -86,6 +86,10 @@ export const STRINGS = {
     explanation: "Açıklama",
     correct_answer: "Doğru yanıt",
     view_xray: "Radyografiyi görüntüle",
+    xray_findings: "Radyografi Okuma",
+    generate_case: "Yapay zeka ile yeni vaka",
+    generating: "Vaka oluşturuluyor…",
+    ai_case: "Yapay Zeka",
   },
   en: {
     app_name: "Vaka",
@@ -170,6 +174,10 @@ export const STRINGS = {
     explanation: "Explanation",
     correct_answer: "Correct answer",
     view_xray: "View radiograph",
+    xray_findings: "X-ray Reading",
+    generate_case: "Generate new case with AI",
+    generating: "Generating case…",
+    ai_case: "AI",
   },
 };
 

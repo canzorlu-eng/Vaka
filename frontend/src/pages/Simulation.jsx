@@ -33,6 +33,7 @@ export default function Simulation() {
   const [mood, setMood] = useState("neutral");
   const [tooth, setTooth] = useState(null);
   const [highlighted, setHighlighted] = useState([]);
+  const [toothMarkers, setToothMarkers] = useState({});
   const [examsDone, setExamsDone] = useState([]);
   const [testsDone, setTestsDone] = useState([]);
   const [dx, setDx] = useState(null);
@@ -61,6 +62,15 @@ export default function Simulation() {
 
   const push = (entry) => setTranscript((prev) => [...prev, entry]);
 
+  const speakPatient = async (text) => {
+    if (!voiceOn || !text) return;
+    try {
+      const res = await api.tts(text);
+      if (res && res.audio) { speech.playBase64(res.audio); return; }
+    } catch (e) {}
+    speech.speak(text); // graceful fallback to browser voice
+  };
+
   const sendQuestion = async (text) => {
     const q = (text ?? input).trim();
     if (!q || thinking) return;
@@ -72,7 +82,7 @@ export default function Simulation() {
       push({ role: "patient", text: res.reply });
       setBubble(res.reply);
       if (res.mood) setMood(res.mood);
-      if (voiceOn) speech.speak(res.reply);
+      speakPatient(res.reply);
     } catch (e) {
       toast.error("Error");
     } finally {
@@ -84,7 +94,11 @@ export default function Simulation() {
     try {
       const res = await api.runExam(sid, a.id);
       setExamsDone((prev) => prev.includes(a.id) ? prev : [...prev, a.id]);
-      if (res.tooth) { setTooth(res.tooth); setHighlighted((p) => p.includes(res.tooth) ? p : [...p, res.tooth]); }
+      if (res.tooth) {
+        setTooth(res.tooth);
+        setHighlighted((p) => p.includes(res.tooth) ? p : [...p, res.tooth]);
+        setToothMarkers((p) => ({ ...p, [res.tooth]: res.severity || "finding" }));
+      }
       push({ role: "exam", label: res.label, text: res.result });
     } catch (e) { toast.error("Error"); }
   };
@@ -158,7 +172,7 @@ export default function Simulation() {
           {phase === "muayene" && (
             <div>
               <p className="text-xs font-bold text-muted-foreground mb-2">{t("select_tooth")}</p>
-              <Odontogram selected={tooth} highlighted={highlighted} onSelect={setTooth} />
+              <Odontogram selected={tooth} highlighted={highlighted} markers={toothMarkers} onSelect={setTooth} />
             </div>
           )}
         </section>

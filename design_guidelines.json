@@ -1,0 +1,108 @@
+{
+  "theme": "light-first",
+  "typography": {
+    "fonts_to_install": [
+      "@fontsource/nunito",
+      "@fontsource/figtree"
+    ],
+    "headings": {
+      "family": "Nunito, sans-serif",
+      "weight": "800",
+      "tracking": "tracking-tight",
+      "color": "text-slate-800 dark:text-slate-100"
+    },
+    "body": {
+      "family": "Figtree, sans-serif",
+      "weight": "400",
+      "color": "text-slate-600 dark:text-slate-300"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl font-black",
+      "h2": "text-2xl sm:text-3xl font-extrabold",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "body": "text-base",
+      "small": "text-sm font-medium"
+    }
+  },
+  "colors": {
+    "palette_name": "Warm Medkit+ Pastel",
+    "background": "#FDFBF7",
+    "foreground": "#2D2926",
+    "card": "#FFFFFF",
+    "primary": "#FF937B",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#82C3A6",
+    "secondary_foreground": "#FFFFFF",
+    "accent": "#F5EBE1",
+    "accent_foreground": "#5C4A3D",
+    "muted": "#F0F0F0",
+    "muted_foreground": "#8C8C8C",
+    "border": "#EAE2D8",
+    "ring": "#FF937B",
+    "dark_mode_overrides": {
+      "background": "#23201F",
+      "foreground": "#FDFBF7",
+      "card": "#2E2B2A",
+      "accent": "#3D3836",
+      "accent_foreground": "#EAE2D8",
+      "border": "#433D3A"
+    }
+  },
+  "visual_enhancers": {
+    "corners": "rounded-3xl for cards, rounded-full for buttons and pills",
+    "shadows": "shadow-[0_8px_30px_rgb(0,0,0,0.04)] for standard cards. shadow-[0_4px_0_rgb(234,226,216)] for 'game-like' clickable buttons (claymorphism).",
+    "borders": "Use border-2 border-[#EAE2D8] on cards to give them a tangible, medkit feel.",
+    "surfaces": "Solid flat colors for clinical areas. Use very subtle noise/grain texture on the main background."
+  },
+  "components": {
+    "buttons": "Pill-shaped, chunky, with a bottom 4px solid shadow to look like a game button. Active state translates down 4px and removes shadow.",
+    "cards": "White background, large 24px border radius, 2px warm border, soft ambient shadow. Inner padding p-6 or p-8.",
+    "dialogue_bubble": "Floating with a gentle up-down bounce animation. 'Listening...' indicator should have 3 dots pulsing sequentially.",
+    "action_dock": "Sticky bottom dock, segmented controls like a game inventory. Uses pill-shaped tabs.",
+    "phase_stepper": "Horizontal timeline with circular nodes. Completed nodes are Mint Green, current is Coral, future is greyed out.",
+    "odontogram": "Interactive SVG with 32 teeth. Hover states highlight individual teeth. Click to select. Minimalist pastel coloring for teeth."
+  },
+  "layouts": {
+    "landing": "Bento grid for case cards (grid-cols-1 md:grid-cols-2 gap-6). Max width 5xl. Generous top/bottom padding.",
+    "simulation_room": "Flex column desktop-first layout. Top: Vitals & Stepper. Middle: 60vh container with Isometric Scene (background image/color) + 3D patient avatar centered + Chat overlay floating left/right. Bottom: Action dock.",
+    "debrief": "Split layout. Left: Score overview (large circular progress, grade). Right: Scrollable breakdown lists (asked vs missed, red flags)."
+  },
+  "motion": {
+    "listening_pulse": "animate-pulse on the mic icon or 3 dots.",
+    "patient_avatar": "Gentle float (translate-y-2 back and forth over 4 seconds) to simulate breathing.",
+    "page_transition": "Fade in and slight slide up for new screens.",
+    "toast": "Use sonner for notifications (e.g. 'Diagnosis committed')."
+  },
+  "accessibility": {
+    "contrast": "Ensure text on primary/secondary colors is pure white. Text on accent backgrounds should be dark brown/grey.",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='start-case-btn', data-testid='push-to-talk-btn').",
+    "bilingual": "Provide a TR/EN toggle that updates all UI strings."
+  },
+  "media": {
+    "image_urls": {
+      "patient_neutral": "https://images.unsplash.com/photo-1772371272179-3ecc656fc677?w=800&q=80",
+      "patient_pain": "https://images.unsplash.com/photo-1772371272206-0525c3183ca9?w=800&q=80",
+      "patient_anxious": "https://images.unsplash.com/photo-1772371272208-412168748f2a?w=800&q=80",
+      "isometric_clinic_bg": "https://images.unsplash.com/photo-1760434979194-7169b1ee1392?w=1200&q=80"
+    }
+  },
+  "instructions_to_main_agent": {
+    "step_1": "Setup Tailwind with the custom colors provided in 'colors'. Update index.css to map these hex codes to CSS variables. Add fonts Playful 'Nunito' and clean 'Figtree' to the project.",
+    "step_2": "Build standard UI components: Game-style pill Button (with 4px bottom shadow), Rounded Card (24px radius, 2px border).",
+    "step_3": "Implement the state management for Language (TR/EN), Case Selection, and Simulation Phases (Anamnez, Klinik Muayene, Testler, Tanı, Tedavi Planı).",
+    "step_4": "Build Landing Page: Header with TR/EN toggle and Demo link. 4 Case cards displaying title, difficulty, chief complaint.",
+    "step_5": "Build Briefing Modal/Screen: Details about the case, scoring dimensions, and 'Start' button.",
+    "step_6": "Build Simulation Room: Use the isometric background image. Place the patient avatar in the center. Add the animated dialogue bubble. Build the Vitals/Phase Stepper at the top. Build the Chat transcript and Push-to-Talk input. Build the Action Dock with tabs for phases. Implement the SVG Odontogram for the 'Klinik Muayene' phase.",
+    "step_7": "Build Debrief Report: Score calculation display, grade, checklists, and examiner narrative. Add 'Copy Summary' functionality.",
+    "step_8": "Ensure footer disclaimer 'Eğitim amaçlıdır — klinik karar aracı değildir / For education only — not a clinical decision tool' is on every page.",
+    "step_9": "Test responsive behavior down to 375px."
+  },
+  "universal_guidelines": [
+    "Prioritize using pre-existing components from src/components/ui.",
+    "Use sonner for toasts.",
+    "DO NOT use completely transparent backgrounds for elements with content under them.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Avoid generic centered layouts, use grid and flex to create structure.",
+    "All interactive elements MUST include a data-testid attribute."
+  ]
+}

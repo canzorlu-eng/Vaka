@@ -1,4 +1,5 @@
 import React from "react";
+import { useLang } from "../context/LangContext";
 
 // FDI numbering. Upper: 18-11 | 21-28. Lower: 48-41 | 31-38.
 const UPPER = [18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28];
@@ -36,6 +37,8 @@ const Tooth = ({ n, selected, highlighted, marker, onClick }) => {
 };
 
 export const Odontogram = ({ selected, highlighted = [], markers = {}, onSelect }) => {
+  const { lang } = useLang();
+  const L = { finding: lang === "tr" ? "bulgu" : "finding", normal: lang === "tr" ? "normal" : "normal", neutral: lang === "tr" ? "yok" : "n/a" };
   return (
     <div data-testid="odontogram" className="card-medkit p-4 select-none">
       <div className="flex justify-center gap-0.5 mb-3 flex-wrap">
@@ -51,9 +54,9 @@ export const Odontogram = ({ selected, highlighted = [], markers = {}, onSelect 
       </div>
       {Object.keys(markers).length > 0 && (
         <div className="flex items-center justify-center gap-4 mt-3 text-[10px] font-semibold text-muted-foreground">
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#E8705B" }} /> finding</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#82C3A6" }} /> normal</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#F0B458" }} /> n/a</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#E8705B" }} /> {L.finding}</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#82C3A6" }} /> {L.normal}</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#F0B458" }} /> {L.neutral}</span>
         </div>
       )}
     </div>

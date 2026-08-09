@@ -21,18 +21,18 @@ Bilingual (Turkish default / English) web app where dental students run a full c
 - Deterministic scoring so debrief never crashes.
 
 ## Implemented (2026-06)
-- Foundation: theme, UI kit, i18n (TR/EN), 4 cases, Landing + Briefing.
-- Core sim loop (text): simulation room, phase stepper, vitals, transcript, action dock, patient LLM engine w/ info-gating, exam/test result flow, interactive odontogram.
-- Scoring & debrief: 5-dimension deterministic scoring + LLM examiner narrative, full debrief report (score ring, grade, rank, breakdown, history/exam checklists, red flags, test stewardship, dx/tx correctness), copy-summary.
-- Voice: Web Speech push-to-talk STT + TTS with graceful text-only fallback.
-- Game polish & demo: SVG isometric clinic scene w/ 3 mood states, animated dialogue bubble + Listening pulse, /demo auto-replay.
-- **X-ray recognition (Testler phase)**: ordering a radiographic test shows a realistic sample X-ray, multiple-choice "identify the main finding", then correct/incorrect + explanation. Bilingual. Endpoints: `/test` returns spoiler-free xray, `/xray-answer` grades + explains.
-- Tested: backend 19/19, frontend full journey 100%.
+- Foundation, core sim loop, scoring & debrief, voice, game polish & /demo (see below).
+- **Voice upgraded to natural OpenAI TTS** (`tts-1`, voice `coral`) via EMERGENT_LLM_KEY; browser Web Speech kept as graceful fallback and for push-to-talk STT.
+- **X-ray recognition** in Testler with a vetted shared library (`xray_library.py`, 10 radiographs) reused by authored + generated cases.
+- **X-ray reading scored**: Test Stewardship blends test-ordering (60%) + X-ray reading accuracy (40%); debrief shows an X-ray Reading sub-section (correct/incorrect/unanswered + score).
+- **Two radiographs per case** for multi-finding practice.
+- **Tooth Findings Map**: exam results drop coloured markers (finding/normal/neutral) on the matching odontogram tooth.
+- **10 authored cases** + **LLM 'Generate new case'** button (landing) creating fresh cases on demand, X-rays chosen from the library, stored in Mongo (`generated_cases`) and loaded on startup.
+- Tested: iteration_1 (MVP) 19/19 backend + full frontend; iteration_2 (new features) 11/11 backend + full frontend. No open bugs.
 
 ## Backlog / Remaining (P1/P2)
-- P1: Persist X-ray recognition performance into the debrief score/stewardship.
 - P1: Richer LLM-based scoring of free-text history (currently keyword checklist).
-- P2: More cases; difficulty-scaled rubrics; session resume/history list.
+- P2: Persist a student's session history / leaderboard; difficulty-scaled rubrics.
 - P2: Full 375px responsive polish pass; dark mode.
 
 ## Next Tasks

@@ -5,23 +5,23 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        head: ['Nunito', 'sans-serif'],
+        head: ['Fraunces', 'Georgia', 'serif'],
         body: ['Figtree', 'sans-serif'],
       },
       colors: {
         bg: 'var(--bg)',
         fg: 'var(--fg)',
         card: 'var(--card)',
-        primary: { DEFAULT: 'var(--primary)', foreground: 'var(--primary-fg)' },
+        primary: { DEFAULT: 'var(--primary)', foreground: 'var(--primary-fg)', soft: 'var(--primary-soft)' },
         secondary: { DEFAULT: 'var(--secondary)', foreground: 'var(--secondary-fg)' },
         accent: { DEFAULT: 'var(--accent)', foreground: 'var(--accent-fg)' },
         muted: { DEFAULT: 'var(--muted)', foreground: 'var(--muted-fg)' },
         border: 'var(--border)',
         ring: 'var(--ring)',
-        peach: '#FF937B',
+        peach: '#E8896F', coral: { DEFAULT: 'var(--coral)', soft: 'var(--coral-soft)' },
         cream: '#FDFBF7',
         sage: '#82C3A6',
-        clay: '#5C4A3D',
+        clay: '#4A4137',
       },
       borderRadius: {
         xl: '18px',

@@ -20,7 +20,7 @@ const Tooth = ({ n, selected, highlighted, marker, onClick }) => {
       title={`${n}`}
     >
       {marker && (
-        <span className="absolute -top-1 right-0 w-2.5 h-2.5 rounded-full border-2 border-white z-10"
+        <span className="absolute -top-1 right-0 w-2.5 h-2.5 rounded-full border border-white z-10"
           style={{ background: MARKER_COLOR[marker] || "#E8705B" }} data-testid={`tooth-marker-${n}`} />
       )}
       <svg width="22" height="26" viewBox="0 0 22 26" className="transition-transform group-hover:scale-110">
@@ -46,7 +46,7 @@ export const Odontogram = ({ selected, highlighted = [], markers = {}, onSelect 
           <Tooth key={n} n={n} selected={selected === n} highlighted={highlighted.includes(n)} marker={markers[n]} onClick={onSelect} />
         ))}
       </div>
-      <div className="border-t-2 border-dashed border-border my-1" />
+      <div className="border-t border-dashed border-border my-1" />
       <div className="flex justify-center gap-0.5 mt-3 flex-wrap">
         {LOWER.map((n) => (
           <Tooth key={n} n={n} selected={selected === n} highlighted={highlighted.includes(n)} marker={markers[n]} onClick={onSelect} />

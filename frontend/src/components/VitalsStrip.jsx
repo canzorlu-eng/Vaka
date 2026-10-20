@@ -14,10 +14,10 @@ export const VitalsStrip = ({ vitals }) => {
   return (
     <div data-testid="vitals-strip" className="flex items-center gap-2 flex-wrap">
       {items.map((it) => (
-        <div key={it.label} className="flex items-center gap-2 bg-white rounded-full px-3 py-1.5 border-2 border-border">
+        <div key={it.label} className="flex items-center gap-2 bg-white rounded-full px-3 py-1.5 border border-border">
           <it.icon size={15} style={{ color: it.color }} strokeWidth={2.5} />
           <span className="text-[11px] text-muted-foreground font-semibold">{it.label}</span>
-          <span className="text-sm font-head font-extrabold text-fg">{it.value}</span>
+          <span className="text-sm font-head font-semibold text-fg">{it.value}</span>
         </div>
       ))}
     </div>

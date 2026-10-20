@@ -135,6 +135,9 @@ jobs:
   secret-scan:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read   # gitleaks-action lists the PR's commits
     steps:
       - uses: actions/checkout@v4
         with:

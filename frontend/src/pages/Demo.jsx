@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
 import { useLang } from "../context/LangContext";
-import { Footer, LangToggle, Logo } from "../components/Chrome";
+import { Footer, HeaderRight, Logo } from "../components/Chrome";
 import { GameButton } from "../components/GameButton";
 import { VitalsStrip } from "../components/VitalsStrip";
 import { ClinicScene } from "../components/ClinicScene";
@@ -79,10 +79,10 @@ export default function Demo() {
       <header className="flex items-center justify-between px-5 sm:px-10 py-4 max-w-6xl mx-auto w-full">
         <Logo onClick={() => navigate("/")} />
         <div className="flex items-center gap-3">
-          <span className="inline-flex items-center gap-1.5 bg-secondary text-white rounded-full px-3 py-1.5 text-xs font-bold">
+          <span className="hidden sm:inline-flex items-center gap-1.5 bg-primary-soft text-primary rounded-lg px-3 py-1.5 text-xs font-bold">
             <PlayCircle size={14} /> {t("demo_mode")}
           </span>
-          <LangToggle />
+          <HeaderRight />
         </div>
       </header>
 
@@ -92,7 +92,7 @@ export default function Demo() {
         </button>
 
         <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
-          <h1 className="font-head font-black text-2xl sm:text-3xl text-fg">{data.case.title}</h1>
+          <h1 className="font-head font-semibold text-2xl sm:text-3xl text-fg">{data.case.title}</h1>
           <VitalsStrip vitals={data.case.vitals} />
         </div>
 
@@ -103,7 +103,7 @@ export default function Demo() {
               <div className="absolute top-4 left-4 z-10">
                 <DialogueBubble text={bubble} thinking={thinking} />
               </div>
-              <div className="absolute bottom-3 right-3 bg-white/90 rounded-full px-3 py-1 text-xs font-bold text-fg border-2 border-border">{data.case.patient.name}</div>
+              <div className="absolute bottom-3 right-3 bg-white/90 rounded-full px-3 py-1 text-xs font-bold text-fg border border-border">{data.case.patient.name}</div>
             </div>
             <GameButton data-testid="demo-replay-btn" variant="secondary" onClick={replay} className="w-full mt-4 flex items-center justify-center gap-2">
               <RotateCcw size={18} /> {t("demo_replay")}
@@ -131,7 +131,7 @@ function DemoItem({ m, t }) {
   const Icon = icons[m.type] || Stethoscope;
   const color = m.type === "test" ? "#82C3A6" : (m.type === "dx" || m.type === "tx") ? "#5AA0C3" : "#FF937B";
   return (
-    <div className="animate-pop"><div className="mx-auto max-w-[92%] bg-white border-2 border-border rounded-2xl p-3">
+    <div className="animate-pop"><div className="mx-auto max-w-[92%] bg-white border border-border rounded-2xl p-3">
       <div className="flex items-center gap-2 mb-1"><Icon size={15} style={{ color }} /><span className="text-xs font-black uppercase tracking-wide text-muted-foreground">{m.label}</span></div>
       <p className="text-sm text-fg font-medium">{m.text}</p>
     </div></div>

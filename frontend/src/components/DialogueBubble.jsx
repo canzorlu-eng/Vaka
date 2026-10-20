@@ -31,7 +31,7 @@ export const DialogueBubble = ({ text, listening, thinking }) => {
       )}
       {/* tail */}
       <div
-        className="absolute -bottom-2 left-8 w-4 h-4 rotate-45 bg-white border-b-2 border-r-2"
+        className="absolute -bottom-2 left-8 w-4 h-4 rotate-45 bg-white border-b border-r"
         style={{ borderColor: "#FFD8CC" }}
       />
     </div>

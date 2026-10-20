@@ -5,7 +5,7 @@ import { api } from "../lib/api";
 import { useLang } from "../context/LangContext";
 import { PHASES } from "../i18n";
 import { useSpeech } from "../hooks/useSpeech";
-import { Footer, LangToggle, Logo } from "../components/Chrome";
+import { Footer, HeaderRight, Logo } from "../components/Chrome";
 import { GameButton } from "../components/GameButton";
 import { PhaseStepper } from "../components/PhaseStepper";
 import { VitalsStrip } from "../components/VitalsStrip";
@@ -14,7 +14,7 @@ import { DialogueBubble } from "../components/DialogueBubble";
 import { Odontogram } from "../components/Odontogram";
 import {
   Send, Mic, Volume2, VolumeX, FlaskConical, Stethoscope,
-  ClipboardCheck, Pill as PillIcon, DoorOpen, Check, X, CircleDot, ScanLine, Lightbulb,
+  ClipboardCheck, Pill as PillIcon, DoorOpen, Check, X, CircleDot, ScanLine, Lightbulb, ArrowRight,
 } from "lucide-react";
 
 export default function Simulation() {
@@ -143,29 +143,52 @@ export default function Simulation() {
 
   if (!caseData) return <div className="min-h-screen flex items-center justify-center text-muted-foreground">…</div>;
 
+  const nextPhase = PHASES[PHASES.findIndex((p) => p.id === phase) + 1] || null;
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* top bar */}
-      <header className="px-4 sm:px-8 py-3 border-b-2 border-border bg-bg/80 backdrop-blur sticky top-0 z-20">
+      <header className="px-4 sm:px-8 py-3 border-b border-border bg-bg/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-7xl mx-auto w-full flex flex-col gap-3">
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
             <Logo onClick={() => navigate("/")} />
-            <VitalsStrip vitals={caseData.vitals} />
-            <LangToggle />
+            <div className="order-3 md:order-none w-full md:w-auto overflow-x-auto scroll-soft">
+              <VitalsStrip vitals={caseData.vitals} />
+            </div>
+            <HeaderRight />
           </div>
-          <PhaseStepper current={phase} onJump={(id) => setPhase(id)} />
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+            <div className="flex-1 min-w-0 w-full">
+              <PhaseStepper current={phase} onJump={(id) => setPhase(id)} />
+            </div>
+            {nextPhase && (
+              <button
+                data-testid="next-phase-btn"
+                onClick={() => setPhase(nextPhase.id)}
+                aria-label={`${t("next_phase_hint")}: ${t(nextPhase.key)}`}
+                className="game-btn shrink-0 w-full sm:w-auto justify-between pl-4 pr-3 py-2 flex items-center gap-3 text-left"
+                style={{ background: "var(--primary)", color: "#fff", "--shadow-btn": "#E0705A" }}
+              >
+                <span className="flex flex-col leading-tight">
+                  <span className="text-[10px] font-bold uppercase tracking-wider opacity-80">{t("next_phase_hint")}</span>
+                  <span className="text-sm font-black whitespace-nowrap">{t(nextPhase.key)}</span>
+                </span>
+                <ArrowRight size={20} strokeWidth={3} />
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-8 py-5 grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-8 py-5 grid grid-cols-1 lg:grid-cols-12 gap-5 content-start">
         {/* left: clinic scene */}
         <section className="lg:col-span-5 flex flex-col gap-4">
-          <div className="card-medkit relative h-[300px] sm:h-[360px] overflow-hidden bg-accent">
+          <div className="card-medkit relative h-[220px] sm:h-[360px] overflow-hidden bg-accent">
             <ClinicScene mood={mood} speaking={thinking} />
             <div className="absolute top-4 left-4 z-10">
               <DialogueBubble text={bubble} listening={speech.listening} thinking={thinking} />
             </div>
-            <div className="absolute bottom-3 right-3 bg-white/90 rounded-full px-3 py-1 text-xs font-bold text-fg border-2 border-border">
+            <div className="absolute bottom-3 right-3 bg-white/90 rounded-full px-3 py-1 text-xs font-bold text-fg border border-border">
               {caseData.patient.name}
             </div>
           </div>
@@ -175,6 +198,7 @@ export default function Simulation() {
               <Odontogram selected={tooth} highlighted={highlighted} markers={toothMarkers} onSelect={setTooth} />
             </div>
           )}
+          <ProgressPanel t={t} caseData={caseData} examsDone={examsDone} testsDone={testsDone} dx={dx} tx={tx} transcript={transcript} />
         </section>
 
         {/* right: transcript + input */}
@@ -182,6 +206,16 @@ export default function Simulation() {
           <div ref={scrollRef} className="flex-1 overflow-y-auto scroll-soft p-4 sm:p-5 space-y-3 min-h-[280px] max-h-[52vh]">
             <div className="text-center text-xs text-muted-foreground font-semibold py-2">— {caseData.patient.name} · {caseData.patient.setting} —</div>
             {transcript.map((m, i) => <TranscriptItem key={i} m={m} t={t} sid={sid} patientName={caseData.patient.name} />)}
+            {phase === "anamnez" && !thinking && !transcript.some((m) => m.role === "student") && (
+              <div className="pt-4" data-testid="starter-questions">
+                <p className="eyebrow mb-3 text-center">{t("starters_title")}</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {t("starters").map((q) => (
+                    <button key={q} type="button" className="chip" onClick={() => sendQuestion(q)}>{q}</button>
+                  ))}
+                </div>
+              </div>
+            )}
             {thinking && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <div className="w-2 h-2 rounded-full bg-primary dot-1" />
@@ -192,9 +226,9 @@ export default function Simulation() {
           </div>
 
           {/* input row */}
-          <div className="border-t-2 border-border p-3 flex items-center gap-2">
+          <div className="border-t border-border p-3 flex items-center gap-2">
             <button data-testid="voice-toggle" onClick={() => setVoiceOn((v) => !v)} title="TTS"
-              className="w-11 h-11 rounded-full flex items-center justify-center border-2 border-border shrink-0" style={{ color: voiceOn ? "var(--secondary)" : "var(--muted-foreground)" }}>
+              className="w-11 h-11 rounded-xl flex items-center justify-center border border-border bg-white shrink-0" style={{ color: voiceOn ? "var(--secondary)" : "var(--muted-foreground)" }}>
               {voiceOn ? <Volume2 size={18} /> : <VolumeX size={18} />}
             </button>
             <input
@@ -203,11 +237,11 @@ export default function Simulation() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendQuestion()}
               placeholder={t("type_question")}
-              className="flex-1 bg-accent/50 rounded-full px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-primary/40 border-2 border-transparent focus:border-primary/30"
+              className="flex-1 bg-white rounded-xl px-4 py-3 text-sm outline-none border border-border focus:ring-2 focus:ring-primary/25 focus:border-primary"
             />
             <button data-testid="push-to-talk-btn" onClick={micPress}
-              className="w-11 h-11 rounded-full flex items-center justify-center text-white shrink-0 game-btn"
-              style={{ background: speech.listening ? "#E8705B" : "var(--secondary)", "--shadow-btn": speech.listening ? "#C2543F" : "#5FA184" }}
+              className="w-11 h-11 rounded-xl flex items-center justify-center text-white shrink-0 game-btn"
+              style={{ background: speech.listening ? "var(--coral)" : "var(--secondary)" }}
               title={t("push_to_talk")}>
               <Mic size={18} className={speech.listening ? "animate-pulse" : ""} />
             </button>
@@ -219,7 +253,7 @@ export default function Simulation() {
       </main>
 
       {/* ACTION DOCK */}
-      <div className="sticky bottom-0 z-20 bg-bg/90 backdrop-blur border-t-2 border-border">
+      <div className="sticky bottom-0 z-20 bg-bg/90 backdrop-blur border-t border-border">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 py-3">
           <ActionDock
             phase={phase} caseData={caseData} t={t}
@@ -256,7 +290,7 @@ function TranscriptItem({ m, t, sid, patientName }) {
   const isTest = m.role === "test";
   return (
     <div className="animate-pop">
-      <div className="mx-auto max-w-[92%] bg-white border-2 border-border rounded-2xl p-3">
+      <div className="mx-auto max-w-[92%] bg-white border border-border rounded-2xl p-3">
         <div className="flex items-center gap-2 mb-1">
           {isTest ? <FlaskConical size={15} className="text-secondary" /> : <Stethoscope size={15} className="text-primary" />}
           <span className="text-xs font-black uppercase tracking-wide text-muted-foreground">{m.label}</span>
@@ -293,8 +327,8 @@ function XrayCard({ m, t, sid }) {
 
   return (
     <div className="animate-pop">
-      <div className="mx-auto max-w-[96%] bg-white border-2 border-border rounded-2xl overflow-hidden">
-        <div className="flex items-center gap-2 px-3 py-2 border-b-2 border-border bg-accent/40">
+      <div className="mx-auto max-w-[96%] bg-white border border-border rounded-2xl overflow-hidden">
+        <div className="flex items-center gap-2 px-3 py-2 border-b border-border bg-accent/40">
           <ScanLine size={15} className="text-secondary" />
           <span className="text-xs font-black uppercase tracking-wide text-muted-foreground">{m.label}</span>
           <span className={`ml-auto text-[10px] font-bold px-2 py-0.5 rounded-full ${m.indicated ? "bg-secondary/20 text-secondary" : "bg-[#E8705B]/15 text-[#E8705B]"}`}>
@@ -314,7 +348,7 @@ function XrayCard({ m, t, sid }) {
         </div>
 
         <div className="p-3">
-          <p className="text-sm font-head font-extrabold text-fg mb-2 flex items-center gap-1.5">
+          <p className="text-sm font-head font-semibold text-fg mb-2 flex items-center gap-1.5">
             <span className="text-primary">◎</span> {m.question || t("identify_finding")}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -335,7 +369,7 @@ function XrayCard({ m, t, sid }) {
                   data-testid={`xray-opt-${m.testId}-${o.id}`}
                   disabled={!!result || loading}
                   onClick={() => answer(o.id)}
-                  className={`text-left text-sm font-semibold px-3 py-2.5 rounded-xl border-2 transition-all flex items-center gap-2 ${cls}`}
+                  className={`text-left text-sm font-semibold px-3 py-2.5 rounded-xl border transition-all flex items-center gap-2 ${cls}`}
                 >
                   {result && isCorrectOpt && <Check size={15} className="shrink-0" />}
                   {result && isChosen && !isCorrectOpt && <X size={15} className="shrink-0" />}
@@ -346,7 +380,7 @@ function XrayCard({ m, t, sid }) {
           </div>
 
           {result && (
-            <div data-testid={`xray-explanation-${m.testId}`} className="mt-3 rounded-xl bg-accent/50 border-2 border-border p-3 animate-fade-up">
+            <div data-testid={`xray-explanation-${m.testId}`} className="mt-3 rounded-xl bg-accent/50 border border-border p-3 animate-fade-up">
               <div className={`text-xs font-black uppercase tracking-wide mb-1 flex items-center gap-1.5 ${result.correct ? "text-secondary" : "text-[#E8705B]"}`}>
                 {result.correct ? <><Check size={14} />{t("correct")}</> : <><X size={14} />{t("incorrect")}</>}
                 {!result.correct && <span className="text-muted-foreground normal-case font-semibold">· {t("correct_answer")}: {result.correct_label}</span>}
@@ -431,10 +465,47 @@ function ActionDock({ phase, caseData, t, examsDone, testsDone, dx, tx, onExam, 
 
       {phase !== "tedavi" && (
         <div className="flex justify-end mt-2">
-          <GameButton data-testid="end-encounter-btn" variant="danger" onClick={onEnd} disabled={ending} className="flex items-center gap-2 !px-4 !py-2 !text-sm">
+          <GameButton data-testid="end-encounter-btn" variant="ghost" onClick={onEnd} disabled={ending} style={{ color: "var(--coral)" }} className="flex items-center gap-2 !px-4 !py-2 !text-sm">
             <DoorOpen size={16} /> {ending ? "…" : t("end_encounter")}
           </GameButton>
         </div>
+      )}
+    </div>
+  );
+}
+
+
+function ProgressPanel({ t, caseData, examsDone, testsDone, dx, tx, transcript }) {
+  const rows = [
+    ["progress_exam", examsDone.length, caseData.exam_actions.length],
+    ["progress_tests", testsDone.length, caseData.tests.length],
+    ["progress_dx", dx ? 1 : 0, 1],
+    ["progress_tx", tx ? 1 : 0, 1],
+  ];
+  const findings = transcript.filter((m) => m.role === "exam" || m.role === "test");
+  return (
+    <div className="card-medkit p-5 hidden lg:block" data-testid="progress-panel">
+      <p className="eyebrow mb-3">{t("progress_title")}</p>
+      <ul className="space-y-2.5">
+        {rows.map(([k, n, total]) => (
+          <li key={k} className="flex items-center gap-3 text-sm">
+            <span className="w-24 font-semibold text-fg">{t(k)}</span>
+            <span className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden" role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={n}>
+              <span className="block h-full rounded-full bg-primary transition-all duration-500" style={{ width: `${(n / total) * 100}%` }} />
+            </span>
+            <span className="w-10 text-right text-xs font-bold text-muted-foreground tabular-nums">{n}/{total}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="eyebrow mt-5 mb-2">{t("findings_title")}</p>
+      {findings.length === 0 ? (
+        <p className="text-sm text-muted-foreground leading-snug">{t("findings_empty")}</p>
+      ) : (
+        <ul className="space-y-1.5 max-h-40 overflow-y-auto scroll-soft pr-1">
+          {findings.map((f, i) => (
+            <li key={i} className="text-sm leading-snug"><span className="font-bold text-fg">{f.label}:</span> <span className="text-muted-foreground">{f.text}</span></li>
+          ))}
+        </ul>
       )}
     </div>
   );

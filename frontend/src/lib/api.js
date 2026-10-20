@@ -29,6 +29,7 @@ export const toastRateLimit = (info) => {
   const s = STRINGS[currentLang()];
   let msg = s.err_rate_limit;
   if (info.code === "daily_ai_budget_reached") msg = s.err_daily_budget;
+  else if (info.code === "monthly_ai_budget_reached") msg = s.err_monthly_budget;
   else if (info.code === "too_many_concurrent_ai_requests") msg = s.err_concurrent;
   if (info.retryAfter) msg = `${msg} (${info.retryAfter}${s.seconds_short})`;
   toast.warning(msg);

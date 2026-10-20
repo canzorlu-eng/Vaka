@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
-import { api } from "../lib/api";
+import { api, errInfo } from "../lib/api";
 import { useLang } from "../context/LangContext";
 import { PHASES } from "../i18n";
 import { useSpeech } from "../hooks/useSpeech";
@@ -40,6 +40,7 @@ export default function Simulation() {
   const [tx, setTx] = useState(null);
   const [voiceOn, setVoiceOn] = useState(true);
   const [ending, setEnding] = useState(false);
+  const [messageLimitReached, setMessageLimitReached] = useState(false);
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -84,7 +85,15 @@ export default function Simulation() {
       if (res.mood) setMood(res.mood);
       speakPatient(res.reply);
     } catch (e) {
-      toast.error("Error");
+      const info = errInfo(e);
+      if (info.status === 409 && info.code === "session_message_limit") {
+        setMessageLimitReached(true);
+        toast.warning(t("err_message_limit"));
+      } else if (info.status === 409) {
+        toast.warning(t("err_session_ended"));
+      } else if (!e.handled) {
+        toast.error(t("err_generic"));
+      }
     } finally {
       setThinking(false);
     }
@@ -236,7 +245,8 @@ export default function Simulation() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendQuestion()}
-              placeholder={t("type_question")}
+              disabled={messageLimitReached}
+              placeholder={messageLimitReached ? t("err_message_limit") : t("type_question")}
               className="flex-1 bg-white rounded-xl px-4 py-3 text-sm outline-none border border-border focus:ring-2 focus:ring-primary/25 focus:border-primary"
             />
             <button data-testid="push-to-talk-btn" onClick={micPress}
@@ -245,7 +255,7 @@ export default function Simulation() {
               title={t("push_to_talk")}>
               <Mic size={18} className={speech.listening ? "animate-pulse" : ""} />
             </button>
-            <GameButton data-testid="send-btn" onClick={() => sendQuestion()} disabled={!input.trim() || thinking} className="!px-4 !py-3 shrink-0">
+            <GameButton data-testid="send-btn" onClick={() => sendQuestion()} disabled={!input.trim() || thinking || messageLimitReached} className="!px-4 !py-3 shrink-0">
               <Send size={18} />
             </GameButton>
           </div>

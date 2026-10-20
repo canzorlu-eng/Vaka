@@ -1,0 +1,323 @@
+{
+ "case_id": "retained-root",
+ "difficulty": "moderate",
+ "title": {
+  "tr": "Kalan Kök",
+  "en": "The Leftover Root"
+ },
+ "chief_complaint": {
+  "tr": "Yıllar önce kırılan dişimin yerinde ara sıra rahatsızlık ve keskin bir uç var.",
+  "en": "Where a tooth broke years ago I get occasional discomfort and a sharp edge."
+ },
+ "patient": {
+  "name": {
+   "tr": "Fatma N.",
+   "en": "Fatma N."
+  },
+  "age": 58,
+  "sex": {
+   "tr": "Kadın",
+   "en": "Female"
+  },
+  "setting": {
+   "tr": "Ağız-diş-çene cerrahisi polikliniği",
+   "en": "Oral surgery clinic"
+  },
+  "avatar_mood": "neutral"
+ },
+ "vitals": {
+  "bp": "130/80",
+  "hr": 74,
+  "temp": "36.6°C",
+  "spo2": "98%"
+ },
+ "hidden_facts": [
+  {
+   "id": "history",
+   "keywords": [
+    "kırıl",
+    "geçmiş",
+    "broke",
+    "history",
+    "before"
+   ],
+   "topic": {
+    "tr": "Öykü",
+    "en": "History"
+   },
+   "text": {
+    "tr": "Diş yıllar önce kırıldı, kalanını çektirmedim.",
+    "en": "The tooth broke years ago and I never had the rest removed."
+   }
+  },
+  {
+   "id": "pain",
+   "keywords": [
+    "ağrı",
+    "rahatsız",
+    "pain",
+    "discomfort"
+   ],
+   "topic": {
+    "tr": "Ağrı",
+    "en": "Pain"
+   },
+   "text": {
+    "tr": "Genelde ağrımıyor ama ara sıra dilim takılıyor.",
+    "en": "Usually painless but my tongue catches on it sometimes."
+   }
+  },
+  {
+   "id": "swelling",
+   "keywords": [
+    "şişlik",
+    "iltihap",
+    "swelling",
+    "infection"
+   ],
+   "topic": {
+    "tr": "Enfeksiyon",
+    "en": "Infection"
+   },
+   "text": {
+    "tr": "Bir-iki kez hafif şişip kendi geçti.",
+    "en": "It mildly swelled once or twice and settled on its own."
+   }
+  },
+  {
+   "id": "medical",
+   "keywords": [
+    "hastalık",
+    "ilaç",
+    "kan sulandırıcı",
+    "medical",
+    "blood thinner",
+    "medication"
+   ],
+   "topic": {
+    "tr": "Tıbbi öykü",
+    "en": "Medical history"
+   },
+   "text": {
+    "tr": "Tansiyon ilacı ve kan sulandırıcı kullanıyorum.",
+    "en": "I take blood pressure medicine and a blood thinner."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 47,
+   "severity": "finding",
+   "label": {
+    "tr": "Görsel muayene",
+    "en": "Visual inspection"
+   },
+   "result": {
+    "tr": "47 bölgesinde dişeti seviyesinde kalmış kök artığı.",
+    "en": "Retained root remnant at gum level in the 47 region."
+   }
+  },
+  {
+   "id": "palpation",
+   "required": true,
+   "tooth": 47,
+   "severity": "normal",
+   "label": {
+    "tr": "Palpasyon",
+    "en": "Palpation"
+   },
+   "result": {
+    "tr": "Akut iltihap veya fluktuasyon yok.",
+    "en": "No acute inflammation or fluctuance."
+   }
+  },
+  {
+   "id": "probing",
+   "required": false,
+   "tooth": 47,
+   "severity": "neutral",
+   "label": {
+    "tr": "Sondlama",
+    "en": "Probing"
+   },
+   "result": {
+    "tr": "Kök çevresinde derin cep yok.",
+    "en": "No deep pocket around the root."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "periapical_xray",
+   "indicated": true,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "Kemik içinde kalmış artık kök; belirgin lezyon yok.",
+    "en": "Retained root within bone; no obvious lesion."
+   },
+   "xray_lib": "retained_root"
+  },
+  {
+   "id": "bitewing",
+   "indicated": true,
+   "label": {
+    "tr": "Bitewing radyografi",
+    "en": "Bitewing radiograph"
+   },
+   "result": {
+    "tr": "Komşu dişlerde çürük yok (normal).",
+    "en": "No caries on adjacent teeth (normal)."
+   },
+   "xray_lib": "normal_bitewing"
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT",
+    "en": "CBCT"
+   },
+   "result": {
+    "tr": "Basit olguda gerekli değil.",
+    "en": "Not required in a simple case."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "retained_root",
+   "correct": true,
+   "label": {
+    "tr": "Artık kök (retained root)",
+    "en": "Retained root"
+   }
+  },
+  {
+   "id": "impacted_tooth",
+   "correct": false,
+   "label": {
+    "tr": "Gömük diş",
+    "en": "Impacted tooth"
+   }
+  },
+  {
+   "id": "cyst",
+   "correct": false,
+   "label": {
+    "tr": "Kist",
+    "en": "Cyst"
+   }
+  },
+  {
+   "id": "normal",
+   "correct": false,
+   "label": {
+    "tr": "Patoloji yok",
+    "en": "No pathology"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "extraction_review",
+   "correct": true,
+   "label": {
+    "tr": "Kök çekimi (kan sulandırıcı için hekimle koordinasyon)",
+    "en": "Root extraction (coordinate blood thinner with physician)"
+   }
+  },
+  {
+   "id": "rct",
+   "correct": false,
+   "label": {
+    "tr": "Kanal tedavisi",
+    "en": "Root canal treatment"
+   }
+  },
+  {
+   "id": "antibiotics_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece antibiyotik",
+    "en": "Antibiotics only"
+   }
+  },
+  {
+   "id": "observe",
+   "correct": false,
+   "label": {
+    "tr": "Tedavi gerekmez",
+    "en": "No treatment needed"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "history",
+    "keywords": [
+     "kırıl",
+     "broke",
+     "history"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Kırık/kök öyküsü",
+     "en": "Fracture/root history"
+    }
+   },
+   {
+    "id": "swelling",
+    "keywords": [
+     "şişlik",
+     "iltihap",
+     "swelling",
+     "infection"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Enfeksiyon/şişlik öyküsü",
+     "en": "Infection/swelling history"
+    }
+   },
+   {
+    "id": "medical",
+    "keywords": [
+     "kan sulandırıcı",
+     "ilaç",
+     "blood thinner",
+     "medication"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Kan sulandırıcı/tıbbi öykü",
+     "en": "Blood thinner/medical history"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "Görsel muayene",
+     "en": "Visual inspection"
+    }
+   },
+   {
+    "id": "palpation",
+    "red_flag": false,
+    "label": {
+     "tr": "Palpasyon",
+     "en": "Palpation"
+    }
+   }
+  ]
+ },
+ "topic": "oral-surgery"
+}

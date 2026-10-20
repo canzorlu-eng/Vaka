@@ -1,0 +1,24 @@
+# Pragmatic lint set for CI: real bugs (F, B), style basics (E) and security smells (S).
+# Tighten later by removing entries from `ignore` (each one is explained).
+line-length = 120
+target-version = "py312"
+extend-exclude = [".venv", "migrations/versions"]
+
+[lint]
+select = ["E", "F", "B", "S"]
+ignore = [
+  "E501",  # long lines: formatter-free codebase, 120 is advisory
+  "B008",  # FastAPI Depends()/Query() in argument defaults is the framework idiom
+  "S608",  # SQL assembled from module constants (column lists), values are always bind parameters
+  "S311",  # random.uniform used for retry jitter, not for security
+  "S105",  # false positives on URL constants named *_TOKEN_URL
+  "S106",
+  "E741",  # `l` as loop variable (case_store.py): cosmetic
+  "B007",
+  "B904",  # raise ... from err: review case by case
+]
+
+[lint.per-file-ignores]
+"tests/**" = ["S", "E402", "F401", "F811", "F841", "B017"]
+"scripts/**" = ["S", "F401"]
+"migrations/**" = ["S"]

@@ -1,0 +1,3059 @@
+[
+ {
+  "id": "ped-ecc-bottle",
+  "topic": "pediatric",
+  "d": "easy",
+  "title": [
+   "Gece Biberonu",
+   "The Night Bottle"
+  ],
+  "cc": [
+   "Annesi, 3 yaşındaki kızının üst ön dişlerinin kararıp kırıldığını söylüyor.",
+   "Her mother says her 3-year-old daughter's upper front teeth have turned dark and are breaking."
+  ],
+  "pt": [
+   "Defne K.",
+   3,
+   "f",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "anxious"
+  ],
+  "vit": [
+   "90/55",
+   100,
+   "36.8°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "bottle",
+    [
+     "Biberon alışkanlığı",
+     "Bottle habit"
+    ],
+    "biberon|emzik|uyur|gece|süt|bottle|sleep|night|milk",
+    [
+     "Biberonla uyuyorum, içinde meyveli süt var.",
+     "I fall asleep with my bottle; it has fruity milk in it."
+    ],
+    1
+   ],
+   [
+    "sugar",
+    [
+     "Şekerli içecek/atıştırma",
+     "Sugary drinks/snacks"
+    ],
+    "şeker|meyve suyu|bisküvi|atıştır|sugar|juice|biscuit|snack",
+    [
+     "Gün içinde bisküvi ve meyve suyu içiyorum.",
+     "I have biscuits and juice during the day."
+    ],
+    0
+   ],
+   [
+    "brush",
+    [
+     "Diş fırçalama",
+     "Brushing"
+    ],
+    "fırça|macun|temizl|brush|toothpaste|clean",
+    [
+     "Annem bazen fırçalıyor ama ben ağlıyorum.",
+     "Mummy brushes sometimes but I cry."
+    ],
+    1
+   ],
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|ağrıyor|pain|hurt|ache",
+    [
+     "Dişlerim bazen yemek yerken acıyor.",
+     "My teeth hurt sometimes when I eat."
+    ],
+    0
+   ],
+   [
+    "swell",
+    [
+     "Şişlik/ateş",
+     "Swelling/fever"
+    ],
+    "şiş|ateş|apse|swell|fever|abscess",
+    [
+     "Yüzüm şişmedi.",
+     "My face isn't puffy."
+    ],
+    1
+   ],
+   [
+    "fluor",
+    [
+     "Florürlü macun/daha önce diş hekimi",
+     "Fluoride toothpaste/previous dentist"
+    ],
+    "florür|macun|doktor|daha önce|fluor|toothpaste|dentist|before",
+    [
+     "Daha önce dişçiye gitmedim.",
+     "I've never been to the dentist."
+    ],
+    0
+   ],
+   [
+    "medical",
+    [
+     "Sağlık durumu",
+     "Health"
+    ],
+    "hastalık|ilaç|alerji|disease|medicine|allerg|health",
+    [
+     "Hastalığım yok, ilaç içmiyorum.",
+     "I'm not sick and I don't take medicine."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Oral examination"
+    ],
+    [
+     "Üst kesicilerde yüzeyler boyunca kahverengi-siyah, kavitasyonlu çürükler; alt kesiciler görece sağlam.",
+     "Brown-black cavitated caries across the upper incisor surfaces; lower incisors relatively spared."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "molars",
+    [
+     "Süt azılar",
+     "Primary molars"
+    ],
+    [
+     "Süt azılarda (54, 64, 74, 84) kahverengi oklüzal ve ara yüz çürükleri.",
+     "Brown occlusal and approximal caries on primary molars 54, 64, 74, 84."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "swelling",
+    [
+     "Yüz/diş eti muayenesi",
+     "Face and gingiva"
+    ],
+    [
+     "Yüzde şişlik yok, fistül yok; dişetinde plak ve hafif kızarıklık.",
+     "No facial swelling or sinus tract; plaque and mild gingival redness."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "plaque",
+    [
+     "Plak değerlendirmesi",
+     "Plaque assessment"
+    ],
+    [
+     "Yaygın, kalın plak birikimi.",
+     "Heavy generalized plaque."
+    ],
+    null,
+    0,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Üst kesicilerde perküsyon hassasiyeti yok.",
+     "No percussion tenderness on upper incisors."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "bw",
+    [
+     "Bitewing radyografi (iş birliği olursa)",
+     "Bitewing radiograph (if cooperative)"
+    ],
+    [
+     "Süt azılarda ara yüz çürükleri dentine, bazılarında pulpaya yakın; periapikal patoloji yok.",
+     "Approximal caries into dentine on primary molars, some near the pulp; no periapical pathology."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "Kesicilerde kronda geniş yıkım, periapikal radyolüsensi yok.",
+     "Extensive crown destruction in incisors; no periapical radiolucency."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Erken çocukluk çürüğü (şiddetli)",
+    "Early childhood caries (severe)"
+   ],
+   [
+    "Amelogenesis imperfekta",
+    "Amelogenesis imperfecta"
+   ],
+   [
+    "Florozis",
+    "Dental fluorosis"
+   ],
+   [
+    "Travmaya bağlı renk değişimi",
+    "Trauma-related discolouration"
+   ]
+  ],
+  "tx": [
+   [
+    "Gece biberonunu ve şekerli içecekleri kesmek, florürlü vernik/gümüş diamin florür ve restoratif tedavi planıyla yüksek riskli koruyucu program",
+    "Stop night bottle and sugary drinks; fluoride varnish or silver diamine fluoride plus restorative plan within a high-risk preventive programme"
+   ],
+   [
+    "Tüm çürük dişlerin hemen çekilmesi",
+    "Immediate extraction of all carious teeth"
+   ],
+   [
+    "Sistemik antibiyotik kürü",
+    "Course of systemic antibiotics"
+   ],
+   [
+    "Süt dişleri düşecek diye tedaviyi ertelemek",
+    "Defer treatment because primary teeth will be shed"
+   ]
+  ]
+ },
+ {
+  "id": "ped-pulpotomy-molar",
+  "topic": "pediatric",
+  "d": "moderate",
+  "title": [
+   "Yemek Sıkışınca Ağrı",
+   "Pain When Food Packs"
+  ],
+  "cc": [
+   "6 yaşındaki çocuk, sol alt süt azısında yemek sıkışınca ağrı olduğunu söylüyor.",
+   "A 6-year-old says his lower left baby molar hurts when food gets stuck in it."
+  ],
+  "pt": [
+   "Mert A.",
+   6,
+   "m",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "neutral"
+  ],
+  "vit": [
+   "95/58",
+   92,
+   "36.7°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "trigger",
+    [
+     "Ağrının tetikleyicisi",
+     "Pain trigger"
+    ],
+    "yemek|sıkış|tatlı|soğuk|ne zaman|food|stuck|sweet|cold|when",
+    [
+     "Yemek girince acıyor, çıkınca geçiyor.",
+     "It hurts when food gets in and stops when it comes out."
+    ],
+    0
+   ],
+   [
+    "night",
+    [
+     "Gece/kendiliğinden ağrı",
+     "Night/spontaneous pain"
+    ],
+    "gece|uyku|uyandır|kendiliğinden|night|sleep|wake|spontaneous",
+    [
+     "Geceleri acımıyor, uykumdan uyanmıyorum.",
+     "It doesn't hurt at night and doesn't wake me up."
+    ],
+    1
+   ],
+   [
+    "duration",
+    [
+     "Ağrı süresi",
+     "Pain duration"
+    ],
+    "süre|ne kadar|sürüyor|geçiyor|how long|last|linger",
+    [
+     "Biraz sonra kendiliğinden geçiyor.",
+     "It goes away by itself after a little while."
+    ],
+    0
+   ],
+   [
+    "swell",
+    [
+     "Şişlik/ateş",
+     "Swelling/fever"
+    ],
+    "şiş|ateş|kabarcık|swell|fever|bump",
+    [
+     "Yanağım şişmedi, ateşim yok.",
+     "My cheek isn't puffy and I don't have a fever."
+    ],
+    1
+   ],
+   [
+    "bite",
+    [
+     "Çiğneme ağrısı",
+     "Pain on biting"
+    ],
+    "çiğne|ısır|bite|chew",
+    [
+     "Sert şey çiğneyince biraz acıyor ama çok değil.",
+     "It hurts a little with hard food but not much."
+    ],
+    0
+   ],
+   [
+    "past",
+    [
+     "Önceki tedavi",
+     "Previous treatment"
+    ],
+    "daha önce|dolgu|tedavi|before|filling|treated",
+    [
+     "Bu dişe daha önce bir şey yapılmadı.",
+     "Nobody has done anything to this tooth before."
+    ],
+    0
+   ],
+   [
+    "hygiene",
+    [
+     "Beslenme/fırçalama",
+     "Diet/brushing"
+    ],
+    "fırça|şeker|tatlı|brush|sugar|sweets",
+    [
+     "Gün içinde şekerleme yiyorum, akşam annem fırçalıyor.",
+     "I eat sweets in the day and mummy brushes at night."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Görsel muayene",
+     "Visual inspection"
+    ],
+    [
+     "Süt dişi 75'te geniş oklüzal-distal çürük, pulpaya yakın; dişte renk değişimi yok.",
+     "Large occlusal-distal caries on primary tooth 75 close to the pulp; no discolouration."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "75'te perküsyon hassasiyeti yok.",
+     "No percussion tenderness on 75."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "gingiva",
+    [
+     "Dişeti/fistül kontrolü",
+     "Gingiva/sinus tract check"
+    ],
+    [
+     "Fistül veya apse yok; dişeti normal.",
+     "No sinus tract or abscess; gingiva normal."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "mobility",
+    [
+     "Mobilite",
+     "Mobility"
+    ],
+    [
+     "Fizyolojik sınırlarda, hareket artışı yok.",
+     "Within physiological limits."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "palp",
+    [
+     "Palpasyon",
+     "Palpation"
+    ],
+    [
+     "Vestibülde hassasiyet yok.",
+     "No vestibular tenderness."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "bw",
+    [
+     "Bitewing radyografi",
+     "Bitewing radiograph"
+    ],
+    [
+     "75'te pulpa boynuzuna ulaşmaya yakın derin çürük; furkasyonda ve periapikal bölgede radyolüsensi yok, kök rezorpsiyonu yok.",
+     "Deep caries approaching the pulp horn on 75; no furcation or periapical radiolucency, no pathological root resorption."
+    ],
+    1,
+    null
+   ],
+   [
+    "ept",
+    [
+     "Elektrikli pulpa testi",
+     "Electric pulp test"
+    ],
+    [
+     "Çocuklarda güvenilir değil; yanıt belirsiz.",
+     "Unreliable in young children; response inconclusive."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Süt dişi 75'te geri dönüşümlü / pulpotomi ile tedavi edilebilir pulpitis (vital koronal pulpa)",
+    "Reversible / pulpotomy-amenable pulpitis of primary tooth 75 (vital pulp)"
+   ],
+   [
+    "75'te pulpa nekrozu ve kronik apikal apse",
+    "Pulp necrosis with chronic apical abscess of 75"
+   ],
+   [
+    "75'te geri dönüşümsüz pulpitis ve ilerlemiş iç rezorpsiyon",
+    "Irreversible pulpitis with advanced internal resorption of 75"
+   ],
+   [
+    "Basit yemek sıkışması, diş sağlam",
+    "Simple food impaction with sound tooth"
+   ]
+  ],
+  "tx": [
+   [
+    "Çürüğün temizlenmesi, pulpotomi (MTA veya biyoseramik materyal) ve paslanmaz çelik kuron",
+    "Caries removal, pulpotomy (MTA or bioceramic) and stainless steel crown"
+   ],
+   [
+    "Yalnızca amalgam/kompozit dolgu",
+    "Simple amalgam or composite filling only"
+   ],
+   [
+    "Dişin çekilmesi ve boşluk tutucu",
+    "Extraction and space maintainer"
+   ],
+   [
+    "Kök kanal dolgusu (pulpektomi)",
+    "Pulpectomy"
+   ]
+  ]
+ },
+ {
+  "id": "ped-abscess-85",
+  "topic": "pediatric",
+  "d": "hard",
+  "title": [
+   "Yanağındaki Şişlik",
+   "The Swollen Cheek"
+  ],
+  "cc": [
+   "5 yaşındaki çocuğun sağ alt arka dişi çok çürük, diş etinde kabarcık çıkmış ve geceleri ağrıyla uyanıyor.",
+   "A 5-year-old has a badly broken-down lower right back tooth with a gum bump and wakes at night with pain."
+  ],
+  "pt": [
+   "Ali C.",
+   5,
+   "m",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "pain"
+  ],
+  "vit": [
+   "95/58",
+   92,
+   "36.7°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "night",
+    [
+     "Gece/kendiliğinden ağrı",
+     "Night/spontaneous pain"
+    ],
+    "gece|uyku|uyandır|kendiliğinden|night|sleep|wake|spontaneous",
+    [
+     "Gece dişim çok acıdı, uyandım.",
+     "My tooth hurt a lot at night and woke me up."
+    ],
+    1
+   ],
+   [
+    "bump",
+    [
+     "Dişetinde kabarcık",
+     "Gum bump"
+    ],
+    "kabarcık|şiş|irin|akıntı|bump|swell|pus|discharge",
+    [
+     "Dişetimde bir kabarcık var, bazen içinden tuzlu bir şey çıkıyor.",
+     "I have a bump on my gum and sometimes something salty comes out."
+    ],
+    1
+   ],
+   [
+    "fever",
+    [
+     "Ateş",
+     "Fever"
+    ],
+    "ateş|halsiz|yemek|fever|tired|eating",
+    [
+     "Dün biraz ateşim vardı, yemek yemek istemedim.",
+     "I felt hot yesterday and didn't want to eat."
+    ],
+    1
+   ],
+   [
+    "bite",
+    [
+     "Çiğneme",
+     "Chewing"
+    ],
+    "çiğne|ısır|bite|chew",
+    [
+     "O tarafla çiğneyemiyorum, çok acıyor.",
+     "I can't chew on that side, it hurts a lot."
+    ],
+    0
+   ],
+   [
+    "duration",
+    [
+     "Ne zamandır",
+     "Duration"
+    ],
+    "ne zaman|kaç|süre|başla|when|how long|start",
+    [
+     "Birkaç haftadır acıyor, dün çok arttı.",
+     "It's hurt for some weeks and got much worse yesterday."
+    ],
+    0
+   ],
+   [
+    "meds",
+    [
+     "İlaç/ağrı kesici",
+     "Medication/painkiller"
+    ],
+    "ilaç|şurup|ağrı kesici|medicine|syrup|painkiller",
+    [
+     "Annem şurup verdi, ağrım biraz azaldı.",
+     "Mummy gave me syrup and it helped a bit."
+    ],
+    0
+   ],
+   [
+    "past",
+    [
+     "Önceki tedavi/alerji",
+     "Previous treatment/allergy"
+    ],
+    "daha önce|alerji|dişçi|before|allerg|dentist",
+    [
+     "Daha önce dişçiye gitmedim, alerjim yok.",
+     "I haven't been to the dentist before and I'm not allergic to anything."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Görsel muayene",
+     "Visual inspection"
+    ],
+    [
+     "85'te kron büyük oranda yıkılmış, kalan yapı restore edilemeyecek durumda.",
+     "Primary tooth 85 is largely destroyed; the remaining crown is not restorable."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "sinus",
+    [
+     "Dişeti/fistül kontrolü",
+     "Gingiva/sinus tract"
+    ],
+    [
+     "Bukkalde, furkasyon hizasında fistül ağzı ve iltihaplı dişeti.",
+     "Buccal sinus tract and inflamed gingiva at the furcation level."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Belirgin perküsyon hassasiyeti; diş mobil.",
+     "Marked percussion tenderness; tooth mobile."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "face",
+    [
+     "Yüz ve lenf bezleri",
+     "Face and lymph nodes"
+    ],
+    [
+     "Hafif submandibular lenfadenopati; yüzde belirgin selülit yok.",
+     "Mild submandibular lymphadenopathy; no frank facial cellulitis."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "airway",
+    [
+     "Yutma/solunum",
+     "Swallowing/airway"
+    ],
+    [
+     "Yutma ve nefes normal, trismus yok.",
+     "Swallowing and breathing normal, no trismus."
+    ],
+    null,
+    0,
+    1
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "85'te furkasyonda yaygın radyolüsensi, kök rezorpsiyonu kökün yarısını aşıyor; kalıcı diş germi kriptinde, kemik kaybı foliküle yaklaşıyor.",
+     "Furcation radiolucency on 85 with root resorption beyond half the root; permanent successor crypt close to the lesion."
+    ],
+    1,
+    null
+   ],
+   [
+    "ept",
+    [
+     "Elektrikli pulpa testi",
+     "Electric pulp test"
+    ],
+    [
+     "Çocukta güvenilir değil.",
+     "Unreliable in a child."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "85'te pulpa nekrozu, kronik apikal apse ve restore edilemeyen diş",
+    "Pulp necrosis with chronic apical abscess of primary tooth 85, non-restorable"
+   ],
+   [
+    "Geri dönüşümlü pulpitis",
+    "Reversible pulpitis"
+   ],
+   [
+    "Dentigeröz kist",
+    "Dentigerous cyst"
+   ],
+   [
+    "Dişeti hastalığı (akut gingivit)",
+    "Acute gingivitis"
+   ]
+  ],
+  "tx": [
+   [
+    "85'in çekimi ve boşluk tutucu (premolar yerleşimine kadar boşluk korunması), enfeksiyon kontrolü",
+    "Extraction of 85 with space maintenance, infection control"
+   ],
+   [
+    "Pulpotomi ve paslanmaz çelik kuron",
+    "Pulpotomy and stainless steel crown"
+   ],
+   [
+    "Pulpektomi ve kuron",
+    "Pulpectomy and crown"
+   ],
+   [
+    "Yalnızca antibiyotik, çekim yok",
+    "Antibiotics alone, no extraction"
+   ]
+  ]
+ },
+ {
+  "id": "ped-hpgs",
+  "topic": "pediatric",
+  "d": "moderate",
+  "title": [
+   "Ateş ve Ağız Yaraları",
+   "Fever and a Sore Mouth"
+  ],
+  "cc": [
+   "3 yaşındaki çocuk iki gündür ateşli, salyası akıyor ve hiçbir şey yemek istemiyor.",
+   "A 3-year-old has had two days of fever, drooling, and refuses to eat or drink."
+  ],
+  "pt": [
+   "Elif S.",
+   3,
+   "f",
+   [
+    "Acil / çocuk poliklinik",
+    "Emergency / paediatric clinic"
+   ],
+   "pain"
+  ],
+  "vit": [
+   "95/58",
+   120,
+   "38.7°C",
+   "98%"
+  ],
+  "hx": [
+   [
+    "fever",
+    [
+     "Ateş",
+     "Fever"
+    ],
+    "ateş|yüksek|sıcak|fever|hot|temperature",
+    [
+     "İki gündür çok ateşim vardı, şimdi biraz azaldı.",
+     "I've been very hot for two days, a little better now."
+    ],
+    1
+   ],
+   [
+    "eating",
+    [
+     "Beslenme/su içme",
+     "Eating/drinking"
+    ],
+    "yemek|su|içmiyor|iç|eat|drink|water|refuse",
+    [
+     "Yemek yiyemiyorum, su içerken bile ağlıyorum.",
+     "I can't eat and I cry even when I drink water."
+    ],
+    1
+   ],
+   [
+    "wet",
+    [
+     "Idrar/dehidratasyon",
+     "Urination/dehydration"
+    ],
+    "çiş|bez|idrar|susuz|pee|wet|diaper|urin",
+    [
+     "Bugün sadece bir kere çiş yaptım.",
+     "I only did a wee once today."
+    ],
+    0
+   ],
+   [
+    "mouth",
+    [
+     "Ağız yaraları",
+     "Mouth sores"
+    ],
+    "yara|kabarcık|ağız|acı|sore|blister|ulcer|mouth",
+    [
+     "Ağzım her yerde acıyor, dişlerimin etleri yanıyor.",
+     "My whole mouth hurts and my gums burn."
+    ],
+    0
+   ],
+   [
+    "contact",
+    [
+     "Temas",
+     "Contact"
+    ],
+    "temas|arkadaş|hasta|kreş|contact|friend|sick|nursery",
+    [
+     "Kreşte hasta çocuklar vardı.",
+     "There were sick children at nursery."
+    ],
+    0
+   ],
+   [
+    "skin",
+    [
+     "Ellerde/ayakta döküntü",
+     "Rash on hands/feet"
+    ],
+    "el|ayak|döküntü|hand|feet|foot|rash",
+    [
+     "Ellerimde ve ayaklarımda bir şey yok.",
+     "Nothing on my hands or feet."
+    ],
+    0
+   ],
+   [
+    "allergy",
+    [
+     "Alerji/ilaç",
+     "Allergy/medication"
+    ],
+    "alerji|ilaç|şurup|allerg|medicine|syrup",
+    [
+     "Ateş şurubu aldım, alerjim yok.",
+     "I had fever syrup and I'm not allergic."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "gingiva",
+    [
+     "Diş eti muayenesi",
+     "Gingival exam"
+    ],
+    [
+     "Yaygın, parlak kırmızı, ödemli ve kolay kanayan dişeti.",
+     "Diffuse bright-red, swollen, easily bleeding gingiva."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "ulcers",
+    [
+     "Ağız mukozası",
+     "Oral mucosa"
+    ],
+    [
+     "Dudak, dil ve damakta küçük, kümelenmiş, sarımsı-gri tabanlı ülserler.",
+     "Clusters of small ulcers with yellow-grey bases on lips, tongue and palate."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "lips",
+    [
+     "Dudaklar",
+     "Lips"
+    ],
+    [
+     "Dudak çevresinde kabuklanmış kabarcıklar.",
+     "Crusted vesicles around the lips."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "dehyd",
+    [
+     "Hidrasyon durumu",
+     "Hydration status"
+    ],
+    [
+     "Dudaklar kuru, mukoza kuru; göz yaşı az.",
+     "Dry lips and mucosa; reduced tears."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "nodes",
+    [
+     "Boyun lenf bezleri",
+     "Cervical lymph nodes"
+    ],
+    [
+     "Bilateral servikal ve submandibular lenf bezleri büyük ve hassas.",
+     "Bilateral tender cervical and submandibular nodes."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "clinical",
+    [
+     "Klinik tanı (laboratuvar gerekmeyebilir)",
+     "Clinical diagnosis (lab often unnecessary)"
+    ],
+    [
+     "Tipik tablo; gerekirse viral PCR ile doğrulanabilir.",
+     "Typical picture; can be confirmed by viral PCR if needed."
+    ],
+    1,
+    null
+   ],
+   [
+    "cult",
+    [
+     "Bakteriyel kültür",
+     "Bacterial culture"
+    ],
+    [
+     "Bu tabloda gereksiz.",
+     "Not needed here."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Primer herpetik gingivostomatit",
+    "Primary herpetic gingivostomatitis"
+   ],
+   [
+    "El-ayak-ağız hastalığı",
+    "Hand-foot-and-mouth disease"
+   ],
+   [
+    "Akut nekrotizan ülseratif gingivit",
+    "Acute necrotizing ulcerative gingivitis"
+   ],
+   [
+    "Oral kandidiyazis",
+    "Oral candidiasis"
+   ]
+  ],
+  "tx": [
+   [
+    "Destekleyici bakım: sıvı alımı, ateş ve ağrı kesici, yumuşak soğuk gıdalar, ağız hijyeni; dehidratasyon varsa sevk",
+    "Supportive care: hydration, antipyretic/analgesic, soft cold diet, oral hygiene; refer if dehydrated"
+   ],
+   [
+    "Geniş spektrumlu antibiyotik",
+    "Broad-spectrum antibiotic"
+   ],
+   [
+    "Antifungal oral jel",
+    "Antifungal oral gel"
+   ],
+   [
+    "Dişeti küretajı",
+    "Gingival curettage"
+   ]
+  ]
+ },
+ {
+  "id": "ped-ectopic-16",
+  "topic": "pediatric",
+  "d": "moderate",
+  "title": [
+   "Takılı Kalan Azı",
+   "The Stuck Molar"
+  ],
+  "cc": [
+   "7 yaşındaki çocuğun üst sağ yeni azısı çıkarken süt azının arkasına takılmış gibi görünüyor.",
+   "A 7-year-old's new upper right molar seems to be stuck behind a baby molar as it comes through."
+  ],
+  "pt": [
+   "Burak Y.",
+   7,
+   "m",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "neutral"
+  ],
+  "vit": [
+   "95/58",
+   92,
+   "36.7°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|ağrıyor|pain|hurt|ache",
+    [
+     "Bazen o tarafta hafif acıyor.",
+     "It hurts a little on that side sometimes."
+    ],
+    0
+   ],
+   [
+    "food",
+    [
+     "Yemek sıkışması",
+     "Food trapping"
+    ],
+    "yemek|sıkış|takıl|food|stuck|trap",
+    [
+     "Dişlerimin arasına yemek giriyor.",
+     "Food gets stuck between my teeth."
+    ],
+    0
+   ],
+   [
+    "odor",
+    [
+     "Kötü koku",
+     "Bad taste/smell"
+    ],
+    "koku|tat|kötü|smell|taste|odor",
+    [
+     "Ağzımda kötü tat olabiliyor.",
+     "Sometimes there's a bad taste."
+    ],
+    0
+   ],
+   [
+    "swell",
+    [
+     "Şişlik/ateş",
+     "Swelling/fever"
+    ],
+    "şiş|ateş|swell|fever",
+    [
+     "Şişlik yok, ateşim de yok.",
+     "No swelling and no fever."
+    ],
+    1
+   ],
+   [
+    "when",
+    [
+     "Ne zaman başladı",
+     "When it started"
+    ],
+    "ne zaman|başla|kaç|when|start|how long",
+    [
+     "Yaklaşık bir aydır fark ettim.",
+     "I noticed about a month ago."
+    ],
+    0
+   ],
+   [
+    "past",
+    [
+     "Süt dişi tedavisi",
+     "Baby tooth treatment"
+    ],
+    "dolgu|tedavi|daha önce|filling|treat|before",
+    [
+     "Süt azıma geçen sene dolgu yapılmıştı.",
+     "I had a filling in the baby molar last year."
+    ],
+    0
+   ],
+   [
+    "loose",
+    [
+     "Süt dişi sallanıyor mu",
+     "Is the baby tooth wobbling"
+    ],
+    "sallan|oynuyor|loose|wobbl|mobile",
+    [
+     "Süt dişim biraz sallanıyor sanki.",
+     "The baby tooth feels a bit wobbly."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Görsel muayene",
+     "Visual inspection"
+    ],
+    [
+     "16 mezial marjinal kenarı 65'in distaline takılmış, kısmen çıkmış.",
+     "The mesial marginal ridge of partly erupted 16 is locked beneath the distal of 65."
+    ],
+    16,
+    1,
+    0
+   ],
+   [
+    "65",
+    [
+     "Süt azı 65 muayenesi",
+     "Primary molar 65 exam"
+    ],
+    [
+     "65'te distal yüzeyde dolgu ve rengi koyulaşmış bölge; hafif mobil.",
+     "65 has a restoration and a darkened distal area; slightly mobile."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "gingiva",
+    [
+     "Dişeti",
+     "Gingiva"
+    ],
+    [
+     "16 çevresinde hafif iltihaplı dişeti; apse yok.",
+     "Mild inflammation around 16; no abscess."
+    ],
+    16,
+    1,
+    1
+   ],
+   [
+    "floss",
+    [
+     "Diş ipi ile temas kontrolü",
+     "Floss contact check"
+    ],
+    [
+     "İp 16 ile 65 arasında sıkı, geçişte zorlanıyor.",
+     "Floss snaps tightly between 16 and 65."
+    ],
+    16,
+    0,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon 65",
+     "Percussion 65"
+    ],
+    [
+     "Hafif hassasiyet.",
+     "Mild tenderness."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "bw",
+    [
+     "Bitewing radyografi",
+     "Bitewing radiograph"
+    ],
+    [
+     "65 distal kökünde rezorpsiyon ve 16 mezial kron kısmı 65 distaline gömülü; pulpa yakınlığı yok.",
+     "Resorption of the distal root of 65 and the mesial crown of 16 impacted beneath it; no pulp involvement."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "16'nın ektopik sürmesi ve 65 distal kökünün rezorpsiyonu",
+    "Ectopic eruption of 16 with resorption of the distal root of 65"
+   ],
+   [
+    "Perikoronit",
+    "Pericoronitis"
+   ],
+   [
+    "Süt azının akut apikal apsesi",
+    "Acute apical abscess of the primary molar"
+   ],
+   [
+    "Normal sürme sırasında geçici sıkışma",
+    "Normal transient eruption"
+   ]
+  ],
+  "tx": [
+   [
+    "Ortodontik separatör/pirinç tel ile 16'nın serbestleştirilmesi ve izlem; kendiliğinden düzelmezse 65'in çekimi ve boşluk yönetimi",
+    "Disimpaction of 16 with an orthodontic separator or brass wire and review; if not self-correcting, remove 65 and manage the space"
+   ],
+   [
+    "16'nın çekimi",
+    "Extract 16"
+   ],
+   [
+    "65'e pulpotomi",
+    "Pulpotomy of 65"
+   ],
+   [
+    "Hiçbir işlem yapmadan beklemek",
+    "Wait without any intervention"
+   ]
+  ]
+ },
+ {
+  "id": "ped-mih-36",
+  "topic": "pediatric",
+  "d": "moderate",
+  "title": [
+   "Soğuk Suda Zonklayan Azı",
+   "The Molar That Jolts in Cold"
+  ],
+  "cc": [
+   "8 yaşındaki çocuk, fırçalarken ve soğuk su içerken yeni azılarında çok sızı hissediyor.",
+   "An 8-year-old feels sharp pain in his new molars when brushing or drinking cold water."
+  ],
+  "pt": [
+   "Kaan T.",
+   8,
+   "m",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "anxious"
+  ],
+  "vit": [
+   "102/62",
+   84,
+   "36.7°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "trigger",
+    [
+     "Tetikleyiciler",
+     "Triggers"
+    ],
+    "soğuk|sıcak|fırça|hava|cold|hot|brush|air",
+    [
+     "Soğuk su ve fırça değince çok acıyor, o yüzden fırçalamak istemiyorum.",
+     "Cold water and the brush hurt so much that I don't want to brush."
+    ],
+    1
+   ],
+   [
+    "which",
+    [
+     "Hangi dişler",
+     "Which teeth"
+    ],
+    "hangi|diş|yer|which|tooth|where",
+    [
+     "Alt ve üst arka dişlerim, özellikle sol alttaki.",
+     "My back teeth, especially bottom left."
+    ],
+    0
+   ],
+   [
+    "look",
+    [
+     "Dişlerin görünümü",
+     "Look of teeth"
+    ],
+    "leke|renk|sarı|kahve|görün|spot|colour|yellow|brown|look",
+    [
+     "Bazı dişlerimde sarı kahverengi lekeler var.",
+     "Some of my teeth have yellow-brown spots."
+    ],
+    0
+   ],
+   [
+    "early",
+    [
+     "Erken yaşlarda hastalık",
+     "Early childhood illness"
+    ],
+    "hastalık|ateş|bebek|illness|fever|baby|infant",
+    [
+     "Bebekken çok hasta olmuşum, annem öyle söylüyor.",
+     "Mum says I was very sick as a baby."
+    ],
+    0
+   ],
+   [
+    "night",
+    [
+     "Gece/kendiliğinden ağrı",
+     "Night/spontaneous pain"
+    ],
+    "gece|uyku|kendiliğinden|night|sleep|spontaneous",
+    [
+     "Gece ağrımıyor.",
+     "It doesn't hurt at night."
+    ],
+    1
+   ],
+   [
+    "break",
+    [
+     "Kırılma",
+     "Breaking"
+    ],
+    "kırıl|döküldü|parça|break|chip|crumble",
+    [
+     "36 numaralı dişimden küçük parça kopmuştu galiba.",
+     "A small piece broke off my bottom left molar I think."
+    ],
+    0
+   ],
+   [
+    "brush",
+    [
+     "Fırçalama/macun",
+     "Brushing/toothpaste"
+    ],
+    "fırça|macun|kaç kez|brush|toothpaste|often",
+    [
+     "Günde iki kere fırçalamaya çalışıyorum ama ağrıdığı yerde atlıyorum.",
+     "I try twice a day but skip the sore bit."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Görsel muayene (azılar)",
+     "Visual (molars)"
+    ],
+    [
+     "16, 26, 36, 46'da sınırları net, sarı-kahverengi opasiteler; 36'da oklüzal enamel yıkımı.",
+     "Well-demarcated yellow-brown opacities on 16, 26, 36, 46; posteruptive enamel breakdown on 36."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "incisors",
+    [
+     "Kesici dişler",
+     "Incisors"
+    ],
+    [
+     "11 ve 21'de beyaz-sarı lekeler, yüzey bütünlüğü korunmuş.",
+     "White-yellow opacities on 11 and 21 with intact surface."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "air",
+    [
+     "Hava/soğuk hassasiyeti testi",
+     "Air/cold sensitivity test"
+    ],
+    [
+     "36'da belirgin sızı, hasta geri çekiliyor.",
+     "Marked sensitivity on 36; the child flinches."
+    ],
+    36,
+    1,
+    1
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "36'da perküsyon hassasiyeti yok.",
+     "No percussion tenderness on 36."
+    ],
+    36,
+    0,
+    0
+   ],
+   [
+    "fistula",
+    [
+     "Dişeti/fistül",
+     "Gingiva/sinus"
+    ],
+    [
+     "Fistül yok; dişeti sağlıklı.",
+     "No sinus; gingiva healthy."
+    ],
+    36,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "bw",
+    [
+     "Bitewing radyografi",
+     "Bitewing radiograph"
+    ],
+    [
+     "36'da oklüzal enamel defekti; pulpa odası geniş, derin çürük yok, periapikal patoloji yok.",
+     "Occlusal enamel defect on 36; wide pulp chamber; no deep caries or periapical pathology."
+    ],
+    1,
+    "normal_bitewing"
+   ],
+   [
+    "ept",
+    [
+     "Elektrikli pulpa testi",
+     "Electric pulp test"
+    ],
+    [
+     "Çocukta güvenilir değil.",
+     "Unreliable in this child."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Molar-kesici hipomineralizasyonu (MIH) ve hassasiyet",
+    "Molar-incisor hypomineralisation (MIH) with hypersensitivity"
+   ],
+   [
+    "Dental florozis",
+    "Dental fluorosis"
+   ],
+   [
+    "Amelogenesis imperfekta",
+    "Amelogenesis imperfecta"
+   ],
+   [
+    "Derin dentin çürüğü / geri dönüşümsüz pulpitis",
+    "Deep dentine caries with irreversible pulpitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Florürlü vernik/desensitizan, koruyucu cam iyonomer veya reçine ile restorasyon (yıkım varsa preforme kuron) ve sıkı koruyucu program",
+    "Fluoride varnish/desensitiser, protective glass ionomer or resin restoration (preformed crown if breakdown) and a strict preventive programme"
+   ],
+   [
+    "Tüm ilk büyük azıların hemen çekimi",
+    "Immediate extraction of all first permanent molars"
+   ],
+   [
+    "Kök kanal tedavisi",
+    "Root canal treatment"
+   ],
+   [
+    "Hiçbir müdahale olmadan izlem",
+    "Observation without intervention"
+   ]
+  ]
+ },
+ {
+  "id": "ped-space-maintainer",
+  "topic": "pediatric",
+  "d": "easy",
+  "title": [
+   "Çekilen Süt Azı",
+   "The Missing Baby Molar"
+  ],
+  "cc": [
+   "6 yaşındaki kızın sol alt ilk süt azısı üç hafta önce çekildi, annesi boşluk için ne yapılacağını soruyor.",
+   "A 6-year-old's lower left first baby molar was extracted three weeks ago and her mother asks what to do about the gap."
+  ],
+  "pt": [
+   "Zeynep D.",
+   6,
+   "f",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "neutral"
+  ],
+  "vit": [
+   "95/58",
+   92,
+   "36.7°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "why",
+    [
+     "Çekim nedeni",
+     "Reason for extraction"
+    ],
+    "neden|çürük|çekil|why|decay|extract|reason",
+    [
+     "Dişim çok çürümüştü, bu yüzden çıkarıldı.",
+     "My tooth was very decayed so it came out."
+    ],
+    0
+   ],
+   [
+    "when",
+    [
+     "Ne zaman çekildi",
+     "When extracted"
+    ],
+    "ne zaman|kaç|hafta|when|how long|weeks",
+    [
+     "Üç hafta önce çıkarıldı.",
+     "It came out three weeks ago."
+    ],
+    0
+   ],
+   [
+    "healing",
+    [
+     "İyileşme/ağrı",
+     "Healing/pain"
+    ],
+    "ağrı|kanama|iyileş|pain|bleed|heal",
+    [
+     "Artık acımıyor, yara kapandı.",
+     "It doesn't hurt now and it's closed."
+    ],
+    0
+   ],
+   [
+    "molar",
+    [
+     "Arkadaki büyük diş",
+     "Back big tooth"
+    ],
+    "büyük diş|yeni diş|azı|çıktı|new tooth|molar|erupt",
+    [
+     "Arka tarafta büyük bir yeni diş çıktı.",
+     "A big new tooth came up at the back."
+    ],
+    0
+   ],
+   [
+    "habits",
+    [
+     "Parmak emme/alışkanlık",
+     "Habits"
+    ],
+    "parmak|emme|alışkanlık|finger|suck|habit",
+    [
+     "Parmak emmiyorum.",
+     "I don't suck my fingers."
+    ],
+    0
+   ],
+   [
+    "health",
+    [
+     "Sağlık durumu",
+     "Health"
+    ],
+    "hastalık|ilaç|kalp|disease|medicine|heart",
+    [
+     "Sağlıklıyım.",
+     "I'm healthy."
+    ],
+    1
+   ],
+   [
+    "brush",
+    [
+     "Fırçalama",
+     "Brushing"
+    ],
+    "fırça|macun|brush|toothpaste",
+    [
+     "Günde iki kere fırçalıyorum.",
+     "I brush twice a day."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Çekim bölgesi",
+     "Extraction site"
+    ],
+    [
+     "74 bölgesinde iyileşmiş boş alan; 75 ve 73 yerinde.",
+     "Healed edentulous space at 74; 75 and 73 in place."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "molar",
+    [
+     "Daimi birinci azı",
+     "First permanent molar"
+    ],
+    [
+     "36 tam sürmüş, oklüzyonda; 75 distalinde.",
+     "36 erupted into occlusion, distal to 75."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "space",
+    [
+     "Boşluk ölçümü",
+     "Space measurement"
+    ],
+    [
+     "Boşluk hâlâ korunmuş, kayma yok.",
+     "Space still maintained; no drift yet."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "caries",
+    [
+     "Komşu dişler",
+     "Adjacent teeth"
+    ],
+    [
+     "75 ve 73 sağlam, çürük yok.",
+     "75 and 73 sound, no caries."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "occl",
+    [
+     "Karşıt diş ilişkisi",
+     "Opposing tooth"
+    ],
+    [
+     "Karşıt 84 ile temas normal.",
+     "Contact with opposing 84 normal."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "Kalıcı premolar 34 germi mevcut, kök gelişimi başlangıçta; kemik kapanmış.",
+     "Permanent premolar germ 34 present, early root formation; bone healed."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Birinci süt azının erken kaybı; boşluk kaybı riski",
+    "Premature loss of a first primary molar with risk of space loss"
+   ],
+   [
+    "Doğuştan eksik premolar",
+    "Congenitally missing premolar"
+   ],
+   [
+    "Normal fizyolojik diş düşmesi",
+    "Normal physiological shedding"
+   ],
+   [
+    "Ankiloz",
+    "Ankylosis"
+   ]
+  ],
+  "tx": [
+   [
+    "Band-loop boşluk tutucu yaptırmak (75'ten destekli) ve düzenli kontrol",
+    "Fit a band-and-loop space maintainer on 75 with regular review"
+   ],
+   [
+    "Hiçbir şey yapmadan beklemek",
+    "Do nothing and wait"
+   ],
+   [
+    "Protez dişi (hareketli) yerleştirmek",
+    "Place a removable replacement denture"
+   ],
+   [
+    "75'i de çekip boşluğu birleştirmek",
+    "Extract 75 as well to merge spaces"
+   ]
+  ]
+ },
+ {
+  "id": "ped-dental-fear",
+  "topic": "pediatric",
+  "d": "easy",
+  "title": [
+   "Koltuğa Oturmayan Çocuk",
+   "The Child Who Won't Sit"
+  ],
+  "cc": [
+   "4 yaşındaki çocuk ilk muayenesinde ağlıyor, ağzını açmıyor ve annesine yapışıyor.",
+   "A 4-year-old cries at the first visit, won't open his mouth and clings to his mother."
+  ],
+  "pt": [
+   "Emir B.",
+   4,
+   "m",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "anxious"
+  ],
+  "vit": [
+   "90/55",
+   100,
+   "36.8°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "fear",
+    [
+     "Korkunun nedeni",
+     "Reason for fear"
+    ],
+    "neden|korku|korkuyor|why|afraid|scared|fear",
+    [
+     "Burası bana iğne yapacak mı diye korkuyorum.",
+     "I'm scared you'll give me a needle."
+    ],
+    0
+   ],
+   [
+    "prev",
+    [
+     "Önceki deneyim",
+     "Previous experience"
+    ],
+    "daha önce|doktor|hastane|before|doctor|hospital",
+    [
+     "Daha önce hastanede çok ağlamıştım.",
+     "I cried a lot at the hospital once."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|diş|pain|hurt|tooth",
+    [
+     "Dişim ağrımıyor.",
+     "My teeth don't hurt."
+    ],
+    1
+   ],
+   [
+    "parent",
+    [
+     "Aile tutumu",
+     "Parent attitude"
+    ],
+    "anne|baba|söyle|mum|dad|told|parent",
+    [
+     "Annem 'doktora götürürüm' diye korkutmuştu.",
+     "Mummy said she'd take me to the doctor when I was naughty."
+    ],
+    0
+   ],
+   [
+    "sleep",
+    [
+     "Uyku/aç mı",
+     "Sleep/hunger"
+    ],
+    "uyku|yemek|aç|sleep|hungry|eaten",
+    [
+     "Şimdi uykum geldi.",
+     "I'm sleepy now."
+    ],
+    0
+   ],
+   [
+    "health",
+    [
+     "Sağlık durumu",
+     "Health"
+    ],
+    "hastalık|ilaç|alerji|disease|medicine|allerg",
+    [
+     "Hastalığım yok.",
+     "I'm not sick."
+    ],
+    1
+   ],
+   [
+    "play",
+    [
+     "İlgi alanı",
+     "Interests"
+    ],
+    "oyun|oyuncak|sevdiğ|play|toy|favourite|like",
+    [
+     "Arabaları çok severim.",
+     "I love cars."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "behaviour",
+    [
+     "Davranış gözlemi",
+     "Behaviour observation"
+    ],
+    [
+     "Ağlıyor, mimik tedirgin; Frankl 2 (olumsuz) ancak ikna edilebilir.",
+     "Crying and tense; Frankl 2 (negative) but persuadable."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "visual",
+    [
+     "Hızlı ağız içi bakış",
+     "Quick oral look"
+    ],
+    [
+     "Çürük, ağrı veya şişlik görülmüyor.",
+     "No caries, swelling or pain seen."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "parent",
+    [
+     "Ebeveyn ile görüşme",
+     "Parent interview"
+    ],
+    [
+     "Anne kaygılı ve çocuğun hareketlerini engelliyor.",
+     "Mother is anxious and restrains the child's movements."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "height",
+    [
+     "Gelişimsel durum",
+     "Developmental status"
+    ],
+    [
+     "Yaşına uygun gelişim; iletişim kurulabiliyor.",
+     "Age-appropriate development; able to communicate."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "health",
+    [
+     "Sistemik kontrol",
+     "Systemic check"
+    ],
+    [
+     "Özel sağlık sorunu yok.",
+     "No significant medical problems."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "none",
+    [
+     "Ek test (şimdilik gerekli değil)",
+     "No tests yet"
+    ],
+    [
+     "Ağrı veya çürük şüphesi yok; ilk görüşmede radyografi gerekmez.",
+     "No suspicion of pain or caries; no radiographs needed at this introductory visit."
+    ],
+    1,
+    null
+   ],
+   [
+    "bw",
+    [
+     "Bitewing radyografi",
+     "Bitewing radiograph"
+    ],
+    [
+     "Çocuk iş birliği yapmıyor; endikasyon yok.",
+     "Child not cooperative; no indication."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Dental kaygı / korku (normal gelişimsel); iş birliği için davranış yönetimi gerekli",
+    "Dental anxiety/fear (normal developmental); behaviour guidance needed"
+   ],
+   [
+    "Zihinsel gelişim geriliği",
+    "Intellectual disability"
+   ],
+   [
+    "Ağrılı çürük nedeniyle kaçınma",
+    "Avoidance due to painful caries"
+   ],
+   [
+    "Otizm spektrum bozukluğu",
+    "Autism spectrum disorder"
+   ]
+  ],
+  "tx": [
+   [
+    "Anlat-göster-uygula, pozitif pekiştirme, kısa seans ve ebeveynle iş birliği; gerekirse sonraki seansta devam",
+    "Tell-show-do, positive reinforcement, a short visit and parent cooperation; continue at later visits"
+   ],
+   [
+    "Hemen genel anestezi altında tedavi",
+    "Immediate general anaesthesia"
+   ],
+   [
+    "Fiziksel olarak sıkıca tutup muayene etmek",
+    "Hold the child down firmly to examine"
+   ],
+   [
+    "Çocuğu azarlayıp korkusunu küçümsemek",
+    "Scold the child and dismiss the fear"
+   ]
+  ]
+ },
+ {
+  "id": "ped-intrusion-51",
+  "topic": "pediatric",
+  "d": "hard",
+  "title": [
+   "Düşme Sonrası Kaybolan Diş",
+   "The Tooth That Vanished"
+  ],
+  "cc": [
+   "3 yaşında bir çocuk düştükten sonra üst ön dişi yarı yarıya diş etine gömülmüş görünüyor.",
+   "A 3-year-old fell and his upper front tooth now looks pushed up into the gum."
+  ],
+  "pt": [
+   "Efe G.",
+   3,
+   "m",
+   [
+    "Acil diş kliniği",
+    "Emergency dental clinic"
+   ],
+   "pain"
+  ],
+  "vit": [
+   "90/55",
+   100,
+   "36.8°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "how",
+    [
+     "Kaza mekanizması",
+     "Mechanism"
+    ],
+    "nasıl|düş|çarp|how|fall|hit|bump",
+    [
+     "Koşarken yüzüstü düştüm, masa köşesine çarptım.",
+     "I fell on my face running and hit the table corner."
+    ],
+    0
+   ],
+   [
+    "loc",
+    [
+     "Bilinç/bayılma",
+     "Loss of consciousness"
+    ],
+    "bayıl|uyku|kus|kafa|faint|conscious|vomit|head",
+    [
+     "Bayılmadım ama kafam biraz ağrıdı, kustum.",
+     "I didn't pass out but my head hurt a bit, I was sick."
+    ],
+    1
+   ],
+   [
+    "when",
+    [
+     "Zaman",
+     "Time since injury"
+    ],
+    "ne zaman|kaç saat|when|how long|hours",
+    [
+     "Bugün sabah oldu.",
+     "It happened this morning."
+    ],
+    0
+   ],
+   [
+    "bleed",
+    [
+     "Kanama",
+     "Bleeding"
+    ],
+    "kan|dudak|diş eti|blood|bleed|lip|gum",
+    [
+     "Dişetim kanadı, şimdi durdu.",
+     "My gum bled but it stopped."
+    ],
+    0
+   ],
+   [
+    "piece",
+    [
+     "Diş parçası/yutma",
+     "Missing tooth piece"
+    ],
+    "parça|yut|diş|piece|swallow|fragment",
+    [
+     "Dişim düşmedi ama kayboldu gibi.",
+     "My tooth didn't fall out but it looks gone."
+    ],
+    0
+   ],
+   [
+    "pacifier",
+    [
+     "Emzik/parmak",
+     "Pacifier/thumb"
+    ],
+    "emzik|parmak|pacifier|thumb|dummy",
+    [
+     "Emziğim var, akşamları emiyorum.",
+     "I have a dummy at bedtime."
+    ],
+    0
+   ],
+   [
+    "tetanus",
+    [
+     "Aşı durumu",
+     "Vaccination"
+    ],
+    "aşı|tetanoz|vaccin|tetanus|immuni",
+    [
+     "Annem aşılarım tam diyor.",
+     "Mummy says my injections are all done."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Görsel muayene",
+     "Visual inspection"
+    ],
+    [
+     "Süt santral 51 kron boyunun büyük bölümü diş etine intrüze; labial gingival laserasyon.",
+     "Primary central 51 intruded most of its crown height with a labial gingival laceration."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "neuro",
+    [
+     "Genel/baş travması kontrolü",
+     "General/head injury check"
+    ],
+    [
+     "Bilinç açık, oryante; kusma tek seferlik, nörolojik bulgu yok.",
+     "Alert, orientated; single vomit, no neurological signs."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "soft",
+    [
+     "Yumuşak doku",
+     "Soft tissue"
+    ],
+    [
+     "Üst dudakta ödem, frenulum sağlam.",
+     "Upper lip oedema; frenulum intact."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "adj",
+    [
+     "Komşu dişler",
+     "Adjacent teeth"
+    ],
+    [
+     "Komşu dişlerde mobilite ve kırık yok.",
+     "No mobility or fractures of adjacent teeth."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "occl",
+    [
+     "Oklüzyon",
+     "Occlusion"
+    ],
+    [
+     "Isırmada engel yok.",
+     "No occlusal interference."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "lat",
+    [
+     "Lateral (dişeti-alveol) radyografi",
+     "Lateral soft-tissue/alveolar radiograph"
+    ],
+    [
+     "51'in apeksi labial kortekse doğru yönelmiş, daimi kesici germinden uzakta.",
+     "Apex of 51 directed toward the labial cortex, away from the permanent successor germ."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Okluzal radyografi",
+     "Occlusal radiograph"
+    ],
+    [
+     "51 kökü germ yönünde değil, labial.",
+     "Root of 51 labial, not toward the germ."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Süt kesicinin intrüzyonu; apeks labial yönde (germe doğru değil)",
+    "Intrusion of primary incisor 51 with apex displaced labially (away from the germ)"
+   ],
+   [
+    "Süt kesicinin avülsiyonu",
+    "Avulsion of primary incisor"
+   ],
+   [
+    "Kök kırığı",
+    "Root fracture"
+   ],
+   [
+    "Subluksasyon",
+    "Subluxation"
+   ]
+  ],
+  "tx": [
+   [
+    "Kendiliğinden yeniden sürmeyi beklemek (haftalar-aylar), yumuşak diyet, klorheksidin gargarası ve düzenli kontrol",
+    "Allow spontaneous re-eruption (weeks to months), soft diet, chlorhexidine rinse and regular review"
+   ],
+   [
+    "Dişi hemen çekmek",
+    "Extract immediately"
+   ],
+   [
+    "Dişi yerine itip splintlemek",
+    "Reposition and splint the tooth"
+   ],
+   [
+    "Kök kanal tedavisi ve kuron",
+    "Pulpectomy and crown"
+   ]
+  ]
+ },
+ {
+  "id": "ped-nai",
+  "topic": "pediatric",
+  "d": "hard",
+  "title": [
+   "Açıklanamayan Morluk",
+   "The Unexplained Bruise"
+  ],
+  "cc": [
+   "4 yaşındaki çocuk yanağındaki morluk ve dudak yırtığı ile getirildi; babası düştüğünü söylüyor.",
+   "A 4-year-old is brought in with a cheek bruise and a torn lip; his father says he fell."
+  ],
+  "pt": [
+   "Hakan Ş.",
+   4,
+   "m",
+   [
+    "Diş kliniği",
+    "Dental clinic"
+   ],
+   "anxious"
+  ],
+  "vit": [
+   "90/55",
+   100,
+   "36.8°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "how",
+    [
+     "Yaralanma nasıl",
+     "How it happened"
+    ],
+    "nasıl|düş|ne oldu|how|fall|what happened",
+    [
+     "Düştüm, babam öyle diyor.",
+     "I fell, that's what daddy says."
+    ],
+    1
+   ],
+   [
+    "whenp",
+    [
+     "Ne zaman, ne kadar süre",
+     "When, how long ago"
+    ],
+    "ne zaman|kaç gün|when|how long|days",
+    [
+     "Dün gece oldu.",
+     "It was last night."
+    ],
+    1
+   ],
+   [
+    "mood",
+    [
+     "Çocuğun davranışı",
+     "Child's behaviour"
+    ],
+    "korku|sessiz|ağla|afraid|quiet|cry|scared",
+    [
+     "Babam kızınca ben saklanıyorum.",
+     "When daddy gets cross I hide."
+    ],
+    1
+   ],
+   [
+    "other",
+    [
+     "Başka yaralanma",
+     "Other injuries"
+    ],
+    "başka|vücut|kol|sırt|other|body|arm|back",
+    [
+     "Kolumda da kırmızı yerler var.",
+     "I have red marks on my arm too."
+    ],
+    1
+   ],
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|pain|hurt",
+    [
+     "Yüzüm acıyor, ağzım acıyor.",
+     "My face hurts and so does my mouth."
+    ],
+    0
+   ],
+   [
+    "eat",
+    [
+     "Yeme",
+     "Eating"
+    ],
+    "yemek|iç|eat|drink|chew",
+    [
+     "Yemek yerken acıyor.",
+     "It hurts when I eat."
+    ],
+    0
+   ],
+   [
+    "prev",
+    [
+     "Önceki yaralanmalar",
+     "Previous injuries"
+    ],
+    "daha önce|hastane|before|hospital|earlier",
+    [
+     "Daha önce de kolumu hastanede sardılar.",
+     "They wrapped my arm at hospital before."
+    ],
+    1
+   ]
+  ],
+  "ex": [
+   [
+    "bruise",
+    [
+     "Yüz/baş muayenesi",
+     "Face/head exam"
+    ],
+    [
+     "Yanakta el izi şeklinde, farklı yaşta eritem ve morluklar; kulak memesinde ekimoz.",
+     "Hand-shaped bruising of different ages on the cheek; ecchymosis of the ear lobe."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "lip",
+    [
+     "Dudak ve frenulum",
+     "Lips and frenulum"
+    ],
+    [
+     "Üst dudak frenulumunda yırtık (laserasyon) ve dudak iç yüzünde diş izi.",
+     "Torn upper labial frenulum and lip lacerations with teeth marks."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "teeth",
+    [
+     "Dişler",
+     "Teeth"
+    ],
+    [
+     "Süt kesicilerde mobilite; bir tanesinde incecik kırık.",
+     "Mobility of primary incisors; a small fracture in one."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "history",
+    [
+     "Hikâye-bulgu uyumu",
+     "Story–injury match"
+    ],
+    [
+     "Anlatılan düşme ile bulgular uyumsuz (şekil/çok bölge).",
+     "Injury pattern is inconsistent with the described fall."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "neglect",
+    [
+     "Genel bakım/hijyen",
+     "General care/hygiene"
+    ],
+    [
+     "Kıyafetler bakımsız, çocuk korkak.",
+     "Poorly kept clothes; child withdrawn."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "doc",
+    [
+     "Fotoğraf ve ayrıntılı kayıt",
+     "Photographs and detailed notes"
+    ],
+    [
+     "Bulguların tarih/saat/ölçüyle tam kaydı yapılır.",
+     "Full dated, measured written and photographic documentation."
+    ],
+    1,
+    null
+   ],
+   [
+    "rad",
+    [
+     "Periapikal radyografi (dişler)",
+     "Periapical radiographs (teeth)"
+    ],
+    [
+     "Dişlerdeki hasar için gerekebilir, asıl çözüm kayıt ve bildirim.",
+     "May help assess dental injury; the main task is documentation and referral."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Şüpheli çocuk istismarı / ihmali (fiziksel istismar)",
+    "Suspected child physical abuse/neglect"
+   ],
+   [
+    "Düşmeye bağlı kaza yaralanması",
+    "Accidental fall injury"
+   ],
+   [
+    "Hemofili / kanama bozukluğu",
+    "Haemophilia / bleeding disorder"
+   ],
+   [
+    "Enfeksiyöz selülit",
+    "Infective cellulitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Yaralanmaları tam belgelemek, çocuğu güvende tutmak ve yasal yükümlülük gereği çocuk koruma birimine bildirmek",
+    "Document findings fully, keep the child safe and report to child-protection services as legally required"
+   ],
+   [
+    "Ebeveynle yüzleşip suçlamak",
+    "Confront and accuse the parent"
+   ],
+   [
+    "Yalnızca dişleri tedavi edip evine göndermek",
+    "Treat only the teeth and send home"
+   ],
+   [
+    "Antibiyotik ve kontrol",
+    "Antibiotics and review"
+   ]
+  ]
+ },
+ {
+  "id": "ped-eruption-cyst",
+  "topic": "pediatric",
+  "d": "easy",
+  "title": [
+   "Azının Üstündeki Mor Kabarcık",
+   "The Purple Bubble"
+  ],
+  "cc": [
+   "6 yaşındaki çocuğun sol alt arka diş etinde mavimsi şişlik fark edilmiş.",
+   "A bluish swelling has appeared on the gum at the back of a 6-year-old's lower left."
+  ],
+  "pt": [
+   "Ayşe N.",
+   6,
+   "f",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "neutral"
+  ],
+  "vit": [
+   "95/58",
+   92,
+   "36.7°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|pain|hurt|ache",
+    [
+     "Hafif acıyor, yemek yerken değiyor.",
+     "It's a little sore when I eat."
+    ],
+    0
+   ],
+   [
+    "grew",
+    [
+     "Büyüme hızı",
+     "Growth"
+    ],
+    "büyü|ne zaman|kaç|grew|when|how long",
+    [
+     "Bir haftadır var, biraz büyüdü.",
+     "It's been a week and got a bit bigger."
+    ],
+    0
+   ],
+   [
+    "fever",
+    [
+     "Ateş",
+     "Fever"
+    ],
+    "ateş|şiş|apse|fever|swell|abscess",
+    [
+     "Ateşim yok.",
+     "No fever."
+    ],
+    1
+   ],
+   [
+    "tooth",
+    [
+     "Sürmekte olan diş",
+     "Erupting tooth"
+    ],
+    "diş|çık|süt|tooth|erupt|baby",
+    [
+     "Orada hiç diş yoktu, yeni diş çıkacakmış.",
+     "There wasn't a tooth there, a new one is coming."
+    ],
+    1
+   ],
+   [
+    "trauma",
+    [
+     "Travma",
+     "Trauma"
+    ],
+    "çarp|düş|darbe|hit|fall|knock",
+    [
+     "Çarpmadım.",
+     "I didn't bump it."
+    ],
+    0
+   ],
+   [
+    "bleed",
+    [
+     "Kanama",
+     "Bleeding"
+    ],
+    "kan|bleed|blood",
+    [
+     "Kanamadı.",
+     "It didn't bleed."
+    ],
+    0
+   ],
+   [
+    "health",
+    [
+     "Sağlık durumu",
+     "Health"
+    ],
+    "hastalık|ilaç|alerji|disease|medicine|allerg",
+    [
+     "Hastalığım yok.",
+     "I'm healthy."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Görsel muayene",
+     "Visual inspection"
+    ],
+    [
+     "36 bölgesinde 8 mm, mavimsi, kubbe şeklinde, yumuşak şişlik; diş henüz çıkmamış.",
+     "8 mm bluish dome-shaped soft swelling over unerupted 36."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "palp",
+    [
+     "Palpasyon",
+     "Palpation"
+    ],
+    [
+     "Dalgalanmalı, ağrısız veya hafif hassas.",
+     "Fluctuant, painless to mildly tender."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "gingiva",
+    [
+     "Çevre dişeti",
+     "Surrounding gingiva"
+    ],
+    [
+     "Enfeksiyon belirtisi yok.",
+     "No signs of infection."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "nodes",
+    [
+     "Lenf bezleri",
+     "Lymph nodes"
+    ],
+    [
+     "Palpe edilmiyor.",
+     "Not palpable."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "opp",
+    [
+     "Karşıt diş",
+     "Opposing tooth"
+    ],
+    [
+     "Isırmada temas yok.",
+     "No occlusal trauma."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "36'nın okluzal yüzü kemiğe yaklaşmış, sürmeden önce; patoloji yok.",
+     "Crown of 36 close to the surface and about to erupt; no pathology."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Sürme kisti (36 bölgesi)",
+    "Eruption cyst over 36"
+   ],
+   [
+    "Mukosel",
+    "Mucocele"
+   ],
+   [
+    "Periapikal apse",
+    "Periapical abscess"
+   ],
+   [
+    "Hemanjiyom",
+    "Haemangioma"
+   ]
+  ],
+  "tx": [
+   [
+    "Müdahale etmeden izlem; kendiliğinden açılır, enfekte veya ağrılıysa basit marsupializasyon",
+    "Observe; usually ruptures on its own, simple marsupialisation only if infected or painful"
+   ],
+   [
+    "Cerrahi çekim",
+    "Surgical extraction"
+   ],
+   [
+    "Antibiyotik",
+    "Antibiotics"
+   ],
+   [
+    "Eksizyonel biyopsi",
+    "Excisional biopsy"
+   ]
+  ]
+ },
+ {
+  "id": "ped-fluorosis",
+  "topic": "pediatric",
+  "d": "moderate",
+  "title": [
+   "Lekeli Dişler",
+   "The Mottled Teeth"
+  ],
+  "cc": [
+   "9 yaşındaki kızın dişlerinde simetrik beyaz-kahverengi lekeler var, annesi estetik olarak endişeli.",
+   "A 9-year-old has symmetrical white and brown mottling on her teeth, and her mother is worried about the look."
+  ],
+  "pt": [
+   "Gül M.",
+   9,
+   "f",
+   [
+    "Çocuk diş hekimliği kliniği",
+    "Pediatric dental clinic"
+   ],
+   "neutral"
+  ],
+  "vit": [
+   "102/62",
+   84,
+   "36.7°C",
+   "99%"
+  ],
+  "hx": [
+   [
+    "look",
+    [
+     "Lekelerin görünümü",
+     "Look of stains"
+    ],
+    "leke|renk|beyaz|kahve|görün|stain|white|brown|colour",
+    [
+     "Dişlerimde tebeşir gibi beyaz çizgiler ve kahverengi noktalar var.",
+     "White chalky lines and brown dots on my teeth."
+    ],
+    0
+   ],
+   [
+    "since",
+    [
+     "Ne zamandan beri",
+     "Since when"
+    ],
+    "ne zaman|doğ|hep|başla|when|born|always|since",
+    [
+     "Daimi dişlerim çıktığından beri böyleler.",
+     "They've been like that since my grown-up teeth came."
+    ],
+    0
+   ],
+   [
+    "water",
+    [
+     "Su kaynağı",
+     "Water source"
+    ],
+    "su|kuyu|çeşme|well|water|tap",
+    [
+     "Evde kuyu suyu içiyoruz.",
+     "We drink well water at home."
+    ],
+    1
+   ],
+   [
+    "paste",
+    [
+     "Macun yutma",
+     "Swallowing toothpaste"
+    ],
+    "macun|yut|toothpaste|swallow",
+    [
+     "Küçükken macunu yutardım, tadı hoşuma giderdi.",
+     "I used to swallow toothpaste when I was little; it tasted nice."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Hassasiyet/ağrı",
+     "Sensitivity/pain"
+    ],
+    "ağrı|sızı|hassas|pain|sensitiv|hurt",
+    [
+     "Hayır, acımıyor, soğuk da rahatsız etmiyor.",
+     "No, they don't hurt and cold is fine."
+    ],
+    1
+   ],
+   [
+    "illness",
+    [
+     "Hastalık/ateş (bebeklik)",
+     "Illness/fever (infancy)"
+    ],
+    "hastalık|ateş|bebek|illness|fever|baby",
+    [
+     "Bebekken özel bir hastalık geçirmedim.",
+     "I had no special illness as a baby."
+    ],
+    0
+   ],
+   [
+    "family",
+    [
+     "Ailede benzer",
+     "Similar in family"
+    ],
+    "aile|kardeş|anne|baba|family|sibling|mother|father",
+    [
+     "Kardeşimde de benzer var.",
+     "My brother has some too."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Görsel muayene (kesiciler)",
+     "Visual (incisors)"
+    ],
+    [
+     "11, 12, 21, 22'de simetrik, çizgisel beyaz opasiteler; yüzey sert ve pürüzsüz.",
+     "Symmetrical lacy white opacities on 11, 12, 21, 22 with a hard smooth surface."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "molars",
+    [
+     "Azılar",
+     "Molars"
+    ],
+    [
+     "16, 26, 36, 46'da diffüz, simetrik beyaz-sarı opasiteler; yıkım yok.",
+     "Diffuse symmetrical opacities on 16, 26, 36, 46 without breakdown."
+    ],
+    16,
+    1,
+    0
+   ],
+   [
+    "sens",
+    [
+     "Soğuk testi",
+     "Cold test"
+    ],
+    [
+     "Hassasiyet yok.",
+     "No hypersensitivity."
+    ],
+    36,
+    1,
+    1
+   ],
+   [
+    "surface",
+    [
+     "Yüzey sertliği (sonda)",
+     "Surface hardness (probe)"
+    ],
+    [
+     "Enamel sert, sonda takılmıyor.",
+     "Enamel hard, probe does not catch."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "caries",
+    [
+     "Çürük taraması",
+     "Caries screening"
+    ],
+    [
+     "Aktif çürük yok.",
+     "No active caries."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "bw",
+    [
+     "Bitewing radyografi",
+     "Bitewing radiograph"
+    ],
+    [
+     "Normal radyografik yoğunluk; çürük yok.",
+     "Normal radiographic density; no caries."
+    ],
+    1,
+    "normal_bitewing"
+   ],
+   [
+    "water",
+    [
+     "Su florür düzeyi tahlili",
+     "Water fluoride analysis"
+    ],
+    [
+     "Kuyu suyunda florür yüksek.",
+     "High fluoride level in the well water."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Dental florozis (hafif-orta)",
+    "Dental fluorosis (mild-moderate)"
+   ],
+   [
+    "Molar-kesici hipomineralizasyonu",
+    "Molar-incisor hypomineralisation"
+   ],
+   [
+    "Amelogenesis imperfekta",
+    "Amelogenesis imperfecta"
+   ],
+   [
+    "Erken çürük lezyonları (beyaz leke)",
+    "Early white spot caries lesions"
+   ]
+  ],
+  "tx": [
+   [
+    "Anne-babayı bilgilendirmek, florür kaynaklarını (kuyu suyu, macun miktarı) gözden geçirmek ve estetik için mikroabrazyon/ağartma planı yapmak",
+    "Reassure parents, review fluoride sources (well water, paste amount) and plan microabrasion or bleaching for aesthetics"
+   ],
+   [
+    "Tüm ön dişlere kompozit venner",
+    "Composite veneers on all front teeth"
+   ],
+   [
+    "Dişlerin çekimi",
+    "Extraction of affected teeth"
+   ],
+   [
+    "Yüksek doz florür takviyesi",
+    "High-dose fluoride supplements"
+   ]
+  ]
+ }
+]

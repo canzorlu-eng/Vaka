@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { api } from "../lib/api";
 import { useLang } from "../context/LangContext";
-import { Footer, LangToggle, Logo } from "../components/Chrome";
+import { Footer, HeaderRight, Logo } from "../components/Chrome";
 import { GameButton } from "../components/GameButton";
 import { Check, X, RotateCcw, Home, Copy, AlertTriangle, FlaskConical, ClipboardList, ScanLine } from "lucide-react";
 
@@ -15,14 +15,16 @@ export default function Debrief() {
   const navigate = useNavigate();
   const [r, setR] = useState(null);
   const [caseId, setCaseId] = useState(null);
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     api.getSession(sid).then((s) => {
       setCaseId(s.case_id);
       if (s.report) setR(s.report);
-      else api.score(sid).then(setR);
+      else api.score(sid).then(setR).catch(() => setFailed(true));
     }).catch(() => navigate("/"));
-  }, [sid, navigate]);
+  }, [sid, navigate, attempt]);
 
   const copySummary = () => {
     if (!r) return;
@@ -44,6 +46,12 @@ export default function Debrief() {
     toast.success(t("copied"));
   };
 
+  if (!r && failed) return (
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6 text-center">
+      <p className="text-fg font-semibold">{t("err_generic")}</p>
+      <GameButton onClick={() => { setFailed(false); setAttempt((n) => n + 1); }}>{t("retry")}</GameButton>
+    </div>
+  );
   if (!r) return <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-muted-foreground">
     <div className="flex gap-1"><span className="w-2.5 h-2.5 rounded-full bg-primary dot-1" /><span className="w-2.5 h-2.5 rounded-full bg-primary dot-2" /><span className="w-2.5 h-2.5 rounded-full bg-primary dot-3" /></div>
     {t("debrief")}…
@@ -56,12 +64,12 @@ export default function Debrief() {
     <div className="min-h-screen flex flex-col">
       <header className="flex items-center justify-between px-5 sm:px-10 py-5 max-w-6xl mx-auto w-full">
         <Logo onClick={() => navigate("/")} />
-        <LangToggle />
+        <HeaderRight />
       </header>
 
       <main className="flex-1 max-w-6xl mx-auto w-full px-5 sm:px-10 pb-14">
-        <div className="inline-block bg-accent text-accent-foreground rounded-full px-4 py-1.5 text-xs font-bold mb-2">{t("debrief")}</div>
-        <h1 className="font-head font-black text-3xl sm:text-4xl text-fg mb-6">{r.case_title}</h1>
+        <p className="eyebrow text-primary mb-2">{t("debrief")}</p>
+        <h1 className="font-head font-semibold text-3xl sm:text-4xl text-fg mb-6">{r.case_title}</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* score column */}
@@ -69,7 +77,7 @@ export default function Debrief() {
             <div className="card-medkit p-7 text-center animate-pop">
               <ScoreRing pct={pct} color={gc} />
               <div className="mt-4 inline-flex items-center gap-2">
-                <span className="font-head font-black text-2xl" style={{ color: gc }}>{r.grade}</span>
+                <span className="font-head font-semibold text-2xl" style={{ color: gc }}>{r.grade}</span>
                 <span className="text-sm font-bold text-fg">· {r.rank}</span>
               </div>
               <p className="text-xs text-muted-foreground font-semibold mt-1">{t("total_score")}</p>
@@ -77,13 +85,13 @@ export default function Debrief() {
 
             {/* dimensions */}
             <div className="card-medkit p-6">
-              <h3 className="font-head font-extrabold text-lg mb-4">{t("breakdown")}</h3>
+              <h3 className="font-head font-semibold text-lg mb-4">{t("breakdown")}</h3>
               <div className="space-y-4">
                 {r.dimensions.map((d) => (
                   <div key={d.id} data-testid={`dim-${d.id}`}>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="font-semibold text-fg">{d.label}</span>
-                      <span className="font-head font-extrabold text-muted-foreground">{d.score}/{d.max}</span>
+                      <span className="font-head font-semibold text-muted-foreground">{d.score}/{d.max}</span>
                     </div>
                     <div className="h-2.5 rounded-full bg-accent overflow-hidden">
                       <div className="h-full rounded-full transition-all" style={{ width: `${d.pct}%`, background: gc }} />
@@ -112,7 +120,7 @@ export default function Debrief() {
           <div className="lg:col-span-8 flex flex-col gap-6">
             {/* narrative */}
             <div className="card-medkit p-6 bg-accent/40">
-              <h3 className="font-head font-extrabold text-lg mb-2 flex items-center gap-2"><ClipboardList size={18} className="text-primary" />{t("examiner_narrative")}</h3>
+              <h3 className="font-head font-semibold text-lg mb-2 flex items-center gap-2"><ClipboardList size={18} className="text-primary" />{t("examiner_narrative")}</h3>
               <p className="text-fg font-medium leading-relaxed">{r.narrative}</p>
             </div>
 
@@ -127,7 +135,7 @@ export default function Debrief() {
             {/* red flags */}
             {r.red_flags.length > 0 && (
               <div className="card-medkit p-6">
-                <h3 className="font-head font-extrabold text-lg mb-3 flex items-center gap-2"><AlertTriangle size={18} className="text-[#E8705B]" />{t("red_flags")}</h3>
+                <h3 className="font-head font-semibold text-lg mb-3 flex items-center gap-2"><AlertTriangle size={18} className="text-[#E8705B]" />{t("red_flags")}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {r.red_flags.map((f, i) => (
                     <div key={i} data-testid={`redflag-${i}`} className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium ${f.caught ? "bg-secondary/15 text-secondary" : "bg-[#E8705B]/12 text-[#E8705B]"}`}>
@@ -146,12 +154,12 @@ export default function Debrief() {
 
             {/* test stewardship */}
             <div className="card-medkit p-6">
-              <h3 className="font-head font-extrabold text-lg mb-3 flex items-center gap-2"><FlaskConical size={18} className="text-secondary" />{t("test_stewardship")}</h3>
+              <h3 className="font-head font-semibold text-lg mb-3 flex items-center gap-2"><FlaskConical size={18} className="text-secondary" />{t("test_stewardship")}</h3>
               <TestGroup label={t("correct_tests")} items={r.test_stewardship.ordered_indicated} tone="ok" />
               <TestGroup label={t("missed_tests")} items={r.test_stewardship.missed_indicated} tone="warn" />
               <TestGroup label={t("over_tests")} items={r.test_stewardship.over_ordered} tone="bad" />
               {r.test_stewardship.xray_findings && r.test_stewardship.xray_findings.length > 0 && (
-                <div className="mt-3 pt-3 border-t-2 border-border">
+                <div className="mt-3 pt-3 border-t border-border">
                   <div className="text-xs font-bold mb-2 flex items-center gap-1.5 text-secondary">
                     <ScanLine size={14} /> {t("xray_findings")}
                     <span className="text-muted-foreground font-semibold">
@@ -163,7 +171,7 @@ export default function Debrief() {
                       <div key={i} data-testid={`xray-finding-${i}`}
                         className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium ${
                           f.correct ? "bg-secondary/15 text-secondary" : f.answered ? "bg-[#E8705B]/12 text-[#E8705B]" : "bg-accent/60 text-muted-foreground"}`}>
-                        {f.correct ? <Check size={15} /> : f.answered ? <X size={15} /> : <span className="w-3.5 h-3.5 rounded-full border-2 border-muted-foreground/40" />}
+                        {f.correct ? <Check size={15} /> : f.answered ? <X size={15} /> : <span className="w-3.5 h-3.5 rounded-full border border-muted-foreground/40" />}
                         {f.label}
                       </div>
                     ))}
@@ -190,7 +198,7 @@ function ScoreRing({ pct, color }) {
           strokeDasharray={C} strokeDashoffset={off} style={{ transition: "stroke-dashoffset 1s ease" }} />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span data-testid="total-score" className="font-head font-black text-4xl text-fg">{pct}</span>
+        <span data-testid="total-score" className="font-head font-semibold text-4xl text-fg">{pct}</span>
         <span className="text-xs text-muted-foreground font-bold">/ 100</span>
       </div>
     </div>
@@ -216,7 +224,7 @@ function DiagCard({ title, chosen, correct, ok, correctLabel, none, okLabel, bad
 function Checklist({ title, items, okLabel, noLabel }) {
   return (
     <div className="card-medkit p-5">
-      <h3 className="font-head font-extrabold text-base mb-3">{title}</h3>
+      <h3 className="font-head font-semibold text-base mb-3">{title}</h3>
       <div className="space-y-2">
         {items.map((it, i) => (
           <div key={i} className="flex items-center gap-2 text-sm">

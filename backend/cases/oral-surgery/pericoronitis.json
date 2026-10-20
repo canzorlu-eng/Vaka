@@ -1,0 +1,463 @@
+{
+ "case_id": "pericoronitis",
+ "difficulty": "moderate",
+ "title": {
+  "tr": "Yirmi Yaş Sancısı",
+  "en": "The Wisdom Tooth Ache"
+ },
+ "chief_complaint": {
+  "tr": "En arkadaki dişimin diş eti şişti, ağzımı zor açıyorum.",
+  "en": "The gum behind my back tooth is swollen and I can barely open my mouth."
+ },
+ "patient": {
+  "name": {
+   "tr": "Can T.",
+   "en": "Can T."
+  },
+  "age": 22,
+  "sex": {
+   "tr": "Erkek",
+   "en": "Male"
+  },
+  "setting": {
+   "tr": "Diş hekimliği polikliniği",
+   "en": "Dental outpatient clinic"
+  },
+  "avatar_mood": "anxious"
+ },
+ "vitals": {
+  "bp": "126/80",
+  "hr": 84,
+  "temp": "37.4°C",
+  "spo2": "99%"
+ },
+ "hidden_facts": [
+  {
+   "id": "onset",
+   "keywords": [
+    "ne zaman",
+    "kaç gün",
+    "when",
+    "how long",
+    "start"
+   ],
+   "text": {
+    "tr": "Üç gündür var, giderek artıyor.",
+    "en": "It's been three days and getting worse."
+   }
+  },
+  {
+   "id": "trismus",
+   "keywords": [
+    "ağız açma",
+    "çene",
+    "kısıtlı",
+    "open mouth",
+    "jaw",
+    "trismus",
+    "limited"
+   ],
+   "text": {
+    "tr": "Ağzımı tam açamıyorum, çenem tutuluyor.",
+    "en": "I can't open my mouth fully; my jaw locks up."
+   }
+  },
+  {
+   "id": "taste",
+   "keywords": [
+    "tat",
+    "koku",
+    "akıntı",
+    "irin",
+    "taste",
+    "smell",
+    "discharge",
+    "pus"
+   ],
+   "text": {
+    "tr": "Ağzımda kötü bir tat ve koku var.",
+    "en": "There's a bad taste and smell in my mouth."
+   }
+  },
+  {
+   "id": "prev_episodes",
+   "keywords": [
+    "daha önce",
+    "tekrar",
+    "geçmiş",
+    "before",
+    "recurrent",
+    "previous",
+    "episode"
+   ],
+   "text": {
+    "tr": "Birkaç ay önce de benzer bir şişlik olmuştu, kendi geçti.",
+    "en": "I had a similar swelling a few months ago that settled on its own."
+   }
+  },
+  {
+   "id": "fever",
+   "keywords": [
+    "ateş",
+    "halsiz",
+    "fever",
+    "unwell",
+    "malaise"
+   ],
+   "text": {
+    "tr": "Hafif ateşim var ve biraz halsizim.",
+    "en": "I have a mild fever and feel a bit run down."
+   }
+  },
+  {
+   "id": "swallow",
+   "keywords": [
+    "yutkun",
+    "nefes",
+    "boğaz",
+    "swallow",
+    "breathe",
+    "throat"
+   ],
+   "text": {
+    "tr": "Yutkunmam ve nefesim normal.",
+    "en": "My swallowing and breathing are normal."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 38,
+   "label": {
+    "tr": "İntraoral görsel muayene",
+    "en": "Intraoral visual inspection"
+   },
+   "result": {
+    "tr": "38 (alt sol 20 yaş) kısmen sürmüş; üzerindeki operkulum kızarık, ödemli ve hassas.",
+    "en": "Tooth 38 (lower left wisdom) partially erupted; overlying operculum is red, oedematous, tender."
+   }
+  },
+  {
+   "id": "extraoral",
+   "required": true,
+   "tooth": null,
+   "label": {
+    "tr": "Ekstraoral muayene",
+    "en": "Extraoral examination"
+   },
+   "result": {
+    "tr": "Sol submandibular lenf nodları hassas; belirgin yüz şişliği yok, hafif trismus var.",
+    "en": "Tender left submandibular nodes; no gross facial swelling, mild trismus."
+   }
+  },
+  {
+   "id": "operculum_probe",
+   "required": true,
+   "tooth": 38,
+   "label": {
+    "tr": "Operkulum sondlama",
+    "en": "Operculum probing"
+   },
+   "result": {
+    "tr": "Operkulum altından hafif pürülan akıntı geliyor.",
+    "en": "Slight purulent discharge from beneath the operculum."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": false,
+   "tooth": 37,
+   "label": {
+    "tr": "Komşu diş vitalite testi",
+    "en": "Adjacent tooth vitality test"
+   },
+   "result": {
+    "tr": "37 soğuğa normal yanıt veriyor (vital).",
+    "en": "Tooth 37 responds normally to cold (vital)."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "opg",
+   "indicated": true,
+   "label": {
+    "tr": "Panoramik radyografi (OPG)",
+    "en": "Panoramic radiograph (OPG)"
+   },
+   "result": {
+    "tr": "38 mesioanguler gömük; komşu 37'de patoloji yok.",
+    "en": "Tooth 38 mesioangular impaction; no pathology on adjacent 37."
+   },
+   "xray": {
+    "image": "/xray/3322129b59230fbde9574ad9c67c2083625533fcc4b4b4e0f1b63f52c671cad7.jpeg",
+    "question": {
+     "tr": "Bu radyografideki ana bulgu nedir?",
+     "en": "What is the main finding on this radiograph?"
+    },
+    "options": [
+     {
+      "id": "impaction",
+      "correct": true,
+      "label": {
+       "tr": "Mesioanguler gömük 20 yaş dişi",
+       "en": "Mesioangular impacted wisdom tooth"
+      }
+     },
+     {
+      "id": "periapical",
+      "correct": false,
+      "label": {
+       "tr": "Komşu dişte apikal apse",
+       "en": "Apical abscess on the adjacent tooth"
+      }
+     },
+     {
+      "id": "caries",
+      "correct": false,
+      "label": {
+       "tr": "İkinci molarda derin çürük",
+       "en": "Deep caries in the second molar"
+      }
+     },
+     {
+      "id": "normal",
+      "correct": false,
+      "label": {
+       "tr": "Normal sürmüş diş",
+       "en": "Normally erupted tooth"
+      }
+     }
+    ],
+    "explanation": {
+     "tr": "En arkadaki 20 yaş dişinin öne (mesial) doğru eğilerek komşu ikinci molara dayandığına bakın — bu mesioanguler gömüklüktür. Komşu dişte apikal radyolusensi veya çürük görülmez; bu tablo perikoroniti ve ileride çekim değerlendirmesini destekler.",
+     "en": "See how the rearmost wisdom tooth is tilted forward (mesially) and impacted against the adjacent second molar — this is mesioangular impaction. There is no apical radiolucency or decay on the neighbour; this supports pericoronitis and later extraction review."
+    }
+   }
+  },
+  {
+   "id": "periapical_adjacent",
+   "indicated": true,
+   "label": {
+    "tr": "Komşu diş periapikal",
+    "en": "Adjacent tooth periapical"
+   },
+   "result": {
+    "tr": "Komşu dişte insidental tamamlanmış kök kanal dolgusu.",
+    "en": "Incidental completed root canal filling on the adjacent tooth."
+   },
+   "xray_lib": "root_canal_filled"
+  },
+  {
+   "id": "temp_check",
+   "indicated": true,
+   "label": {
+    "tr": "Ateş ölçümü",
+    "en": "Temperature check"
+   },
+   "result": {
+    "tr": "37.4°C — hafif yükselme.",
+    "en": "37.4°C — mildly elevated."
+   }
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT",
+    "en": "CBCT"
+   },
+   "result": {
+    "tr": "Akut tabloda rutin endike değil.",
+    "en": "Not routinely indicated in the acute phase."
+   }
+  },
+  {
+   "id": "cbc",
+   "indicated": false,
+   "label": {
+    "tr": "Tam kan sayımı",
+    "en": "Complete blood count"
+   },
+   "result": {
+    "tr": "Lokalize, sistemik olmayan tabloda gerekli değil.",
+    "en": "Not required in a localized, non-systemic presentation."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "pericoronitis",
+   "correct": true,
+   "label": {
+    "tr": "Akut perikoronit (38)",
+    "en": "Acute pericoronitis (38)"
+   }
+  },
+  {
+   "id": "apical_abscess",
+   "correct": false,
+   "label": {
+    "tr": "Apikal apse (37)",
+    "en": "Apical abscess (37)"
+   }
+  },
+  {
+   "id": "irreversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümsüz pulpitis",
+    "en": "Irreversible pulpitis"
+   }
+  },
+  {
+   "id": "tmd",
+   "correct": false,
+   "label": {
+    "tr": "Temporomandibular eklem bozukluğu",
+    "en": "Temporomandibular disorder"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "irrigation_review",
+   "correct": true,
+   "label": {
+    "tr": "İrrigasyon + oral hijyen + gerekirse antibiyotik, sonra çekim değerlendirmesi",
+    "en": "Irrigation + oral hygiene + antibiotics if needed, then extraction review"
+   }
+  },
+  {
+   "id": "immediate_rct",
+   "correct": false,
+   "label": {
+    "tr": "Acil kanal tedavisi",
+    "en": "Immediate root canal"
+   }
+  },
+  {
+   "id": "adjacent_extraction",
+   "correct": false,
+   "label": {
+    "tr": "Komşu 37 dişinin çekimi",
+    "en": "Extraction of adjacent tooth 37"
+   }
+  },
+  {
+   "id": "no_treatment",
+   "correct": false,
+   "label": {
+    "tr": "Tedavi gerekmez",
+    "en": "No treatment needed"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "onset",
+    "keywords": [
+     "ne zaman",
+     "kaç gün",
+     "when",
+     "how long"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Başlangıç/süre",
+     "en": "Onset & duration"
+    }
+   },
+   {
+    "id": "trismus",
+    "keywords": [
+     "ağız açma",
+     "çene",
+     "open mouth",
+     "jaw",
+     "trismus"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Trismus/ağız açma kısıtlılığı (kırmızı bayrak)",
+     "en": "Trismus/limited opening (red flag)"
+    }
+   },
+   {
+    "id": "swallow",
+    "keywords": [
+     "yutkun",
+     "nefes",
+     "boğaz",
+     "swallow",
+     "breathe",
+     "throat"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Yutma/nefes güçlüğü (kırmızı bayrak — hava yolu)",
+     "en": "Dysphagia/dyspnoea (red flag — airway)"
+    }
+   },
+   {
+    "id": "fever",
+    "keywords": [
+     "ateş",
+     "halsiz",
+     "fever",
+     "unwell"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Ateş/sistemik bulgu",
+     "en": "Fever/systemic signs"
+    }
+   },
+   {
+    "id": "prev_episodes",
+    "keywords": [
+     "daha önce",
+     "tekrar",
+     "before",
+     "recurrent",
+     "previous"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Tekrarlayan atak öyküsü",
+     "en": "Recurrent episodes"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "İntraoral görsel muayene",
+     "en": "Intraoral inspection"
+    }
+   },
+   {
+    "id": "extraoral",
+    "red_flag": true,
+    "label": {
+     "tr": "Ekstraoral/lenf nodu muayenesi",
+     "en": "Extraoral/lymph node exam"
+    }
+   },
+   {
+    "id": "operculum_probe",
+    "red_flag": false,
+    "label": {
+     "tr": "Operkulum değerlendirmesi",
+     "en": "Operculum assessment"
+    }
+   }
+  ]
+ },
+ "topic": "oral-surgery"
+}

@@ -86,3 +86,9 @@ android-sdk/
 credentials.json
 *.key
 .credentials
+!.env.example
+!*/.env.example
+
+# generated reports / local artefacts
+backend/scripts/out/
+deploy/vaka.log

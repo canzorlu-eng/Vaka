@@ -1,0 +1,13 @@
+[
+  {"id":"endodontics","icon":"🦷","color":"#FF937B","name":{"tr":"Endodonti","en":"Endodontics"},"blurb":{"tr":"Pulpa ve periapikal hastalıklar, kök kanal tedavisi","en":"Pulpal and periapical disease, root canal therapy"}},
+  {"id":"periodontology","icon":"🩸","color":"#C08BD9","name":{"tr":"Periodontoloji","en":"Periodontology"},"blurb":{"tr":"Diş eti ve destek doku hastalıkları, implant çevresi","en":"Gingival and periodontal disease, peri-implant conditions"}},
+  {"id":"oral-surgery","icon":"🔪","color":"#E8705B","name":{"tr":"Ağız, Diş ve Çene Cerrahisi","en":"Oral & Maxillofacial Surgery"},"blurb":{"tr":"Çekim, gömülü dişler, enfeksiyonlar, kistler","en":"Extractions, impactions, odontogenic infections, cysts"}},
+  {"id":"oral-medicine","icon":"🔬","color":"#5AA0C3","name":{"tr":"Ağız Patolojisi ve Oral Tıp","en":"Oral Medicine & Pathology"},"blurb":{"tr":"Mukozal lezyonlar, premalign ve malign hastalıklar","en":"Mucosal lesions, premalignant and malignant disease"}},
+  {"id":"restorative","icon":"🧱","color":"#F0B458","name":{"tr":"Restoratif Diş Tedavisi","en":"Restorative Dentistry & Cariology"},"blurb":{"tr":"Çürük, dolgu, aşınma ve estetik restorasyon","en":"Caries, restorations, tooth wear and aesthetic repair"}},
+  {"id":"prosthodontics","icon":"👑","color":"#82C3A6","name":{"tr":"Protetik Diş Tedavisi","en":"Prosthodontics"},"blurb":{"tr":"Kron-köprü, protezler, implant üstü restorasyonlar","en":"Crowns, bridges, dentures, implant restorations"}},
+  {"id":"pediatric","icon":"🧒","color":"#6FB5E0","name":{"tr":"Pedodonti","en":"Pediatric Dentistry"},"blurb":{"tr":"Çocuk hastalar, süt dişleri, davranış yönetimi","en":"Child patients, primary teeth, behaviour guidance"}},
+  {"id":"orthodontics","icon":"📐","color":"#9B8CE0","name":{"tr":"Ortodonti","en":"Orthodontics"},"blurb":{"tr":"Maloklüzyonlar, tedavi zamanlaması, aparey sorunları","en":"Malocclusions, treatment timing, appliance problems"}},
+  {"id":"trauma-emergency","icon":"🚑","color":"#D95F5F","name":{"tr":"Travma ve Acil","en":"Trauma & Emergencies"},"blurb":{"tr":"Dental travma, kanama, tıbbi acil durumlar","en":"Dental trauma, bleeding, medical emergencies in the chair"}},
+  {"id":"medically-complex","icon":"💊","color":"#4FA58A","name":{"tr":"Sistemik Hastalıklar ve İlaçlar","en":"Medically Complex Patients"},"blurb":{"tr":"Sistemik hastalığı ve ilacı olan hastada güvenli tedavi","en":"Safe care in patients with systemic disease and medications"}},
+  {"id":"orofacial-pain","icon":"⚡","color":"#E0A040","name":{"tr":"Orofasiyal Ağrı ve TMD","en":"Orofacial Pain & TMD"},"blurb":{"tr":"Çiğneme sistemi, nöropatik ve diş dışı ağrılar","en":"Masticatory system, neuropathic and non-dental pain"}}
+]

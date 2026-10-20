@@ -1,0 +1,386 @@
+{
+ "case_id": "periodontitis",
+ "difficulty": "hard",
+ "title": {
+  "tr": "Kanayan Diş Etleri",
+  "en": "Bleeding Gums"
+ },
+ "chief_complaint": {
+  "tr": "Diş etlerim fırçalayınca kanıyor ve dişlerim sallanmaya başladı.",
+  "en": "My gums bleed when I brush and my teeth are getting loose."
+ },
+ "patient": {
+  "name": {
+   "tr": "Hakan S.",
+   "en": "Hakan S."
+  },
+  "age": 52,
+  "sex": {
+   "tr": "Erkek",
+   "en": "Male"
+  },
+  "setting": {
+   "tr": "Periodontoloji polikliniği",
+   "en": "Periodontology clinic"
+  },
+  "avatar_mood": "anxious"
+ },
+ "vitals": {
+  "bp": "138/86",
+  "hr": 80,
+  "temp": "36.7°C",
+  "spo2": "98%"
+ },
+ "hidden_facts": [
+  {
+   "id": "bleeding",
+   "keywords": [
+    "kanama",
+    "fırça",
+    "bleed",
+    "brush"
+   ],
+   "topic": {
+    "tr": "Kanama",
+    "en": "Bleeding"
+   },
+   "text": {
+    "tr": "Her fırçalamada kanıyor, aylardır sürüyor.",
+    "en": "It bleeds every time I brush, for months now."
+   }
+  },
+  {
+   "id": "smoking",
+   "keywords": [
+    "sigara",
+    "tütün",
+    "smok",
+    "tobacco"
+   ],
+   "topic": {
+    "tr": "Sigara",
+    "en": "Smoking"
+   },
+   "text": {
+    "tr": "Günde bir paket sigara içiyorum, 30 yıldır.",
+    "en": "I smoke a pack a day, for 30 years."
+   }
+  },
+  {
+   "id": "diabetes",
+   "keywords": [
+    "şeker",
+    "diyabet",
+    "diabetes",
+    "hastalık",
+    "medical"
+   ],
+   "topic": {
+    "tr": "Sistemik hastalık",
+    "en": "Medical history"
+   },
+   "text": {
+    "tr": "Şekerim var, tam düzenli takip etmiyorum.",
+    "en": "I have diabetes and don't monitor it closely."
+   }
+  },
+  {
+   "id": "mobility",
+   "keywords": [
+    "sallanma",
+    "gevşek",
+    "loose",
+    "mobile"
+   ],
+   "topic": {
+    "tr": "Diş mobilitesi",
+    "en": "Tooth mobility"
+   },
+   "text": {
+    "tr": "Alt ön dişlerim belirgin sallanıyor.",
+    "en": "My lower front teeth are noticeably loose."
+   }
+  },
+  {
+   "id": "hygiene",
+   "keywords": [
+    "temizlik",
+    "diş ipi",
+    "hygiene",
+    "floss"
+   ],
+   "topic": {
+    "tr": "Ağız hijyeni",
+    "en": "Oral hygiene"
+   },
+   "text": {
+    "tr": "Diş ipi kullanmam, düzensiz fırçalarım.",
+    "en": "I don't floss and brush irregularly."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "probing",
+   "required": true,
+   "tooth": 31,
+   "severity": "finding",
+   "label": {
+    "tr": "Periodontal sondlama",
+    "en": "Periodontal probing"
+   },
+   "result": {
+    "tr": "Genelde 6-8 mm cep derinlikleri, sondlamada kanama (+).",
+    "en": "Generalized 6-8 mm pockets, bleeding on probing (+)."
+   }
+  },
+  {
+   "id": "mobility",
+   "required": true,
+   "tooth": 31,
+   "severity": "finding",
+   "label": {
+    "tr": "Mobilite testi",
+    "en": "Mobility test"
+   },
+   "result": {
+    "tr": "Alt kesicilerde Grade II mobilite.",
+    "en": "Grade II mobility on lower incisors."
+   }
+  },
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": null,
+   "severity": "finding",
+   "label": {
+    "tr": "Görsel/plak muayenesi",
+    "en": "Visual/plaque inspection"
+   },
+   "result": {
+    "tr": "Yaygın plak ve diş taşı, dişeti çekilmesi.",
+    "en": "Generalized plaque and calculus, gingival recession."
+   }
+  },
+  {
+   "id": "percussion",
+   "required": false,
+   "tooth": 31,
+   "severity": "normal",
+   "label": {
+    "tr": "Perküsyon",
+    "en": "Percussion"
+   },
+   "result": {
+    "tr": "Perküsyon negatif (endodontik köken düşük).",
+    "en": "Percussion negative (endodontic origin unlikely)."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "periapical_xray",
+   "indicated": true,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "Yaygın horizontal kemik kaybı.",
+    "en": "Generalized horizontal bone loss."
+   },
+   "xray_lib": "bone_loss"
+  },
+  {
+   "id": "bitewing",
+   "indicated": true,
+   "label": {
+    "tr": "Bitewing radyografi",
+    "en": "Bitewing radiograph"
+   },
+   "result": {
+    "tr": "İnterproksimal çürük ve kemik seviyesi değerlendirmesi.",
+    "en": "Assess interproximal caries and bone level."
+   },
+   "xray_lib": "interproximal_caries"
+  },
+  {
+   "id": "glucose",
+   "indicated": true,
+   "label": {
+    "tr": "Kan şekeri (HbA1c)",
+    "en": "Blood glucose (HbA1c)"
+   },
+   "result": {
+    "tr": "HbA1c %8.4 — kontrolsüz diyabet.",
+    "en": "HbA1c 8.4% — uncontrolled diabetes."
+   }
+  },
+  {
+   "id": "cbc",
+   "indicated": false,
+   "label": {
+    "tr": "Tam kan sayımı",
+    "en": "Complete blood count"
+   },
+   "result": {
+    "tr": "Rutin periodontitis için gerekli değil.",
+    "en": "Not required for routine periodontitis."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "chronic_periodontitis",
+   "correct": true,
+   "label": {
+    "tr": "Kronik (evre III) periodontitis",
+    "en": "Chronic (stage III) periodontitis"
+   }
+  },
+  {
+   "id": "gingivitis",
+   "correct": false,
+   "label": {
+    "tr": "Gingivitis",
+    "en": "Gingivitis"
+   }
+  },
+  {
+   "id": "abscess",
+   "correct": false,
+   "label": {
+    "tr": "Periodontal apse",
+    "en": "Periodontal abscess"
+   }
+  },
+  {
+   "id": "occlusal_trauma",
+   "correct": false,
+   "label": {
+    "tr": "Oklüzal travma",
+    "en": "Occlusal trauma"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "srp_control",
+   "correct": true,
+   "label": {
+    "tr": "Diştaşı temizliği + kök yüzeyi düzleştirme + sigara/diyabet kontrolü",
+    "en": "Scaling + root planing + smoking/diabetes control"
+   }
+  },
+  {
+   "id": "extraction_all",
+   "correct": false,
+   "label": {
+    "tr": "Tüm dişlerin çekimi",
+    "en": "Extract all teeth"
+   }
+  },
+  {
+   "id": "antibiotics_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece antibiyotik",
+    "en": "Antibiotics only"
+   }
+  },
+  {
+   "id": "mouthwash_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece gargara",
+    "en": "Mouthwash only"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "bleeding",
+    "keywords": [
+     "kanama",
+     "fırça",
+     "bleed",
+     "brush"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Kanama öyküsü",
+     "en": "Bleeding history"
+    }
+   },
+   {
+    "id": "smoking",
+    "keywords": [
+     "sigara",
+     "tütün",
+     "smok",
+     "tobacco"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Sigara (risk faktörü)",
+     "en": "Smoking (risk factor)"
+    }
+   },
+   {
+    "id": "diabetes",
+    "keywords": [
+     "şeker",
+     "diyabet",
+     "diabetes"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Diyabet (risk faktörü)",
+     "en": "Diabetes (risk factor)"
+    }
+   },
+   {
+    "id": "mobility",
+    "keywords": [
+     "sallanma",
+     "gevşek",
+     "loose",
+     "mobile"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Diş mobilitesi sorgusu",
+     "en": "Tooth mobility check"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "probing",
+    "red_flag": true,
+    "label": {
+     "tr": "Periodontal sondlama",
+     "en": "Periodontal probing"
+    }
+   },
+   {
+    "id": "mobility",
+    "red_flag": true,
+    "label": {
+     "tr": "Mobilite testi",
+     "en": "Mobility test"
+    }
+   },
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "Plak/görsel muayene",
+     "en": "Plaque/visual inspection"
+    }
+   }
+  ]
+ },
+ "topic": "periodontology"
+}

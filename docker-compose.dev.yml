@@ -1,0 +1,19 @@
+# Local development services: `docker compose -f docker-compose.dev.yml up -d`
+# Postgres on 55432, Redis on 56379 (non-default ports so they never collide with a system install).
+name: vaka-dev
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: vaka
+      POSTGRES_PASSWORD: vaka
+      POSTGRES_DB: vaka
+    ports: ["127.0.0.1:55432:5432"]
+    volumes: ["vaka-pgdata:/var/lib/postgresql/data"]
+    healthcheck: {test: ["CMD-SHELL", "pg_isready -U vaka"], interval: 3s, retries: 20}
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru", "--save", ""]
+    ports: ["127.0.0.1:56379:6379"]
+volumes:
+  vaka-pgdata:

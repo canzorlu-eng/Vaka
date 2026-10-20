@@ -21,7 +21,7 @@ def _load_url():
                     return ln.split("=", 1)[1].strip().rstrip("/")
     except Exception:
         pass
-    raise RuntimeError("REACT_APP_BACKEND_URL not set")
+    pytest.skip("live API tests need REACT_APP_BACKEND_URL", allow_module_level=True)
 
 
 BASE_URL = _load_url()

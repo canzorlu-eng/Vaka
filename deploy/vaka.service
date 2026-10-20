@@ -1,0 +1,12 @@
+[Unit]
+Description=Vaka (FastAPI + built frontend)
+After=network.target postgresql.service
+
+[Service]
+WorkingDirectory=/home/can/Desktop/Vaka/backend
+ExecStart=/home/can/Desktop/Vaka/backend/.venv/bin/uvicorn server:app --host 127.0.0.1 --port 8001 --workers 1 --proxy-headers
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

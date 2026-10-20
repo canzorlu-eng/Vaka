@@ -1,0 +1,13 @@
+# Backup / restore-drill image for the Render cron jobs (see render.yaml, docs/DISASTER_RECOVERY.md).
+# pg_dump must be >= the server major version: keep PG_MAJOR equal to `postgresMajorVersion` in render.yaml.
+ARG PG_MAJOR=16
+FROM postgres:${PG_MAJOR}-alpine
+RUN apk add --no-cache bash curl aws-cli coreutils \
+ && addgroup -S backup && adduser -S -G backup -u 10002 backup
+WORKDIR /opt/vaka
+COPY backend/scripts/backup.sh backend/scripts/restore_test.sh ./
+RUN chmod 0755 backup.sh restore_test.sh
+USER backup
+# Render cron jobs override this with dockerCommand; the default is a plain backup.
+ENTRYPOINT []
+CMD ["/opt/vaka/backup.sh"]

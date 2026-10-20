@@ -1,0 +1,359 @@
+{
+ "case_id": "failed-rct",
+ "difficulty": "hard",
+ "title": {
+  "tr": "Geri Gelen Ağrı",
+  "en": "The Pain Returns"
+ },
+ "chief_complaint": {
+  "tr": "Yıllar önce kanal tedavisi olan dişimde tekrar ağrı ve basınç var.",
+  "en": "The tooth that had a root canal years ago is aching and feels pressured again."
+ },
+ "patient": {
+  "name": {
+   "tr": "Emre Ç.",
+   "en": "Emre Ç."
+  },
+  "age": 47,
+  "sex": {
+   "tr": "Erkek",
+   "en": "Male"
+  },
+  "setting": {
+   "tr": "Endodonti polikliniği",
+   "en": "Endodontics clinic"
+  },
+  "avatar_mood": "pain"
+ },
+ "vitals": {
+  "bp": "128/82",
+  "hr": 82,
+  "temp": "36.9°C",
+  "spo2": "99%"
+ },
+ "hidden_facts": [
+  {
+   "id": "history",
+   "keywords": [
+    "kanal",
+    "tedavi",
+    "root canal",
+    "history",
+    "before"
+   ],
+   "topic": {
+    "tr": "Tedavi öyküsü",
+    "en": "Treatment history"
+   },
+   "text": {
+    "tr": "O dişe 6-7 yıl önce kanal tedavisi yapıldı.",
+    "en": "That tooth was root-canal treated 6-7 years ago."
+   }
+  },
+  {
+   "id": "biting",
+   "keywords": [
+    "ısır",
+    "çiğne",
+    "basınç",
+    "bite",
+    "chew",
+    "pressure"
+   ],
+   "topic": {
+    "tr": "Isırma ağrısı",
+    "en": "Biting pain"
+   },
+   "text": {
+    "tr": "Isırınca ve üzerine bastırınca ağrıyor.",
+    "en": "It hurts when I bite and press on it."
+   }
+  },
+  {
+   "id": "swelling",
+   "keywords": [
+    "şişlik",
+    "diş eti",
+    "swelling",
+    "gum"
+   ],
+   "topic": {
+    "tr": "Şişlik",
+    "en": "Swelling"
+   },
+   "text": {
+    "tr": "Diş etinde ara sıra küçük bir kabarcık oluyor.",
+    "en": "A small bump sometimes appears on the gum."
+   }
+  },
+  {
+   "id": "onset",
+   "keywords": [
+    "ne zaman",
+    "kaç",
+    "when",
+    "how long"
+   ],
+   "topic": {
+    "tr": "Başlangıç",
+    "en": "Onset"
+   },
+   "text": {
+    "tr": "Birkaç haftadır giderek artıyor.",
+    "en": "It's been building over a few weeks."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 46,
+   "severity": "finding",
+   "label": {
+    "tr": "Görsel muayene",
+    "en": "Visual inspection"
+   },
+   "result": {
+    "tr": "46'da eski kanal tedavisi ve kron; komşu diş etinde sinüs ağzı.",
+    "en": "Old RCT and crown on 46; a sinus tract on the adjacent gingiva."
+   }
+  },
+  {
+   "id": "percussion",
+   "required": true,
+   "tooth": 46,
+   "severity": "finding",
+   "label": {
+    "tr": "Perküsyon testi",
+    "en": "Percussion test"
+   },
+   "result": {
+    "tr": "46 perküsyona belirgin ağrılı.",
+    "en": "Tooth 46 markedly tender to percussion."
+   }
+  },
+  {
+   "id": "palpation",
+   "required": true,
+   "tooth": 46,
+   "severity": "finding",
+   "label": {
+    "tr": "Apikal palpasyon",
+    "en": "Apical palpation"
+   },
+   "result": {
+    "tr": "46 apeksi hizasında palpasyonda hassasiyet.",
+    "en": "Tenderness on palpation over the apex of 46."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": false,
+   "tooth": 46,
+   "severity": "neutral",
+   "label": {
+    "tr": "Soğuk testi",
+    "en": "Cold test"
+   },
+   "result": {
+    "tr": "Yanıt yok (zaten kanal tedavili).",
+    "en": "No response (already root-treated)."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "periapical_xray",
+   "indicated": true,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "Tamamlanmış kanal dolgusu görülüyor; kısa/eksik doldurulmuş kanal şüphesi.",
+    "en": "Completed root filling seen; suspected short/underfilled canal."
+   },
+   "xray_lib": "root_canal_filled"
+  },
+  {
+   "id": "periapical2",
+   "indicated": true,
+   "label": {
+    "tr": "Açılı ikinci periapikal",
+    "en": "Angled second periapical"
+   },
+   "result": {
+    "tr": "Apeksde genişlemiş periodontal aralık — başlayan lezyon.",
+    "en": "Widened periapical space at the apex — early lesion."
+   },
+   "xray_lib": "widened_pdl"
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT",
+    "en": "CBCT"
+   },
+   "result": {
+    "tr": "Kompleks olgularda düşünülebilir; ilk değerlendirmede zorunlu değil.",
+    "en": "May be considered in complex cases; not mandatory at first assessment."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "symptomatic_apical",
+   "correct": true,
+   "label": {
+    "tr": "Başarısız kanal tedavisi — semptomatik apikal periodontitis (46)",
+    "en": "Failed RCT — symptomatic apical periodontitis (46)"
+   }
+  },
+  {
+   "id": "cracked_tooth",
+   "correct": false,
+   "label": {
+    "tr": "Çatlak diş",
+    "en": "Cracked tooth"
+   }
+  },
+  {
+   "id": "periodontal_abscess",
+   "correct": false,
+   "label": {
+    "tr": "Periodontal apse",
+    "en": "Periodontal abscess"
+   }
+  },
+  {
+   "id": "normal",
+   "correct": false,
+   "label": {
+    "tr": "Patoloji yok",
+    "en": "No pathology"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "retreatment",
+   "correct": true,
+   "label": {
+    "tr": "Kanal yeniden tedavisi (retreatment) / apikal cerrahi değerlendirme",
+    "en": "Root canal retreatment / apical surgery review"
+   }
+  },
+  {
+   "id": "extraction",
+   "correct": false,
+   "label": {
+    "tr": "Hemen çekim",
+    "en": "Immediate extraction"
+   }
+  },
+  {
+   "id": "antibiotics_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece antibiyotik",
+    "en": "Antibiotics only"
+   }
+  },
+  {
+   "id": "observe",
+   "correct": false,
+   "label": {
+    "tr": "Gözlem, tedavi yok",
+    "en": "Observe, no treatment"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "history",
+    "keywords": [
+     "kanal",
+     "tedavi",
+     "root canal",
+     "history"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Önceki kanal tedavisi",
+     "en": "Prior root canal"
+    }
+   },
+   {
+    "id": "biting",
+    "keywords": [
+     "ısır",
+     "basınç",
+     "bite",
+     "pressure"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Isırma ağrısı",
+     "en": "Biting pain"
+    }
+   },
+   {
+    "id": "swelling",
+    "keywords": [
+     "şişlik",
+     "diş eti",
+     "swelling",
+     "gum"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Şişlik/sinüs ağzı sorgusu",
+     "en": "Swelling/sinus tract check"
+    }
+   },
+   {
+    "id": "onset",
+    "keywords": [
+     "ne zaman",
+     "when",
+     "how long"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Başlangıç/süre",
+     "en": "Onset & duration"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "Görsel muayene",
+     "en": "Visual inspection"
+    }
+   },
+   {
+    "id": "percussion",
+    "red_flag": true,
+    "label": {
+     "tr": "Perküsyon",
+     "en": "Percussion"
+    }
+   },
+   {
+    "id": "palpation",
+    "red_flag": true,
+    "label": {
+     "tr": "Apikal palpasyon",
+     "en": "Apical palpation"
+    }
+   }
+  ]
+ },
+ "topic": "endodontics"
+}

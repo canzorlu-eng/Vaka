@@ -1,0 +1,335 @@
+{
+ "case_id": "early-caries",
+ "difficulty": "easy",
+ "title": {
+  "tr": "Tatlı Kaçamağı",
+  "en": "The Sweet Tooth"
+ },
+ "chief_complaint": {
+  "tr": "Tatlı yiyince arka dişimde kısa bir sızlama hissediyorum.",
+  "en": "I feel a brief twinge in a back tooth when I eat sweets."
+ },
+ "patient": {
+  "name": {
+   "tr": "Zeynep B.",
+   "en": "Zeynep B."
+  },
+  "age": 24,
+  "sex": {
+   "tr": "Kadın",
+   "en": "Female"
+  },
+  "setting": {
+   "tr": "Rutin diş kontrolü",
+   "en": "Routine dental check-up"
+  },
+  "avatar_mood": "neutral"
+ },
+ "vitals": {
+  "bp": "116/72",
+  "hr": 70,
+  "temp": "36.5°C",
+  "spo2": "99%"
+ },
+ "hidden_facts": [
+  {
+   "id": "trigger",
+   "keywords": [
+    "tatlı",
+    "şeker",
+    "sweet",
+    "sugar"
+   ],
+   "topic": {
+    "tr": "Tetikleyici",
+    "en": "Trigger"
+   },
+   "text": {
+    "tr": "Sadece tatlıyla oluyor, sıcak-soğukla değil.",
+    "en": "Only with sweets, not hot or cold."
+   }
+  },
+  {
+   "id": "duration",
+   "keywords": [
+    "ne kadar",
+    "sürüyor",
+    "how long",
+    "lasts"
+   ],
+   "topic": {
+    "tr": "Ağrı süresi",
+    "en": "Pain duration"
+   },
+   "text": {
+    "tr": "Birkaç saniye sürüp geçiyor.",
+    "en": "Lasts a few seconds then stops."
+   }
+  },
+  {
+   "id": "night",
+   "keywords": [
+    "gece",
+    "spontan",
+    "night",
+    "spontaneous"
+   ],
+   "topic": {
+    "tr": "Spontan ağrı",
+    "en": "Spontaneous pain"
+   },
+   "text": {
+    "tr": "Geceleri veya kendiliğinden ağrımıyor.",
+    "en": "No night or spontaneous pain."
+   }
+  },
+  {
+   "id": "diet",
+   "keywords": [
+    "diyet",
+    "atıştır",
+    "diet",
+    "snack"
+   ],
+   "topic": {
+    "tr": "Beslenme",
+    "en": "Diet"
+   },
+   "text": {
+    "tr": "Gün boyu sık sık şekerli atıştırıyorum.",
+    "en": "I snack on sugary things all day."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 36,
+   "severity": "finding",
+   "label": {
+    "tr": "Görsel muayene",
+    "en": "Visual inspection"
+   },
+   "result": {
+    "tr": "36 mezialinde başlangıç çürük lezyonu görülüyor.",
+    "en": "Early caries lesion on the mesial of 36."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": true,
+   "tooth": 36,
+   "severity": "normal",
+   "label": {
+    "tr": "Soğuk testi",
+    "en": "Cold test"
+   },
+   "result": {
+    "tr": "Kısa, normal vital yanıt.",
+    "en": "Short, normal vital response."
+   }
+  },
+  {
+   "id": "probing",
+   "required": false,
+   "tooth": 36,
+   "severity": "normal",
+   "label": {
+    "tr": "Sondlama",
+    "en": "Probing"
+   },
+   "result": {
+    "tr": "Yüzeyde hafif takılma, kavitasyon minimal.",
+    "en": "Slight surface catch, minimal cavitation."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "bitewing",
+   "indicated": true,
+   "label": {
+    "tr": "Bitewing radyografi",
+    "en": "Bitewing radiograph"
+   },
+   "result": {
+    "tr": "Minede sınırlı interproksimal çürük.",
+    "en": "Interproximal caries limited to enamel."
+   },
+   "xray_lib": "interproximal_caries"
+  },
+  {
+   "id": "bitewing2",
+   "indicated": true,
+   "label": {
+    "tr": "Karşı taraf bitewing",
+    "en": "Opposite-side bitewing"
+   },
+   "result": {
+    "tr": "Karşı tarafta çürük yok (normal).",
+    "en": "No caries on the opposite side (normal)."
+   },
+   "xray_lib": "normal_bitewing"
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT",
+    "en": "CBCT"
+   },
+   "result": {
+    "tr": "Kesinlikle endike değil.",
+    "en": "Definitely not indicated."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "early_caries",
+   "correct": true,
+   "label": {
+    "tr": "Başlangıç (mine) çürüğü",
+    "en": "Early (enamel) caries"
+   }
+  },
+  {
+   "id": "dentin_sensitivity",
+   "correct": false,
+   "label": {
+    "tr": "Dentin hassasiyeti",
+    "en": "Dentin hypersensitivity"
+   }
+  },
+  {
+   "id": "reversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümlü pulpitis",
+    "en": "Reversible pulpitis"
+   }
+  },
+  {
+   "id": "irreversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümsüz pulpitis",
+    "en": "Irreversible pulpitis"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "prevention_fluoride",
+   "correct": true,
+   "label": {
+    "tr": "Florür + diyet önerisi + takip (remineralizasyon)",
+    "en": "Fluoride + diet advice + monitor (remineralization)"
+   }
+  },
+  {
+   "id": "rct",
+   "correct": false,
+   "label": {
+    "tr": "Kök kanal tedavisi",
+    "en": "Root canal treatment"
+   }
+  },
+  {
+   "id": "extraction",
+   "correct": false,
+   "label": {
+    "tr": "Çekim",
+    "en": "Extraction"
+   }
+  },
+  {
+   "id": "crown",
+   "correct": false,
+   "label": {
+    "tr": "Kron",
+    "en": "Crown"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "trigger",
+    "keywords": [
+     "tatlı",
+     "şeker",
+     "sweet",
+     "sugar"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Tetikleyici (tatlı)",
+     "en": "Trigger (sweet)"
+    }
+   },
+   {
+    "id": "duration",
+    "keywords": [
+     "ne kadar",
+     "sürüyor",
+     "how long",
+     "lasts"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Ağrı süresi",
+     "en": "Pain duration"
+    }
+   },
+   {
+    "id": "night",
+    "keywords": [
+     "gece",
+     "spontan",
+     "night",
+     "spontaneous"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Spontan ağrı sorgusu",
+     "en": "Spontaneous pain check"
+    }
+   },
+   {
+    "id": "diet",
+    "keywords": [
+     "diyet",
+     "atıştır",
+     "diet",
+     "snack"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Diyet öyküsü",
+     "en": "Diet history"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "Görsel muayene",
+     "en": "Visual inspection"
+    }
+   },
+   {
+    "id": "cold_test",
+    "red_flag": false,
+    "label": {
+     "tr": "Soğuk testi",
+     "en": "Cold test"
+    }
+   }
+  ]
+ },
+ "topic": "restorative"
+}

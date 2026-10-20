@@ -1,0 +1,55 @@
+name: Smoke test (staging / any URL)
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Base URL to test (no trailing slash)"
+        required: true
+        default: "https://vaka-staging.onrender.com"
+  # Optional: call from a Render deploy-hook / `repository_dispatch` after each staging deploy.
+  repository_dispatch:
+    types: [staging-deployed]
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      BASE_URL: ${{ github.event.inputs.base_url || github.event.client_payload.base_url || vars.STAGING_URL }}
+    steps:
+      - name: Validate URL
+        run: |
+          [[ "$BASE_URL" =~ ^https?://[A-Za-z0-9.:-]+$ ]] || { echo "::error::invalid or missing base URL (set input, client_payload.base_url or repo variable STAGING_URL)"; exit 1; }
+      - name: Wait for the service (free/cold instances take up to ~90 s)
+        run: |
+          for i in $(seq 1 30); do
+            code=$(curl -s -o /dev/null -m 10 -w '%{http_code}' "$BASE_URL/api/health" || true)
+            [[ "$code" == 200 ]] && exit 0
+            echo "attempt $i: HTTP $code"; sleep 5
+          done
+          echo "::error::service did not become healthy"; exit 1
+      - name: /api/health
+        run: curl -fsS -m 10 "$BASE_URL/api/health" | grep -q '"status":"ok"'
+      - name: /api/ready (database + cache reachable)
+        run: |
+          body=$(curl -fsS -m 15 "$BASE_URL/api/ready"); echo "$body"
+          echo "$body" | grep -q '"database":true'
+      - name: SPA is served and CSP/security headers are present
+        run: |
+          curl -fsS -m 15 -D headers.txt "$BASE_URL/" -o index.html
+          grep -q '<div id="root">' index.html
+          grep -qi '^content-security-policy:' headers.txt
+          grep -qi '^x-content-type-options: nosniff' headers.txt
+          if grep -E '<script>[^<]' index.html; then echo 'inline script found'; exit 1; fi
+      - name: Public catalogue
+        run: |
+          curl -fsS -m 15 "$BASE_URL/api/topics?lang=en" | grep -q '"id"'
+          curl -fsS -m 15 "$BASE_URL/api/cases?lang=en&limit=1" | grep -q 'case_id'
+      - name: Unauthenticated access is refused
+        run: |
+          code=$(curl -s -o /dev/null -m 10 -w '%{http_code}' "$BASE_URL/api/me/export")
+          [[ "$code" == 401 || "$code" == 403 ]] || { echo "expected 401/403, got $code"; exit 1; }

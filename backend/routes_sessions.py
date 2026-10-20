@@ -73,11 +73,23 @@ async def create_session(body: SessionCreate, user: Dict[str, Any] = Depends(cur
     return {**doc, "case": public_case(case, body.lang)}
 
 
+async def _case_titles(case_id: str, user: Dict[str, Any]) -> Optional[Dict[str, str]]:
+    """Both-language title of a case, or None when the case has since been removed."""
+    try:
+        title = (await catalogue.get_case(case_id, user))["title"]
+    except HTTPException:
+        return None
+    return {"tr": title["tr"], "en": title.get("en", title["tr"])}
+
+
 @router.get("/sessions")
 async def my_sessions(limit_: int = Query(20, ge=1, le=50, alias="limit"), before: Optional[datetime] = None,
                       user: Dict[str, Any] = Depends(current_user)):
     rows = await repo.list_sessions(user["id"], limit_, before)
-    return {"items": [{**r, "id": str(r["id"])} for r in rows],
+    titles = {}
+    for case_id in {r["case_id"] for r in rows}:
+        titles[case_id] = await _case_titles(case_id, user)
+    return {"items": [{**r, "id": str(r["id"]), "case_title": (titles[r["case_id"]] or {}).get(r["lang"])} for r in rows],
             "next_before": rows[-1]["created_at"].isoformat() if len(rows) == limit_ else None}
 
 

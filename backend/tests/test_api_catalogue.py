@@ -157,6 +157,20 @@ async def test_session_list_pagination(world, user_a):
     assert (await user_a.get("/api/sessions", params={"limit": 51})).status_code == 422
 
 
+async def test_session_list_includes_localised_case_titles(world, user_a):
+    await world.new_session(user_a)  # starts CASE_ID in Turkish
+    item = (await user_a.get("/api/sessions")).json()["items"][0]
+    expected = (await world.anon.get(f"/api/cases/{item['case_id']}", params={"lang": "tr"})).json()["title"]
+    assert item["case_title"] == expected and item["case_title"] != item["case_id"]
+
+
+async def test_session_list_survives_a_case_that_no_longer_exists(world, user_a):
+    sid = await world.new_session(user_a)
+    await db.pool().execute("UPDATE case_sessions SET case_id = 'gen-deleted' WHERE id = $1::uuid", str(sid))
+    item = (await user_a.get("/api/sessions")).json()["items"][0]
+    assert item["case_title"] is None
+
+
 async def test_malformed_session_ids_are_404(world, user_a):
     for sid in ("zzz", "123", "%2e%2e%2fetc", "00000000-0000-0000-0000-000000000000"):
         assert (await user_a.get(f"/api/sessions/{sid}")).status_code == 404

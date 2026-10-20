@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # ---- stage 1: build the React app (same-origin API => empty backend URL) ----
-FROM node:22-alpine AS web
+FROM node:26-alpine AS web
 WORKDIR /web
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci --legacy-peer-deps --no-audit --no-fund

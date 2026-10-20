@@ -3,7 +3,7 @@ clinically-correct recognition question, options and explanation (TR/EN).
 Both authored cases and LLM-generated cases reference these by id, so X-ray facts
 are always clinically correct regardless of the LLM."""
 
-BASE = "https://static.prod-images.emergentagent.com/jobs/47bcb2af-92fd-4a81-b080-8804a610f8b1/images/"
+BASE = "/xray/"
 
 XRAY_LIB = {
     "deep_filling_pulp": {

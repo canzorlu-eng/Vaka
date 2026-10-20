@@ -1,0 +1,358 @@
+{
+ "case_id": "bruxism",
+ "difficulty": "moderate",
+ "title": {
+  "tr": "Sabah Çene Ağrısı",
+  "en": "Morning Jaw Ache"
+ },
+ "chief_complaint": {
+  "tr": "Sabahları çenem ağrıyor ve dişlerim genelde hassas.",
+  "en": "My jaw aches in the mornings and my teeth feel generally sensitive."
+ },
+ "patient": {
+  "name": {
+   "tr": "Burak T.",
+   "en": "Burak T."
+  },
+  "age": 33,
+  "sex": {
+   "tr": "Erkek",
+   "en": "Male"
+  },
+  "setting": {
+   "tr": "Diş hekimliği polikliniği",
+   "en": "Dental outpatient clinic"
+  },
+  "avatar_mood": "anxious"
+ },
+ "vitals": {
+  "bp": "124/78",
+  "hr": 78,
+  "temp": "36.6°C",
+  "spo2": "99%"
+ },
+ "hidden_facts": [
+  {
+   "id": "timing",
+   "keywords": [
+    "sabah",
+    "uyan",
+    "morning",
+    "wake"
+   ],
+   "topic": {
+    "tr": "Zamanlama",
+    "en": "Timing"
+   },
+   "text": {
+    "tr": "En çok sabah uyandığımda ağrıyor.",
+    "en": "It's worst when I wake up in the morning."
+   }
+  },
+  {
+   "id": "grinding",
+   "keywords": [
+    "gıcırdat",
+    "sıkma",
+    "grind",
+    "clench"
+   ],
+   "topic": {
+    "tr": "Diş gıcırdatma",
+    "en": "Grinding"
+   },
+   "text": {
+    "tr": "Eşim gece diş gıcırdattığımı söylüyor.",
+    "en": "My partner says I grind my teeth at night."
+   }
+  },
+  {
+   "id": "stress",
+   "keywords": [
+    "stres",
+    "kaygı",
+    "stress",
+    "anxiety"
+   ],
+   "topic": {
+    "tr": "Stres",
+    "en": "Stress"
+   },
+   "text": {
+    "tr": "Son aylarda işte çok stresliyim.",
+    "en": "I've been very stressed at work lately."
+   }
+  },
+  {
+   "id": "clicking",
+   "keywords": [
+    "ses",
+    "tıklama",
+    "click",
+    "sound",
+    "eklem"
+   ],
+   "topic": {
+    "tr": "Eklem sesi",
+    "en": "Joint sounds"
+   },
+   "text": {
+    "tr": "Ağzımı açınca hafif bir tıklama oluyor.",
+    "en": "There's a slight click when I open my mouth."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "occlusal_exam",
+   "required": true,
+   "tooth": 26,
+   "severity": "finding",
+   "label": {
+    "tr": "Oklüzal aşınma muayenesi",
+    "en": "Occlusal wear exam"
+   },
+   "result": {
+    "tr": "Yaygın oklüzal aşınma faseti (attrisyon), boyunda mikroçatlaklar.",
+    "en": "Generalized occlusal wear facets (attrition), cervical microcracks."
+   }
+  },
+  {
+   "id": "tmj_exam",
+   "required": true,
+   "tooth": null,
+   "severity": "finding",
+   "label": {
+    "tr": "TME (çene eklemi) muayenesi",
+    "en": "TMJ examination"
+   },
+   "result": {
+    "tr": "Sol TME'de açılışta hafif tıklama; masseter kasında hassasiyet.",
+    "en": "Slight clicking on opening in left TMJ; masseter muscle tenderness."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": true,
+   "tooth": 26,
+   "severity": "normal",
+   "label": {
+    "tr": "Soğuk testi",
+    "en": "Cold test"
+   },
+   "result": {
+    "tr": "Dişler soğuğa normal, geçici yanıt veriyor.",
+    "en": "Teeth give a normal, transient response to cold."
+   }
+  },
+  {
+   "id": "percussion",
+   "required": false,
+   "tooth": 26,
+   "severity": "normal",
+   "label": {
+    "tr": "Perküsyon",
+    "en": "Percussion"
+   },
+   "result": {
+    "tr": "Perküsyon negatif.",
+    "en": "Percussion negative."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "periapical_xray",
+   "indicated": true,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "Aşırı yüklenmeye bağlı genişlemiş periodontal aralık.",
+    "en": "Widened periodontal ligament space from overload."
+   },
+   "xray_lib": "widened_pdl"
+  },
+  {
+   "id": "bitewing",
+   "indicated": true,
+   "label": {
+    "tr": "Bitewing radyografi",
+    "en": "Bitewing radiograph"
+   },
+   "result": {
+    "tr": "Çürük veya patoloji yok (normal).",
+    "en": "No caries or pathology (normal)."
+   },
+   "xray_lib": "normal_bitewing"
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT",
+    "en": "CBCT"
+   },
+   "result": {
+    "tr": "Rutin bruksizm değerlendirmesinde gerekli değil.",
+    "en": "Not required for routine bruxism assessment."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "bruxism",
+   "correct": true,
+   "label": {
+    "tr": "Bruksizm / oklüzal aşırı yüklenme",
+    "en": "Bruxism / occlusal overload"
+   }
+  },
+  {
+   "id": "irreversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümsüz pulpitis",
+    "en": "Irreversible pulpitis"
+   }
+  },
+  {
+   "id": "abscess",
+   "correct": false,
+   "label": {
+    "tr": "Apikal apse",
+    "en": "Apical abscess"
+   }
+  },
+  {
+   "id": "sinusitis",
+   "correct": false,
+   "label": {
+    "tr": "Sinüzit",
+    "en": "Sinusitis"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "splint_stress",
+   "correct": true,
+   "label": {
+    "tr": "Gece plağı (splint) + stres yönetimi + takip",
+    "en": "Night guard (splint) + stress management + review"
+   }
+  },
+  {
+   "id": "rct_all",
+   "correct": false,
+   "label": {
+    "tr": "Etkilenen tüm dişlere kanal tedavisi",
+    "en": "Root canal on all affected teeth"
+   }
+  },
+  {
+   "id": "extraction",
+   "correct": false,
+   "label": {
+    "tr": "Çekim",
+    "en": "Extraction"
+   }
+  },
+  {
+   "id": "antibiotics",
+   "correct": false,
+   "label": {
+    "tr": "Antibiyotik",
+    "en": "Antibiotics"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "timing",
+    "keywords": [
+     "sabah",
+     "uyan",
+     "morning",
+     "wake"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Zamanlama (sabah)",
+     "en": "Timing (morning)"
+    }
+   },
+   {
+    "id": "grinding",
+    "keywords": [
+     "gıcırdat",
+     "sıkma",
+     "grind",
+     "clench"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Diş gıcırdatma/sıkma",
+     "en": "Grinding/clenching"
+    }
+   },
+   {
+    "id": "stress",
+    "keywords": [
+     "stres",
+     "kaygı",
+     "stress",
+     "anxiety"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Stres öyküsü",
+     "en": "Stress history"
+    }
+   },
+   {
+    "id": "clicking",
+    "keywords": [
+     "ses",
+     "tıklama",
+     "click",
+     "eklem"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "TME ses/kilitlenme sorgusu",
+     "en": "TMJ click/locking check"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "occlusal_exam",
+    "red_flag": true,
+    "label": {
+     "tr": "Oklüzal aşınma muayenesi",
+     "en": "Occlusal wear exam"
+    }
+   },
+   {
+    "id": "tmj_exam",
+    "red_flag": true,
+    "label": {
+     "tr": "TME muayenesi",
+     "en": "TMJ examination"
+    }
+   },
+   {
+    "id": "cold_test",
+    "red_flag": false,
+    "label": {
+     "tr": "Soğuk testi",
+     "en": "Cold test"
+    }
+   }
+  ]
+ },
+ "topic": "orofacial-pain"
+}

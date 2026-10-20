@@ -1,0 +1,379 @@
+{
+ "case_id": "cracked-tooth",
+ "difficulty": "moderate",
+ "title": {
+  "tr": "Isırınca Şimşek",
+  "en": "The Lightning Bite"
+ },
+ "chief_complaint": {
+  "tr": "Sert bir şey ısırınca üst sağ dişimde ani, keskin bir ağrı oluyor.",
+  "en": "A sudden, sharp pain in my upper right tooth when I bite on something hard."
+ },
+ "patient": {
+  "name": {
+   "tr": "Deniz A.",
+   "en": "Deniz A."
+  },
+  "age": 41,
+  "sex": {
+   "tr": "Kadın",
+   "en": "Female"
+  },
+  "setting": {
+   "tr": "Diş hekimliği polikliniği",
+   "en": "Dental outpatient clinic"
+  },
+  "avatar_mood": "neutral"
+ },
+ "vitals": {
+  "bp": "120/76",
+  "hr": 76,
+  "temp": "36.6°C",
+  "spo2": "99%"
+ },
+ "hidden_facts": [
+  {
+   "id": "trigger",
+   "keywords": [
+    "ısır",
+    "çiğne",
+    "bite",
+    "chew",
+    "when"
+   ],
+   "topic": {
+    "tr": "Ağrı tetikleyicisi",
+    "en": "Pain trigger"
+   },
+   "text": {
+    "tr": "Sadece ısırınca, özellikle bırakırken oluyor.",
+    "en": "Only when I bite, especially on release."
+   }
+  },
+  {
+   "id": "cold",
+   "keywords": [
+    "soğuk",
+    "cold",
+    "hot",
+    "sıcak"
+   ],
+   "topic": {
+    "tr": "Termal yanıt",
+    "en": "Thermal response"
+   },
+   "text": {
+    "tr": "Soğuğa kısa bir hassasiyet var ama hemen geçiyor.",
+    "en": "Brief cold sensitivity that passes quickly."
+   }
+  },
+  {
+   "id": "spontaneous",
+   "keywords": [
+    "kendiliğinden",
+    "gece",
+    "spontaneous",
+    "night"
+   ],
+   "topic": {
+    "tr": "Spontan ağrı",
+    "en": "Spontaneous pain"
+   },
+   "text": {
+    "tr": "Kendiliğinden veya geceleri ağrımıyor.",
+    "en": "No spontaneous or night pain."
+   }
+  },
+  {
+   "id": "history",
+   "keywords": [
+    "dolgu",
+    "geçmiş",
+    "filling",
+    "history",
+    "before"
+   ],
+   "topic": {
+    "tr": "Diş öyküsü",
+    "en": "Dental history"
+   },
+   "text": {
+    "tr": "O dişte eski büyük bir dolgu var.",
+    "en": "That tooth has a large old filling."
+   }
+  },
+  {
+   "id": "habit",
+   "keywords": [
+    "diş sıkma",
+    "gıcırdatma",
+    "grind",
+    "clench",
+    "buz"
+   ],
+   "topic": {
+    "tr": "Parafonksiyon",
+    "en": "Parafunction"
+   },
+   "text": {
+    "tr": "Stresliyken dişlerimi sıkarım, bazen buz çiğnerim.",
+    "en": "I clench when stressed and sometimes chew ice."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 15,
+   "severity": "finding",
+   "label": {
+    "tr": "Görsel muayene",
+    "en": "Visual inspection"
+   },
+   "result": {
+    "tr": "15'te büyük dolgu; belirgin kavite yok, ince çatlak hattı şüphesi.",
+    "en": "Large filling on 15; no obvious cavity, suspected hairline crack."
+   }
+  },
+  {
+   "id": "bite_test",
+   "required": true,
+   "tooth": 15,
+   "severity": "finding",
+   "label": {
+    "tr": "Isırma testi (tooth slooth)",
+    "en": "Bite test (tooth slooth)"
+   },
+   "result": {
+    "tr": "Bırakma anında keskin ağrı — çatlak diş için pozitif.",
+    "en": "Sharp pain on release — positive for cracked tooth."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": true,
+   "tooth": 15,
+   "severity": "finding",
+   "label": {
+    "tr": "Soğuk testi",
+    "en": "Cold test"
+   },
+   "result": {
+    "tr": "Kısa, geçici yanıt (vital pulpa).",
+    "en": "Short, transient response (vital pulp)."
+   }
+  },
+  {
+   "id": "percussion",
+   "required": false,
+   "tooth": 15,
+   "severity": "normal",
+   "label": {
+    "tr": "Perküsyon",
+    "en": "Percussion"
+   },
+   "result": {
+    "tr": "Perküsyon hafif hassas.",
+    "en": "Mildly tender to percussion."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "periapical_xray",
+   "indicated": true,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "İnce dikey kırık hattı şüphesi; belirgin periapikal lezyon yok.",
+    "en": "Suspected fine vertical fracture line; no obvious periapical lesion."
+   },
+   "xray_lib": "root_fracture"
+  },
+  {
+   "id": "bitewing",
+   "indicated": true,
+   "label": {
+    "tr": "Bitewing radyografi",
+    "en": "Bitewing radiograph"
+   },
+   "result": {
+    "tr": "Komşu yüzeylerde çürük yok (normal).",
+    "en": "No caries on adjacent surfaces (normal)."
+   },
+   "xray_lib": "normal_bitewing"
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT",
+    "en": "CBCT"
+   },
+   "result": {
+    "tr": "İlk değerlendirmede rutin gerekli değil.",
+    "en": "Not routinely required at first assessment."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "cracked_tooth",
+   "correct": true,
+   "label": {
+    "tr": "Çatlak diş sendromu (15)",
+    "en": "Cracked tooth syndrome (15)"
+   }
+  },
+  {
+   "id": "reversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümlü pulpitis",
+    "en": "Reversible pulpitis"
+   }
+  },
+  {
+   "id": "irreversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümsüz pulpitis",
+    "en": "Irreversible pulpitis"
+   }
+  },
+  {
+   "id": "abscess",
+   "correct": false,
+   "label": {
+    "tr": "Apikal apse",
+    "en": "Apical abscess"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "crown",
+   "correct": true,
+   "label": {
+    "tr": "Kron/onlay ile çatlağı stabilize etme + takip",
+    "en": "Stabilize crack with crown/onlay + review"
+   }
+  },
+  {
+   "id": "extraction",
+   "correct": false,
+   "label": {
+    "tr": "Çekim",
+    "en": "Extraction"
+   }
+  },
+  {
+   "id": "antibiotics",
+   "correct": false,
+   "label": {
+    "tr": "Antibiyotik",
+    "en": "Antibiotics"
+   }
+  },
+  {
+   "id": "observe",
+   "correct": false,
+   "label": {
+    "tr": "Tedavi gerekmez",
+    "en": "No treatment needed"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "trigger",
+    "keywords": [
+     "ısır",
+     "çiğne",
+     "bite",
+     "chew"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Isırma tetikleyicisi",
+     "en": "Bite trigger"
+    }
+   },
+   {
+    "id": "cold",
+    "keywords": [
+     "soğuk",
+     "cold",
+     "sıcak",
+     "hot"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Termal yanıt",
+     "en": "Thermal response"
+    }
+   },
+   {
+    "id": "spontaneous",
+    "keywords": [
+     "kendiliğinden",
+     "gece",
+     "spontaneous",
+     "night"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Spontan ağrı sorgusu",
+     "en": "Spontaneous pain check"
+    }
+   },
+   {
+    "id": "habit",
+    "keywords": [
+     "sıkma",
+     "gıcırdat",
+     "grind",
+     "clench",
+     "buz",
+     "ice"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Parafonksiyon öyküsü",
+     "en": "Parafunction history"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "Görsel muayene",
+     "en": "Visual inspection"
+    }
+   },
+   {
+    "id": "bite_test",
+    "red_flag": true,
+    "label": {
+     "tr": "Isırma testi",
+     "en": "Bite test"
+    }
+   },
+   {
+    "id": "cold_test",
+    "red_flag": false,
+    "label": {
+     "tr": "Soğuk testi",
+     "en": "Cold test"
+    }
+   }
+  ]
+ },
+ "topic": "endodontics"
+}

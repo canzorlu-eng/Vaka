@@ -1,3 +1,6 @@
+import pytest
+pytestmark = pytest.mark.live
+
 """Backend tests for Vaka virtual dental patient simulator (iteration 2).
 Covers 10-case pack, dual X-rays, X-ray-blended Test Stewardship scoring,
 exam severity, /api/cases/generate, /api/tts, and regression on core flow.
@@ -12,7 +15,7 @@ def _load_url():
     if v:
         return v.rstrip("/")
     try:
-        with open("/app/frontend/.env") as f:
+        with open(os.path.join(os.path.dirname(__file__), "..", "..", "frontend", ".env")) as f:
             for ln in f:
                 if ln.startswith("REACT_APP_BACKEND_URL="):
                     return ln.split("=", 1)[1].strip().rstrip("/")

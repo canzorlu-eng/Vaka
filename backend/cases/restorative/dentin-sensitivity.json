@@ -1,0 +1,412 @@
+{
+ "case_id": "dentin-sensitivity",
+ "difficulty": "easy",
+ "title": {
+  "tr": "Soğuk Su Sızlaması",
+  "en": "The Cold-Water Twinge"
+ },
+ "chief_complaint": {
+  "tr": "Soğuk bir şey yiyince dişlerim kısa süreli sızlıyor.",
+  "en": "My teeth give a brief twinge when I eat something cold."
+ },
+ "patient": {
+  "name": {
+   "tr": "Ayşe D.",
+   "en": "Ayşe D."
+  },
+  "age": 28,
+  "sex": {
+   "tr": "Kadın",
+   "en": "Female"
+  },
+  "setting": {
+   "tr": "Rutin diş kontrolü",
+   "en": "Routine dental check-up"
+  },
+  "avatar_mood": "neutral"
+ },
+ "vitals": {
+  "bp": "118/74",
+  "hr": 72,
+  "temp": "36.6°C",
+  "spo2": "99%"
+ },
+ "hidden_facts": [
+  {
+   "id": "duration_pain",
+   "keywords": [
+    "ne kadar",
+    "sürüyor",
+    "geçiyor",
+    "how long",
+    "lasts",
+    "linger"
+   ],
+   "text": {
+    "tr": "Sızlama birkaç saniye sürüyor, sonra hemen geçiyor.",
+    "en": "The twinge lasts a few seconds then goes away immediately."
+   }
+  },
+  {
+   "id": "night",
+   "keywords": [
+    "gece",
+    "spontan",
+    "kendiliğinden",
+    "night",
+    "spontaneous"
+   ],
+   "text": {
+    "tr": "Hayır, geceleri veya kendiliğinden hiç ağrımıyor.",
+    "en": "No, it never hurts at night or on its own."
+   }
+  },
+  {
+   "id": "brushing",
+   "keywords": [
+    "fırça",
+    "sert",
+    "diş macunu",
+    "brush",
+    "hard",
+    "toothpaste",
+    "technique"
+   ],
+   "text": {
+    "tr": "Dişlerimi çok sert fırçalarım, sağ tarafı özellikle.",
+    "en": "I brush very hard, especially on the right side."
+   }
+  },
+  {
+   "id": "diet",
+   "keywords": [
+    "asit",
+    "gazlı",
+    "limon",
+    "diyet",
+    "acid",
+    "citrus",
+    "soda",
+    "diet"
+   ],
+   "text": {
+    "tr": "Her gün limonlu su ve gazlı içecek içiyorum.",
+    "en": "I drink lemon water and soda every day."
+   }
+  },
+  {
+   "id": "sweet",
+   "keywords": [
+    "tatlı",
+    "şeker",
+    "sweet",
+    "sugar"
+   ],
+   "text": {
+    "tr": "Tatlıyla değil, sadece soğukla oluyor.",
+    "en": "Not with sweets, only with cold."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 14,
+   "label": {
+    "tr": "Görsel muayene",
+    "en": "Visual inspection"
+   },
+   "result": {
+    "tr": "Sağ premolarlarda diş eti çekilmesi ve boyunda aşınma (abrazyon) görülüyor. Çürük yok.",
+    "en": "Gingival recession and cervical wear (abrasion) on the right premolars. No caries."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": true,
+   "tooth": 14,
+   "label": {
+    "tr": "Soğuk testi",
+    "en": "Cold test"
+   },
+   "result": {
+    "tr": "Kısa, keskin ama hemen geçen yanıt (normal vital yanıt).",
+    "en": "Short, sharp but immediately resolving response (normal vital response)."
+   }
+  },
+  {
+   "id": "probing",
+   "required": false,
+   "tooth": 14,
+   "label": {
+    "tr": "Sondlama (perio)",
+    "en": "Periodontal probing"
+   },
+   "result": {
+    "tr": "Cep derinlikleri normal (≤3 mm), aktif periodontal hastalık yok.",
+    "en": "Pocket depths normal (≤3 mm), no active periodontal disease."
+   }
+  },
+  {
+   "id": "percussion",
+   "required": false,
+   "tooth": 14,
+   "label": {
+    "tr": "Perküsyon",
+    "en": "Percussion"
+   },
+   "result": {
+    "tr": "Perküsyon negatif.",
+    "en": "Percussion negative."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "bitewing",
+   "indicated": true,
+   "label": {
+    "tr": "Bitewing radyografi",
+    "en": "Bitewing radiograph"
+   },
+   "result": {
+    "tr": "Çürük veya periapikal patoloji yok.",
+    "en": "No caries or periapical pathology."
+   },
+   "xray": {
+    "image": "/xray/d0ba96fd403282cea0a39c2e19e5177eef89d1e6021797ac6e382e0c95e12ae1.jpeg",
+    "question": {
+     "tr": "Bu bitewing radyografideki ana bulgu nedir?",
+     "en": "What is the main finding on this bitewing radiograph?"
+    },
+    "options": [
+     {
+      "id": "normal",
+      "correct": true,
+      "label": {
+       "tr": "Çürük veya kemik kaybı yok (normal)",
+       "en": "No caries or bone loss (normal)"
+      }
+     },
+     {
+      "id": "caries",
+      "correct": false,
+      "label": {
+       "tr": "İnterproksimal çürük",
+       "en": "Interproximal caries"
+      }
+     },
+     {
+      "id": "periapical",
+      "correct": false,
+      "label": {
+       "tr": "Apikal radyolusensi",
+       "en": "Periapical radiolucency"
+      }
+     },
+     {
+      "id": "bone_loss",
+      "correct": false,
+      "label": {
+       "tr": "İleri kemik kaybı",
+       "en": "Advanced bone loss"
+      }
+     }
+    ],
+    "explanation": {
+     "tr": "Dişler arası (interproksimal) yüzeylerde koyu üçgen çürük gölgeleri ve alveol kemiği tepesinde kayıp olup olmadığına bakın. Burada mineler sağlam ve kemik seviyeleri normal — bu, hassasiyetin çürüğe değil, dentin duyarlılığına bağlı olduğunu destekler.",
+     "en": "Check the surfaces between teeth (interproximal) for dark triangular decay shadows and the alveolar bone crest for loss. Here the enamel is intact and bone levels are normal — supporting that the sensitivity is from dentin hypersensitivity, not caries."
+    }
+   }
+  },
+  {
+   "id": "periapical_region",
+   "indicated": true,
+   "label": {
+    "tr": "Bölge periapikal radyografi",
+    "en": "Regional periapical radiograph"
+   },
+   "result": {
+    "tr": "Dişsiz bölgede insidental artık kök parçası.",
+    "en": "Incidental retained root fragment in an edentulous area."
+   },
+   "xray_lib": "retained_root"
+  },
+  {
+   "id": "periapical_xray",
+   "indicated": false,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "Bu tabloda özel endikasyonu yok.",
+    "en": "No specific indication in this presentation."
+   }
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT",
+    "en": "CBCT"
+   },
+   "result": {
+    "tr": "Kesinlikle endike değil — aşırı tetkik.",
+    "en": "Definitely not indicated — over-testing."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "dentin_hypersensitivity",
+   "correct": true,
+   "label": {
+    "tr": "Dentin hassasiyeti",
+    "en": "Dentin hypersensitivity"
+   }
+  },
+  {
+   "id": "reversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümlü pulpitis",
+    "en": "Reversible pulpitis"
+   }
+  },
+  {
+   "id": "irreversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümsüz pulpitis",
+    "en": "Irreversible pulpitis"
+   }
+  },
+  {
+   "id": "caries",
+   "correct": false,
+   "label": {
+    "tr": "Çürük kaynaklı ağrı",
+    "en": "Caries-related pain"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "desensitize_advice",
+   "correct": true,
+   "label": {
+    "tr": "Duyarlılık giderici macun + fırçalama/diyet önerisi",
+    "en": "Desensitizing toothpaste + brushing/diet advice"
+   }
+  },
+  {
+   "id": "rct",
+   "correct": false,
+   "label": {
+    "tr": "Kök kanal tedavisi",
+    "en": "Root canal treatment"
+   }
+  },
+  {
+   "id": "extraction",
+   "correct": false,
+   "label": {
+    "tr": "Çekim",
+    "en": "Extraction"
+   }
+  },
+  {
+   "id": "antibiotics",
+   "correct": false,
+   "label": {
+    "tr": "Antibiyotik",
+    "en": "Antibiotics"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "duration_pain",
+    "keywords": [
+     "ne kadar",
+     "sürüyor",
+     "geçiyor",
+     "how long",
+     "lasts",
+     "linger"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Ağrının süresi (ayırıcı tanı için kritik)",
+     "en": "Pain duration (key for differential)"
+    }
+   },
+   {
+    "id": "night",
+    "keywords": [
+     "gece",
+     "spontan",
+     "night",
+     "spontaneous"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Spontan/gece ağrısı sorgusu",
+     "en": "Spontaneous/night pain check"
+    }
+   },
+   {
+    "id": "brushing",
+    "keywords": [
+     "fırça",
+     "sert",
+     "brush",
+     "hard"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Fırçalama alışkanlığı",
+     "en": "Brushing habits"
+    }
+   },
+   {
+    "id": "diet",
+    "keywords": [
+     "asit",
+     "gazlı",
+     "limon",
+     "acid",
+     "soda",
+     "citrus"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Asidik diyet sorgusu",
+     "en": "Acidic diet check"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "Görsel muayene",
+     "en": "Visual inspection"
+    }
+   },
+   {
+    "id": "cold_test",
+    "red_flag": true,
+    "label": {
+     "tr": "Soğuk/vitalite testi",
+     "en": "Cold/vitality test"
+    }
+   }
+  ]
+ },
+ "topic": "restorative"
+}

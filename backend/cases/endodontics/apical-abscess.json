@@ -1,0 +1,505 @@
+{
+ "case_id": "apical-abscess",
+ "difficulty": "hard",
+ "title": {
+  "tr": "Şişmiş Yanak",
+  "en": "The Swollen Cheek"
+ },
+ "chief_complaint": {
+  "tr": "Sol üst dişimin yanında yüzüm şişti ve çok ağrıyor.",
+  "en": "My face is swollen next to my upper left tooth and it hurts a lot."
+ },
+ "patient": {
+  "name": {
+   "tr": "Murat K.",
+   "en": "Murat K."
+  },
+  "age": 45,
+  "sex": {
+   "tr": "Erkek",
+   "en": "Male"
+  },
+  "setting": {
+   "tr": "Acil diş polikliniği",
+   "en": "Emergency dental clinic"
+  },
+  "avatar_mood": "pain"
+ },
+ "vitals": {
+  "bp": "132/84",
+  "hr": 96,
+  "temp": "38.1°C",
+  "spo2": "98%"
+ },
+ "hidden_facts": [
+  {
+   "id": "onset",
+   "keywords": [
+    "ne zaman",
+    "kaç gün",
+    "süre",
+    "when",
+    "how long",
+    "duration",
+    "start"
+   ],
+   "text": {
+    "tr": "Ağrı bir haftadır vardı, şişlik dün başladı.",
+    "en": "The pain has been a week; the swelling started yesterday."
+   }
+  },
+  {
+   "id": "fever",
+   "keywords": [
+    "ateş",
+    "üşüme",
+    "titreme",
+    "fever",
+    "chills",
+    "temperature"
+   ],
+   "text": {
+    "tr": "Dün akşamdan beri ateşim var ve kendimi halsiz hissediyorum.",
+    "en": "I've had a fever since last night and feel run down."
+   }
+  },
+  {
+   "id": "swallow",
+   "keywords": [
+    "yutkun",
+    "yutma",
+    "nefes",
+    "boğaz",
+    "swallow",
+    "breathe",
+    "throat",
+    "difficulty"
+   ],
+   "text": {
+    "tr": "Yutkunurken biraz zorlanıyorum ama nefes almam normal.",
+    "en": "Swallowing is a bit hard but my breathing is fine."
+   }
+  },
+  {
+   "id": "taste",
+   "keywords": [
+    "tat",
+    "kötü tat",
+    "akıntı",
+    "irin",
+    "taste",
+    "discharge",
+    "pus",
+    "bad taste"
+   ],
+   "text": {
+    "tr": "Ağzımda ara sıra kötü bir tat ve akıntı oluyor.",
+    "en": "I occasionally get a bad taste and some discharge."
+   }
+  },
+  {
+   "id": "history",
+   "keywords": [
+    "geçmiş",
+    "önceden",
+    "tedavi",
+    "dolgu",
+    "kanal",
+    "previous",
+    "history",
+    "root canal"
+   ],
+   "text": {
+    "tr": "O diş yıllardır çürüktü, hiç tedavi ettirmedim.",
+    "en": "That tooth had decay for years; I never had it treated."
+   }
+  },
+  {
+   "id": "meds",
+   "keywords": [
+    "ilaç",
+    "antibiyotik",
+    "kesici",
+    "medication",
+    "antibiotic",
+    "painkiller"
+   ],
+   "text": {
+    "tr": "İki gün önce evde kalan bir antibiyotiği kullanmaya başladım.",
+    "en": "I started an old antibiotic I had at home two days ago."
+   }
+  },
+  {
+   "id": "medical",
+   "keywords": [
+    "hastalık",
+    "şeker",
+    "diyabet",
+    "sistemik",
+    "medical",
+    "diabetes",
+    "condition"
+   ],
+   "text": {
+    "tr": "Şeker hastasıyım (Tip 2), ilaç kullanıyorum.",
+    "en": "I'm a Type 2 diabetic on medication."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "extraoral",
+   "required": true,
+   "tooth": null,
+   "label": {
+    "tr": "Ekstraoral muayene",
+    "en": "Extraoral examination"
+   },
+   "result": {
+    "tr": "Sol bukkal bölgede fluktuan, sıcak, hassas şişlik. Submandibular lenf nodları hassas.",
+    "en": "Fluctuant, warm, tender swelling in the left buccal region. Tender submandibular nodes."
+   }
+  },
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 26,
+   "label": {
+    "tr": "İntraoral görsel muayene",
+    "en": "Intraoral visual inspection"
+   },
+   "result": {
+    "tr": "26 numaralı dişte geniş çürük; komşu diş etinde sinüs ağzı (fistül) mevcut.",
+    "en": "Gross caries on tooth 26; a sinus tract on the adjacent gingiva."
+   }
+  },
+  {
+   "id": "percussion",
+   "required": true,
+   "tooth": 26,
+   "label": {
+    "tr": "Perküsyon testi",
+    "en": "Percussion test"
+   },
+   "result": {
+    "tr": "26 perküsyona belirgin şekilde ağrılı.",
+    "en": "Tooth 26 is markedly painful to percussion."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": true,
+   "tooth": 26,
+   "label": {
+    "tr": "Vitalite (soğuk) testi",
+    "en": "Vitality (cold) test"
+   },
+   "result": {
+    "tr": "26 soğuğa yanıt vermiyor (nekrotik pulpa).",
+    "en": "Tooth 26 does not respond to cold (necrotic pulp)."
+   }
+  },
+  {
+   "id": "palpation",
+   "required": true,
+   "tooth": 26,
+   "label": {
+    "tr": "Palpasyon",
+    "en": "Palpation"
+   },
+   "result": {
+    "tr": "26 apeksi hizasında palpasyonda ağrı ve fluktuasyon.",
+    "en": "Tenderness and fluctuance on palpation over the apex of 26."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "periapical_xray",
+   "indicated": true,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "26 apeksinde geniş periapikal radyolusensi (lezyon).",
+    "en": "Large periapical radiolucency at the apex of 26."
+   },
+   "xray": {
+    "image": "/xray/029aacf39c4d943cc6576df681bdb7b7db08d42088aca6a9370eb189b968af52.jpeg",
+    "question": {
+     "tr": "Bu radyografideki ana bulgu nedir?",
+     "en": "What is the main finding on this radiograph?"
+    },
+    "options": [
+     {
+      "id": "periapical",
+      "correct": true,
+      "label": {
+       "tr": "Apeksde iyi sınırlı radyolusensi (lezyon)",
+       "en": "Well-defined periapical radiolucency (lesion)"
+      }
+     },
+     {
+      "id": "deep_filling",
+      "correct": false,
+      "label": {
+       "tr": "Pulpaya yakın derin dolgu",
+       "en": "Deep filling near the pulp"
+      }
+     },
+     {
+      "id": "impaction",
+      "correct": false,
+      "label": {
+       "tr": "Gömük diş",
+       "en": "Impacted tooth"
+      }
+     },
+     {
+      "id": "normal",
+      "correct": false,
+      "label": {
+       "tr": "Herhangi bir patoloji yok",
+       "en": "No pathology"
+      }
+     }
+    ],
+    "explanation": {
+     "tr": "Kök ucunda (apeks) yuvarlak, koyu (radyolusent), iyi sınırlı bir alan arayın; çevresindeki kemikte kayıp vardır. Bu, nekrotik pulpaya bağlı kronikleşmiş apikal enfeksiyonun (apse/granülom) tipik görüntüsüdür.",
+     "en": "Look for a round, dark (radiolucent), well-defined area at the root tip (apex) with surrounding bone loss. This is the classic appearance of a chronic apical infection (abscess/granuloma) from a necrotic pulp."
+    }
+   }
+  },
+  {
+   "id": "perio_film",
+   "indicated": true,
+   "label": {
+    "tr": "Periodontal değerlendirme filmi",
+    "en": "Periodontal review film"
+   },
+   "result": {
+    "tr": "İnsidental horizontal alveolar kemik kaybı görülüyor.",
+    "en": "Incidental horizontal alveolar bone loss seen."
+   },
+   "xray_lib": "bone_loss"
+  },
+  {
+   "id": "temp_check",
+   "indicated": true,
+   "label": {
+    "tr": "Vücut sıcaklığı ölçümü",
+    "en": "Body temperature check"
+   },
+   "result": {
+    "tr": "38.1°C — sistemik yayılım bulgusu.",
+    "en": "38.1°C — sign of systemic involvement."
+   }
+  },
+  {
+   "id": "glucose",
+   "indicated": true,
+   "label": {
+    "tr": "Kan şekeri ölçümü",
+    "en": "Blood glucose check"
+   },
+   "result": {
+    "tr": "Açlık kan şekeri 186 mg/dL — kontrolsüz diyabet.",
+    "en": "Fasting glucose 186 mg/dL — poorly controlled diabetes."
+   }
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT (3B tomografi)",
+    "en": "CBCT (3D scan)"
+   },
+   "result": {
+    "tr": "Akut apse yönetiminde rutin gerekli değil.",
+    "en": "Not routinely required for acute abscess management."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "acute_apical_abscess",
+   "correct": true,
+   "label": {
+    "tr": "Akut apikal apse (26)",
+    "en": "Acute apical abscess (26)"
+   }
+  },
+  {
+   "id": "irreversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümsüz pulpitis",
+    "en": "Irreversible pulpitis"
+   }
+  },
+  {
+   "id": "periodontal_abscess",
+   "correct": false,
+   "label": {
+    "tr": "Periodontal apse",
+    "en": "Periodontal abscess"
+   }
+  },
+  {
+   "id": "sinusitis",
+   "correct": false,
+   "label": {
+    "tr": "Maksiller sinüzit",
+    "en": "Maxillary sinusitis"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "drainage_rct_ab",
+   "correct": true,
+   "label": {
+    "tr": "Drenaj + kanal tedavisi + antibiyotik (sistemik bulgu var)",
+    "en": "Drainage + RCT + antibiotics (systemic signs present)"
+   }
+  },
+  {
+   "id": "antibiotics_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece antibiyotik",
+    "en": "Antibiotics only"
+   }
+  },
+  {
+   "id": "extraction_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece çekim, drenaj yok",
+    "en": "Extraction only, no drainage"
+   }
+  },
+  {
+   "id": "analgesics_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece ağrı kesici, gözlem",
+    "en": "Analgesics only, observe"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "onset",
+    "keywords": [
+     "ne zaman",
+     "kaç gün",
+     "süre",
+     "when",
+     "how long"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Başlangıç/süre",
+     "en": "Onset & duration"
+    }
+   },
+   {
+    "id": "fever",
+    "keywords": [
+     "ateş",
+     "üşüme",
+     "fever",
+     "chills"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Ateş/sistemik bulgu (kırmızı bayrak)",
+     "en": "Fever/systemic signs (red flag)"
+    }
+   },
+   {
+    "id": "swallow",
+    "keywords": [
+     "yutkun",
+     "nefes",
+     "boğaz",
+     "swallow",
+     "breathe",
+     "throat"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Yutma/nefes güçlüğü (kırmızı bayrak — hava yolu)",
+     "en": "Dysphagia/dyspnoea (red flag — airway)"
+    }
+   },
+   {
+    "id": "medical",
+    "keywords": [
+     "hastalık",
+     "şeker",
+     "diyabet",
+     "diabetes",
+     "medical"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Sistemik hastalık/diyabet (kırmızı bayrak)",
+     "en": "Medical history/diabetes (red flag)"
+    }
+   },
+   {
+    "id": "meds",
+    "keywords": [
+     "ilaç",
+     "antibiyotik",
+     "medication",
+     "antibiotic"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "İlaç/antibiyotik kullanımı",
+     "en": "Medication/antibiotic use"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "extraoral",
+    "red_flag": true,
+    "label": {
+     "tr": "Ekstraoral/lenf nodu muayenesi",
+     "en": "Extraoral/lymph node exam"
+    }
+   },
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "İntraoral görsel muayene",
+     "en": "Intraoral inspection"
+    }
+   },
+   {
+    "id": "percussion",
+    "red_flag": false,
+    "label": {
+     "tr": "Perküsyon",
+     "en": "Percussion"
+    }
+   },
+   {
+    "id": "cold_test",
+    "red_flag": true,
+    "label": {
+     "tr": "Vitalite testi",
+     "en": "Vitality test"
+    }
+   }
+  ]
+ },
+ "topic": "endodontics"
+}

@@ -92,3 +92,6 @@ credentials.json
 # generated reports / local artefacts
 backend/scripts/out/
 deploy/vaka.log
+
+# local demo script (never published)
+narration.md

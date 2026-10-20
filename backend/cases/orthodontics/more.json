@@ -1,0 +1,2774 @@
+[
+ {
+  "id": "ortho-poking-wire",
+  "topic": "orthodontics",
+  "d": "easy",
+  "title": [
+   "Yanağı Çizen Tel",
+   "The Wire That Pokes"
+  ],
+  "cc": [
+   "Sabit tel tedavisi gören 15 yaşındaki hastanın sağ yanağında bir telin batması nedeniyle yara var.",
+   "A 15-year-old in fixed braces has a sore on his right cheek from a wire poking him."
+  ],
+  "pt": [
+   "Mert E.",
+   15,
+   "m",
+   [
+    "Acil ortodonti randevusu",
+    "Urgent orthodontic appointment"
+   ],
+   "pain"
+  ],
+  "hx": [
+   [
+    "where",
+    [
+     "Ağrının yeri",
+     "Location"
+    ],
+    "nerede|hangi|yer|yanak|where|which|cheek",
+    [
+     "Sağ arka tarafta, yanağımda bir tel batıyor.",
+     "On the back right, a wire is stabbing my cheek."
+    ],
+    0
+   ],
+   [
+    "when",
+    [
+     "Ne zaman başladı",
+     "Onset"
+    ],
+    "ne zaman|başla|kaç gün|when|start|how long",
+    [
+     "Dün gece bir şey yedikten sonra başladı.",
+     "It started last night after I ate something."
+    ],
+    0
+   ],
+   [
+    "break",
+    [
+     "Tel/braket kırıldı mı",
+     "Broken wire/bracket"
+    ],
+    "kırıl|çık|braket|tel|break|loose|bracket|wire",
+    [
+     "Tel arkadan kayıp uzamış gibi, braket yerinde.",
+     "The wire slid out at the back; the brackets are in place."
+    ],
+    0
+   ],
+   [
+    "ulcer",
+    [
+     "Yara/aft",
+     "Ulcer"
+    ],
+    "yara|aft|kanama|ulcer|sore|bleed",
+    [
+     "Yanağımda yara var, yemek yerken acıyor.",
+     "I have a sore on my cheek that hurts when I eat."
+    ],
+    0
+   ],
+   [
+    "fever",
+    [
+     "Şişlik/ateş",
+     "Swelling/fever"
+    ],
+    "şiş|ateş|swell|fever",
+    [
+     "Şişlik yok, ateşim yok.",
+     "No swelling or fever."
+    ],
+    1
+   ],
+   [
+    "wax",
+    [
+     "Mum kullanımı",
+     "Wax use"
+    ],
+    "mum|wax|kapat|cover",
+    [
+     "Mum vardı ama kullanmadım.",
+     "I have wax but didn't use it."
+    ],
+    0
+   ],
+   [
+    "last",
+    [
+     "Son kontrol",
+     "Last visit"
+    ],
+    "son|randevu|kontrol|last|appointment|visit",
+    [
+     "Üç hafta önce tel değişti.",
+     "Wire was changed three weeks ago."
+    ],
+    1
+   ]
+  ],
+  "ex": [
+   [
+    "wire",
+    [
+     "Tel ucu muayenesi",
+     "Wire end check"
+    ],
+    [
+     "Sağ ikinci azıdaki tüpten 4-5 mm taşan kesilmemiş ark teli ucu.",
+     "Wire end protrudes 4-5 mm from the right second molar tube."
+    ],
+    47,
+    1,
+    0
+   ],
+   [
+    "mucosa",
+    [
+     "Yanak mukozası",
+     "Buccal mucosa"
+    ],
+    [
+     "Travmatik 5 mm ülser, enfeksiyon bulgusu yok.",
+     "Traumatic 5 mm ulcer without signs of infection."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "brackets",
+    [
+     "Braketler",
+     "Brackets"
+    ],
+    [
+     "Tüm braketler yerinde, kayma yok.",
+     "All brackets intact and in place."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "hygiene",
+    [
+     "Ağız hijyeni",
+     "Oral hygiene"
+    ],
+    [
+     "Orta düzey plak, dişeti hafif kızarık.",
+     "Moderate plaque, mild gingival redness."
+    ],
+    null,
+    0,
+    0
+   ],
+   [
+    "nodes",
+    [
+     "Lenf bezleri/şişlik",
+     "Nodes/swelling"
+    ],
+    [
+     "Yok.",
+     "None."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "none",
+    [
+     "Ek test gerekmiyor (klinik tanı)",
+     "No test needed (clinical diagnosis)"
+    ],
+    [
+     "Klinik bulgular yeterli.",
+     "Clinical findings are sufficient."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "Endikasyon yok.",
+     "No indication."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Taşan ark teli ucuna bağlı travmatik mukozal ülser",
+    "Traumatic mucosal ulcer from a protruding archwire end"
+   ],
+   [
+    "Rekürren aftöz stomatit",
+    "Recurrent aphthous stomatitis"
+   ],
+   [
+    "Herpetik gingivostomatit",
+    "Herpetic gingivostomatitis"
+   ],
+   [
+    "Oral kandidiyazis",
+    "Oral candidiasis"
+   ]
+  ],
+  "tx": [
+   [
+    "Tel ucunu kesmek veya kıvırmak (gerekirse ortodontik mumla geçici koruma) ve ülser için lokal bakım",
+    "Trim or bend back the wire end (temporary orthodontic wax if needed) and local care for the ulcer"
+   ],
+   [
+    "Tüm tedaviyi bırakıp telleri çıkarmak",
+    "Remove all appliances"
+   ],
+   [
+    "Antibiyotik başlamak",
+    "Start antibiotics"
+   ],
+   [
+    "Ülser biyopsisi",
+    "Biopsy the ulcer"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-retainer-relapse",
+  "topic": "orthodontics",
+  "d": "easy",
+  "title": [
+   "Kaybolan Retainer",
+   "The Lost Retainer"
+  ],
+  "cc": [
+   "17 yaşındaki genç, tedavi bittikten sonra retainer'ını kaybettiğini ve alt dişlerinin yeniden çapraşıklaştığını söylüyor.",
+   "A 17-year-old lost his retainer after treatment and says his lower teeth are crowding again."
+  ],
+  "pt": [
+   "Selim K.",
+   17,
+   "m",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "anxious"
+  ],
+  "hx": [
+   [
+    "lost",
+    [
+     "Retainer durumu",
+     "Retainer status"
+    ],
+    "retainer|kaybet|tutucu|plak|kayıp|retainer|lost|wear",
+    [
+     "Plağımı bir yıl önce kaybettim, yenisini yaptırmadım.",
+     "I lost my retainer a year ago and never replaced it."
+    ],
+    1
+   ],
+   [
+    "wire",
+    [
+     "Sabit tel",
+     "Bonded wire"
+    ],
+    "tel|yapışık|sabit|bonded|fixed|wire",
+    [
+     "Alt dişlerin arkasında tel vardı ama kopmuş.",
+     "There was a wire behind the bottom teeth but it came off."
+    ],
+    1
+   ],
+   [
+    "when",
+    [
+     "Tedavi bitiş zamanı",
+     "Treatment end"
+    ],
+    "ne zaman|bitti|yıl|ay|when|finish|ended|years",
+    [
+     "Tedavi iki yıl önce bitti.",
+     "Treatment finished two years ago."
+    ],
+    0
+   ],
+   [
+    "change",
+    [
+     "Fark ettiğiniz değişiklik",
+     "Noticed change"
+    ],
+    "çapraş|kayma|değiş|crowd|shift|moved|change",
+    [
+     "Alt ön dişlerim yine kaymış gibi.",
+     "My bottom front teeth seem to have moved again."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|pain|hurt",
+    [
+     "Ağrı yok.",
+     "No pain."
+    ],
+    0
+   ],
+   [
+    "habit",
+    [
+     "Alışkanlık/diş sıkma",
+     "Habit/clenching"
+    ],
+    "sık|gıcırd|dil|clench|grind|tongue|habit",
+    [
+     "Dilimi dişlerime bastırıyorum galiba.",
+     "I think I press my tongue on my teeth."
+    ],
+    0
+   ],
+   [
+    "wisdom",
+    [
+     "20'lik diş",
+     "Wisdom teeth"
+    ],
+    "yirmi|20|akıl|wisdom|third molar",
+    [
+     "Yirmi yaş dişlerim henüz çıkmadı.",
+     "My wisdom teeth haven't come through yet."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "lowers",
+    [
+     "Alt kesici dizilimi",
+     "Lower incisor alignment"
+    ],
+    [
+     "31, 32, 41, 42'de 2-3 mm çapraşıklık ve rotasyon.",
+     "2-3 mm crowding and rotation of 31, 32, 41, 42."
+    ],
+    41,
+    1,
+    0
+   ],
+   [
+    "wire",
+    [
+     "Lingual tutucu tel",
+     "Lingual retainer wire"
+    ],
+    [
+     "Alt kaninler arası bağlı tel mevcut değil, bondlama izleri duruyor.",
+     "Bonded canine-to-canine wire absent; bonding pads remain."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "overjet",
+    [
+     "Overjet/overbite",
+     "Overjet/overbite"
+    ],
+    [
+     "Overjet 2 mm, overbite %30; belirgin değişiklik yok.",
+     "Overjet 2 mm, overbite 30%; no major change."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "gingiva",
+    [
+     "Periodontal durum",
+     "Periodontal status"
+    ],
+    [
+     "Dişeti kırmızı ama çekilme yok.",
+     "Mild redness, no recession."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "upper",
+    [
+     "Üst retainer",
+     "Upper retainer"
+    ],
+    [
+     "Üst Hawley plağı kırık, kullanılmıyor.",
+     "Upper Hawley cracked and not worn."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "model",
+    [
+     "Çalışma modeli/tarama",
+     "Study model / scan"
+    ],
+    [
+     "Karşılaştırma için dijital tarama alınır; 2.5 mm Little indeksi.",
+     "Digital scan taken for comparison; Little's index 2.5 mm."
+    ],
+    1,
+    null
+   ],
+   [
+    "pano",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "18, 28, 38, 48 germleri mevcut, mezial yönde ilerleme, taşma beklenmiyor.",
+     "Third molar buds present; no obvious pressure on arches."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Retansiyon kaybına bağlı hafif alt çapraşıklık relapsı",
+    "Mild lower crowding relapse due to loss of retention"
+   ],
+   [
+    "Yeni gelişen iskeletal anormallik",
+    "New skeletal discrepancy"
+   ],
+   [
+    "Periodontitise bağlı dişlerin kayması",
+    "Pathological migration from periodontitis"
+   ],
+   [
+    "Çürük nedeniyle mezial kayma",
+    "Mesial drift from caries"
+   ]
+  ],
+  "tx": [
+   [
+    "Durumu değerlendirip (hafif ise) alt-üst yeni retainer yapmak ve gerekirse küçük ortodontik düzeltme sonrası uzun süreli retansiyon",
+    "Assess the relapse and, if mild, provide new retainers (with minor realignment if needed) followed by long-term retention"
+   ],
+   [
+    "Hiçbir şey yapmamak, kendiliğinden düzelir",
+    "Do nothing; it will self-correct"
+   ],
+   [
+    "Dört premolar çekimi ve yeniden tedavi",
+    "Four premolar extractions and full retreatment"
+   ],
+   [
+    "Ortognatik cerrahi",
+    "Orthognathic surgery"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-open-bite-thumb",
+  "topic": "orthodontics",
+  "d": "easy",
+  "title": [
+   "Parmağını Bırakmayan Çocuk",
+   "The Thumb He Won't Give Up"
+  ],
+  "cc": [
+   "9 yaşındaki çocuğun ön dişleri ısırırken birbirine değmiyor, anne parmak emme alışkanlığından şikâyetçi.",
+   "A 9-year-old's front teeth don't meet when he bites, and his mother is worried about thumb sucking."
+  ],
+  "pt": [
+   "Ozan T.",
+   9,
+   "m",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "thumb",
+    [
+     "Parmak emme",
+     "Thumb sucking"
+    ],
+    "parmak|emme|emiyor|thumb|suck|finger",
+    [
+     "Uyurken ve televizyon izlerken başparmağımı emiyorum.",
+     "I suck my thumb when sleeping and watching TV."
+    ],
+    1
+   ],
+   [
+    "start",
+    [
+     "Ne zamandan beri",
+     "Since when"
+    ],
+    "ne zaman|yaş|kaç|başla|when|age|start|how long",
+    [
+     "Küçüklükten beri bırakamadım.",
+     "I've done it since I was little."
+    ],
+    0
+   ],
+   [
+    "speech",
+    [
+     "Konuşma sorunu",
+     "Speech problem"
+    ],
+    "konuş|s harfi|dil|speak|lisp|speech|tongue",
+    [
+     "S harfini söylerken dilim dişlerime çıkıyor.",
+     "My tongue sticks out between my teeth on the S sound."
+    ],
+    0
+   ],
+   [
+    "swallow",
+    [
+     "Yutma şekli",
+     "Swallowing"
+    ],
+    "yut|dil|yutkun|swallow|tongue",
+    [
+     "Yutarken dilim öne geliyor.",
+     "My tongue pushes forward when I swallow."
+    ],
+    0
+   ],
+   [
+    "breath",
+    [
+     "Ağızdan nefes/alerji",
+     "Mouth breathing/allergy"
+    ],
+    "burun|ağız|nefes|alerji|nose|mouth|breath|allerg|adenoid",
+    [
+     "Burnum çoğu zaman tıkalı değil.",
+     "My nose isn't usually blocked."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|pain|hurt",
+    [
+     "Ağrım yok.",
+     "No pain."
+    ],
+    1
+   ],
+   [
+    "past",
+    [
+     "Önceki girişimler",
+     "Previous attempts"
+    ],
+    "dene|bırak|biber|try|stop|quit|bitter",
+    [
+     "Annem acı ilaç sürdü, işe yaramadı.",
+     "Mum put bitter stuff on, didn't work."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "bite",
+    [
+     "Ön oklüzyon",
+     "Anterior occlusion"
+    ],
+    [
+     "Üst-alt kesiciler arasında 4 mm açık kapanış; üst kesiciler hafif protrüze.",
+     "4 mm anterior open bite with mildly proclined upper incisors."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "thumb",
+    [
+     "Parmak/başparmak muayenesi",
+     "Thumb inspection"
+    ],
+    [
+     "Başparmakta nasır ve temizlik çizgisi (kallus).",
+     "Callus on the thumb."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "posterior",
+    [
+     "Arka bölge",
+     "Posterior segment"
+    ],
+    [
+     "Üst arkta daralma, tek taraflı çapraz kapanış yok; molarlar Sınıf I.",
+     "Mild upper arch narrowing; molars Class I."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "airway",
+    [
+     "Hava yolu/tonsil",
+     "Airway/tonsils"
+    ],
+    [
+     "Burun solunumu normal, tonsiller büyük değil.",
+     "Normal nasal breathing; tonsils not enlarged."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "tongue",
+    [
+     "Dil pozisyonu",
+     "Tongue posture"
+    ],
+    [
+     "Yutarken hafif dil itimi ancak ana neden parmak.",
+     "Mild tongue thrust but thumb habit is the main cause."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "ceph",
+    [
+     "Sefalometrik radyografi",
+     "Lateral cephalogram"
+    ],
+    [
+     "İskeletal vertikal ilişki normal sınırlarda; dişsel açık kapanış.",
+     "Skeletal vertical relationship within normal limits; dento-alveolar open bite."
+    ],
+    1,
+    null
+   ],
+   [
+    "pano",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "Daimi dişler normal gelişimde.",
+     "Normal permanent tooth development."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Parmak emmeye bağlı dentoalveoler anterior açık kapanış",
+    "Dento-alveolar anterior open bite due to thumb sucking"
+   ],
+   [
+    "İskeletal açık kapanış (uzun yüz)",
+    "Skeletal open bite (long face)"
+   ],
+   [
+    "Dil itimine bağlı genetik açık kapanış",
+    "Genetic tongue-thrust open bite"
+   ],
+   [
+    "Kondiler rezorpsiyon",
+    "Condylar resorption"
+   ]
+  ],
+  "tx": [
+   [
+    "Parmak emmeyi bırakma motivasyonu ve gerekirse alışkanlık kırıcı apareyle; sonrasında oklüzyon izlemi",
+    "Motivate to stop the habit, with a habit-breaking appliance if needed, then monitor the occlusion"
+   ],
+   [
+    "Hemen ortognatik cerrahi",
+    "Immediate orthognathic surgery"
+   ],
+   [
+    "Üst dört premolar çekimi",
+    "Extract four premolars"
+   ],
+   [
+    "Hiç müdahale etmeden 18 yaşına kadar beklemek",
+    "Wait without action until 18"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-deep-bite",
+  "topic": "orthodontics",
+  "d": "easy",
+  "title": [
+   "Alt Kesicilerin Damağa Değmesi",
+   "Lower Teeth Touching the Palate"
+  ],
+  "cc": [
+   "12 yaşındaki kızın üst kesicileri içe yatık, ısırdığında alt kesicileri damak mukozasına değiyor.",
+   "A 12-year-old girl's upper incisors lean inward and her lower incisors bite into the palate."
+  ],
+  "pt": [
+   "Aylin Ö.",
+   12,
+   "f",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "bite",
+    [
+     "Isırma/kapanış",
+     "Biting"
+    ],
+    "ısır|kapan|değ|bite|close|touch",
+    [
+     "Alt dişlerim üst dişlerin arkasına çok giriyor.",
+     "My bottom teeth go far behind my top ones."
+    ],
+    0
+   ],
+   [
+    "palate",
+    [
+     "Damakta ağrı/yara",
+     "Palate soreness"
+    ],
+    "damak|yara|ağrı|palate|sore|pain|ulcer",
+    [
+     "Damağımda bazen sızı oluyor.",
+     "My palate sometimes feels sore."
+    ],
+    0
+   ],
+   [
+    "look",
+    [
+     "Görünüm memnuniyeti",
+     "Appearance"
+    ],
+    "görün|gülüş|diş|look|smile|appearance",
+    [
+     "Üst ön dişlerim kısa görünüyor.",
+     "My top front teeth look short."
+    ],
+    0
+   ],
+   [
+    "jaw",
+    [
+     "Çene eklemi",
+     "Jaw joint"
+    ],
+    "çene|klik|ağrı|jaw|click|joint|tmj",
+    [
+     "Çenemde ağrı veya ses yok.",
+     "No jaw pain or clicking."
+    ],
+    1
+   ],
+   [
+    "trauma",
+    [
+     "Travma",
+     "Trauma"
+    ],
+    "düş|çarp|travma|fall|hit|knock|trauma",
+    [
+     "Kırılan diş yok.",
+     "No broken teeth."
+    ],
+    0
+   ],
+   [
+    "family",
+    [
+     "Ailede benzer",
+     "Family"
+    ],
+    "aile|anne|baba|family|mother|father|sibling",
+    [
+     "Babamın da dişleri benzer.",
+     "My dad's teeth are similar."
+    ],
+    0
+   ],
+   [
+    "pt",
+    [
+     "Büyüme durumu/regl",
+     "Growth/menarche"
+    ],
+    "boy|uzam|adet|regl|height|grow|menstru|period",
+    [
+     "Son bir yılda çok uzadım.",
+     "I've grown a lot this year."
+    ],
+    1
+   ]
+  ],
+  "ex": [
+   [
+    "incisors",
+    [
+     "Üst kesici eğimi",
+     "Upper incisor inclination"
+    ],
+    [
+     "11 ve 21 retruzyonlu, birbirinin üzerine bindirmiş; interinsizal açı artmış.",
+     "11 and 21 are retroclined and overlap; the interincisal angle is increased."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "overbite",
+    [
+     "Overbite",
+     "Overbite"
+    ],
+    [
+     "Overbite %90, alt kesiciler damak mukozasını travmatize ediyor.",
+     "Overbite 90% with lower incisors touching the palatal mucosa."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "molar",
+    [
+     "Molar ilişkisi",
+     "Molar relationship"
+    ],
+    [
+     "Sınıf II molar ilişkisi, overjet 1 mm.",
+     "Class II molar relationship, overjet 1 mm."
+    ],
+    16,
+    1,
+    0
+   ],
+   [
+    "tmj",
+    [
+     "TME muayenesi",
+     "TMJ exam"
+    ],
+    [
+     "Ağrı veya klik yok, açılma 45 mm.",
+     "No pain or click, opening 45 mm."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "lip",
+    [
+     "Dudak çizgisi",
+     "Lip line"
+    ],
+    [
+     "Normal dudak çizgisi.",
+     "Normal lip line."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "ceph",
+    [
+     "Sefalometrik radyografi",
+     "Lateral cephalogram"
+    ],
+    [
+     "ANB 5°, üst kesici retrüzyonu, düşük mandibular düzlem açısı.",
+     "ANB 5°, retroclined upper incisors and a low mandibular plane angle."
+    ],
+    1,
+    null
+   ],
+   [
+    "pano",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "Daimi dişler ve 18-28 germleri normal.",
+     "Permanent dentition and third molar buds normal."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Sınıf II bölüm 2 maloklüzyon ile derin kapanış",
+    "Class II division 2 malocclusion with deep overbite"
+   ],
+   [
+    "Sınıf II bölüm 1 maloklüzyon",
+    "Class II division 1 malocclusion"
+   ],
+   [
+    "Sınıf III maloklüzyon",
+    "Class III malocclusion"
+   ],
+   [
+    "Çapraz kapanış",
+    "Crossbite"
+   ]
+  ],
+  "tx": [
+   [
+    "Sabit apareylerle kesiciler hizalanıp ön diş eğimi düzeltilerek, kapanış aralanarak (leveling) tedavi",
+    "Fixed appliances to correct incisor inclination, level the curve of Spee and open the bite"
+   ],
+   [
+    "Dişleri çekip hiçbir işlem yapmamak",
+    "Extract teeth without further treatment"
+   ],
+   [
+    "Hemen ortognatik cerrahi",
+    "Orthognathic surgery now"
+   ],
+   [
+    "Sadece izlem",
+    "Observation only"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-class2-div1",
+  "topic": "orthodontics",
+  "d": "moderate",
+  "title": [
+   "Öne Çıkık Üst Dişler",
+   "The Prominent Upper Teeth"
+  ],
+  "cc": [
+   "11 yaşındaki erkek çocuğun üst ön dişleri belirgin öne çıkık ve alay konusu olmaktan çekiniyor.",
+   "An 11-year-old boy has markedly protruding upper front teeth and gets teased about them."
+  ],
+  "pt": [
+   "Burak H.",
+   11,
+   "m",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "anxious"
+  ],
+  "hx": [
+   [
+    "tease",
+    [
+     "Alay/psikososyal",
+     "Teasing/psychosocial"
+    ],
+    "alay|arkadaş|utan|tease|friend|embarrass|bully",
+    [
+     "Okulda dişlerim yüzünden dalga geçiyorlar.",
+     "At school they make fun of my teeth."
+    ],
+    0
+   ],
+   [
+    "trauma",
+    [
+     "Diş travması",
+     "Dental trauma"
+    ],
+    "düş|kır|çarp|spor|fall|break|knock|sport|trauma",
+    [
+     "Geçen yıl bisikletten düşünce bir dişimin ucu kırıldı.",
+     "I chipped a front tooth falling off my bike last year."
+    ],
+    1
+   ],
+   [
+    "lips",
+    [
+     "Dudak kapama",
+     "Lip closure"
+    ],
+    "dudak|kapat|ağız|lip|close|mouth",
+    [
+     "Ağzımı rahat kapatamıyorum, dudağım dişlerime sıkışıyor.",
+     "I can't close my lips easily; my lip gets caught behind my teeth."
+    ],
+    0
+   ],
+   [
+    "habit",
+    [
+     "Alışkanlıklar",
+     "Habits"
+    ],
+    "emme|parmak|alt dudak|suck|thumb|lip habit",
+    [
+     "Alt dudağımı emerim.",
+     "I suck my bottom lip."
+    ],
+    0
+   ],
+   [
+    "growth",
+    [
+     "Büyüme durumu",
+     "Growth"
+    ],
+    "boy|uzam|ses|grow|height|voice|puberty",
+    [
+     "Son altı ayda çok uzadım, sesim değişiyor.",
+     "I've grown a lot in six months and my voice is changing."
+    ],
+    1
+   ],
+   [
+    "tmj",
+    [
+     "Çene ağrısı",
+     "Jaw pain"
+    ],
+    "çene|klik|ağrı|jaw|click|pain",
+    [
+     "Çene ağrım yok.",
+     "No jaw pain."
+    ],
+    0
+   ],
+   [
+    "family",
+    [
+     "Ailede benzer",
+     "Family"
+    ],
+    "aile|baba|anne|family|father|mother",
+    [
+     "Babamın üst dişleri de çıkıkmış.",
+     "My dad's top teeth stick out too."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "overjet",
+    [
+     "Overjet",
+     "Overjet"
+    ],
+    [
+     "Overjet 9 mm; üst kesiciler protrüze, 11'in ucunda hafif mine kırığı.",
+     "Overjet 9 mm; upper incisors proclined; minor enamel chip on 11."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "molar",
+    [
+     "Molar ilişkisi",
+     "Molar relationship"
+    ],
+    [
+     "Tam kuspal Sınıf II molar ve kanin ilişkisi.",
+     "Full-cusp Class II molar and canine relationship."
+    ],
+    16,
+    1,
+    0
+   ],
+   [
+    "profile",
+    [
+     "Yüz profili",
+     "Facial profile"
+    ],
+    [
+     "Konveks profil, retrüzyonlu çene, inkompetan dudaklar.",
+     "Convex profile, retrognathic mandible, incompetent lips."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "overbite",
+    [
+     "Overbite",
+     "Overbite"
+    ],
+    [
+     "Overbite %50, hafif sıkışıklık.",
+     "Overbite 50%, mild crowding."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "growthstage",
+    [
+     "Büyüme evresi (el-bilek/servikal)",
+     "Growth stage (hand-wrist/cervical)"
+    ],
+    [
+     "Pubertal büyüme atılımı öncesi/ başlangıcında (CVM 2).",
+     "Just before/at onset of the pubertal growth spurt (CS2)."
+    ],
+    null,
+    1,
+    1
+   ]
+  ],
+  "ts": [
+   [
+    "ceph",
+    [
+     "Sefalometrik radyografi",
+     "Lateral cephalogram"
+    ],
+    [
+     "ANB 7°, mandibular retrognati, üst kesici proklinasyonu.",
+     "ANB 7°, mandibular retrusion, proclined upper incisors."
+    ],
+    1,
+    null
+   ],
+   [
+    "pano",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "Tüm daimi dişler mevcut, kanin germleri normal pozisyonda.",
+     "All permanent teeth present; canine germs in normal position."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Sınıf II bölüm 1 maloklüzyon (mandibular retrognati ve artmış overjet)",
+    "Class II division 1 malocclusion (mandibular retrognathia with increased overjet)"
+   ],
+   [
+    "Sınıf II bölüm 2 maloklüzyon",
+    "Class II division 2 malocclusion"
+   ],
+   [
+    "Sınıf III maloklüzyon",
+    "Class III malocclusion"
+   ],
+   [
+    "Çift dentoalveoler protrüzyon",
+    "Bimaxillary dentoalveolar protrusion"
+   ]
+  ],
+  "tx": [
+   [
+    "Büyüme atılımına denk gelen fonksiyonel apareyle (ör. twin-block) tedavi ve ardından sabit apareylerle finish",
+    "Functional appliance (e.g. twin block) timed with the pubertal growth spurt followed by fixed appliances"
+   ],
+   [
+    "18 yaşına kadar hiçbir şey yapmadan izlem",
+    "Observe untreated until 18"
+   ],
+   [
+    "Hemen dört premolar çekimi",
+    "Immediate extraction of four premolars"
+   ],
+   [
+    "Bimaksiller ortognatik cerrahi",
+    "Bimaxillary orthognathic surgery now"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-xbite-functional",
+  "topic": "orthodontics",
+  "d": "moderate",
+  "title": [
+   "Kapatırken Kayan Çene",
+   "The Jaw That Slides Shut"
+  ],
+  "cc": [
+   "7 yaşındaki çocuğun ağzını kapatırken çenesi sağa kayıyor ve sağ arka dişleri çapraz kapanıyor.",
+   "A 7-year-old's jaw slides to the right as he closes and his right back teeth bite crossed."
+  ],
+  "pt": [
+   "Yiğit C.",
+   7,
+   "m",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "slide",
+    [
+     "Çene kayması",
+     "Jaw shift"
+    ],
+    "kay|çene|sağ|sola|shift|jaw|slide",
+    [
+     "Ağzımı kapatırken çenem bir yana kayıyor.",
+     "My jaw goes to one side when I close."
+    ],
+    0
+   ],
+   [
+    "suck",
+    [
+     "Emme alışkanlığı",
+     "Sucking habit"
+    ],
+    "emzik|parmak|pacifier|thumb|suck",
+    [
+     "Dört yaşıma kadar emzik kullandım.",
+     "I used a dummy until I was four."
+    ],
+    0
+   ],
+   [
+    "breath",
+    [
+     "Burun tıkanıklığı/ağızdan nefes",
+     "Nasal obstruction/mouth breathing"
+    ],
+    "burun|horlam|ağız|nefes|nose|snor|mouth|breath",
+    [
+     "Uyurken ağzım açık oluyor ve horluyorum.",
+     "I sleep with my mouth open and snore."
+    ],
+    0
+   ],
+   [
+    "chew",
+    [
+     "Çiğneme",
+     "Chewing"
+    ],
+    "çiğne|yemek|chew|eating",
+    [
+     "Hep sağ tarafımla çiğniyorum.",
+     "I always chew on my right."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|pain|hurt",
+    [
+     "Ağrım yok.",
+     "No pain."
+    ],
+    0
+   ],
+   [
+    "tmj",
+    [
+     "Çene eklem sesi",
+     "Jaw joint noise"
+    ],
+    "klik|ses|çene|click|noise|joint",
+    [
+     "Ses yok.",
+     "No noises."
+    ],
+    1
+   ],
+   [
+    "tonsil",
+    [
+     "Bademcik/geçmiş",
+     "Tonsils/history"
+    ],
+    "bademcik|alerji|ameliyat|tonsil|allerg|surgery|adenoid",
+    [
+     "Sık sık nezle oluyorum.",
+     "I get colds a lot."
+    ],
+    1
+   ]
+  ],
+  "ex": [
+   [
+    "maxilla",
+    [
+     "Üst çene darlığı",
+     "Maxillary width"
+    ],
+    [
+     "Üst arkta daralma; sağ 55 ve 16 alt dişlerin dışında kapanıyor.",
+     "Narrow upper arch; right posterior teeth bite crossed over the lower."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "midline",
+    [
+     "Orta hat ve kapanış kayması",
+     "Midline and closure path"
+    ],
+    [
+     "İlk temasta (CR) orta hat uyumlu, sonra mandibula 2-3 mm sağa kayıyor (fonksiyonel kayma).",
+     "Midlines coincide at first contact, then the mandible shifts 2-3 mm to the right (functional shift)."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "occl",
+    [
+     "Oklüzyon",
+     "Occlusion"
+    ],
+    [
+     "Karma dişlenme; kesiciler Sınıf I.",
+     "Mixed dentition, incisors Class I."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "airway",
+    [
+     "Hava yolu/tonsiller",
+     "Airway/tonsils"
+    ],
+    [
+     "Hafif adenotonsiller hipertrofi.",
+     "Mild adenotonsillar hypertrophy."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "tmj",
+    [
+     "TME",
+     "TMJ"
+    ],
+    [
+     "Normal.",
+     "Normal."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Posteroanterior sefalogram / model",
+     "PA cephalogram / models"
+    ],
+    [
+     "Üst intermolar genişlik alt arka göre 4 mm dar.",
+     "Maxillary intermolar width 4 mm narrower than the lower."
+    ],
+    1,
+    null
+   ],
+   [
+    "pano",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "Daimi diş germleri normal.",
+     "Normal permanent germs."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Maksiller darlığa bağlı tek taraflı posterior çapraz kapanış ve fonksiyonel mandibular kayma",
+    "Unilateral posterior crossbite with functional mandibular shift due to maxillary constriction"
+   ],
+   [
+    "Sınıf III iskeletal maloklüzyon",
+    "Class III skeletal malocclusion"
+   ],
+   [
+    "Gerçek iskeletal asimetri",
+    "True skeletal asymmetry"
+   ],
+   [
+    "Kondiler hiperplazi",
+    "Condylar hyperplasia"
+   ]
+  ],
+  "tx": [
+   [
+    "Erken dönemde maksiller ekspansiyon (hızlı genişletme veya quad helix) ve adenotonsiller değerlendirme için KBB sevki",
+    "Early maxillary expansion (rapid expander or quad helix) and ENT referral for adenotonsillar assessment"
+   ],
+   [
+    "Çocuğun büyümesini bekleyip müdahale etmemek",
+    "Wait for growth without action"
+   ],
+   [
+    "Ortognatik cerrahi",
+    "Orthognathic surgery"
+   ],
+   [
+    "Alt arkın genişletilmesi",
+    "Expansion of the lower arch only"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-crowding-serial",
+  "topic": "orthodontics",
+  "d": "moderate",
+  "title": [
+   "Çapraşık Alt Kesiciler",
+   "Crowded Lower Incisors"
+  ],
+  "cc": [
+   "8 yaşındaki kızın alt daimi kesicileri çapraşık çıkmış, anne seri çekim gerekip gerekmediğini soruyor.",
+   "An 8-year-old's lower permanent incisors came through crowded and her mother asks whether serial extraction is needed."
+  ],
+  "pt": [
+   "Zehra P.",
+   8,
+   "f",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "look",
+    [
+     "Annenin endişesi",
+     "Concern"
+    ],
+    "endişe|görün|çapraş|worry|concern|crowd|look",
+    [
+     "Alt ön dişlerim üst üste çıktı.",
+     "My bottom front teeth came through on top of each other."
+    ],
+    0
+   ],
+   [
+    "loss",
+    [
+     "Süt diş kayıpları",
+     "Early baby tooth loss"
+    ],
+    "süt|çekil|erken|düş|baby|lost|early|extract",
+    [
+     "Süt dişlerim zamanında döküldü, erken çekilen yok.",
+     "My baby teeth fell out on time, none removed early."
+    ],
+    0
+   ],
+   [
+    "family",
+    [
+     "Ailede çapraşıklık",
+     "Family crowding"
+    ],
+    "aile|anne|baba|family|mother|father|crowd",
+    [
+     "Annemin ve ablamın dişleri çapraşıktı.",
+     "My mum and sister had crowded teeth."
+    ],
+    0
+   ],
+   [
+    "habit",
+    [
+     "Alışkanlıklar",
+     "Habits"
+    ],
+    "emme|parmak|dil|suck|thumb|tongue",
+    [
+     "Parmak emmem yok.",
+     "No thumb sucking."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Ağrı/diş eti",
+     "Pain/gums"
+    ],
+    "ağrı|kanama|diş eti|pain|bleed|gum",
+    [
+     "Ağrı yok, fırçalarken biraz kanıyor.",
+     "No pain; they bleed a little on brushing."
+    ],
+    0
+   ],
+   [
+    "tmj",
+    [
+     "Çene eklemi",
+     "Jaw joint"
+    ],
+    "çene|klik|jaw|click",
+    [
+     "Sorunum yok.",
+     "No problems."
+    ],
+    1
+   ],
+   [
+    "health",
+    [
+     "Sağlık",
+     "Health"
+    ],
+    "hastalık|ilaç|alerji|disease|medicine|allerg",
+    [
+     "Hastalığım yok.",
+     "I'm healthy."
+    ],
+    1
+   ]
+  ],
+  "ex": [
+   [
+    "incisors",
+    [
+     "Alt kesiciler",
+     "Lower incisors"
+    ],
+    [
+     "41-31 arası rotasyon ve lingualde yer alan 32, 42; yaklaşık 5 mm yer darlığı.",
+     "Rotated incisors with 32 and 42 lingually placed; approximately 5 mm of crowding."
+    ],
+    31,
+    1,
+    0
+   ],
+   [
+    "molar",
+    [
+     "Molar ve kanin ilişkisi",
+     "Molar and canine relationship"
+    ],
+    [
+     "Sınıf I molar ilişkisi.",
+     "Class I molar relationship."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "profile",
+    [
+     "Profil",
+     "Profile"
+    ],
+    [
+     "Düz profil, dudaklar kompetan.",
+     "Straight profile, competent lips."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "gingiva",
+    [
+     "Periodontal durum",
+     "Periodontal status"
+    ],
+    [
+     "Alt kesicilerde ince biyotip, hafif gingivit; çekilme yok.",
+     "Thin biotype in lower incisors, mild gingivitis; no recession."
+    ],
+    31,
+    1,
+    1
+   ],
+   [
+    "overbite",
+    [
+     "Overjet/overbite",
+     "Overjet/overbite"
+    ],
+    [
+     "Normal.",
+     "Normal."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pano",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "Tüm daimi diş germleri mevcut, süt kaninlerin kök rezorpsiyonu başlıyor.",
+     "All permanent germs present; resorption of the primary canines beginning."
+    ],
+    1,
+    null
+   ],
+   [
+    "ceph",
+    [
+     "Sefalometrik radyografi",
+     "Lateral cephalogram"
+    ],
+    [
+     "İskeletal Sınıf I, normal vertikal ilişki.",
+     "Skeletal Class I, normal vertical relationship."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Sınıf I dentoalveoler yer darlığı ile hafif-orta alt çapraşıklık (kalıtımsal)",
+    "Class I dento-alveolar crowding (mild to moderate, inherited)"
+   ],
+   [
+    "Sınıf II bölüm 1 maloklüzyon",
+    "Class II division 1 malocclusion"
+   ],
+   [
+    "Doğuştan eksik daimi dişler",
+    "Congenitally missing permanent teeth"
+   ],
+   [
+    "Dil itimine bağlı çapraşıklık",
+    "Tongue-thrust crowding"
+   ]
+  ],
+  "tx": [
+   [
+    "Gelişimi izlemek, lingual holding arch ile leeway space'i korumak ve karma dişlenme sonu değerlendirip gerekirse premolar çekimi planlamak",
+    "Monitor, preserve leeway space with a lingual holding arch, and decide on premolar extractions at the late mixed dentition"
+   ],
+   [
+    "Hemen dört premolar çekimi",
+    "Immediately extract four premolars"
+   ],
+   [
+    "Süt kaninleri çekip hiç izlememek",
+    "Extract primary canines and not review"
+   ],
+   [
+    "Hiç izlem yapmamak",
+    "No follow-up"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-pseudo-class3",
+  "topic": "orthodontics",
+  "d": "hard",
+  "title": [
+   "Öne Kayan Çene",
+   "The Jaw That Slips Forward"
+  ],
+  "cc": [
+   "9 yaşındaki çocuğun üst ön dişleri alt dişlerin gerisinde kalıyor, ağzını kapatınca çenesi öne kayıyor.",
+   "A 9-year-old's upper front teeth bite behind the lowers and his jaw slips forward when he closes."
+  ],
+  "pt": [
+   "Tarık L.",
+   9,
+   "m",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "bite",
+    [
+     "Isırma şekli",
+     "Bite"
+    ],
+    "ısır|kapan|çene|bite|close|jaw",
+    [
+     "Isırırken alt çenemi öne itiyorum.",
+     "I push my bottom jaw forward when I bite."
+    ],
+    1
+   ],
+   [
+    "family",
+    [
+     "Ailede Sınıf III",
+     "Family Class III"
+    ],
+    "aile|baba|dede|çene|family|father|grandfather|jaw",
+    [
+     "Babamın ve dedemin çeneleri öne çıkıkmış.",
+     "My dad and grandad have jutting chins."
+    ],
+    0
+   ],
+   [
+    "when",
+    [
+     "Ne zaman fark edildi",
+     "When noticed"
+    ],
+    "ne zaman|fark|dönem|when|notice|since",
+    [
+     "Üst ön dişlerim yeni çıkarken ters oldu.",
+     "My top front teeth came in the wrong way."
+    ],
+    0
+   ],
+   [
+    "early",
+    [
+     "Süt dişlerin kaybı",
+     "Early loss"
+    ],
+    "süt|dökül|erken|baby|lost|early",
+    [
+     "Süt dişlerim zamanında döküldü.",
+     "My baby teeth fell out on time."
+    ],
+    0
+   ],
+   [
+    "tonsil",
+    [
+     "Bademcik/ağızdan nefes",
+     "Tonsils/mouth breathing"
+    ],
+    "bademcik|nefes|burun|tonsil|breath|nose",
+    [
+     "Bazen ağzımdan nefes alıyorum.",
+     "I sometimes breathe through my mouth."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Çene eklemi ağrısı",
+     "Jaw joint pain"
+    ],
+    "ağrı|klik|çene|pain|click|joint",
+    [
+     "Ağrı yok.",
+     "No pain."
+    ],
+    1
+   ],
+   [
+    "chew",
+    [
+     "Çiğneme zorluğu",
+     "Chewing difficulty"
+    ],
+    "çiğne|yemek|chew|eat",
+    [
+     "Isırmakta zorlanmıyorum.",
+     "I don't struggle to chew."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "incisors",
+    [
+     "Kesici ilişkisi",
+     "Incisor relationship"
+    ],
+    [
+     "21 palatinalde kalmış, anterior çapraz kapanış (overjet -2 mm).",
+     "Upper incisors palatally positioned, anterior crossbite (overjet -2 mm)."
+    ],
+    21,
+    1,
+    0
+   ],
+   [
+    "shift",
+    [
+     "Santrik ilişkide kapanış",
+     "Closure from retruded contact position"
+    ],
+    [
+     "Geriye yönlendirildiğinde kesiciler uç uca; öne mandibular kayma (3 mm).",
+     "Incisors reach edge-to-edge when guided back; 3 mm anterior mandibular shift."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "profile",
+    [
+     "Yüz profili",
+     "Facial profile"
+    ],
+    [
+     "Profil hafif düz, çene sertçe öne gelmiyor (Sınıf I iskeletsel eğilim).",
+     "Mildly straight profile; the chin is not strongly prominent (skeletal Class I tendency)."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "molar",
+    [
+     "Molar ilişkisi",
+     "Molar relationship"
+    ],
+    [
+     "Uç uca/ Sınıf I eğilimi (karma dişlenme).",
+     "Edge-to-edge/Class I tendency in mixed dentition."
+    ],
+    16,
+    1,
+    1
+   ],
+   [
+    "tmj",
+    [
+     "TME",
+     "TMJ"
+    ],
+    [
+     "Sorun yok.",
+     "Normal."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "ceph",
+    [
+     "Sefalometrik radyografi (santrik ilişkide)",
+     "Lateral cephalogram in retruded position"
+    ],
+    [
+     "SNA 81°, SNB 79°, ANB 2°; üst kesici retrüzyonu — gerçek iskeletsel Sınıf III yok.",
+     "SNA 81°, SNB 79°, ANB 2°; retroclined upper incisors, no true skeletal Class III."
+    ],
+    1,
+    null
+   ],
+   [
+    "pano",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "Daimi diş germleri normal.",
+     "Normal germ development."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Psödo Sınıf III (dişsel/fonksiyonel anterior çapraz kapanış)",
+    "Pseudo Class III (dental/functional anterior crossbite)"
+   ],
+   [
+    "Gerçek iskeletsel Sınıf III (mandibular prognati)",
+    "True skeletal Class III (mandibular prognathism)"
+   ],
+   [
+    "Maksiller hipoplazi",
+    "Maxillary hypoplasia"
+   ],
+   [
+    "Akromegali",
+    "Acromegaly"
+   ]
+  ],
+  "tx": [
+   [
+    "Anterior çapraz kapanışı erken dönemde aktif apareyle (ör. inklin düzlemi veya sabit/çıkarılabilir parmak yaylı apare) düzeltmek ve fonksiyonel kaymayı ortadan kaldırmak",
+    "Correct the anterior crossbite early with an active appliance (e.g. inclined plane or fixed/removable with finger springs) to eliminate the functional shift"
+   ],
+   [
+    "Maskeyle ortognatik cerrahi",
+    "Orthognathic surgery now"
+   ],
+   [
+    "Büyüme tamamlanana kadar tedavi etmemek",
+    "Delay treatment until growth is complete"
+   ],
+   [
+    "Alt kesicileri çekerek çapraz kapanışı gidermek",
+    "Extract lower incisors"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-impacted-canine",
+  "topic": "orthodontics",
+  "d": "hard",
+  "title": [
+   "Çıkmayan Kanin",
+   "The Canine That Won't Erupt"
+  ],
+  "cc": [
+   "11 yaşındaki kızın sol üst süt köpek dişi hâlâ yerinde ve kalıcı köpek dişi çıkmadı.",
+   "An 11-year-old girl still has her upper left baby canine and the permanent canine has not erupted."
+  ],
+  "pt": [
+   "Merve S.",
+   11,
+   "f",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "baby",
+    [
+     "Süt kanin durumu",
+     "Baby canine status"
+    ],
+    "süt|köpek|kanin|durum|baby|canine|primary",
+    [
+     "Sağ üstteki köpek dişim düştü ve yenisi çıktı, solda süt dişi duruyor.",
+     "My right top canine fell out and a new one came up; the left baby one is still there."
+    ],
+    1
+   ],
+   [
+    "lump",
+    [
+     "Damakta çıkıntı",
+     "Palatal bulge"
+    ],
+    "damak|şiş|çıkıntı|palate|lump|bulge|swell",
+    [
+     "Damağımda sol tarafta sert bir kabarıklık var.",
+     "I have a hard bump on the left side of my roof."
+    ],
+    1
+   ],
+   [
+    "pain",
+    [
+     "Ağrı",
+     "Pain"
+    ],
+    "ağrı|acı|pain|hurt",
+    [
+     "Ağrı yok.",
+     "No pain."
+    ],
+    0
+   ],
+   [
+    "lateral",
+    [
+     "Yan kesici durumu",
+     "Lateral incisor"
+    ],
+    "yan kesici|ön diş|kesici|lateral|incisor",
+    [
+     "Sol yan ön dişim biraz yana yatmış gibi.",
+     "My left side front tooth seems tilted."
+    ],
+    0
+   ],
+   [
+    "family",
+    [
+     "Ailede çıkmayan diş",
+     "Family history"
+    ],
+    "aile|kardeş|anne|family|sibling|mother",
+    [
+     "Annemin de bir köpek dişi çıkmamış.",
+     "Mum's canine didn't come through either."
+    ],
+    1
+   ],
+   [
+    "trauma",
+    [
+     "Travma",
+     "Trauma"
+    ],
+    "düş|çarp|travma|fall|hit|trauma",
+    [
+     "Travma yok.",
+     "No injuries."
+    ],
+    0
+   ],
+   [
+    "ortho",
+    [
+     "Ortodontik geçmiş",
+     "Orthodontic history"
+    ],
+    "tedavi|tel|ortodonti|treatment|braces|orthodont",
+    [
+     "Daha önce tel takılmadı.",
+     "I haven't had braces."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "primary",
+    [
+     "Süt kanin 63",
+     "Primary canine 63"
+    ],
+    [
+     "63 kalmış, hafif mobil değil; 23 bukkal sulkusta palpe edilmiyor.",
+     "Primary canine 63 retained and firm; permanent 23 not palpable in the buccal sulcus."
+    ],
+    23,
+    1,
+    0
+   ],
+   [
+    "palatal",
+    [
+     "Damak palpasyonu",
+     "Palatal palpation"
+    ],
+    [
+     "Sol damakta sert palatal kabarıklık (23 kronu).",
+     "Hard palatal bulge on the left (crown of 23)."
+    ],
+    23,
+    1,
+    0
+   ],
+   [
+    "lateral",
+    [
+     "Yan kesici 22",
+     "Lateral incisor 22"
+    ],
+    [
+     "22 distal eğimli, mobil değil, vital.",
+     "22 distally tilted, not mobile, vital."
+    ],
+    22,
+    1,
+    0
+   ],
+   [
+    "right",
+    [
+     "Karşı taraf kaninleri",
+     "Contralateral canine"
+    ],
+    [
+     "13 normal sürmüş.",
+     "13 erupted normally."
+    ],
+    13,
+    1,
+    1
+   ],
+   [
+    "gingiva",
+    [
+     "Dişeti/enfeksiyon",
+     "Gingiva/infection"
+    ],
+    [
+     "Enfeksiyon yok.",
+     "No infection."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pano",
+    [
+     "Panoramik + paralaks (tüp kaydırma) görüntüleri",
+     "Panoramic with parallax (tube-shift) views"
+    ],
+    [
+     "23 kaninin palatinal yerleşimi (SLOB kuralı), yan kesici kökünde hafif temas; belirgin rezorpsiyon yok.",
+     "Canine 23 palatally positioned by parallax (SLOB rule), contacting the lateral incisor root; no obvious resorption."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "23 kronu 22'nin kökü hizasında, rezorpsiyon şüphesi yok.",
+     "Crown of 23 at the level of the 22 root; no suspected resorption."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "23'ün palatinal impaksiyonu ve 63'ün retansiyonu",
+    "Palatally impacted 23 with retained 63"
+   ],
+   [
+    "23'ün yokluğu (agenezi)",
+    "Congenital absence of 23"
+   ],
+   [
+    "Odontoma",
+    "Odontoma"
+   ],
+   [
+    "Dentigeröz kist",
+    "Dentigerous cyst"
+   ]
+  ],
+  "tx": [
+   [
+    "Süt kanin 63'ü çekmek (interseptif), 6-12 ay izlemek; hâlâ sürmezse cerrahi açma ve ortodontik traksiyon",
+    "Extract 63 (interceptive), monitor 6-12 months; if 23 fails to erupt, surgical exposure and orthodontic traction"
+   ],
+   [
+    "23'ü hemen çekmek",
+    "Remove 23 immediately"
+   ],
+   [
+    "Hiçbir müdahale olmadan izlem",
+    "Observe without any intervention"
+   ],
+   [
+    "Yan kesici 22'yi çekip köpek yerine kullanmak",
+    "Extract 22 and use it in place of the canine"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-gummy-smile",
+  "topic": "orthodontics",
+  "d": "moderate",
+  "title": [
+   "Fazla Görünen Diş Eti",
+   "Too Much Gum"
+  ],
+  "cc": [
+   "20 yaşındaki genç kadın gülerken dişlerinin kısa ve diş etinin çok göründüğünü söylüyor.",
+   "A 20-year-old woman says her teeth look short and a lot of gum shows when she smiles."
+  ],
+  "pt": [
+   "Ceren A.",
+   20,
+   "f",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "anxious"
+  ],
+  "hx": [
+   [
+    "smile",
+    [
+     "Gülüş şikâyeti",
+     "Smile concern"
+    ],
+    "gül|diş eti|görün|kısa|smile|gum|show|short",
+    [
+     "Gülünce diş etim çok görünüyor, dişlerim kısa duruyor.",
+     "When I smile a lot of gum shows and my teeth look short."
+    ],
+    0
+   ],
+   [
+    "since",
+    [
+     "Ne zamandan beri",
+     "Since when"
+    ],
+    "ne zaman|hep|çocukluk|when|always|since",
+    [
+     "Hep böyleydi, gençlikten beri.",
+     "It's always been like that since my teens."
+    ],
+    0
+   ],
+   [
+    "fam",
+    [
+     "Ailede",
+     "Family"
+    ],
+    "aile|anne|family|mother",
+    [
+     "Annem de gülünce diş etini gösterir.",
+     "Mum shows her gums too."
+    ],
+    0
+   ],
+   [
+    "pain",
+    [
+     "Ağrı/kanama",
+     "Pain/bleeding"
+    ],
+    "ağrı|kanama|pain|bleed",
+    [
+     "Ağrı yok, fırçalarken biraz kanıyor.",
+     "No pain; slight bleeding when brushing."
+    ],
+    0
+   ],
+   [
+    "med",
+    [
+     "İlaç/büyüme",
+     "Medication/overgrowth"
+    ],
+    "ilaç|kullan|medicine|drug|medication",
+    [
+     "İlaç kullanmıyorum.",
+     "I take no medication."
+    ],
+    1
+   ],
+   [
+    "lip",
+    [
+     "Dudak hareketi",
+     "Lip movement"
+    ],
+    "dudak|hareket|lip|move|lift",
+    [
+     "Gülerken üst dudağım çok yukarı çıkıyor sanırım.",
+     "My upper lip seems to lift quite high when I smile."
+    ],
+    0
+   ],
+   [
+    "surg",
+    [
+     "Önceki tedavi",
+     "Previous treatment"
+    ],
+    "tedavi|ameliyat|tel|treatment|surgery|braces",
+    [
+     "Daha önce tedavi görmedim.",
+     "No treatment before."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "display",
+    [
+     "Gülüşte diş eti gösterimi",
+     "Gingival display on smile"
+    ],
+    [
+     "Gülerken üst kesiciler çevresinde 4-5 mm diş eti.",
+     "4-5 mm of gingival display around the upper incisors on smile."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "crown",
+    [
+     "Klinik kron boyu",
+     "Clinical crown length"
+    ],
+    [
+     "11 klinik kron 7 mm (kısa), mine-sement sınırı diş eti altında.",
+     "11 clinical crown 7 mm (short), CEJ not visible under the gingiva."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "lip",
+    [
+     "Üst dudak uzunluğu/mobilitesi",
+     "Upper lip length/mobility"
+    ],
+    [
+     "Dudak uzunluğu 22 mm normal, hareketlilik normal.",
+     "Normal lip length (22 mm) and normal mobility."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "probe",
+    [
+     "Sondalama (kemik sondalama)",
+     "Bone sounding"
+    ],
+    [
+     "Sulkus 4 mm; kemik kreti CEJ'e 1 mm, cep yok.",
+     "Sulcus 4 mm; bone crest 1 mm from the CEJ."
+    ],
+    11,
+    1,
+    1
+   ],
+   [
+    "face",
+    [
+     "Dikey yüz oranları",
+     "Vertical facial proportions"
+    ],
+    [
+     "Alt yüz yüksekliği normal.",
+     "Normal lower face height."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "ceph",
+    [
+     "Sefalometrik radyografi",
+     "Lateral cephalogram"
+    ],
+    [
+     "Maksiller dikey fazlalık yok; alt yüz yüksekliği normal.",
+     "No vertical maxillary excess; lower face height normal."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "Kemik kreti CEJ'e yakın (1-2 mm).",
+     "Bone crest 1–2 mm from the CEJ."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Değişmiş pasif sürme (altered passive eruption) ile gummy smile",
+    "Gummy smile due to altered passive eruption"
+   ],
+   [
+    "Vertikal maksiller fazlalık",
+    "Vertical maxillary excess"
+   ],
+   [
+    "İlaç kaynaklı gingival büyüme",
+    "Drug-induced gingival overgrowth"
+   ],
+   [
+    "Hipermobil üst dudak",
+    "Hypermobile upper lip"
+   ]
+  ],
+  "tx": [
+   [
+    "Periodontal estetik kron uzatma (gingivektomi ± kemik rekonturu) ve ardından değerlendirme",
+    "Aesthetic periodontal crown lengthening (gingivectomy with or without osseous recontouring)"
+   ],
+   [
+    "Le Fort I ortognatik cerrahi",
+    "Le Fort I osteotomy"
+   ],
+   [
+    "Botulinum toksini",
+    "Botulinum toxin injections"
+   ],
+   [
+    "Sabit ortodontik tedaviyle intrüzyon",
+    "Orthodontic intrusion of incisors"
+   ]
+  ]
+ },
+ {
+  "id": "ortho-adult-perio",
+  "topic": "orthodontics",
+  "d": "hard",
+  "title": [
+   "Aralanan Üst Dişler",
+   "Drifting Upper Teeth"
+  ],
+  "cc": [
+   "45 yaşındaki erkek hasta, üst ön dişlerinin öne açılıp aralandığından ve diş etlerinden kan geldiğinden yakınıyor.",
+   "A 45-year-old man says his upper front teeth are flaring forward and spacing, and his gums bleed."
+  ],
+  "pt": [
+   "Murat D.",
+   45,
+   "m",
+   [
+    "Ortodonti kliniği",
+    "Orthodontic clinic"
+   ],
+   "anxious"
+  ],
+  "hx": [
+   [
+    "drift",
+    [
+     "Dişlerin kayması",
+     "Tooth drifting"
+    ],
+    "kay|aralan|öne|açıl|drift|space|flare|move",
+    [
+     "Son iki yılda üst ön dişlerim öne ve aralara doğru gitti.",
+     "Over two years my upper front teeth have drifted forward and apart."
+    ],
+    1
+   ],
+   [
+    "bleed",
+    [
+     "Diş eti kanaması",
+     "Gum bleeding"
+    ],
+    "kan|diş eti|bleed|gum",
+    [
+     "Fırçalarken ve ısırırken kanıyor.",
+     "They bleed when I brush or bite."
+    ],
+    0
+   ],
+   [
+    "loose",
+    [
+     "Sallanma",
+     "Mobility"
+    ],
+    "sallan|oynak|loose|mobile|wobbl",
+    [
+     "Bazı dişlerim sallanıyor gibi.",
+     "A few of my teeth feel loose."
+    ],
+    1
+   ],
+   [
+    "smoke",
+    [
+     "Sigara",
+     "Smoking"
+    ],
+    "sigara|içiyor|smok|cigarette",
+    [
+     "Günde on dal sigara içerim.",
+     "I smoke about ten cigarettes a day."
+    ],
+    1
+   ],
+   [
+    "diabetes",
+    [
+     "Diyabet",
+     "Diabetes"
+    ],
+    "diyabet|şeker|kan|diabet|sugar",
+    [
+     "Şekerim yüksek çıkmıştı, takip etmiyorum.",
+     "My sugar tested high once; I haven't followed up."
+    ],
+    1
+   ],
+   [
+    "goal",
+    [
+     "Beklenti",
+     "Expectation"
+    ],
+    "istek|beklenti|neden|want|expect|goal|why",
+    [
+     "Dişlerimin tekrar düzgün görünmesini istiyorum.",
+     "I want my teeth to look straight again."
+    ],
+    0
+   ],
+   [
+    "hygiene",
+    [
+     "Hijyen",
+     "Hygiene"
+    ],
+    "fırça|ip|temizl|brush|floss|clean",
+    [
+     "Günde bir kez fırçalarım.",
+     "I brush once a day."
+    ],
+    0
+   ]
+  ],
+  "ex": [
+   [
+    "flaring",
+    [
+     "Üst kesicilerin proklinasyonu",
+     "Upper incisor flaring"
+    ],
+    [
+     "11, 12, 21, 22'de diastema ve proklinasyon; patolojik diş migrasyonu.",
+     "Proclination and diastemas of 11, 12, 21, 22 consistent with pathological tooth migration."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "probe",
+    [
+     "Periodontal sondalama",
+     "Periodontal probing"
+    ],
+    [
+     "Anterior bölgede 6-8 mm cep, yaygın kanama.",
+     "6-8 mm pockets in the anterior region with generalised bleeding."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "mobility",
+    [
+     "Mobilite",
+     "Mobility"
+    ],
+    [
+     "11 ve 21'de derece 1-2 mobilite.",
+     "Grade 1–2 mobility of 11 and 21."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "calc",
+    [
+     "Diş taşı ve plak",
+     "Calculus and plaque"
+    ],
+    [
+     "Yaygın subgingival diş taşı.",
+     "Generalised subgingival calculus."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "occl",
+    [
+     "Oklüzyon",
+     "Occlusion"
+    ],
+    [
+     "Travmatik oklüzyon izleri yok.",
+     "No obvious occlusal trauma."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pano",
+    [
+     "Panoramik + periapikal seri",
+     "Panoramic + periapical series"
+    ],
+    [
+     "Anterior bölgede ve molarlarda horizontal kemik kaybı (%30-50).",
+     "Horizontal bone loss of 30–50% in anterior and molar regions."
+    ],
+    1,
+    "bone_loss"
+   ],
+   [
+    "hba1c",
+    [
+     "HbA1c / kan şekeri",
+     "HbA1c / blood glucose"
+    ],
+    [
+     "Yüksek; diyabet kontrolsüz.",
+     "Elevated; diabetes poorly controlled."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Periodontitise bağlı patolojik diş migrasyonu (Evre III periodontitis)",
+    "Pathological tooth migration due to stage III periodontitis"
+   ],
+   [
+    "Basit ortodontik relaps",
+    "Simple orthodontic relapse"
+   ],
+   [
+    "Dil itimi nedeniyle diş kayması",
+    "Tongue-thrust related drifting"
+   ],
+   [
+    "İlaç kaynaklı gingival büyüme",
+    "Drug-induced gingival enlargement"
+   ]
+  ],
+  "tx": [
+   [
+    "Önce periodontal tedavi ve sistemik kontrol (sigara bırakma, diyabet), enflamasyon kontrolünden sonra hafif kuvvetli ortodontik düzeltme ve uzun süreli retansiyon",
+    "Periodontal therapy first with systemic control (smoking cessation, diabetes); after inflammation is controlled, light-force orthodontic correction and lifelong retention"
+   ],
+   [
+    "Hemen sabit tel takmak",
+    "Place fixed appliances now"
+   ],
+   [
+    "Periodontal tedavisiz şeffaf plak",
+    "Aligners without periodontal treatment"
+   ],
+   [
+    "Üst kesicileri çekip protez yapmak",
+    "Extract upper incisors and replace with prosthesis"
+   ]
+  ]
+ }
+]

@@ -1,0 +1,3170 @@
+[
+ {
+  "id": "med-cx-warfarin-extraction",
+  "topic": "medically-complex",
+  "d": "easy",
+  "title": [
+   "Kan Sulandırıcılı Çekim",
+   "Extraction on Warfarin"
+  ],
+  "cc": [
+   "Sağ alt büyük azım kırıldı, çekilmesi gerekiyormuş.",
+   "My right lower molar broke and I was told it has to come out."
+  ],
+  "pt": [
+   "Hasan K.",
+   68,
+   "m",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|başla|kırıl|ağrı|when|start|broke|pain",
+    [
+     "Üç hafta önce sert bir şey çiğnerken kırıldı, ara sıra ağrıyor.",
+     "It broke three weeks ago on something hard, and it aches now and then."
+    ]
+   ],
+   [
+    "meds",
+    [
+     "Kullandığı ilaçlar",
+     "Medications"
+    ],
+    "ilaç|hap|tablet|kullan|medic|drug|pill|taking",
+    [
+     "Kalp ritmim için her akşam bir hap kullanıyorum, kanım sulanıyor diye doktorum söyledi.",
+     "I take one tablet every evening for my heart rhythm; my doctor says it thins my blood."
+    ],
+    1
+   ],
+   [
+    "inr",
+    [
+     "Kan testi (INR)",
+     "Blood test (INR)"
+    ],
+    "inr|kan testi|tahlil|ölçüm|kontrol|blood test|check|level",
+    [
+     "Ayda bir hastanede kanıma bakıyorlar, geçen hafta 'iyi' dediler.",
+     "They check my blood at the hospital monthly; last week they said it was fine."
+    ],
+    1
+   ],
+   [
+    "bleed",
+    [
+     "Kanama öyküsü",
+     "Bleeding history"
+    ],
+    "kanama|kanar|morar|bleed|bruis",
+    [
+     "Çene altında kolay morarma oluyor ama burun kanamam yok.",
+     "I bruise easily, but I don't have nosebleeds."
+    ]
+   ],
+   [
+    "aspirin",
+    [
+     "Aspirin / ağrı kesici",
+     "Aspirin / painkillers"
+    ],
+    "aspirin|ağrı kesici|ibuprofen|painkiller|nsaid",
+    [
+     "Ağrı için ara sıra aspirinli bir ağrı kesici içiyorum.",
+     "I sometimes take an aspirin-type painkiller for the pain."
+    ],
+    1
+   ],
+   [
+    "allergy",
+    [
+     "Alerji",
+     "Allergy"
+    ],
+    "alerji|allerj|allergy|allergic",
+    [
+     "İlaç alerjim yok.",
+     "I have no drug allergies."
+    ]
+   ],
+   [
+    "heart",
+    [
+     "Kalp öyküsü",
+     "Heart history"
+    ],
+    "kalp|damar|ameliyat|valf|heart|surgery|valve",
+    [
+     "Kalp ritmim düzensiz, ama kalp ameliyatı geçirmedim.",
+     "My heartbeat is irregular, but I've never had heart surgery."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "46 numaralı dişin tacı yok, sadece iki kök kalmış; çevre diş eti hafif kırmızı, irin yok.",
+     "Tooth 46 has lost its crown, only roots remain; the gum is slightly red with no pus."
+    ],
+    46,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Perküsyon hafif hassas.",
+     "Slightly tender to percussion."
+    ],
+    46,
+    1,
+    0
+   ],
+   [
+    "bleedsign",
+    [
+     "Mukoza ve kanama bulguları",
+     "Mucosal and bleeding signs"
+    ],
+    [
+     "Spontan gingival kanama veya peteşi yok.",
+     "No spontaneous gingival bleeding or petechiae."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "mobility",
+    [
+     "Mobilite",
+     "Mobility"
+    ],
+    [
+     "Kökler mobil değil.",
+     "Roots are not mobile."
+    ],
+    46,
+    0,
+    0
+   ],
+   [
+    "probe",
+    [
+     "Sondalama",
+     "Probing"
+    ],
+    [
+     "Genel sondalama 2-3 mm.",
+     "General probing 2-3 mm."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "inr",
+    [
+     "INR ölçümü (son 24 saat)",
+     "INR (within 24 h)"
+    ],
+    [
+     "INR 2,4 — hedef aralıkta, çekim için uygun.",
+     "INR 2.4 - within therapeutic range and acceptable for extraction."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "46'da restore edilemeyen kök artığı; çevre kemik normal.",
+     "Non-restorable root remnants of 46 with normal surrounding bone."
+    ],
+    1,
+    "retained_root"
+   ]
+  ],
+  "dx": [
+   [
+    "46 numaralı dişte restore edilemeyen kök artığı; antikoagülan kullanan hasta",
+    "Non-restorable root remnant of 46 in a patient on an anticoagulant"
+   ],
+   [
+    "Akut irreversibl pulpitis",
+    "Acute irreversible pulpitis"
+   ],
+   [
+    "Periodontal apse",
+    "Periodontal abscess"
+   ],
+   [
+    "Alveolar osteit",
+    "Alveolar osteitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Varfarini kesmeden, 24 saat içinde bakılan INR uygunsa atravmatik çekim ve lokal hemostaz (sütür, jelatin sünger, traneksamik asit gargarası)",
+    "Atraumatic extraction without stopping warfarin if INR checked within 24 h is in range, with local haemostasis (sutures, gelatin sponge, tranexamic acid mouthwash)"
+   ],
+   [
+    "Varfarini 5 gün önce kesip sonra çekmek",
+    "Stop warfarin 5 days beforehand, then extract"
+   ],
+   [
+    "INR bakmadan rutin çekim yapmak",
+    "Extract routinely without checking INR"
+   ],
+   [
+    "Çekim öncesi kalıcı olarak heparine geçirmek",
+    "Switch permanently to heparin before extraction"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-hypertension-elective",
+  "topic": "medically-complex",
+  "d": "easy",
+  "title": [
+   "Muayenehanede Yüksek Tansiyon",
+   "Sky-High Blood Pressure"
+  ],
+  "cc": [
+   "Ön dişimdeki küçük çürük için dolgu yaptırmak istiyorum.",
+   "I'd like a filling for a small cavity in a front tooth."
+  ],
+  "pt": [
+   "Mehmet T.",
+   58,
+   "m",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "neutral"
+  ],
+  "vit": [
+   "190/115",
+   84,
+   "36.7°C",
+   "98%"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Şikayet",
+     "Complaint"
+    ],
+    "ne zaman|ağrı|şikayet|when|pain|complaint",
+    [
+     "Ağrı yok, sadece diş çürüğünü fark ettim, acelesi yok.",
+     "No pain, I just noticed a cavity; it isn't urgent."
+    ]
+   ],
+   [
+    "bp",
+    [
+     "Tansiyon öyküsü",
+     "Blood pressure history"
+    ],
+    "tansiyon|hipertansiyon|blood pressure|hypertension",
+    [
+     "Yıllardır tansiyonum yüksektir.",
+     "My blood pressure has been high for years."
+    ],
+    1
+   ],
+   [
+    "meds",
+    [
+     "Tansiyon ilacı",
+     "BP medication"
+    ],
+    "ilaç|hap|tablet|kullan|medic|pill|taking",
+    [
+     "İlacım iki haftadır bitti, yenisini almadım.",
+     "I ran out of my tablets two weeks ago and haven't picked up more."
+    ],
+    1
+   ],
+   [
+    "sym",
+    [
+     "Baş ağrısı / göz",
+     "Headache / vision"
+    ],
+    "baş ağrı|baş dön|göz|görme|headache|dizz|vision",
+    [
+     "Sabahtan beri ensemde zonklayan bir ağrı var.",
+     "I've had a throbbing ache at the back of my head since this morning."
+    ],
+    1
+   ],
+   [
+    "chest",
+    [
+     "Göğüs ağrısı",
+     "Chest pain"
+    ],
+    "göğüs|nefes|chest|breath",
+    [
+     "Göğüs ağrım yok.",
+     "No chest pain."
+    ]
+   ],
+   [
+    "smoke",
+    [
+     "Sigara / kafein",
+     "Smoking / caffeine"
+    ],
+    "sigara|kahve|çay|smok|coffee|caffeine",
+    [
+     "Gün içinde çok çay ve kahve içerim, sigara da içiyorum.",
+     "I drink a lot of tea and coffee and I smoke."
+    ]
+   ],
+   [
+    "allergy",
+    [
+     "Alerji",
+     "Allergy"
+    ],
+    "alerji|allerj|allergy|allergic",
+    [
+     "Alerjim yok.",
+     "No allergies."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "bp",
+    [
+     "Tansiyon ölçümü",
+     "Blood pressure"
+    ],
+    [
+     "Ölçüm 190/115 mmHg.",
+     "Reading is 190/115 mmHg."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "11-21 arası ara yüzde küçük, yüzeyel çürük.",
+     "Small superficial interproximal caries between 11 and 21."
+    ],
+    11,
+    1,
+    0
+   ],
+   [
+    "pulse",
+    [
+     "Nabız",
+     "Pulse"
+    ],
+    [
+     "Nabız 84/dk, düzenli.",
+     "Pulse 84/min, regular."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Perküsyon negatif.",
+     "Percussion negative."
+    ],
+    11,
+    0,
+    0
+   ],
+   [
+    "probe",
+    [
+     "Sondalama",
+     "Probing"
+    ],
+    [
+     "Hafif gingivit, 2-3 mm.",
+     "Mild gingivitis, 2-3 mm."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "bprecheck",
+    [
+     "5 dakika dinlenme sonrası tansiyon tekrarı",
+     "BP recheck after 5 minutes rest"
+    ],
+    [
+     "188/114 mmHg — yüksek kalmaya devam ediyor.",
+     "188/114 mmHg - remains markedly elevated."
+    ],
+    1,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "Kontrolsüz hipertansiyon (190/115); elektif tedavi için kontrendike",
+    "Uncontrolled hypertension (190/115); elective treatment contraindicated"
+   ],
+   [
+    "Beyaz önlük hipertansiyonu",
+    "White-coat hypertension"
+   ],
+   [
+    "Derin dentin çürüğü, pulpitis",
+    "Deep dentine caries with pulpitis"
+   ],
+   [
+    "Dental anksiyete",
+    "Dental anxiety"
+   ]
+  ],
+  "tx": [
+   [
+    "Elektif dolguyu ertelemek, tansiyonu yeniden ölçmek ve aynı gün hekime yönlendirmek; kontrol altına alınınca randevu vermek",
+    "Defer the elective filling, recheck BP, refer to a physician the same day, and reschedule once controlled"
+   ],
+   [
+    "Adrenalinsiz anestezi ile dolguyu yapmak",
+    "Place the filling with epinephrine-free anaesthetic"
+   ],
+   [
+    "Sedasyon altında tedaviyi tamamlamak",
+    "Complete treatment under sedation"
+   ],
+   [
+    "Dil altına tansiyon ilacı verip devam etmek",
+    "Give a sublingual antihypertensive and continue"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-pregnancy-pulpitis",
+  "topic": "medically-complex",
+  "d": "easy",
+  "title": [
+   "Hamilelikte Diş Ağrısı",
+   "Toothache in Pregnancy"
+  ],
+  "cc": [
+   "Gece beni uyandıran şiddetli sol alt diş ağrım var, hamileyim.",
+   "A severe lower left toothache keeps waking me at night; I'm pregnant."
+  ],
+  "pt": [
+   "Elif D.",
+   29,
+   "f",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "pain"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|başla|kaç gün|when|start|how long",
+    [
+     "Beş gündür giderek artıyor.",
+     "It has been getting worse for five days."
+    ]
+   ],
+   [
+    "pain",
+    [
+     "Ağrı özelliği",
+     "Pain character"
+    ],
+    "gece|kendiliğinden|zonk|sıcak|soğuk|night|spontaneous|throb|hot|cold",
+    [
+     "Soğuktan sonra uzun süre geçmiyor, geceleri kendiliğinden başlıyor.",
+     "Cold sets it off and it lingers; at night it starts by itself."
+    ]
+   ],
+   [
+    "preg",
+    [
+     "Gebelik haftası",
+     "Pregnancy stage"
+    ],
+    "hamile|gebe|hafta|ay|pregnan|week|month|trimester",
+    [
+     "Yaklaşık 22 haftalık hamileyim, her şey yolunda gidiyor.",
+     "I'm about 22 weeks pregnant and all is going well."
+    ],
+    1
+   ],
+   [
+    "supine",
+    [
+     "Sırtüstü yatınca",
+     "Lying flat"
+    ],
+    "yat|baş dön|sırtüstü|lying|dizz|flat|faint",
+    [
+     "Düz yatınca başım dönüyor ve midem bulanıyor.",
+     "When I lie flat I get dizzy and queasy."
+    ],
+    1
+   ],
+   [
+    "meds",
+    [
+     "İlaçlar",
+     "Medications"
+    ],
+    "ilaç|vitamin|kullan|medic|vitamin|taking",
+    [
+     "Sadece doktorumun verdiği vitamin ve demir hapı.",
+     "Only the vitamins and iron my doctor gave me."
+    ]
+   ],
+   [
+    "allergy",
+    [
+     "Alerji",
+     "Allergy"
+    ],
+    "alerji|allerj|allergy|allergic",
+    [
+     "Penisilin ya da lokal anesteziye alerjim yok.",
+     "I'm not allergic to penicillin or numbing shots."
+    ]
+   ],
+   [
+    "sugar",
+    [
+     "Gebelik şekeri / tansiyon",
+     "Gestational diabetes / BP"
+    ],
+    "şeker|tansiyon|diyabet|sugar|diabet|pressure",
+    [
+     "Şekerim ve tansiyonum normal çıktı.",
+     "My sugar and blood pressure have been normal."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "36'da derin distal çürük; hafif gingivit, hamilelikle uyumlu.",
+     "Deep distal caries on 36; mild gingivitis consistent with pregnancy."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "cold",
+    [
+     "Soğuk testi",
+     "Cold test"
+    ],
+    [
+     "36'da şiddetli, 30 sn'den uzun süren yanıt.",
+     "Severe response on 36 lasting over 30 s."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Hafif hassas.",
+     "Mildly tender."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "palp",
+    [
+     "Palpasyon",
+     "Palpation"
+    ],
+    [
+     "Şişlik yok.",
+     "No swelling."
+    ],
+    36,
+    0,
+    0
+   ],
+   [
+    "bp",
+    [
+     "Tansiyon",
+     "Blood pressure"
+    ],
+    [
+     "Normal değerler.",
+     "Normal values."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi (kurşun önlük, minimal doz)",
+     "Periapical radiograph (shielded, minimal dose)"
+    ],
+    [
+     "36'da pulpaya ulaşan derin çürük, periapikal aralık hafif genişlemiş.",
+     "Deep caries reaching the pulp of 36 with slightly widened periapical space."
+    ],
+    1,
+    "deep_filling_pulp"
+   ]
+  ],
+  "dx": [
+   [
+    "36'da semptomatik geri dönüşümsüz pulpitis; gebeliğin ikinci trimesteri",
+    "Symptomatic irreversible pulpitis of 36 in the second trimester"
+   ],
+   [
+    "Gebelik gingiviti",
+    "Pregnancy gingivitis"
+   ],
+   [
+    "Geri dönüşümlü pulpitis",
+    "Reversible pulpitis"
+   ],
+   [
+    "Akut periodontal apse",
+    "Acute periodontal abscess"
+   ]
+  ],
+  "tx": [
+   [
+    "İkinci trimesterde acil pulpa tedavisini hemen yapmak: korumalı minimal doz radyografi, epinefrinli lidokain, sol yana eğik pozisyon",
+    "Treat now in the second trimester: shielded low-dose radiograph, lidocaine with epinephrine, semi-reclined left tilt"
+   ],
+   [
+    "Doğuma kadar ertelemek, ağrıyı beklemek",
+    "Postpone until after delivery"
+   ],
+   [
+    "Hiç radyografi ve anestezi kullanmadan işlem yapmak",
+    "Treat with no radiograph and no anaesthetic"
+   ],
+   [
+    "Tetrasiklin grubu antibiyotik başlayıp izlemek",
+    "Start a tetracycline and observe"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-prosthetic-hip-extraction",
+  "topic": "medically-complex",
+  "d": "easy",
+  "title": [
+   "Kalça Protezli Hasta",
+   "The Hip Replacement Patient"
+  ],
+  "cc": [
+   "Üst sağ küçük azımın kökü kalmış, çekilsin istiyorum.",
+   "The root of my upper right premolar is left; I want it taken out."
+  ],
+  "pt": [
+   "Zehra Y.",
+   70,
+   "f",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|ağrı|kırıl|when|pain|broke",
+    [
+     "Diş iki yıl önce kırıldı, ara sıra hassaslaşıyor.",
+     "The tooth broke two years ago and gets tender sometimes."
+    ]
+   ],
+   [
+    "joint",
+    [
+     "Eklem protezi",
+     "Joint replacement"
+    ],
+    "ameliyat|protez|kalça|diz|surgery|prosthe|hip|knee|replace",
+    [
+     "Üç yıl önce sağ kalçama protez takıldı, sorunsuz yürüyorum.",
+     "I had a right hip replacement three years ago and I walk fine."
+    ],
+    1
+   ],
+   [
+    "heart",
+    [
+     "Kalp kapağı / endokardit",
+     "Heart valve / endocarditis"
+    ],
+    "kalp|kapak|enfeksiyon|heart|valve|infection",
+    [
+     "Kalbimle ilgili hiçbir sorunum yok, kapak ameliyatı da geçirmedim.",
+     "I have no heart problems and no valve surgery."
+    ],
+    1
+   ],
+   [
+    "meds",
+    [
+     "İlaçlar",
+     "Medications"
+    ],
+    "ilaç|hap|kullan|medic|pill|taking",
+    [
+     "Tansiyon ilacı kullanıyorum, kan sulandırıcı yok.",
+     "I take a blood pressure tablet, no blood thinners."
+    ]
+   ],
+   [
+    "immune",
+    [
+     "Bağışıklık",
+     "Immunity"
+    ],
+    "romatizma|kortizon|bağışıklık|rheum|cortisone|steroid|immune",
+    [
+     "Romatizmam yok, kortizon almıyorum.",
+     "No rheumatism and I don't take cortisone."
+    ],
+    1
+   ],
+   [
+    "allergy",
+    [
+     "Alerji",
+     "Allergy"
+    ],
+    "alerji|allerj|allergy|allergic",
+    [
+     "Penisilin alerjim yok.",
+     "No penicillin allergy."
+    ]
+   ],
+   [
+    "clinic",
+    [
+     "Ortopedi uyarısı",
+     "Orthopaedic advice"
+    ],
+    "ortopedi|doktor|söyl|orthop|told|advice",
+    [
+     "Ortopedi doktorum dişte işlem için ayrı bir şey söylemedi.",
+     "My orthopaedic surgeon never gave me special instructions for dental work."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "14 numarada kök artığı, çevrede lokalize eritem, irin yok.",
+     "Root remnant of 14 with localised erythema and no pus."
+    ],
+    14,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Hafif hassas.",
+     "Slightly tender."
+    ],
+    14,
+    1,
+    0
+   ],
+   [
+    "sinus",
+    [
+     "Fistül / şişlik",
+     "Sinus tract / swelling"
+    ],
+    [
+     "Fistül veya yüzde şişlik yok.",
+     "No sinus tract or facial swelling."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "temp",
+    [
+     "Ateş",
+     "Temperature"
+    ],
+    [
+     "Ateş yok.",
+     "Afebrile."
+    ],
+    null,
+    0,
+    0
+   ],
+   [
+    "probe",
+    [
+     "Sondalama",
+     "Probing"
+    ],
+    [
+     "Genel 2-3 mm.",
+     "General 2-3 mm."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "14'te sağlam kök artığı; apikal lezyon yok.",
+     "Retained root of 14; no apical lesion."
+    ],
+    1,
+    "retained_root"
+   ]
+  ],
+  "dx": [
+   [
+    "14 numaralı dişte kök artığı; kalça protezi var, rutin antibiyotik profilaksisi gerekmiyor",
+    "Retained root of 14; hip replacement does not require routine antibiotic prophylaxis"
+   ],
+   [
+    "Kronik periodontitis",
+    "Chronic periodontitis"
+   ],
+   [
+    "Akut apikal apse",
+    "Acute apical abscess"
+   ],
+   [
+    "Perikoronit",
+    "Pericoronitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Antibiyotik profilaksisi vermeden rutin çekim; enfeksiyon belirtisi olursa tedavi etmek",
+    "Routine extraction without antibiotic prophylaxis; treat only if infection develops"
+   ],
+   [
+    "Çekimden bir saat önce amoksisilin profilaksisi",
+    "Amoxicillin prophylaxis one hour before extraction"
+   ],
+   [
+    "Profilaksi için klindamisin vermek",
+    "Give clindamycin prophylaxis"
+   ],
+   [
+    "Çekimi, protezin ikinci yılı dolana kadar reddetmek",
+    "Refuse extraction until two years after implant surgery"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-doac-extraction",
+  "topic": "medically-complex",
+  "d": "moderate",
+  "title": [
+   "Yeni Nesil Kan Sulandırıcı",
+   "A Newer Blood Thinner"
+  ],
+  "cc": [
+   "Sol alt büyük azım sallanıyor, çekilmesini istiyorum.",
+   "My lower left molar is wobbly and I want it out."
+  ],
+  "pt": [
+   "Ayşe B.",
+   74,
+   "f",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|sallan|ağrı|when|loose|wobbl|pain",
+    [
+     "Aylardır sallanıyordu, bu hafta yemek yerken çok rahatsız etti.",
+     "It has been loosening for months and this week it bothered me badly when eating."
+    ]
+   ],
+   [
+    "meds",
+    [
+     "İlaçlar",
+     "Medications"
+    ],
+    "ilaç|hap|tablet|kullan|medic|pill|taking",
+    [
+     "Kalp ritmi için günde iki kez bir hap alıyorum, kanı sulandırıyormuş.",
+     "I take a tablet twice a day for my heart rhythm; it thins the blood."
+    ],
+    1
+   ],
+   [
+    "lastdose",
+    [
+     "Son doz zamanı",
+     "Time of last dose"
+    ],
+    "son|ne zaman al|saat|last|when did you take|hour",
+    [
+     "Sabah 8'de ve akşam 8'de alıyorum, bu sabah da aldım.",
+     "I take it at 8 in the morning and 8 at night, and I took it this morning."
+    ],
+    1
+   ],
+   [
+    "kidney",
+    [
+     "Böbrek",
+     "Kidneys"
+    ],
+    "böbrek|kreatinin|kidney|renal|creatinine",
+    [
+     "Böbreklerim biraz yorgun, düzenli kontrole gidiyorum.",
+     "My kidneys are a bit weak and I go for regular checks."
+    ],
+    1
+   ],
+   [
+    "inr",
+    [
+     "Kan testi",
+     "Blood tests"
+    ],
+    "inr|kan testi|tahlil|blood test|monitor",
+    [
+     "Bu ilaç için kanıma sürekli bakmıyorlar.",
+     "They don't keep testing my blood for this one."
+    ]
+   ],
+   [
+    "aspirin",
+    [
+     "Aspirin",
+     "Aspirin"
+    ],
+    "aspirin|ağrı kesici|ibuprofen|painkiller|nsaid",
+    [
+     "Aspirin ya da başka ağrı kesici kullanmıyorum.",
+     "I don't take aspirin or other painkillers."
+    ]
+   ],
+   [
+    "bleed",
+    [
+     "Kanama öyküsü",
+     "Bleeding history"
+    ],
+    "kanama|kanar|bleed|stomach|mide",
+    [
+     "Daha önce ciddi kanamam olmadı.",
+     "I've never had a serious bleed."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "36'da ileri diş eti çekilmesi ve dişin hareketliliği; yaygın plak.",
+     "Advanced recession and mobility of 36; generalised plaque."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "mobility",
+    [
+     "Mobilite",
+     "Mobility"
+    ],
+    [
+     "36'da derece 3 mobilite.",
+     "Grade 3 mobility of 36."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "probe",
+    [
+     "Sondalama",
+     "Probing"
+    ],
+    [
+     "36'da 9 mm cep, süpürasyon var.",
+     "9 mm pocket on 36 with suppuration."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "bleedsign",
+    [
+     "Kanama bulguları",
+     "Bleeding signs"
+    ],
+    [
+     "Spontan mukozal kanama yok.",
+     "No spontaneous mucosal bleeding."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "lymph",
+    [
+     "Lenf nodları",
+     "Lymph nodes"
+    ],
+    [
+     "Palpe edilmiyor.",
+     "Not palpable."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "36'da ileri kemik kaybı, köklerin yarısından fazlası açıkta.",
+     "Advanced bone loss around 36 with over half of the roots exposed."
+    ],
+    1,
+    "bone_loss"
+   ],
+   [
+    "inr",
+    [
+     "INR",
+     "INR"
+    ],
+    [
+     "Bu ilacın etkisini güvenilir yansıtmaz; karar vermeye katkısı yok.",
+     "Does not reliably reflect this drug's effect; does not guide the decision."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "36'da prognozu umutsuz ileri periodontitis; DOAC kullanan hasta, ekstraksiyon gerekli",
+    "Hopeless 36 from advanced periodontitis in a patient on a DOAC; extraction required"
+   ],
+   [
+    "Akut apikal apse",
+    "Acute apical abscess"
+   ],
+   [
+    "Vertikal kök kırığı",
+    "Vertical root fracture"
+   ],
+   [
+    "Perikoronit",
+    "Pericoronitis"
+   ]
+  ],
+  "tx": [
+   [
+    "İlacı kesmeden atravmatik çekim, kan düzeyi düşükken ve sonraki doz kanama durduktan sonra olacak şekilde zamanlama, lokal hemostaz ve gerekirse hekimle iletişim",
+    "Atraumatic extraction without stopping the drug, timed away from the last dose with the next dose after haemostasis, local measures, and physician liaison if needed"
+   ],
+   [
+    "INR 2-3 olana kadar beklemek",
+    "Wait until INR reaches 2-3"
+   ],
+   [
+    "Çekim öncesi 5 gün ilacı kesmek",
+    "Stop the drug for 5 days before extraction"
+   ],
+   [
+    "Tüm kan sulandırıcıları durdurup heparin köprüsü kurmak",
+    "Stop all anticoagulants and bridge with heparin"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-oral-bisphosphonate",
+  "topic": "medically-complex",
+  "d": "moderate",
+  "title": [
+   "Osteoporoz İlacı ve Çekim",
+   "Osteoporosis Pill and Extraction"
+  ],
+  "cc": [
+   "Sağ alt arka dişim kırıldı, çekilsin istiyorum ama kemik ilacı kullandığım için korkuyorum.",
+   "My lower right back tooth broke; I need it out but I'm worried because of my bone pills."
+  ],
+  "pt": [
+   "Fatma S.",
+   72,
+   "f",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "anxious"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|ağrı|kırıl|when|pain|broke",
+    [
+     "Altı ay önce kırıldı, son zamanlarda dişeti şişiyor.",
+     "It broke six months ago and lately the gum swells."
+    ]
+   ],
+   [
+    "bone",
+    [
+     "Kemik ilacı",
+     "Bone medication"
+    ],
+    "kemik|osteoporoz|ilaç|bone|osteopor|medic|pill",
+    [
+     "Osteoporoz için haftada bir hap alıyorum.",
+     "I take one tablet a week for osteoporosis."
+    ],
+    1
+   ],
+   [
+    "years",
+    [
+     "Kullanım süresi",
+     "Duration of use"
+    ],
+    "kaç yıl|ne zamandır|süre|how long|years|since",
+    [
+     "Yaklaşık dört yıldır kullanıyorum.",
+     "I've been taking it for about four years."
+    ],
+    1
+   ],
+   [
+    "inject",
+    [
+     "İğne / damar yolu",
+     "Injection / infusion"
+    ],
+    "iğne|serum|damar|infusion|injection|iv|drip",
+    [
+     "Hayır, iğne ya da serum yoluyla almadım.",
+     "No, I've never had it as an injection or drip."
+    ]
+   ],
+   [
+    "steroid",
+    [
+     "Kortizon",
+     "Cortisone"
+    ],
+    "kortizon|steroid|cortisone",
+    [
+     "Kortizon kullanmıyorum.",
+     "I don't take cortisone."
+    ]
+   ],
+   [
+    "cancer",
+    [
+     "Kanser / ışın tedavisi",
+     "Cancer / radiotherapy"
+    ],
+    "kanser|ışın|radyoterapi|cancer|radiation|radiother",
+    [
+     "Hiç kanser ya da ışın tedavisi geçirmedim.",
+     "No cancer or radiation treatment ever."
+    ]
+   ],
+   [
+    "healing",
+    [
+     "Önceki çekimler",
+     "Previous extractions"
+    ],
+    "çekim|iyileş|önceki|extract|heal|previous",
+    [
+     "Üç yıl önce bir diş çektirdim, sorunsuz iyileşti.",
+     "I had a tooth out three years ago and it healed fine."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "47'de geniş çürük, restore edilemez; çevrede şişmiş dişeti, açık kemik yok.",
+     "47 has extensive caries and is non-restorable; swollen gum around it, no exposed bone."
+    ],
+    47,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Belirgin hassas.",
+     "Clearly tender."
+    ],
+    47,
+    1,
+    0
+   ],
+   [
+    "bone",
+    [
+     "Kemik açıklığı / fistül",
+     "Exposed bone / fistula"
+    ],
+    [
+     "Mukozada açıkta kemik yok.",
+     "No exposed bone in the mucosa."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "mobility",
+    [
+     "Mobilite",
+     "Mobility"
+    ],
+    [
+     "Derece 1.",
+     "Grade 1."
+    ],
+    47,
+    0,
+    0
+   ],
+   [
+    "lymph",
+    [
+     "Lenf nodları",
+     "Lymph nodes"
+    ],
+    [
+     "Palpe edilmiyor.",
+     "Not palpable."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "47'de çürük pulpaya ulaşmış, geniş periapikal radyolusensi.",
+     "Caries reaching the pulp of 47 with a large periapical radiolucency."
+    ],
+    1,
+    "periapical_lesion"
+   ],
+   [
+    "ctx",
+    [
+     "Serum CTX",
+     "Serum CTX"
+    ],
+    [
+     "Risk tahmininde güvenilir değil; kararı değiştirmez.",
+     "Not a reliable risk predictor; does not change management."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "47'de restore edilemez, periapikal lezyonlu diş; oral bifosfonat kullanıcısında düşük MRONJ riski",
+    "Non-restorable 47 with apical lesion in an oral bisphosphonate user (low MRONJ risk)"
+   ],
+   [
+    "MRONJ evre 2",
+    "MRONJ stage 2"
+   ],
+   [
+    "Osteoradyonekroz",
+    "Osteoradionecrosis"
+   ],
+   [
+    "Akut alveolar osteit",
+    "Acute alveolar osteitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Bilgilendirilmiş onamla atravmatik çekim, primer kapama ve yakın takip; rutin ilaç tatili gerekmez",
+    "Atraumatic extraction with informed consent of the small risk, primary closure and close follow-up; a routine drug holiday is not required"
+   ],
+   [
+    "Çekimi tamamen reddedip sadece antibiyotik vermek",
+    "Refuse extraction and give antibiotics only"
+   ],
+   [
+    "Çekimden üç ay önce bifosfonatı bırakmasını istemek",
+    "Ask the patient to stop the bisphosphonate three months beforehand"
+   ],
+   [
+    "Çekim sonrası uzun süreli profilaktik antibiyotik",
+    "Prolonged prophylactic antibiotics after extraction"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-diabetic-abscess",
+  "topic": "medically-complex",
+  "d": "moderate",
+  "title": [
+   "Diyabetli Hastada Şişlik",
+   "Swelling in a Diabetic"
+  ],
+  "cc": [
+   "Sağ alt çenemde şişlik ve zonklayan ağrı var, birkaç gündür yemek yiyemiyorum.",
+   "My lower right jaw is swollen and throbbing; I haven't been able to eat for days."
+  ],
+  "pt": [
+   "Kemal Ö.",
+   55,
+   "m",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "pain"
+  ],
+  "vit": [
+   "138/86",
+   96,
+   "37.9°C",
+   "97%"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|başla|kaç gün|when|start|how long",
+    [
+     "Dört gün önce başladı, dün şişlik belirgin hale geldi.",
+     "It started four days ago and yesterday the swelling became obvious."
+    ]
+   ],
+   [
+    "diab",
+    [
+     "Şeker hastalığı",
+     "Diabetes"
+    ],
+    "şeker|diyabet|insülin|sugar|diabet|insulin",
+    [
+     "On yıldır şekerim var, iğne ve hap kullanıyorum.",
+     "I've had sugar problems for ten years; I use an injection and tablets."
+    ],
+    1
+   ],
+   [
+    "control",
+    [
+     "Şeker kontrolü",
+     "Blood sugar control"
+    ],
+    "kontrol|hba1c|ölçüm|değer|control|reading|level",
+    [
+     "Son tahlilde şekerin çok yüksek olduğunu, ortalamamın 10 civarı olduğunu söylediler.",
+     "At the last test they said my sugar was very high, an average around 10."
+    ],
+    1
+   ],
+   [
+    "eat",
+    [
+     "Yemek / ilaç",
+     "Eating / medication today"
+    ],
+    "yedi|yemek|kahvaltı|ilaç|aç|ate|eat|breakfast|insulin|fasting",
+    [
+     "Ağrıdan bir şey yemedim ama sabah insülinimi yaptım.",
+     "I couldn't eat because of the pain, but I took my insulin this morning."
+    ],
+    1
+   ],
+   [
+    "thirst",
+    [
+     "Susuzluk / idrar",
+     "Thirst / urination"
+    ],
+    "susuz|idrar|thirst|urin|dry",
+    [
+     "Çok susuyorum ve sık tuvalete gidiyorum.",
+     "I'm very thirsty and use the toilet often."
+    ]
+   ],
+   [
+    "fever",
+    [
+     "Ateş",
+     "Fever"
+    ],
+    "ateş|titreme|fever|chill",
+    [
+     "Dün gece üşüme ve ateş hissettim.",
+     "I felt chills and feverish last night."
+    ]
+   ],
+   [
+    "allergy",
+    [
+     "Alerji",
+     "Allergy"
+    ],
+    "alerji|allerj|allergy|allergic",
+    [
+     "İlaç alerjim yok.",
+     "No drug allergies."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi / yüz muayenesi",
+     "Intraoral / facial exam"
+    ],
+    [
+     "46 çevresinde vestibüler şişlik ve irin; sağ yanakta hafif ödem.",
+     "Vestibular swelling and pus around 46; mild right cheek oedema."
+    ],
+    46,
+    1,
+    0
+   ],
+   [
+    "temp",
+    [
+     "Ateş ve nabız",
+     "Temperature and pulse"
+    ],
+    [
+     "Ateş 37,9°C, nabız 98/dk.",
+     "Temperature 37.9°C, pulse 98/min."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "46'da çok hassas.",
+     "46 markedly tender."
+    ],
+    46,
+    1,
+    0
+   ],
+   [
+    "trismus",
+    [
+     "Ağız açıklığı",
+     "Mouth opening"
+    ],
+    [
+     "Ağız açıklığı 38 mm, yutma sorunu yok.",
+     "Mouth opening 38 mm, no swallowing difficulty."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "mobility",
+    [
+     "Mobilite",
+     "Mobility"
+    ],
+    [
+     "Derece 2.",
+     "Grade 2."
+    ],
+    46,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "glucose",
+    [
+     "Parmak ucundan kan şekeri",
+     "Finger-prick glucose"
+    ],
+    [
+     "Kan şekeri 310 mg/dL.",
+     "Blood glucose 310 mg/dL."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "46'da geniş periapikal radyolusensi.",
+     "Large periapical radiolucency on 46."
+    ],
+    1,
+    "periapical_lesion"
+   ]
+  ],
+  "dx": [
+   [
+    "46'da akut periapikal apse; kontrolsüz diyabetli hastada odontojenik enfeksiyon",
+    "Acute periapical abscess of 46 in a poorly controlled diabetic"
+   ],
+   [
+    "Basit gingivit",
+    "Simple gingivitis"
+   ],
+   [
+    "Maksiller sinüzit",
+    "Maxillary sinusitis"
+   ],
+   [
+    "Parotit",
+    "Parotitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Enfeksiyon kaynağını çıkarmak (drenaj ve çekim/endodontik açılım), kan şekerini ölçüp hekimle ilişkiye geçmek, antibiyotiği tamamlayıcı vermek ve sıkı izlemek",
+    "Remove the source (drainage and extraction/endodontic access), check glucose, liaise with the physician, add antibiotics as an adjunct and monitor closely"
+   ],
+   [
+    "Sadece antibiyotik verip bir hafta sonra çağırmak",
+    "Antibiotics only and review in a week"
+   ],
+   [
+    "HbA1c düzelene kadar hiçbir işlem yapmamak",
+    "Do nothing until HbA1c is normal"
+   ],
+   [
+    "Kan şekerine bakmadan çekim yapıp ilaç ve yemek sormamak",
+    "Extract without checking glucose or asking about meals and insulin"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-asthma-nsaid",
+  "topic": "medically-complex",
+  "d": "moderate",
+  "title": [
+   "Astım ve Ağrı Kesici",
+   "Asthma and the Painkiller"
+  ],
+  "cc": [
+   "Üst sol büyük azımda dayanılmaz ağrı var, ibuprofen alabilir miyim?",
+   "Terrible pain in my upper left molar; can I take ibuprofen?"
+  ],
+  "pt": [
+   "Derya M.",
+   34,
+   "f",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "pain"
+  ],
+  "vit": [
+   "122/78",
+   88,
+   "36.8°C",
+   "96%"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|başla|ağrı|when|start|pain",
+    [
+     "Üç gündür ağrıyor, geceleri uyutmuyor.",
+     "It has hurt for three days and keeps me up at night."
+    ]
+   ],
+   [
+    "asthma",
+    [
+     "Astım",
+     "Asthma"
+    ],
+    "astım|nefes|öksür|asthma|breath|wheez|cough",
+    [
+     "Çocukluktan beri astımım var, sık sık nefesim daralır.",
+     "I've had asthma since childhood and get short of breath often."
+    ],
+    1
+   ],
+   [
+    "inhaler",
+    [
+     "Ventolin / solunum aleti",
+     "Inhaler"
+    ],
+    "ventolin|sprey|puf|inhaler|spray|puff",
+    [
+     "Evet, yanımda mavi spreyim var.",
+     "Yes, I have my blue puffer with me."
+    ],
+    1
+   ],
+   [
+    "nsaid",
+    [
+     "Ağrı kesicilere tepki",
+     "Reaction to painkillers"
+    ],
+    "ağrı kesici|ibuprofen|aspirin|nefes daral|painkiller|nsaid|react",
+    [
+     "Daha önce aspirin ve benzeri bir hap içince nefesim daralmış ve burnum tıkanmıştı.",
+     "Once after aspirin or something like it my breathing tightened and my nose blocked."
+    ],
+    1
+   ],
+   [
+    "polyp",
+    [
+     "Burun polibi",
+     "Nasal polyps"
+    ],
+    "burun|polip|nose|polyp|sinus",
+    [
+     "Burnumda polip nedeniyle ameliyat oldum.",
+     "I had surgery for nasal polyps."
+    ]
+   ],
+   [
+    "attack",
+    [
+     "Son atak",
+     "Last attack"
+    ],
+    "atak|son|hastane|attack|last|hospital",
+    [
+     "Son atağım iki ay önceydi, acile gitmedim.",
+     "My last attack was two months ago; I didn't go to the ER."
+    ]
+   ],
+   [
+    "steroid",
+    [
+     "Steroid",
+     "Steroid"
+    ],
+    "kortizon|steroid|cortisone",
+    [
+     "Günde iki kez soluyarak alınan bir ilaç kullanıyorum.",
+     "I use a preventer inhaler twice a day."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "26'da derin mezial çürük.",
+     "Deep mesial caries on 26."
+    ],
+    26,
+    1,
+    0
+   ],
+   [
+    "cold",
+    [
+     "Soğuk testi",
+     "Cold test"
+    ],
+    [
+     "26'da şiddetli, uzun süren yanıt.",
+     "Severe prolonged response on 26."
+    ],
+    26,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Hafif hassas.",
+     "Mildly tender."
+    ],
+    26,
+    1,
+    0
+   ],
+   [
+    "resp",
+    [
+     "Solunum",
+     "Respiration"
+    ],
+    [
+     "Dinlemede hafif hışıltı yok; solunum sayısı normal.",
+     "No wheeze on listening; normal respiratory rate."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "swelling",
+    [
+     "Şişlik",
+     "Swelling"
+    ],
+    [
+     "Şişlik yok.",
+     "No swelling."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "26'da pulpaya yaklaşan/ulaşan derin çürük.",
+     "Deep caries approaching or reaching the pulp of 26."
+    ],
+    1,
+    "deep_filling_pulp"
+   ]
+  ],
+  "dx": [
+   [
+    "26'da semptomatik geri dönüşümsüz pulpitis; NSAİİ'ye duyarlı astım",
+    "Symptomatic irreversible pulpitis of 26; NSAID-sensitive asthma"
+   ],
+   [
+    "Dentin hassasiyeti",
+    "Dentine hypersensitivity"
+   ],
+   [
+    "Maksiller sinüzit",
+    "Maxillary sinusitis"
+   ],
+   [
+    "Kuru soket",
+    "Dry socket"
+   ]
+  ],
+  "tx": [
+   [
+    "İnhaleri hazır tutarak lokal anestezi altında pulpa tedavisini başlatmak, NSAİİ/aspirinden kaçınıp parasetamol önermek",
+    "Start pulp treatment under local anaesthesia with the inhaler at hand, avoid NSAIDs and aspirin, advise paracetamol"
+   ],
+   [
+    "İbuprofen reçete edip pulpa tedavisini ertelemek",
+    "Prescribe ibuprofen and postpone treatment"
+   ],
+   [
+    "Diklofenak enjeksiyonu yapmak",
+    "Give a diclofenac injection"
+   ],
+   [
+    "Çekimi genel anestezi altında yapmak",
+    "Extract under general anaesthesia"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-pacemaker-scaling",
+  "topic": "medically-complex",
+  "d": "moderate",
+  "title": [
+   "Kalp Pili ve Diş Taşı",
+   "Pacemaker and Scaling"
+  ],
+  "cc": [
+   "Dişlerimi temizletmek istiyorum, dişetlerim kanıyor.",
+   "I'd like my teeth cleaned; my gums bleed."
+  ],
+  "pt": [
+   "Osman E.",
+   76,
+   "m",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Şikayet",
+     "Complaint"
+    ],
+    "ne zaman|kanama|şikayet|when|bleed|complaint",
+    [
+     "Fırçalarken aylardır kanıyor, nefesim de kokuyor.",
+     "It bleeds when I brush, for months, and my breath smells."
+    ]
+   ],
+   [
+    "device",
+    [
+     "Kalp pili",
+     "Pacemaker"
+    ],
+    "pil|kalp|cihaz|pacemaker|device|heart|implant",
+    [
+     "Beş yıl önce göğsüme kalp pili taktılar.",
+     "I had a pacemaker fitted in my chest five years ago."
+    ],
+    1
+   ],
+   [
+    "icd",
+    [
+     "Şok verici cihaz",
+     "Defibrillator"
+    ],
+    "şok|defibrilatör|icd|shock|defibrill",
+    [
+     "Cihaz hiç şok vermedi, sadece ritmi düzenliyor.",
+     "It has never given me a shock; it only keeps the rhythm steady."
+    ],
+    1
+   ],
+   [
+    "check",
+    [
+     "Cihaz kontrolü",
+     "Device check"
+    ],
+    "kontrol|pil ömrü|check|battery",
+    [
+     "Altı ayda bir kontrole gidiyorum.",
+     "I go for a check every six months."
+    ]
+   ],
+   [
+    "meds",
+    [
+     "İlaçlar",
+     "Medications"
+    ],
+    "ilaç|hap|kullan|medic|pill|taking",
+    [
+     "Tansiyon ve kalp için iki ilaç alıyorum, kan sulandırıcı yok.",
+     "I take two tablets for blood pressure and heart; no blood thinners."
+    ]
+   ],
+   [
+    "valve",
+    [
+     "Kalp kapağı",
+     "Heart valve"
+    ],
+    "kapak|valve|endokardit|endocard",
+    [
+     "Kapak sorunum yok.",
+     "No valve problems."
+    ]
+   ],
+   [
+    "hearing",
+    [
+     "İşitme cihazı",
+     "Hearing aid"
+    ],
+    "işitme|kulak|hearing|ear",
+    [
+     "İşitme cihazı kullanıyorum.",
+     "I use a hearing aid."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "Yaygın subgingival diş taşı, marjinal diş eti kırmızı ve ödemli.",
+     "Generalised subgingival calculus with red, oedematous marginal gingiva."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "probe",
+    [
+     "Sondalama",
+     "Probing"
+    ],
+    [
+     "Cepler 3-4 mm, kanama var; ataşman kaybı yok.",
+     "Pockets 3-4 mm with bleeding; no attachment loss."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "mobility",
+    [
+     "Mobilite",
+     "Mobility"
+    ],
+    [
+     "Mobil diş yok.",
+     "No mobile teeth."
+    ],
+    null,
+    0,
+    0
+   ],
+   [
+    "chest",
+    [
+     "Cihaz bölgesi",
+     "Device site"
+    ],
+    [
+     "Sol göğüs üstünde cihaz yeri, cilt normal.",
+     "Device site over the left upper chest, skin normal."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "pulse",
+    [
+     "Nabız",
+     "Pulse"
+    ],
+    [
+     "Nabız 68/dk, düzenli.",
+     "Pulse 68/min, regular."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "bw",
+    [
+     "Bitewing radyografi",
+     "Bitewing radiograph"
+    ],
+    [
+     "Kemik seviyesi normal; ara yüz çürüğü yok.",
+     "Normal bone levels; no interproximal caries."
+    ],
+    1,
+    "normal_bitewing"
+   ]
+  ],
+  "dx": [
+   [
+    "Plak kaynaklı yaygın gingivit ve diş taşı; kalp pilli hasta",
+    "Generalised plaque-induced gingivitis with calculus in a pacemaker patient"
+   ],
+   [
+    "Agresif periodontitis",
+    "Aggressive periodontitis"
+   ],
+   [
+    "Nekrotizan gingivit",
+    "Necrotising gingivitis"
+   ],
+   [
+    "Gebelik gingiviti",
+    "Pregnancy gingivitis"
+   ]
+  ],
+  "tx": [
+   [
+    "El aletleri veya piezoelektrik ultrasonik ile detertraj, monopolar elektrocerrahiden kaçınmak ve kabloları göğüsten uzak tutmak; antibiyotik profilaksisi gerekmez",
+    "Scaling with hand instruments or a piezoelectric scaler, avoiding monopolar electrosurgery and keeping cables away from the chest; no antibiotic prophylaxis"
+   ],
+   [
+    "Antibiyotik profilaksisinden sonra manyetostriktif aletle işlem",
+    "Magnetostrictive scaler after antibiotic prophylaxis"
+   ],
+   [
+    "Gingivektomiyi monopolar elektrokoterle yapmak",
+    "Perform gingivectomy with a monopolar electrosurgery unit"
+   ],
+   [
+    "Kalp piline bakılana kadar tüm işlemleri reddetmek",
+    "Refuse all treatment until the pacemaker is checked"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-mronj-zoledronate",
+  "topic": "medically-complex",
+  "d": "hard",
+  "title": [
+   "Çekim Yerinde İyileşmeyen Kemik",
+   "The Socket That Won't Heal"
+  ],
+  "cc": [
+   "İki ay önce çektirdiğim sol alt dişin yerinde kemik görünüyor, ağrıyor.",
+   "Bone is showing where my lower left tooth was removed two months ago, and it hurts."
+  ],
+  "pt": [
+   "Nurten A.",
+   66,
+   "f",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "pain"
+  ],
+  "vit": [
+   "126/80",
+   88,
+   "37.4°C",
+   "97%"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|başla|çekim|when|start|extract",
+    [
+     "Diş çekildikten sonra yer hiç kapanmadı, son iki haftada ağrı ve kötü tat başladı.",
+     "The socket never closed after the extraction, and in the last two weeks pain and a bad taste began."
+    ]
+   ],
+   [
+    "infusion",
+    [
+     "Damar yolu ilaç",
+     "Intravenous drug"
+    ],
+    "serum|damar|infüzyon|iğne|ilaç|infusion|iv|injection|drip|drug",
+    [
+     "Hastanede ayda bir kemikler için bir serum alıyorum.",
+     "Once a month at the hospital I get a drip for my bones."
+    ],
+    1
+   ],
+   [
+    "cancer",
+    [
+     "Altta yatan hastalık",
+     "Underlying disease"
+    ],
+    "kanser|meme|hastalık|tümör|cancer|breast|disease|tumou",
+    [
+     "Üç yıl önce meme kanseri oldum, kemiklerime de yayılmış.",
+     "I had breast cancer three years ago and it spread to my bones."
+    ],
+    1
+   ],
+   [
+    "duration",
+    [
+     "Kullanım süresi",
+     "Duration"
+    ],
+    "kaç yıl|ne zamandır|süre|how long|years|since",
+    [
+     "Yaklaşık iki buçuk yıldır alıyorum.",
+     "I've had it for about two and a half years."
+    ],
+    1
+   ],
+   [
+    "rt",
+    [
+     "Işın tedavisi",
+     "Radiotherapy"
+    ],
+    "ışın|radyoterapi|radiation|radiother",
+    [
+     "Çeneme ışın verilmedi.",
+     "I haven't had radiation to my jaw."
+    ]
+   ],
+   [
+    "steroid",
+    [
+     "Kortizon / kemoterapi",
+     "Cortisone / chemo"
+    ],
+    "kortizon|kemoterapi|steroid|chemo|cortisone",
+    [
+     "Kemoterapi aldım, kortizon da kullanıyorum.",
+     "I had chemotherapy and I take cortisone as well."
+    ]
+   ],
+   [
+    "smoke",
+    [
+     "Sigara",
+     "Smoking"
+    ],
+    "sigara|smok|tobacco",
+    [
+     "Sigara içmiyorum.",
+     "I don't smoke."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "37 bölgesinde lingualde 1 cm'lik açıkta nekrotik kemik, çevrede eritem ve seröz akıntı.",
+     "About 1 cm of exposed necrotic bone lingually in the 37 region with surrounding erythema and serous discharge."
+    ],
+    37,
+    1,
+    1
+   ],
+   [
+    "palp",
+    [
+     "Palpasyon",
+     "Palpation"
+    ],
+    [
+     "Bölgede hassasiyet, submandibular lenf nodu hassas.",
+     "Local tenderness; tender submandibular node."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "sinus",
+    [
+     "Fistül / irin",
+     "Fistula / pus"
+    ],
+    [
+     "Hafif pürülan akıntı, fistül yok.",
+     "Mild purulent discharge, no fistula."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "sensation",
+    [
+     "Dudak duyusu",
+     "Lip sensation"
+    ],
+    [
+     "Duyu normal.",
+     "Sensation normal."
+    ],
+    null,
+    0,
+    0
+   ],
+   [
+    "trismus",
+    [
+     "Ağız açıklığı",
+     "Mouth opening"
+    ],
+    [
+     "42 mm, kısıtlı değil.",
+     "42 mm, not restricted."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pan",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "37 bölgesinde kemik skleroz alanı ve kapanmamış soket; sekestr belirgin.",
+     "Sclerotic bone and an unhealed socket in the 37 region, sequestrum evident."
+    ],
+    1,
+    null
+   ],
+   [
+    "cult",
+    [
+     "İrin kültürü",
+     "Pus culture"
+    ],
+    [
+     "Karışık oral flora; tedaviyi değiştirmez.",
+     "Mixed oral flora; does not change management."
+    ],
+    0,
+    null
+   ]
+  ],
+  "dx": [
+   [
+    "MRONJ evre 2 (damar yoluyla zoledronat kullanan hasta, açıkta nekrotik kemik ve enfeksiyon)",
+    "MRONJ stage 2 (IV zoledronate, exposed necrotic bone with infection)"
+   ],
+   [
+    "Kuru soket",
+    "Dry socket"
+   ],
+   [
+    "Osteoradyonekroz",
+    "Osteoradionecrosis"
+   ],
+   [
+    "Kronik sklerozan osteomiyelit",
+    "Chronic sclerosing osteomyelitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Konservatif tedavi: antimikrobiyal gargara, enfeksiyon için sistemik antibiyotik, analjezi, sadece gevşek sekestri nazikçe çıkarmak, onkolog ile iş birliği ve düzenli takip",
+    "Conservative care: antimicrobial rinse, systemic antibiotics for infection, analgesia, gentle removal of loose sequestra only, oncologist liaison and regular review"
+   ],
+   [
+    "Geniş kemik rezeksiyonunu hemen yapmak",
+    "Immediate wide bone resection"
+   ],
+   [
+    "Soket küretajı ve yeniden paketleme",
+    "Curette the socket and repack it"
+   ],
+   [
+    "Hastaya ilacı kendi başına bırakmasını söylemek",
+    "Tell the patient to stop the drug on their own"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-radiotherapy-extraction",
+  "topic": "medically-complex",
+  "d": "hard",
+  "title": [
+   "Işın Almış Çenede Çekim",
+   "Extraction in an Irradiated Jaw"
+  ],
+  "cc": [
+   "Sağ alt arka dişim çok ağrıyor, çekilsin istiyorum.",
+   "My lower right back tooth hurts a lot and I want it pulled."
+  ],
+  "pt": [
+   "Sedat C.",
+   61,
+   "m",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "pain"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|başla|ağrı|when|start|pain",
+    [
+     "Bir aydır ağrıyor, çiğneyemiyorum.",
+     "It has hurt for a month and I can't chew."
+    ]
+   ],
+   [
+    "cancer",
+    [
+     "Kanser öyküsü",
+     "Cancer history"
+    ],
+    "kanser|tümör|ameliyat|cancer|tumou|surgery|malign",
+    [
+     "Bir buçuk yıl önce boğazımda kanser oldu, tedavi aldım.",
+     "I had throat cancer a year and a half ago and was treated."
+    ],
+    1
+   ],
+   [
+    "rt",
+    [
+     "Işın tedavisi",
+     "Radiotherapy"
+    ],
+    "ışın|radyoterapi|radiation|radiother|beam",
+    [
+     "Boyun ve çene bölgeme altı hafta boyunca ışın verdiler.",
+     "They gave me radiation to my neck and jaw for six weeks."
+    ],
+    1
+   ],
+   [
+    "dry",
+    [
+     "Ağız kuruluğu",
+     "Dry mouth"
+    ],
+    "kuru|tükürük|dry|saliva",
+    [
+     "Ağzım çok kuru, sürekli su taşıyorum.",
+     "My mouth is very dry and I carry water everywhere."
+    ]
+   ],
+   [
+    "smoke",
+    [
+     "Sigara / alkol",
+     "Smoking / alcohol"
+    ],
+    "sigara|alkol|smok|alcohol|drink",
+    [
+     "Hâlâ günde yarım paket içiyorum.",
+     "I still smoke about half a pack a day."
+    ],
+    1
+   ],
+   [
+    "trismus",
+    [
+     "Ağız açma",
+     "Mouth opening"
+    ],
+    "ağız aç|çene|açılm|open|jaw|trismus|stiff",
+    [
+     "Ağzım eskisi kadar açılmıyor.",
+     "I can't open my mouth as wide as before."
+    ]
+   ],
+   [
+    "allergy",
+    [
+     "Alerji",
+     "Allergy"
+    ],
+    "alerji|allerj|allergy|allergic",
+    [
+     "Alerjim yok.",
+     "No allergies."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "47'de ileri çürük, restore edilemez; mukoza ince ve kuru, plak yaygın.",
+     "47 has advanced caries and is non-restorable; thin, dry mucosa and heavy plaque."
+    ],
+    47,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "47 çok hassas.",
+     "47 very tender."
+    ],
+    47,
+    1,
+    0
+   ],
+   [
+    "mucosa",
+    [
+     "Mukoza ve kemik",
+     "Mucosa and bone"
+    ],
+    [
+     "Açıkta kemik yok; mukoza atrofik.",
+     "No exposed bone; atrophic mucosa."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "opening",
+    [
+     "Ağız açıklığı",
+     "Mouth opening"
+    ],
+    [
+     "28 mm, hafif trismus.",
+     "28 mm, mild trismus."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "lymph",
+    [
+     "Lenf nodları",
+     "Lymph nodes"
+    ],
+    [
+     "Palpe edilmiyor.",
+     "Not palpable."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "pan",
+    [
+     "Panoramik radyografi",
+     "Panoramic radiograph"
+    ],
+    [
+     "47'de geniş çürük ve periapikal lezyon; mandibulada nekroz bulgusu yok.",
+     "Extensive caries and periapical lesion on 47; no necrosis in the mandible."
+    ],
+    1,
+    "periapical_lesion"
+   ]
+  ],
+  "dx": [
+   [
+    "47 numaralı dişte restore edilemeyen çürük; ışınlanmış alanda yüksek osteoradyonekroz riski",
+    "Non-restorable 47 within the irradiated field with high osteoradionecrosis risk"
+   ],
+   [
+    "Basit pulpitis",
+    "Simple pulpitis"
+   ],
+   [
+    "Ankilozan çene",
+    "Temporomandibular ankylosis"
+   ],
+   [
+    "Perikoronit",
+    "Pericoronitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Onkoloji/çene cerrahisi ekibiyle planlayıp mümkün olan en atravmatik çekimi, perioperatif antibiyotik, primer kapama ve yakın takiple yapmak",
+    "Plan with the oncology/maxillofacial team and extract as atraumatically as possible with peri-operative antibiotics, primary closure and close follow-up"
+   ],
+   [
+    "Aynı gün alveoloplasti ile soketi açık bırakarak çekmek",
+    "Extract the same day with alveoloplasty, leaving the socket open"
+   ],
+   [
+    "Antibiyotik verip diş çekmeyi sonsuza kadar reddetmek",
+    "Give antibiotics and permanently refuse extraction"
+   ],
+   [
+    "Antibiyotik ve profilaksi olmadan rutin çekim",
+    "Routine extraction with no antibiotic cover or planning"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-prosthetic-valve-extraction",
+  "topic": "medically-complex",
+  "d": "hard",
+  "title": [
+   "Mekanik Kapak ve Çekim",
+   "Mechanical Valve and Extraction"
+  ],
+  "cc": [
+   "Sol alt köklerim çürümüş, apse yapmış, çekilmesi lazım.",
+   "The roots of my lower left tooth are rotten, abscessed, and need to go."
+  ],
+  "pt": [
+   "Murat Ç.",
+   52,
+   "m",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "neutral"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|şişlik|ağrı|when|swell|pain",
+    [
+     "Birkaç aydır ara sıra şişiyor, irin geliyor.",
+     "For months it swells now and then and drains pus."
+    ]
+   ],
+   [
+    "heart",
+    [
+     "Kalp ameliyatı",
+     "Heart surgery"
+    ],
+    "kalp|ameliyat|kapak|heart|surgery|valve|operation",
+    [
+     "Altı yıl önce kalp kapağı değiştirdiler, metal kapak.",
+     "They replaced a heart valve six years ago, a metal one."
+    ],
+    1
+   ],
+   [
+    "meds",
+    [
+     "Kan sulandırıcı",
+     "Blood thinner"
+    ],
+    "ilaç|kan sulandır|hap|medic|thinner|pill|warfarin|coumadin",
+    [
+     "Ömür boyu kullandığım bir kan sulandırıcı hap var.",
+     "I take a blood-thinning tablet that I must take for life."
+    ],
+    1
+   ],
+   [
+    "inr",
+    [
+     "Kan testi",
+     "Blood test"
+    ],
+    "inr|tahlil|kan testi|test|blood test|level",
+    [
+     "Geçen hafta 'değeriniz iyi' dediler, ama tam sayıyı hatırlamıyorum.",
+     "Last week they said my value was good but I don't remember the number."
+    ],
+    1
+   ],
+   [
+    "endo",
+    [
+     "Kalp enfeksiyonu",
+     "Heart infection"
+    ],
+    "enfeksiyon|endokardit|ateş|infection|endocardit|fever",
+    [
+     "Kapak değişmeden önce kalbimde enfeksiyon geçirmiştim.",
+     "Before the valve change I had an infection in my heart."
+    ],
+    1
+   ],
+   [
+    "allergy",
+    [
+     "Antibiyotik alerjisi",
+     "Antibiotic allergy"
+    ],
+    "alerji|allerj|penisilin|allergy|allergic|penicillin",
+    [
+     "Penisilinden hiç sorun yaşamadım.",
+     "I've never had a problem with penicillin."
+    ]
+   ],
+   [
+    "last",
+    [
+     "Önceki çekimler",
+     "Previous extractions"
+    ],
+    "çekim|önceki|extract|previous",
+    [
+     "İki yıl önce bir diş çektirdim, hastane ayarladı.",
+     "I had a tooth out two years ago; the hospital arranged it."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "35 kökleri ağzın içinde, çevresinde kronik fistül ve hafif irin.",
+     "Roots of 35 remain with a chronic sinus tract and mild pus."
+    ],
+    35,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Hafif hassas.",
+     "Mildly tender."
+    ],
+    35,
+    1,
+    0
+   ],
+   [
+    "hygiene",
+    [
+     "Genel ağız hijyeni",
+     "General oral hygiene"
+    ],
+    [
+     "Orta düzey plak, diğer dişlerde aktif enfeksiyon yok.",
+     "Moderate plaque; no other active infection."
+    ],
+    null,
+    1,
+    0
+   ],
+   [
+    "temp",
+    [
+     "Ateş",
+     "Temperature"
+    ],
+    [
+     "Ateş yok.",
+     "Afebrile."
+    ],
+    null,
+    0,
+    0
+   ],
+   [
+    "lymph",
+    [
+     "Lenf nodları",
+     "Lymph nodes"
+    ],
+    [
+     "Palpe edilmiyor.",
+     "Not palpable."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "inr",
+    [
+     "INR (son 24 saat)",
+     "INR (within 24 h)"
+    ],
+    [
+     "INR 2,8 — hedef aralıkta.",
+     "INR 2.8 - in target range."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "35 kök artığı etrafında apikal radyolusensi.",
+     "Root remnant of 35 with apical radiolucency."
+    ],
+    1,
+    "retained_root"
+   ]
+  ],
+  "dx": [
+   [
+    "35 kök artığı ve kronik apse; protez kapak ve geçirilmiş endokardit nedeniyle yüksek riskli, varfarin kullanan hasta",
+    "Retained root and chronic abscess of 35; high-risk patient (prosthetic valve, previous endocarditis) on warfarin"
+   ],
+   [
+    "Periodontal apse",
+    "Periodontal abscess"
+   ],
+   [
+    "Maksiller sinüzit",
+    "Maxillary sinusitis"
+   ],
+   [
+    "Basit alveolit",
+    "Simple alveolitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Kardiyoloji ile haberleşip tek doz amoksisilin profilaksisi vermek; varfarini kesmeden 24 saat içinde INR'yi doğrulayıp lokal hemostazla çekmek",
+    "Liaise with the cardiologist, give single-dose amoxicillin prophylaxis, confirm INR within 24 h and extract with local haemostasis without stopping warfarin"
+   ],
+   [
+    "Profilaksi vermeden, varfarin ile rutin çekim",
+    "Extract on warfarin without prophylaxis"
+   ],
+   [
+    "Profilaksi için klindamisin kullanmak",
+    "Use clindamycin as prophylaxis"
+   ],
+   [
+    "Varfarini 5 gün kesip antibiyotiksiz çekmek",
+    "Stop warfarin for 5 days and extract without antibiotics"
+   ]
+  ]
+ },
+ {
+  "id": "med-cx-hemophilia-extraction",
+  "topic": "medically-complex",
+  "d": "hard",
+  "title": [
+   "Hemofilili Genç",
+   "The Young Man with Hemophilia"
+  ],
+  "cc": [
+   "Sol alt büyük azımda çürük var, çekilmesi gerekiyormuş.",
+   "I have a bad cavity in a lower left molar and they say it needs to come out."
+  ],
+  "pt": [
+   "Burak Y.",
+   24,
+   "m",
+   [
+    "Diş hekimliği polikliniği",
+    "Dental outpatient clinic"
+   ],
+   "anxious"
+  ],
+  "hx": [
+   [
+    "onset",
+    [
+     "Başlangıç",
+     "Onset"
+    ],
+    "ne zaman|ağrı|çürük|when|pain|decay",
+    [
+     "Çürük yıllarca vardı, şimdi çiğnerken zonkluyor.",
+     "The cavity has been there for years and now throbs when I chew."
+    ]
+   ],
+   [
+    "bleed",
+    [
+     "Kanama öyküsü",
+     "Bleeding history"
+    ],
+    "kanama|kanar|yara|bleed|wound|cut",
+    [
+     "Küçük kesiklerde bile kan çok geç duruyor, eklemlerime kanama oldu.",
+     "Even small cuts bleed for ages, and I've had bleeding into my joints."
+    ],
+    1
+   ],
+   [
+    "family",
+    [
+     "Aile öyküsü",
+     "Family history"
+    ],
+    "aile|kardeş|dayı|family|brother|uncle|inherit",
+    [
+     "Dayımda da aynı sorun var, doğuştan.",
+     "My uncle has the same problem; it's from birth."
+    ],
+    1
+   ],
+   [
+    "treat",
+    [
+     "Düzenli tedavi",
+     "Regular treatment"
+    ],
+    "iğne|ilaç|hastane|faktör|injection|medic|hospital|factor",
+    [
+     "Kanama olunca hematolog hastanesinde bana bir iğne yapıyorlar, evde de yapabiliyorum.",
+     "When I bleed the haematology unit gives me an injection, and I can do it at home."
+    ],
+    1
+   ],
+   [
+    "dental",
+    [
+     "Önceki diş işlemleri",
+     "Previous dental work"
+    ],
+    "çekim|önceki|extract|previous",
+    [
+     "Çocukken bir diş çekilince hastaneye yatırmışlardı.",
+     "When I was a child a tooth extraction ended with a hospital stay."
+    ]
+   ],
+   [
+    "aspirin",
+    [
+     "Aspirin / ağrı kesici",
+     "Aspirin / painkillers"
+    ],
+    "aspirin|ibuprofen|ağrı kesici|painkiller|nsaid",
+    [
+     "Ağrı kesici olarak sadece parasetamol alıyorum.",
+     "I only take paracetamol for pain."
+    ]
+   ],
+   [
+    "hep",
+    [
+     "Hepatit / HIV",
+     "Hepatitis / HIV"
+    ],
+    "hepatit|hiv|sarılık|hepatit|jaundice|virus",
+    [
+     "Kan ürünleri nedeniyle hepatit testlerim düzenli yapılıyor, temiz çıktı.",
+     "I'm tested regularly because of blood products and the results are clear."
+    ]
+   ]
+  ],
+  "ex": [
+   [
+    "visual",
+    [
+     "Ağız içi muayene",
+     "Intraoral exam"
+    ],
+    [
+     "36'da geniş çürük, sadece kök ve kron parçası kalmış.",
+     "Extensive caries on 36 with only roots and a crown fragment left."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "percussion",
+    [
+     "Perküsyon",
+     "Percussion"
+    ],
+    [
+     "Hassas.",
+     "Tender."
+    ],
+    36,
+    1,
+    0
+   ],
+   [
+    "bleedsign",
+    [
+     "Kanama bulguları",
+     "Bleeding signs"
+    ],
+    [
+     "Dişetinde peteşi yok; sondalamada kontrollü kanama.",
+     "No gingival petechiae; controlled bleeding on probing."
+    ],
+    null,
+    1,
+    1
+   ],
+   [
+    "lymph",
+    [
+     "Lenf nodları",
+     "Lymph nodes"
+    ],
+    [
+     "Palpe edilmiyor.",
+     "Not palpable."
+    ],
+    null,
+    0,
+    0
+   ],
+   [
+    "joints",
+    [
+     "Eklemler",
+     "Joints"
+    ],
+    [
+     "Dizlerde hafif kısıtlılık.",
+     "Mild restriction in both knees."
+    ],
+    null,
+    0,
+    0
+   ]
+  ],
+  "ts": [
+   [
+    "haem",
+    [
+     "Hematoloji raporu ve faktör VIII düzeyi",
+     "Haematology report and factor VIII level"
+    ],
+    [
+     "Orta şiddette hemofili A; hematolog çekim öncesi faktör desteği ve traneksamik asit planı bildirdi.",
+     "Moderate haemophilia A; haematologist advises factor cover and tranexamic acid around the extraction."
+    ],
+    1,
+    null
+   ],
+   [
+    "pa",
+    [
+     "Periapikal radyografi",
+     "Periapical radiograph"
+    ],
+    [
+     "36'da restore edilemeyen kök artıkları, periapikal aralık genişlemiş.",
+     "Non-restorable roots of 36 with widened periapical space."
+    ],
+    1,
+    "widened_pdl"
+   ]
+  ],
+  "dx": [
+   [
+    "36'da restore edilemeyen diş; hemofili A hastasında hematolog desteği gerektiren çekim",
+    "Non-restorable 36 in a patient with haemophilia A requiring haematology-supported extraction"
+   ],
+   [
+    "Geri dönüşümlü pulpitis",
+    "Reversible pulpitis"
+   ],
+   [
+    "Periapikal apse",
+    "Acute periapical abscess"
+   ],
+   [
+    "Alveolar osteit",
+    "Alveolar osteitis"
+   ]
+  ],
+  "tx": [
+   [
+    "Hematologla planlama: gerekli faktör desteği/traneksamik asit, mümkünse mandibular blok yerine infiltrasyon/intraligamenter anestezi, atravmatik çekim, sütür ve lokal hemostaz, NSAİİ'den kaçınmak",
+    "Plan with haematology: factor cover/tranexamic acid as advised, infiltration or intraligamentary anaesthesia rather than an inferior alveolar block, atraumatic extraction, sutures and local haemostasis, avoid NSAIDs"
+   ],
+   [
+    "Rutin mandibular blokla klinikte hemen çekim",
+    "Immediate chairside extraction with a routine inferior alveolar block"
+   ],
+   [
+    "Aspirinle ağrıyı kontrol edip çekimi yapmak",
+    "Control pain with aspirin and extract"
+   ],
+   [
+    "Dişi çekmek yerine yıllarca antibiyotikle izlemek",
+    "Keep monitoring on antibiotics for years instead of extracting"
+   ]
+  ]
+ }
+]

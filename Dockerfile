@@ -10,7 +10,7 @@ ENV REACT_APP_BACKEND_URL="" GENERATE_SOURCEMAP=false CI=false INLINE_RUNTIME_CH
 RUN npm run build
 
 # ---- stage 2: FastAPI serving the API and the built frontend ----
-FROM python:3.12-slim AS app
+FROM python:3.15-slim AS app
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PORT=10000
 WORKDIR /app/backend
 COPY backend/requirements.txt ./

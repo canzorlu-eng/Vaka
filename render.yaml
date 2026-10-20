@@ -1,23 +1,42 @@
-# Render Blueprint for Vaka: TWO fully separate environments (production + staging).
-#   production : branch `main`    -> services vaka*,         Postgres vaka-db,         Key Value vaka-redis
-#   staging    : branch `staging` -> services vaka-staging*, Postgres vaka-staging-db, Key Value vaka-staging-redis
-# Nothing is shared between them: own database, own Redis, own env-var group, own secrets (every secret is
-# `sync: false`, i.e. typed into the Render dashboard once per service - never committed). Use DIFFERENT keys
-# (Google OAuth client, Gemini/OpenAI projects, iyzico sandbox vs live) for staging and production.
+# Lean Render Blueprint for the hackathon deployment (one web service + Postgres + Key Value).
+# The full two-environment blueprint (production + staging + cron jobs) lives on `main`; this branch trades
+# redundancy for a ~US$13/month footprint. Every secret is `sync: false`: typed into the Render dashboard once,
+# never committed.
 #
-# Deploy: Dashboard -> New -> Blueprint -> pick this repo -> fill the `sync: false` prompts.
-# Docs: docs/SETUP_GUIDE.md (first deploy), docs/RUNBOOK.md (promotion, rollback), docs/DISASTER_RECOVERY.md (backups).
-#
-# Notes
-#  * Secrets are per service because Render does not support `sync: false` inside env-var groups; the groups below hold
-#    the non-secret configuration that must stay identical between the web service and (where relevant) cron jobs.
-#  * preDeployCommand needs a paid instance type; it runs `alembic upgrade head` once per deploy BEFORE the new
-#    version receives traffic, so AUTO_MIGRATE=false in both deployed environments (only dev auto-migrates).
-#  * The app is single-process on purpose (in-process job workers) -> numInstances: 1. Do not scale horizontally
-#    without first reading docs/ARCHITECTURE.md ("Scaling").
+# Deploy: Dashboard -> New -> Blueprint -> pick this repo, branch `deploy/hackathon` -> fill the prompts.
+# After the first deploy set PUBLIC_BASE_URL to the service URL and add
+#   <PUBLIC_BASE_URL>/api/auth/google/callback
+# to the Google OAuth client's "Authorized redirect URIs".
 
-envVarGroups:
-  - name: vaka-prod-config
+databases:
+  - name: vaka-db
+    region: frankfurt
+    plan: basic-256mb
+    postgresMajorVersion: "16"
+    databaseName: vaka
+    user: vaka
+    ipAllowList: []                     # internal connections only
+
+services:
+  - type: keyvalue
+    name: vaka-redis
+    region: frankfurt
+    plan: free                          # cache + rate-limit counters only; nothing here is source of truth
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []
+
+  - type: web
+    name: vaka
+    runtime: docker
+    region: frankfurt
+    plan: starter
+    numInstances: 1                     # in-process job workers: do not scale horizontally (docs/ARCHITECTURE.md)
+    branch: deploy/hackathon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    maxShutdownDelaySeconds: 30
+    preDeployCommand: alembic upgrade head
     envVars:
       - key: APP_ENV
         value: production
@@ -27,114 +46,12 @@ envVarGroups:
         value: INFO
       - key: GEMINI_MODEL
         value: gemini-3.5-flash-lite
+      - key: GEMINI_MODEL_GENERATION
+        value: gemini-3.6-flash
       - key: OPENAI_TTS_MODEL
         value: tts-1
       - key: OPENAI_TTS_VOICE
         value: coral
-      - key: IYZICO_BASE_URL            # LIVE iyzico API
-        value: https://api.iyzipay.com
-      - key: PRICE_MONTHLY_USD
-        value: "9"
-      - key: PRICE_YEARLY_USD
-        value: "90"
-      - key: PRICE_MONTHLY_TRY
-        value: "399"
-      - key: PRICE_YEARLY_TRY
-        value: "3990"
-      # Extra CSP origins (space or comma separated). Defaults are strict ('self' only). Add the iyzico checkout origins
-      # here once the billing UI loads scripts/frames from them, e.g.
-      #   CSP_EXTRA_SCRIPT=https://static.iyzipay.com   CSP_EXTRA_CONNECT=https://api.iyzipay.com
-      #   CSP_EXTRA_FRAME=https://*.iyzipay.com         CSP_EXTRA_FORM=https://*.iyzipay.com
-      - key: CSP_EXTRA_SCRIPT
-        value: ""
-      - key: CSP_EXTRA_CONNECT
-        value: ""
-      - key: CSP_EXTRA_FRAME
-        value: ""
-      - key: CSP_EXTRA_FORM
-        value: ""
-
-  - name: vaka-staging-config
-    envVars:
-      - key: APP_ENV
-        value: staging
-      - key: AUTO_MIGRATE
-        value: "false"
-      - key: LOG_LEVEL
-        value: DEBUG
-      - key: GEMINI_MODEL
-        value: gemini-3.5-flash-lite
-      - key: OPENAI_TTS_MODEL
-        value: tts-1
-      - key: OPENAI_TTS_VOICE
-        value: coral
-      - key: IYZICO_BASE_URL            # iyzico SANDBOX - staging must never hit the live API
-        value: https://sandbox-api.iyzipay.com
-      - key: PRICE_MONTHLY_USD
-        value: "9"
-      - key: PRICE_YEARLY_USD
-        value: "90"
-      - key: PRICE_MONTHLY_TRY
-        value: "399"
-      - key: PRICE_YEARLY_TRY
-        value: "3990"
-      - key: CSP_EXTRA_SCRIPT           # sandbox equivalents, e.g. https://sandbox-static.iyzipay.com
-        value: ""
-      - key: CSP_EXTRA_CONNECT
-        value: ""
-      - key: CSP_EXTRA_FRAME
-        value: ""
-      - key: CSP_EXTRA_FORM
-        value: ""
-
-databases:
-  - name: vaka-db
-    region: frankfurt
-    plan: basic-256mb
-    postgresMajorVersion: "16"          # keep equal to PG_MAJOR in Dockerfile.backup
-    databaseName: vaka
-    user: vaka
-    ipAllowList: []                     # internal connections only (no public access)
-  - name: vaka-staging-db
-    region: frankfurt
-    plan: basic-256mb                   # smallest plan that is not deleted after 30 days (`free` expires; fine for throwaway staging)
-    postgresMajorVersion: "16"
-    diskSizeGB: 1
-    databaseName: vaka_staging
-    user: vaka_staging
-    ipAllowList: []
-
-services:
-  # ------------------------------------------------------------------ Key Value (Redis-compatible)
-  - type: keyvalue
-    name: vaka-redis
-    region: frankfurt
-    plan: starter
-    maxmemoryPolicy: allkeys-lru        # cache + rate-limit counters only; nothing here is source of truth
-    ipAllowList: []
-  - type: keyvalue
-    name: vaka-staging-redis
-    region: frankfurt
-    plan: free                          # 25 MB, no persistence: enough for staging
-    maxmemoryPolicy: allkeys-lru
-    ipAllowList: []
-
-  # ------------------------------------------------------------------ production web service
-  - type: web
-    name: vaka
-    runtime: docker
-    region: frankfurt
-    plan: standard                      # `starter` (512 MB) is acceptable for a soft launch
-    numInstances: 1
-    branch: main
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
-    healthCheckPath: /api/health
-    autoDeployTrigger: checksPass       # deploy only after the GitHub CI checks pass
-    maxShutdownDelaySeconds: 30         # > uvicorn --timeout-graceful-shutdown 25
-    preDeployCommand: alembic upgrade head   # WORKDIR is /app/backend (alembic.ini + migrations/)
-    envVars:
-      - fromGroup: vaka-prod-config
       - key: DATABASE_URL
         fromDatabase:
           name: vaka-db
@@ -146,9 +63,9 @@ services:
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
-      - key: PUBLIC_BASE_URL            # https://<custom domain or vaka.onrender.com>, no trailing slash
+      - key: PUBLIC_BASE_URL            # https://<service>.onrender.com, no trailing slash
         sync: false
-      - key: ADMIN_EMAILS               # comma separated Google account emails with the admin role
+      - key: ADMIN_EMAILS
         sync: false
       - key: GOOGLE_CLIENT_ID
         sync: false
@@ -157,232 +74,4 @@ services:
       - key: GEMINI_API_KEY
         sync: false
       - key: OPENAI_API_KEY
-        sync: false
-      - key: IYZICO_API_KEY
-        sync: false
-      - key: IYZICO_SECRET_KEY
-        sync: false
-      - key: IYZICO_WEBHOOK_SECRET
-        sync: false
-      - key: IYZICO_PLAN_MONTHLY_USD
-        sync: false
-      - key: IYZICO_PLAN_YEARLY_USD
-        sync: false
-      - key: IYZICO_PLAN_MONTHLY_TRY
-        sync: false
-      - key: IYZICO_PLAN_YEARLY_TRY
-        sync: false
-      - key: ALERT_WEBHOOK_URL
-        sync: false
-
-  # ------------------------------------------------------------------ staging web service
-  - type: web
-    name: vaka-staging
-    runtime: docker
-    region: frankfurt
-    plan: starter
-    numInstances: 1
-    branch: staging
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
-    healthCheckPath: /api/health
-    autoDeployTrigger: checksPass
-    maxShutdownDelaySeconds: 30
-    preDeployCommand: alembic upgrade head   # WORKDIR is /app/backend (alembic.ini + migrations/)
-    envVars:
-      - fromGroup: vaka-staging-config
-      - key: DATABASE_URL
-        fromDatabase:
-          name: vaka-staging-db
-          property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: keyvalue
-          name: vaka-staging-redis
-          property: connectionString
-      - key: SECRET_KEY
-        generateValue: true
-      - key: PUBLIC_BASE_URL
-        sync: false
-      - key: ADMIN_EMAILS
-        sync: false
-      - key: GOOGLE_CLIENT_ID           # a SEPARATE OAuth client (redirect URI of the staging URL)
-        sync: false
-      - key: GOOGLE_CLIENT_SECRET
-        sync: false
-      - key: GEMINI_API_KEY             # a SEPARATE Gemini project with a low budget
-        sync: false
-      - key: OPENAI_API_KEY             # a SEPARATE OpenAI project with a low budget
-        sync: false
-      - key: IYZICO_API_KEY             # sandbox keys only
-        sync: false
-      - key: IYZICO_SECRET_KEY
-        sync: false
-      - key: IYZICO_WEBHOOK_SECRET
-        sync: false
-      - key: IYZICO_PLAN_MONTHLY_USD
-        sync: false
-      - key: IYZICO_PLAN_YEARLY_USD
-        sync: false
-      - key: IYZICO_PLAN_MONTHLY_TRY
-        sync: false
-      - key: IYZICO_PLAN_YEARLY_TRY
-        sync: false
-      - key: ALERT_WEBHOOK_URL
-        sync: false
-
-  # ------------------------------------------------------------------ production cron jobs
-  - type: cron
-    name: vaka-backup
-    runtime: docker
-    region: frankfurt
-    plan: starter
-    branch: main
-    schedule: "15 2 * * *"              # 02:15 UTC every day
-    dockerfilePath: ./Dockerfile.backup
-    dockerContext: .
-    dockerCommand: /opt/vaka/backup.sh
-    envVars:
-      - key: APP_ENV
-        value: production
-      - key: DATABASE_URL
-        fromDatabase:
-          name: vaka-db
-          property: connectionString
-      - key: BACKUP_PREFIX
-        value: vaka/production
-      - key: BACKUP_S3_ENDPOINT         # R2: https://<account id>.r2.cloudflarestorage.com ; B2: https://s3.<region>.backblazeb2.com
-        sync: false
-      - key: BACKUP_S3_BUCKET
-        sync: false
-      - key: AWS_ACCESS_KEY_ID
-        sync: false
-      - key: AWS_SECRET_ACCESS_KEY
-        sync: false
-      - key: ALERT_WEBHOOK_URL
-        sync: false
-
-  - type: cron
-    name: vaka-restore-test
-    runtime: docker
-    region: frankfurt
-    plan: starter
-    branch: main
-    schedule: "30 4 * * 1"              # Mondays 04:30 UTC: restore the latest dump into a scratch DB and verify
-    dockerfilePath: ./Dockerfile.backup
-    dockerContext: .
-    dockerCommand: /opt/vaka/restore_test.sh
-    envVars:
-      - key: APP_ENV
-        value: production
-      - key: DATABASE_URL               # used only to CREATE/DROP a scratch database next to the real one
-        fromDatabase:
-          name: vaka-db
-          property: connectionString
-      - key: BACKUP_PREFIX
-        value: vaka/production
-      - key: BACKUP_S3_ENDPOINT
-        sync: false
-      - key: BACKUP_S3_BUCKET
-        sync: false
-      - key: AWS_ACCESS_KEY_ID          # read-only credentials are enough here
-        sync: false
-      - key: AWS_SECRET_ACCESS_KEY
-        sync: false
-      - key: ALERT_WEBHOOK_URL
-        sync: false
-
-  # Daily billing reconcile (iyzico subscription status vs our `subscriptions` table).
-  # Runs `python -m billing` (billing.reconcile_all) against iyzico daily; needs the same env group + DB/Redis as the web service.
-
-  - type: cron
-    name: vaka-billing-reconcile
-    runtime: docker
-    region: frankfurt
-    plan: starter
-    branch: main
-    schedule: "45 3 * * *"
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
-    dockerCommand: sh -c "cd /app/backend && python -m billing"
-    envVars:
-      - fromGroup: vaka-prod-config
-      - key: DATABASE_URL
-        fromDatabase: {name: vaka-db, property: connectionString}
-      - key: REDIS_URL
-        fromService: {type: keyvalue, name: vaka-redis, property: connectionString}
-      - key: SECRET_KEY
-        sync: false                    # must equal the web service's SECRET_KEY
-      - key: PUBLIC_BASE_URL
-        sync: false
-      - key: IYZICO_API_KEY
-        sync: false
-      - key: IYZICO_SECRET_KEY
-        sync: false
-      - key: ALERT_WEBHOOK_URL
-        sync: false
-
-  # ------------------------------------------------------------------ staging cron jobs
-  - type: cron
-    name: vaka-staging-backup
-    runtime: docker
-    region: frankfurt
-    plan: starter
-    branch: staging
-    schedule: "15 3 * * *"
-    dockerfilePath: ./Dockerfile.backup
-    dockerContext: .
-    dockerCommand: /opt/vaka/backup.sh
-    envVars:
-      - key: APP_ENV
-        value: staging
-      - key: DATABASE_URL
-        fromDatabase:
-          name: vaka-staging-db
-          property: connectionString
-      - key: BACKUP_PREFIX
-        value: vaka/staging
-      - key: BACKUP_KEEP_DAILY
-        value: "7"
-      - key: BACKUP_KEEP_WEEKLY
-        value: "2"
-      - key: BACKUP_S3_ENDPOINT
-        sync: false
-      - key: BACKUP_S3_BUCKET
-        sync: false
-      - key: AWS_ACCESS_KEY_ID          # ideally a different token than production, scoped to the staging prefix/bucket
-        sync: false
-      - key: AWS_SECRET_ACCESS_KEY
-        sync: false
-      - key: ALERT_WEBHOOK_URL
-        sync: false
-
-  - type: cron
-    name: vaka-staging-restore-test
-    runtime: docker
-    region: frankfurt
-    plan: starter
-    branch: staging
-    schedule: "30 5 * * 1"
-    dockerfilePath: ./Dockerfile.backup
-    dockerContext: .
-    dockerCommand: /opt/vaka/restore_test.sh
-    envVars:
-      - key: APP_ENV
-        value: staging
-      - key: DATABASE_URL
-        fromDatabase:
-          name: vaka-staging-db
-          property: connectionString
-      - key: BACKUP_PREFIX
-        value: vaka/staging
-      - key: BACKUP_S3_ENDPOINT
-        sync: false
-      - key: BACKUP_S3_BUCKET
-        sync: false
-      - key: AWS_ACCESS_KEY_ID
-        sync: false
-      - key: AWS_SECRET_ACCESS_KEY
-        sync: false
-      - key: ALERT_WEBHOOK_URL
         sync: false

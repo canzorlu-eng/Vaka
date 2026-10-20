@@ -1,22 +1,26 @@
+# Version-update PRs are paused (limit 0) so CI and end-to-end runs stay focused on feature work.
+# Raise the limits (e.g. 5) to re-enable them; security updates are unaffected.
 version: 2
 updates:
   - package-ecosystem: pip
     directory: /backend
     schedule: {interval: weekly, day: monday}
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
     groups:
       python-minor-patch:
         update-types: [minor, patch]
   - package-ecosystem: npm
     directory: /frontend
     schedule: {interval: weekly, day: monday}
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
     groups:
       npm-minor-patch:
         update-types: [minor, patch]
   - package-ecosystem: docker
     directory: /
     schedule: {interval: weekly, day: monday}
+    open-pull-requests-limit: 0
   - package-ecosystem: github-actions
     directory: /
     schedule: {interval: weekly, day: monday}
+    open-pull-requests-limit: 0

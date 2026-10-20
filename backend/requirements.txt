@@ -1,6 +1,6 @@
 fastapi==0.156.1
 starlette>=1.3.1   # fixes the PYSEC advisories that pip-audit reports for starlette 0.37.x
-uvicorn==0.25.0
+uvicorn==0.54.0
 python-dotenv>=1.0.1
 pydantic>=2.6.4
 asyncpg>=0.29.0

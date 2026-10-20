@@ -3,7 +3,6 @@ import re
 import uuid
 
 import pytest
-from fastapi.routing import APIRoute
 
 import auth
 import db
@@ -23,12 +22,15 @@ UUID_ = str(uuid.uuid4())
 
 
 def _api_routes():
+    """Every (method, path) the app serves, taken from the OpenAPI schema so it is independent of how the
+    framework stores included routers internally."""
     out = []
-    for r in server.app.routes:
-        if isinstance(r, APIRoute) and r.path.startswith("/api/"):
-            for m in sorted(r.methods - {"HEAD", "OPTIONS"}):
-                out.append((m, r.path))
-    return out
+    for path, item in server.app.openapi()["paths"].items():
+        if path.startswith("/api/"):
+            for method in item:
+                if method.upper() in {"GET", "POST", "PUT", "PATCH", "DELETE"}:
+                    out.append((method.upper(), path))
+    return sorted(out)
 
 
 def _fill(path: str) -> str:
@@ -52,8 +54,9 @@ async def test_every_non_public_route_rejects_anonymous(world):
 
 async def test_public_whitelist_has_no_stale_entries():
     paths = set(_api_routes())
-    # billing is optional; everything else in the whitelist must still exist
-    stale = {p for p in PUBLIC if p not in paths and "/billing/" not in p[1]}
+    # billing is optional; probes are deliberately hidden from the OpenAPI schema; the rest must still exist
+    hidden = {"/api/health", "/api/ready"}
+    stale = {p for p in PUBLIC if p not in paths and "/billing/" not in p[1] and p[1] not in hidden}
     assert not stale
 
 

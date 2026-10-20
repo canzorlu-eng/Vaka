@@ -1,0 +1,526 @@
+{
+ "case_id": "acute-pulpitis",
+ "difficulty": "moderate",
+ "title": {
+  "tr": "Gece Uyandıran Ağrı",
+  "en": "The Pain That Wakes You"
+ },
+ "chief_complaint": {
+  "tr": "Sağ alt azı dişimde geceleri artan zonklayıcı ağrı var.",
+  "en": "A throbbing pain in my lower right molar that gets worse at night."
+ },
+ "patient": {
+  "name": {
+   "tr": "Elif Y.",
+   "en": "Elif Y."
+  },
+  "age": 34,
+  "sex": {
+   "tr": "Kadın",
+   "en": "Female"
+  },
+  "setting": {
+   "tr": "Diş hekimliği polikliniği, sabah muayenesi",
+   "en": "Dental outpatient clinic, morning session"
+  },
+  "avatar_mood": "pain"
+ },
+ "vitals": {
+  "bp": "124/78",
+  "hr": 88,
+  "temp": "36.8°C",
+  "spo2": "99%"
+ },
+ "hidden_facts": [
+  {
+   "id": "onset",
+   "keywords": [
+    "ne zaman",
+    "başla",
+    "kaç gün",
+    "süre",
+    "when",
+    "start",
+    "how long",
+    "duration"
+   ],
+   "text": {
+    "tr": "Yaklaşık 4 gündür var, gittikçe kötüleşiyor.",
+    "en": "It's been about 4 days and getting worse."
+   }
+  },
+  {
+   "id": "night",
+   "keywords": [
+    "gece",
+    "uyku",
+    "yat",
+    "night",
+    "sleep",
+    "lying"
+   ],
+   "text": {
+    "tr": "Geceleri, özellikle uzandığımda çok daha kötü. Dün gece uyuyamadım.",
+    "en": "It's much worse at night, especially lying down. I couldn't sleep last night."
+   }
+  },
+  {
+   "id": "cold_hot",
+   "keywords": [
+    "soğuk",
+    "sıcak",
+    "içecek",
+    "cold",
+    "hot",
+    "temperature",
+    "drink"
+   ],
+   "text": {
+    "tr": "Soğuk içince keskin bir ağrı oluyor ve dakikalarca geçmiyor.",
+    "en": "Cold drinks trigger a sharp pain that lingers for minutes."
+   }
+  },
+  {
+   "id": "character",
+   "keywords": [
+    "nasıl",
+    "zonkla",
+    "keskin",
+    "künt",
+    "type",
+    "throb",
+    "sharp",
+    "character",
+    "describe"
+   ],
+   "text": {
+    "tr": "Zonklayıcı, nabız gibi atan bir ağrı.",
+    "en": "A throbbing pain, like a pulse."
+   }
+  },
+  {
+   "id": "meds",
+   "keywords": [
+    "ilaç",
+    "ağrı kesici",
+    "para",
+    "medication",
+    "painkiller",
+    "took"
+   ],
+   "text": {
+    "tr": "Parasetamol aldım ama pek işe yaramadı.",
+    "en": "I took paracetamol but it barely helped."
+   }
+  },
+  {
+   "id": "radiation",
+   "keywords": [
+    "yayıl",
+    "kulak",
+    "şakak",
+    "radiate",
+    "ear",
+    "spread"
+   ],
+   "text": {
+    "tr": "Bazen kulağıma ve şakağıma doğru yayılıyor.",
+    "en": "Sometimes it spreads to my ear and temple."
+   }
+  },
+  {
+   "id": "history",
+   "keywords": [
+    "dolgu",
+    "geçmiş",
+    "önceden",
+    "tedavi",
+    "filling",
+    "previous",
+    "history",
+    "before"
+   ],
+   "text": {
+    "tr": "O dişe birkaç yıl önce büyük bir dolgu yapılmıştı.",
+    "en": "That tooth had a large filling a few years ago."
+   }
+  },
+  {
+   "id": "swelling",
+   "keywords": [
+    "şişlik",
+    "şiş",
+    "yüz",
+    "swelling",
+    "swollen",
+    "face"
+   ],
+   "text": {
+    "tr": "Hayır, yüzümde şişlik yok.",
+    "en": "No, there's no swelling on my face."
+   }
+  }
+ ],
+ "exam_actions": [
+  {
+   "id": "visual",
+   "required": true,
+   "tooth": 46,
+   "label": {
+    "tr": "Görsel muayene",
+    "en": "Visual inspection"
+   },
+   "result": {
+    "tr": "46 numaralı dişte geniş, kenarları sızdıran eski bir dolgu görülüyor. Çürük şüphesi var.",
+    "en": "Tooth 46 shows a large old filling with leaking margins. Caries suspected."
+   }
+  },
+  {
+   "id": "cold_test",
+   "required": true,
+   "tooth": 46,
+   "label": {
+    "tr": "Soğuk (vitalite) testi",
+    "en": "Cold (vitality) test"
+   },
+   "result": {
+    "tr": "46'da soğuğa şiddetli, uzun süreli (>30 sn) yanıt. Bitişik dişler normal.",
+    "en": "Tooth 46 shows an exaggerated, lingering (>30s) response to cold. Adjacent teeth normal."
+   }
+  },
+  {
+   "id": "percussion",
+   "required": true,
+   "tooth": 46,
+   "label": {
+    "tr": "Perküsyon testi",
+    "en": "Percussion test"
+   },
+   "result": {
+    "tr": "46'da perküsyona hafif hassasiyet var.",
+    "en": "Mild tenderness to percussion on 46."
+   }
+  },
+  {
+   "id": "palpation",
+   "required": false,
+   "tooth": 46,
+   "label": {
+    "tr": "Palpasyon",
+    "en": "Palpation"
+   },
+   "result": {
+    "tr": "Vestibül palpasyonu normal, şişlik yok.",
+    "en": "Buccal palpation normal, no swelling."
+   }
+  },
+  {
+   "id": "mobility",
+   "required": false,
+   "tooth": 46,
+   "label": {
+    "tr": "Mobilite testi",
+    "en": "Mobility test"
+   },
+   "result": {
+    "tr": "Diş mobilitesi normal (Grade 0).",
+    "en": "Normal mobility (Grade 0)."
+   }
+  }
+ ],
+ "tests": [
+  {
+   "id": "periapical_xray",
+   "indicated": true,
+   "label": {
+    "tr": "Periapikal radyografi",
+    "en": "Periapical radiograph"
+   },
+   "result": {
+    "tr": "46'da derin dolgu pulpaya çok yakın; periapikal aralık normal görünüyor.",
+    "en": "Deep filling approaching the pulp on 46; periapical space appears normal."
+   },
+   "xray": {
+    "image": "/xray/5f0de1290fac177974f999fa81ef9c189a6185f62d49e84ebaf1664262593485.jpeg",
+    "question": {
+     "tr": "Bu radyografideki ana bulgu nedir?",
+     "en": "What is the main finding on this radiograph?"
+    },
+    "options": [
+     {
+      "id": "deep_filling",
+      "correct": true,
+      "label": {
+       "tr": "Pulpaya çok yakın derin restorasyon",
+       "en": "Deep restoration very close to the pulp"
+      }
+     },
+     {
+      "id": "periapical",
+      "correct": false,
+      "label": {
+       "tr": "Apikal radyolusensi (apse)",
+       "en": "Periapical radiolucency (abscess)"
+      }
+     },
+     {
+      "id": "fracture",
+      "correct": false,
+      "label": {
+       "tr": "Dikey kök kırığı",
+       "en": "Vertical root fracture"
+      }
+     },
+     {
+      "id": "normal",
+      "correct": false,
+      "label": {
+       "tr": "Herhangi bir patoloji yok",
+       "en": "No pathology"
+      }
+     }
+    ],
+    "explanation": {
+     "tr": "Dişin kuronunda pulpa boynuzuna dayanan büyük radyoopak restorasyon dikkat çekiyor. Radyolusensinin (koyu alan) apekste olmayışına ve periodontal aralığın korunmuş olmasına bakın — bu, pulpaya yakın derin restorasyonu düşündürür, henüz apikal patoloji yoktur.",
+     "en": "Look for the large radiopaque restoration in the crown sitting right on the pulp horn. Note there is no dark radiolucency at the apex and the periodontal space is intact — this points to a deep restoration close to the pulp, without apical pathology yet."
+    }
+   }
+  },
+  {
+   "id": "bitewing_screen",
+   "indicated": true,
+   "label": {
+    "tr": "Bitewing radyografi",
+    "en": "Bitewing radiograph"
+   },
+   "result": {
+    "tr": "Tarama filminde komşu bölgede insidental interproksimal çürük.",
+    "en": "Incidental interproximal caries nearby on the screening film."
+   },
+   "xray_lib": "interproximal_caries"
+  },
+  {
+   "id": "pulp_ee",
+   "indicated": false,
+   "label": {
+    "tr": "Elektrikli pulpa testi",
+    "en": "Electric pulp test"
+   },
+   "result": {
+    "tr": "Düşük eşikte pozitif yanıt (vital pulpa).",
+    "en": "Positive response at low threshold (vital pulp)."
+   }
+  },
+  {
+   "id": "cbct",
+   "indicated": false,
+   "label": {
+    "tr": "CBCT (3B tomografi)",
+    "en": "CBCT (3D scan)"
+   },
+   "result": {
+    "tr": "Bu aşamada endike değil — gereksiz radyasyon.",
+    "en": "Not indicated at this stage — unnecessary radiation."
+   }
+  },
+  {
+   "id": "cbc",
+   "indicated": false,
+   "label": {
+    "tr": "Tam kan sayımı",
+    "en": "Complete blood count"
+   },
+   "result": {
+    "tr": "Lokalize diş ağrısında endike değil.",
+    "en": "Not indicated for localized dental pain."
+   }
+  }
+ ],
+ "diagnosis_options": [
+  {
+   "id": "irreversible_pulpitis",
+   "correct": true,
+   "label": {
+    "tr": "Geri dönüşümsüz pulpitis (46)",
+    "en": "Irreversible pulpitis (46)"
+   }
+  },
+  {
+   "id": "reversible_pulpitis",
+   "correct": false,
+   "label": {
+    "tr": "Geri dönüşümlü pulpitis",
+    "en": "Reversible pulpitis"
+   }
+  },
+  {
+   "id": "apical_abscess",
+   "correct": false,
+   "label": {
+    "tr": "Akut apikal apse",
+    "en": "Acute apical abscess"
+   }
+  },
+  {
+   "id": "cracked_tooth",
+   "correct": false,
+   "label": {
+    "tr": "Çatlak diş sendromu",
+    "en": "Cracked tooth syndrome"
+   }
+  }
+ ],
+ "treatment_options": [
+  {
+   "id": "rct",
+   "correct": true,
+   "label": {
+    "tr": "Kök kanal tedavisi (endodonti)",
+    "en": "Root canal treatment (endodontics)"
+   }
+  },
+  {
+   "id": "extraction",
+   "correct": false,
+   "label": {
+    "tr": "Diş çekimi",
+    "en": "Tooth extraction"
+   }
+  },
+  {
+   "id": "restoration_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece dolgu yenileme",
+    "en": "Filling replacement only"
+   }
+  },
+  {
+   "id": "antibiotics_only",
+   "correct": false,
+   "label": {
+    "tr": "Sadece antibiyotik",
+    "en": "Antibiotics only"
+   }
+  }
+ ],
+ "checklist": {
+  "history": [
+   {
+    "id": "onset",
+    "keywords": [
+     "ne zaman",
+     "kaç gün",
+     "süre",
+     "when",
+     "how long",
+     "onset"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Ağrının başlangıcı/süresi",
+     "en": "Onset & duration"
+    }
+   },
+   {
+    "id": "character",
+    "keywords": [
+     "nasıl",
+     "zonkla",
+     "keskin",
+     "throb",
+     "sharp",
+     "character"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Ağrının karakteri",
+     "en": "Pain character"
+    }
+   },
+   {
+    "id": "night",
+    "keywords": [
+     "gece",
+     "uyku",
+     "night",
+     "sleep"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Gece/spontan ağrı (kırmızı bayrak)",
+     "en": "Night/spontaneous pain (red flag)"
+    }
+   },
+   {
+    "id": "thermal",
+    "keywords": [
+     "soğuk",
+     "sıcak",
+     "cold",
+     "hot"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Termal uyaran yanıtı (kırmızı bayrak)",
+     "en": "Thermal trigger response (red flag)"
+    }
+   },
+   {
+    "id": "meds",
+    "keywords": [
+     "ilaç",
+     "ağrı kesici",
+     "medication",
+     "painkiller"
+    ],
+    "red_flag": false,
+    "label": {
+     "tr": "Kullanılan ilaçlar",
+     "en": "Medications tried"
+    }
+   },
+   {
+    "id": "swelling",
+    "keywords": [
+     "şişlik",
+     "şiş",
+     "swelling",
+     "swollen"
+    ],
+    "red_flag": true,
+    "label": {
+     "tr": "Şişlik sorgusu (kırmızı bayrak)",
+     "en": "Swelling check (red flag)"
+    }
+   }
+  ],
+  "exam": [
+   {
+    "id": "visual",
+    "red_flag": false,
+    "label": {
+     "tr": "Görsel muayene",
+     "en": "Visual inspection"
+    }
+   },
+   {
+    "id": "cold_test",
+    "red_flag": true,
+    "label": {
+     "tr": "Vitalite (soğuk) testi",
+     "en": "Vitality (cold) test"
+    }
+   },
+   {
+    "id": "percussion",
+    "red_flag": true,
+    "label": {
+     "tr": "Perküsyon testi",
+     "en": "Percussion test"
+    }
+   }
+  ]
+ },
+ "topic": "endodontics"
+}

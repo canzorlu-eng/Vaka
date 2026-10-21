@@ -11,7 +11,13 @@ module.exports = {
       colors: {
         bg: 'var(--bg)',
         fg: 'var(--fg)',
-        card: 'var(--card)',
+        card: { DEFAULT: 'var(--card)', foreground: 'var(--fg)' },
+        // shadcn/ui primitives (menus, dialogs) reference these semantic names
+        background: 'var(--bg)',
+        foreground: 'var(--fg)',
+        popover: { DEFAULT: 'var(--card)', foreground: 'var(--fg)' },
+        destructive: { DEFAULT: 'var(--coral)', foreground: '#FFFFFF' },
+        input: 'var(--border)',
         primary: { DEFAULT: 'var(--primary)', foreground: 'var(--primary-fg)', soft: 'var(--primary-soft)' },
         secondary: { DEFAULT: 'var(--secondary)', foreground: 'var(--secondary-fg)' },
         accent: { DEFAULT: 'var(--accent)', foreground: 'var(--accent-fg)' },

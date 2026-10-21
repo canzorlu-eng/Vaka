@@ -124,7 +124,7 @@ export const AuthControl = () => {
         )}
         <PlanBadge plan={plan} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-64 rounded-2xl border border-border p-1.5 shadow-lg">
+      <DropdownMenuContent align="end" collisionPadding={12} className="w-[min(16rem,calc(100vw-1.5rem))] rounded-2xl border border-border bg-popover p-1.5 shadow-lg">
         <DropdownMenuLabel className="font-normal">
           <div className="font-head font-semibold text-fg truncate" data-testid="user-menu-name">{user.name || user.email}</div>
           <div className="text-xs text-muted-foreground truncate">{user.email}</div>

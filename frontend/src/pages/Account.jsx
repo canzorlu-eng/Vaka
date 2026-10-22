@@ -14,6 +14,7 @@ import {
 import { fmt } from "../i18n";
 
 const PAGE = 20;
+const CHECKOUT_BANNERS = { success: "acc_checkout_success", refunded: "acc_checkout_refunded", failed: "acc_checkout_failed" };
 
 const Meter = ({ id, label, used, limit }) => {
   const pct = limit > 0 ? Math.min(100, Math.round((used / limit) * 100)) : 0;
@@ -158,9 +159,9 @@ export default function Account() {
 
         {checkout && (
           <div role="status" data-testid={`checkout-banner-${checkout}`}
-            className={`card-medkit px-5 py-4 flex items-start gap-3 ${checkout === "success" ? "bg-secondary/15" : "bg-[#E8705B]/10"}`}>
-            {checkout === "success" ? <CheckCircle2 className="text-secondary shrink-0" /> : <XCircle className="text-[#E8705B] shrink-0" />}
-            <p className="flex-1 text-sm font-semibold text-fg">{checkout === "success" ? t("acc_checkout_success") : t("acc_checkout_failed")}</p>
+            className={`card-medkit px-5 py-4 flex items-start gap-3 ${checkout === "failed" ? "bg-[#E8705B]/10" : "bg-secondary/15"}`}>
+            {checkout === "failed" ? <XCircle className="text-[#E8705B] shrink-0" /> : <CheckCircle2 className="text-secondary shrink-0" />}
+            <p className="flex-1 text-sm font-semibold text-fg">{t(CHECKOUT_BANNERS[checkout] || "acc_checkout_failed")}</p>
             <button type="button" onClick={dismissBanner} className="text-xs font-bold text-muted-foreground hover:text-primary" aria-label={t("close")}>✕</button>
           </div>
         )}

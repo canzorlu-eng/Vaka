@@ -5,6 +5,7 @@ import hashlib
 import hmac
 import json
 import uuid
+from datetime import datetime, timedelta, timezone
 
 import httpx
 import pytest
@@ -189,16 +190,86 @@ async def test_callback_activates_and_is_idempotent(client, iyzico_cfg, pool, us
     assert await pool.fetchval("SELECT current_period_end FROM subscriptions") == end
 
 
-async def test_callback_rejects_unknown_token_and_mismatch(client, iyzico_cfg, pool, user):
+def _orphan_detail(ref="SUB-ORPHAN", status="ACTIVE", plan="PLAN-M-USD", payment_id=777, created_ms=None):
+    """iyzico subscription record (detail/search item) with one successfully charged order."""
+    return {"referenceCode": ref, "subscriptionStatus": status, "pricingPlanReferenceCode": plan,
+            "createdDate": created_ms if created_ms is not None else 0,
+            "orders": [{"referenceCode": "ORD-1", "price": 9.0, "currencyCode": "USD", "orderStatus": "SUCCESS",
+                        "paymentAttempts": [{"paymentStatus": "FAILED"},
+                                            {"paymentStatus": "SUCCESS", "paymentId": payment_id}]}]}
+
+
+def _orphan_routes(iyzico_cfg, ref="SUB-ORPHAN", **kw):
+    iyzico_cfg.on("GET", f"/v2/subscription/subscriptions/{ref}",
+                  {"status": "success", "data": {"totalCount": 1, "items": [_orphan_detail(ref, **kw)]}})
+    iyzico_cfg.on("POST", "/v2/payment/refund", {"status": "success", "paymentId": "777"})
+    iyzico_cfg.on("POST", f"/v2/subscription/subscriptions/{ref}/cancel", {"status": "success"})
+
+
+async def test_callback_unknown_token_or_mismatch_refunds_and_cancels(client, iyzico_cfg, pool, user):
+    # A paid checkout we cannot match (superseded by a newer checkout, or a different plan) must never keep the
+    # money: refund every successful charge, then cancel so it does not renew.
     assert (await client.get("/api/billing/callback")).headers["location"].endswith("failed")
     await _pending(client, iyzico_cfg)
     iyzico_cfg.on("GET", "/v2/subscription/checkoutform/tok-1234567", {"status": "success", "data": {
-        "referenceCode": "SUB-REAL", "subscriptionStatus": "ACTIVE", "pricingPlanReferenceCode": "PLAN-Y-USD"}})
-    assert (await client.get("/api/billing/callback?token=tok-1234567")).headers["location"].endswith("failed")
+        "referenceCode": "SUB-ORPHAN", "subscriptionStatus": "ACTIVE", "pricingPlanReferenceCode": "PLAN-Y-USD"}})
+    _orphan_routes(iyzico_cfg)
+    assert (await client.get("/api/billing/callback?token=tok-1234567")).headers["location"] == "/account?checkout=refunded"
     assert await pool.fetchval("SELECT status FROM subscriptions") == "pending"
-    iyzico_cfg.on("GET", "/v2/subscription/checkoutform/tok-unknown1", {"status": "success", "data": {
-        "referenceCode": "SUB-X", "subscriptionStatus": "ACTIVE", "pricingPlanReferenceCode": "PLAN-M-USD"}})
-    assert (await client.get("/api/billing/callback?token=tok-unknown1")).headers["location"].endswith("failed")
+    refund = json.loads(next(c[2] for c in iyzico_cfg.calls if c[1] == "/v2/payment/refund"))
+    assert refund["paymentId"] == "777" and refund["price"] == 9.0 and refund["currency"] == "USD"
+    assert iyzico_cfg.count("POST", "/v2/subscription/subscriptions/SUB-ORPHAN/cancel") == 1
+    # refreshing the callback never refunds twice
+    assert (await client.get("/api/billing/callback?token=tok-1234567")).headers["location"] == "/account?checkout=refunded"
+    assert iyzico_cfg.count("POST", "/v2/payment/refund") == 1
+
+
+async def test_second_paid_checkout_while_active_is_refunded(client, iyzico_cfg, pool, user):
+    await _pending(client, iyzico_cfg)
+    assert (await client.get("/api/billing/callback?token=tok-1234567")).headers["location"].endswith("success")
+    iyzico_cfg.on("GET", "/v2/subscription/checkoutform/tok-older-tab", {"status": "success", "data": {
+        "referenceCode": "SUB-ORPHAN", "subscriptionStatus": "ACTIVE", "pricingPlanReferenceCode": "PLAN-M-USD"}})
+    _orphan_routes(iyzico_cfg)
+    assert (await client.get("/api/billing/callback?token=tok-older-tab")).headers["location"].endswith("refunded")
+    row = await pool.fetchrow("SELECT status, provider_subscription_ref FROM subscriptions")
+    assert (row["status"], row["provider_subscription_ref"]) == ("active", "SUB-REAL")
+
+
+async def test_orphan_refund_failure_keeps_subscription_for_retry(client, iyzico_cfg, pool, user):
+    await _pending(client, iyzico_cfg)
+    iyzico_cfg.on("GET", "/v2/subscription/checkoutform/tok-other1", {"status": "success", "data": {
+        "referenceCode": "SUB-ORPHAN", "subscriptionStatus": "ACTIVE", "pricingPlanReferenceCode": "PLAN-M-USD"}})
+    _orphan_routes(iyzico_cfg)
+    iyzico_cfg.on("POST", "/v2/payment/refund", {"status": "failure", "errorCode": "x"})
+    assert (await client.get("/api/billing/callback?token=tok-other1")).headers["location"].endswith("failed")
+    assert iyzico_cfg.count("POST", "/v2/subscription/subscriptions/SUB-ORPHAN/cancel") == 0   # refund first
+    assert await pool.fetchval("SELECT count(*) FROM payment_events") == 0   # marker rolled back -> retried later
+    iyzico_cfg.on("POST", "/v2/payment/refund", {"status": "success"})
+    assert await billing.refund_and_cancel_orphan("SUB-ORPHAN") is True
+    assert iyzico_cfg.count("POST", "/v2/subscription/subscriptions/SUB-ORPHAN/cancel") == 1
+
+
+async def test_checkout_reuses_live_form_for_same_plan(client, iyzico_cfg, pool, user):
+    await _pending(client, iyzico_cfg)
+    r = await client.post("/api/billing/checkout", json=checkout_body())
+    assert r.json() == {"checkout_url": "/api/billing/pay/tok-1234567"}
+    assert iyzico_cfg.count("POST", "/v2/subscription/checkoutform/initialize") == 1
+
+
+async def test_sweep_refunds_unknown_active_subscriptions_only(client, iyzico_cfg, pool, user):
+    ref = await insert_sub(pool, user, status="active", ref="SUB-OURS", end=future(20))
+    old = int((datetime.now(timezone.utc) - timedelta(hours=5)).timestamp() * 1000)
+    fresh = int(datetime.now(timezone.utc).timestamp() * 1000)
+    items = [_orphan_detail(ref, created_ms=old),                                   # ours
+             _orphan_detail("SUB-ORPHAN", created_ms=old),                          # unknown, renewing -> refund
+             _orphan_detail("SUB-NEW", created_ms=fresh),                           # callback may still arrive
+             _orphan_detail("SUB-FOREIGN", plan="OTHER-PRODUCT", created_ms=old),   # not our plans
+             _orphan_detail("SUB-DONE", status="CANCELED", created_ms=old)]         # not charging anymore
+    iyzico_cfg.on("GET", "/v2/subscription/subscriptions", {"status": "success", "data": {"totalCount": 5, "items": items}})
+    _orphan_routes(iyzico_cfg, created_ms=old)
+    assert await billing.sweep_orphans() == 1
+    assert [c[1] for c in iyzico_cfg.calls if c[0] == "POST"] == ["/v2/payment/refund",
+                                                                  "/v2/subscription/subscriptions/SUB-ORPHAN/cancel"]
 
 
 # ---------- cancel ----------
@@ -236,3 +307,24 @@ async def test_reconcile_repairs_missed_renewal_and_expires(client, iyzico_cfg, 
     row = await pool.fetchrow("SELECT status, current_period_end FROM subscriptions")
     assert row["status"] == "active" and row["current_period_end"] > future(0)
     assert await billing.reconcile_all() == 0   # nothing left to fix (fresh updated_at)
+
+
+async def test_maintenance_loop_runs_billing_reconcile(monkeypatch, pool):
+    import jobs
+    calls = []
+
+    async def fake_reconcile():
+        calls.append(1)
+        return 0
+
+    monkeypatch.setattr(jobs, "BILLING_RECONCILE_FIRST_S", 0)
+    monkeypatch.setattr(billing, "reconcile_all", fake_reconcile)
+    stop = asyncio.Event()
+    task = asyncio.create_task(jobs.maintenance_loop(stop))
+    for _ in range(50):
+        await asyncio.sleep(0.02)
+        if calls:
+            break
+    stop.set()
+    await asyncio.wait_for(task, 5)
+    assert calls == [1]

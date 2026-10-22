@@ -19,6 +19,10 @@ ProgressFn = Callable[[int, str], Awaitable[None]]
 Handler = Callable[[Dict[str, Any], ProgressFn], Awaitable[Dict[str, Any]]]
 HANDLERS: Dict[str, Handler] = {}
 POLL_S = 1.0
+# Billing drift repair (missed callbacks/webhooks, unmatched charges). The first run waits a little so short-lived
+# processes (restarts, free-tier spin-downs) still get one, without hammering iyzico on every boot.
+BILLING_RECONCILE_FIRST_S = 600
+BILLING_RECONCILE_EVERY_S = 3600
 PUBLIC_COLS = "id, kind, status, progress, stage, result, error, attempts, max_attempts, created_at, finished_at"
 
 
@@ -142,8 +146,18 @@ async def worker_loop(stop: asyncio.Event, name: str) -> None:
     logger.info("job worker stopped", extra={"extra_fields": {"worker": name}})
 
 
+async def _reconcile_billing() -> None:
+    try:
+        import billing   # optional module (see server.py); imported lazily
+    except ImportError:
+        return
+    await billing.reconcile_all()
+
+
 async def maintenance_loop(stop: asyncio.Event) -> None:
-    """Retention + housekeeping + cost alerting (every 5 minutes)."""
+    """Retention + housekeeping + cost alerting (every 5 minutes), billing reconciliation (hourly)."""
+    loop = asyncio.get_running_loop()
+    next_billing = loop.time() + BILLING_RECONCILE_FIRST_S
     while not stop.is_set():
         try:
             pool = db.pool()
@@ -159,6 +173,12 @@ async def maintenance_loop(stop: asyncio.Event) -> None:
                 await alerts.send("daily-cost", f"AI spend today is ${spent:.2f} (alert threshold ${settings.global_daily_cost_alert:.2f})")
         except Exception as e:  # noqa: BLE001
             logger.error("maintenance failed: %s", type(e).__name__)
+        if loop.time() >= next_billing:
+            next_billing = loop.time() + BILLING_RECONCILE_EVERY_S
+            try:
+                await _reconcile_billing()
+            except Exception:  # noqa: BLE001 - never let billing take housekeeping down
+                logger.exception("billing reconcile failed")
         try:
             await asyncio.wait_for(stop.wait(), timeout=300)
         except asyncio.TimeoutError:

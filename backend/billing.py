@@ -2,7 +2,11 @@
 
 Flow: POST /checkout -> iyzico checkout form -> iyzico hits /callback with a token -> we fetch the result and
 activate -> iyzico webhooks (subscription.order.success|failure) keep the period up to date; reconcile_all()
-repairs drift (missed webhooks). All state changes happen in a transaction holding a row lock on the
+(hourly, from jobs.maintenance_loop) repairs drift (missed callbacks/webhooks).
+
+Double charges: a user has at most one payable form (a live one is re-opened, not re-minted). A charge we still
+cannot match (an older tab's form paid after a newer checkout, or a plan mismatch) is refunded and its iyzico
+subscription canceled, at callback time or by the hourly orphan sweep; refunds are recorded once per paymentId. All state changes happen in a transaction holding a row lock on the
 subscription, so callback, webhook, cancel and reconcile cannot interleave.
 
 Nothing here logs request bodies, customer details or identity numbers; those are pass-through only.
@@ -29,6 +33,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel, Field, field_validator, model_validator
 
+import alerts
 import cache
 import db
 from auth import current_user
@@ -48,7 +53,12 @@ RECONCILE_MIN_AGE = {"active": timedelta(hours=6), "past_due": timedelta(hours=6
                      "pending": timedelta(minutes=45)}
 PENDING_MAX_AGE = timedelta(days=1)
 FORM_TTL_S = 1800   # iyzico checkout tokens expire after 30 minutes
+FORM_REUSE_MAX_AGE_S = FORM_TTL_S - 300   # re-open a live form instead of minting a second payable token
 FORM_CACHE_PREFIX = "billing:form:"
+ORPHAN_GRACE = timedelta(hours=3)   # leave time for the callback / pending reconcile to claim a fresh subscription
+ORPHAN_SCAN_PAGE_SIZE = 100
+ORPHAN_SCAN_MAX_PAGES = 20
+CHARGING_STATUSES = ("ACTIVE", "UNPAID", "PENDING")
 # The checkout form is iyzico's inline bootstrap script plus bundles/iframes from *.iyzipay.com. It only runs under
 # a CSP that admits those, so it lives on its own page; the SPA keeps script-src 'self'. form-action is left open
 # because 3-D Secure posts the card holder to the issuing bank's page.
@@ -179,14 +189,6 @@ def period_end_from(plan: str, start: Optional[datetime] = None) -> datetime:
     return _add_months(start or _now(), PLAN_MONTHS[plan])
 
 
-def _public_url_failed() -> str:
-    return "/account?checkout=failed"
-
-
-def _redirect(ok: bool) -> RedirectResponse:
-    return RedirectResponse("/account?checkout=success" if ok else _public_url_failed(), status_code=303)
-
-
 async def _lock_by(conn, where: str, *args):
     return await conn.fetchrow(f"SELECT * FROM subscriptions WHERE {where} FOR UPDATE", *args)
 
@@ -265,6 +267,9 @@ async def checkout(body: CheckoutIn, user: Dict[str, Any] = Depends(current_user
             if row["status"] in ("active", "past_due"):
                 raise HTTPException(status_code=409, detail={"code": "already_subscribed",
                                                               "message": "You already have a subscription"})
+            reusable = await _reusable_form(row, body.plan, body.currency)
+            if reusable:
+                return {"checkout_url": _pay_url(reusable)}
             try:
                 res = await iyzico("POST", "/v2/subscription/checkoutform/initialize", payload)
             except IyzicoError:
@@ -279,8 +284,28 @@ async def checkout(body: CheckoutIn, user: Dict[str, Any] = Depends(current_user
                 row["id"], body.plan, PROVIDER, conversation_id, PENDING_PREFIX + str(token))
     # iyzico's hosted page (paymentPageUrl / cpp) ignores subscription tokens, so the embeddable form is required.
     await cache.set(FORM_CACHE_PREFIX + str(token), json.dumps(
-        {"html": res.get("checkoutFormContent", ""), "locale": payload["locale"]}), FORM_TTL_S)
-    return {"checkout_url": f"/api/billing/pay/{quote(str(token), safe='')}"}
+        {"html": res.get("checkoutFormContent", ""), "locale": payload["locale"], "plan": body.plan,
+         "currency": body.currency, "created": _now().timestamp()}), FORM_TTL_S)
+    return {"checkout_url": _pay_url(str(token))}
+
+
+def _pay_url(token: str) -> str:
+    return f"/api/billing/pay/{quote(token, safe='')}"
+
+
+async def _reusable_form(row, plan: str, currency: str) -> Optional[str]:
+    """Token of the user's still-payable form for the same plan/currency. Re-opening it (rather than minting a new
+    token) keeps one payable checkout per user, so a double click or second tab cannot produce two charges."""
+    ref = row["provider_subscription_ref"] or ""
+    if row["status"] != "pending" or not ref.startswith(PENDING_PREFIX):
+        return None
+    token = ref[len(PENDING_PREFIX):]
+    cached = await cache.get(FORM_CACHE_PREFIX + token)
+    if not cached:
+        return None
+    form = json.loads(cached)
+    fresh = _now().timestamp() - float(form.get("created", 0)) < FORM_REUSE_MAX_AGE_S
+    return token if fresh and form.get("plan") == plan and form.get("currency") == currency else None
 
 
 PAY_PAGE = """<!doctype html>
@@ -319,42 +344,49 @@ async def _token_from(request: Request) -> Optional[str]:
     return token if token and re.fullmatch(r"[\w\-.]{8,200}", token) else None
 
 
-async def activate_from_token(token: str) -> bool:
-    """Fetch the checkout result and activate our pending row. Idempotent; True when the user ends up active."""
+async def activate_from_token(token: str) -> str:
+    """Fetch the checkout result and activate our pending row. Idempotent. Returns 'active' when the user ends up
+    subscribed, 'refunded' when iyzico charged a checkout we cannot match (a superseded form from another tab, or a
+    plan mismatch) and the money went back, else 'failed'."""
     try:
         res = await iyzico("GET", f"/v2/subscription/checkoutform/{quote(token, safe='')}")
     except IyzicoError:
-        return False
+        return "failed"
     sub_ref = res.get("referenceCode")
     if not sub_ref or str(res.get("subscriptionStatus", "")).upper() != "ACTIVE":
-        return False
+        return "failed"
     async with db.pool().acquire() as conn:
         async with conn.transaction():
             row = await _lock_by(conn, "provider_subscription_ref = $1", PENDING_PREFIX + token)
-            if row is None:   # refresh / retry: already processed?
+            if row is None:   # refresh / retry of a processed token, or a paid checkout we no longer track
                 done = await conn.fetchrow(
                     "SELECT status FROM subscriptions WHERE provider_subscription_ref = $1", sub_ref)
-                return bool(done and done["status"] in ("active", "past_due"))
-            plan = plan_for_ref(str(res.get("pricingPlanReferenceCode", "")))
-            conv = res.get("conversationId")
-            if plan is None or plan != row["plan"] or (conv and conv != row["provider_customer_ref"]):
-                logger.error("checkout result does not match pending subscription (user=%s)", row["user_id"])
-                return False
-            end = period_end_from(plan)
-            await conn.execute(
-                """UPDATE subscriptions SET status = 'active', provider_subscription_ref = $2,
-                       provider_customer_ref = $3, cancel_at_period_end = false,
-                       current_period_end = GREATEST(COALESCE(current_period_end, $4), $4), updated_at = now()
-                   WHERE id = $1""",
-                row["id"], sub_ref, res.get("customerReferenceCode"), end)
-            return True
+                if done:
+                    return "active" if done["status"] in ("active", "past_due") else "failed"
+                orphan = True
+            else:
+                plan = plan_for_ref(str(res.get("pricingPlanReferenceCode", "")))
+                conv = res.get("conversationId")
+                orphan = plan is None or plan != row["plan"] or bool(conv and conv != row["provider_customer_ref"])
+                if orphan:
+                    logger.error("checkout result does not match pending subscription (user=%s)", row["user_id"])
+                else:
+                    end = period_end_from(plan)
+                    await conn.execute(
+                        """UPDATE subscriptions SET status = 'active', provider_subscription_ref = $2,
+                               provider_customer_ref = $3, cancel_at_period_end = false,
+                               current_period_end = GREATEST(COALESCE(current_period_end, $4), $4), updated_at = now()
+                           WHERE id = $1""",
+                        row["id"], sub_ref, res.get("customerReferenceCode"), end)
+                    return "active"
+    return "refunded" if orphan and await refund_and_cancel_orphan(str(sub_ref)) else "failed"
 
 
 @router.api_route("/callback", methods=["GET", "POST"])
 async def callback(request: Request):
     token = await _token_from(request)
-    ok = bool(token) and await activate_from_token(token)
-    return _redirect(ok)
+    outcome = await activate_from_token(token) if token else "failed"
+    return RedirectResponse(f"/account?checkout={'success' if outcome == 'active' else outcome}", status_code=303)
 
 
 # ----------------------------- webhook -----------------------------
@@ -469,6 +501,83 @@ async def cancel(user: Dict[str, Any] = Depends(current_user)):
             "current_period_end": end.isoformat() if end else None}
 
 
+# ----------------------------- orphan recovery -----------------------------
+def _subscription_record(res: Dict[str, Any]) -> Dict[str, Any]:
+    """The detail endpoint answers with a one-item page ({items: [...]}); tolerate a bare record too."""
+    items = res.get("items")
+    return items[0] if isinstance(items, list) and items and isinstance(items[0], dict) else res
+
+
+def _charged_payments(record: Dict[str, Any]):
+    """(paymentId, price, currency) for every successful charge of an iyzico subscription."""
+    for order in record.get("orders") or []:
+        for attempt in order.get("paymentAttempts") or []:
+            if str(attempt.get("paymentStatus", "")).upper() == "SUCCESS" and attempt.get("paymentId"):
+                yield str(attempt["paymentId"]), order.get("price"), order.get("currencyCode")
+
+
+async def _refund_once(payment_id: str, price: Any, currency: Any, sub_ref: str) -> None:
+    """Refund one charge at most once: the payment_events marker commits only if iyzico accepted the refund, and
+    its unique key makes a concurrent attempt wait and then skip."""
+    async with db.pool().acquire() as conn:
+        async with conn.transaction():
+            marker = await conn.fetchval(
+                """INSERT INTO payment_events (provider, event_id, event_type, payload, processed_at)
+                   VALUES ($1, $2, 'refund.orphan', $3, now()) ON CONFLICT (provider, event_id) DO NOTHING RETURNING id""",
+                PROVIDER, f"refund:{payment_id}", {"subscriptionReferenceCode": sub_ref, "paymentId": payment_id})
+            if marker is None:
+                return
+            await iyzico("POST", "/v2/payment/refund", {"paymentId": payment_id, "price": price, "currency": currency,
+                                                         "conversationId": f"orphan-{sub_ref}", "locale": "en"})
+
+
+async def refund_and_cancel_orphan(sub_ref: str) -> bool:
+    """A charged iyzico subscription with no matching row of ours: give every charge back, then stop renewals.
+    Refunds go first so a failure leaves it renewing-and-visible to the sweep, which retries. True when done."""
+    try:
+        record = _subscription_record(await iyzico("GET", f"/v2/subscription/subscriptions/{quote(sub_ref, safe='')}"))
+        for payment_id, price, currency in _charged_payments(record):
+            await _refund_once(payment_id, price, currency, sub_ref)
+        if str(record.get("subscriptionStatus", "")).upper() in CHARGING_STATUSES:
+            await iyzico("POST", f"/v2/subscription/subscriptions/{quote(sub_ref, safe='')}/cancel")
+    except IyzicoError as e:
+        logger.error("orphan subscription %s not refunded yet (code %s); the sweep retries", sub_ref, e.code)
+        return False
+    logger.warning("orphan subscription %s refunded and canceled", sub_ref)
+    await alerts.send(f"billing-orphan-{sub_ref}", f"Refunded and canceled unmatched iyzico subscription {sub_ref}")
+    return True
+
+
+def _created_at(record: Dict[str, Any]) -> Optional[datetime]:
+    raw = record.get("createdDate")
+    try:
+        return datetime.fromtimestamp(float(raw) / 1000, tz=timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+async def sweep_orphans() -> int:
+    """Refund and cancel iyzico subscriptions of our plans that still charge but that no row of ours tracks
+    (a paid form whose callback never reached us after a newer checkout replaced it). Returns how many."""
+    known = {r["provider_subscription_ref"] for r in await db.pool().fetch(
+        "SELECT provider_subscription_ref FROM subscriptions WHERE provider_subscription_ref IS NOT NULL")}
+    cutoff = _now() - ORPHAN_GRACE
+    fixed = 0
+    for page in range(1, ORPHAN_SCAN_MAX_PAGES + 1):
+        res = await iyzico("GET", f"/v2/subscription/subscriptions?subscriptionStatus=ACTIVE&page={page}"
+                                  f"&count={ORPHAN_SCAN_PAGE_SIZE}")
+        items = res.get("items") or []
+        for item in items:
+            ref, created = str(item.get("referenceCode", "")), _created_at(item)
+            if (ref and ref not in known and plan_for_ref(str(item.get("pricingPlanReferenceCode", "")))
+                    and str(item.get("subscriptionStatus", "")).upper() in CHARGING_STATUSES
+                    and created is not None and created < cutoff):
+                fixed += 1 if await refund_and_cancel_orphan(ref) else 0
+        if len(items) < ORPHAN_SCAN_PAGE_SIZE:
+            break
+    return fixed
+
+
 # ----------------------------- reconciliation -----------------------------
 _STATUS_MAP = {"ACTIVE": "active", "UNPAID": "past_due", "CANCELED": "canceled", "EXPIRED": "expired"}
 
@@ -482,11 +591,11 @@ async def _reconcile_one(row) -> bool:
                     await conn.execute("DELETE FROM subscriptions WHERE id = $1 AND status = 'pending' "
                                        "AND provider_subscription_ref = $2", row["id"], ref)
             return True
-        return await activate_from_token(ref[len(PENDING_PREFIX):])
+        return await activate_from_token(ref[len(PENDING_PREFIX):]) == "active"
     if not ref:
         return False
     try:
-        res = await iyzico("GET", f"/v2/subscription/subscriptions/{quote(ref, safe='')}")
+        res = _subscription_record(await iyzico("GET", f"/v2/subscription/subscriptions/{quote(ref, safe='')}"))
     except IyzicoError:
         return False
     new_status = _STATUS_MAP.get(str(res.get("subscriptionStatus", "")).upper())
@@ -540,6 +649,10 @@ async def reconcile_all() -> int:
         "UPDATE subscriptions SET status = 'expired', updated_at = now() "
         "WHERE status = 'canceled' AND current_period_end <= now()")
     fixed += int(expired.split()[-1])
+    try:   # after the pending rows above had their chance to claim fresh subscriptions
+        fixed += await sweep_orphans()
+    except IyzicoError as e:
+        logger.error("orphan sweep failed (code %s)", e.code)
     logger.info("billing reconcile finished", extra={"extra_fields": {"fixed": fixed, "scanned": len(rows)}})
     return fixed
 

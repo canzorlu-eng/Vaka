@@ -169,6 +169,13 @@ def _redirect(ok: bool) -> RedirectResponse:
     return RedirectResponse("/account?checkout=success" if ok else _public_url_failed(), status_code=303)
 
 
+def hosted_page_url(token: str, locale: str) -> str:
+    """iyzico's hosted payment page for a checkout-form token. The embeddable form (checkoutFormContent) needs
+    inline scripts from iyzipay.com that our CSP blocks, so users are always redirected here instead."""
+    host = "sandbox-cpp.iyzipay.com" if "sandbox" in settings.iyzico_base_url else "cpp.iyzipay.com"
+    return f"https://{host}/?token={quote(token, safe='')}&lang={locale}"
+
+
 async def _lock_by(conn, where: str, *args):
     return await conn.fetchrow(f"SELECT * FROM subscriptions WHERE {where} FOR UPDATE", *args)
 
@@ -259,10 +266,8 @@ async def checkout(body: CheckoutIn, user: Dict[str, Any] = Depends(current_user
                        provider_customer_ref = $4, provider_subscription_ref = $5, updated_at = now()
                    WHERE id = $1""",
                 row["id"], body.plan, PROVIDER, conversation_id, PENDING_PREFIX + str(token))
-    url = res.get("paymentPageUrl") or res.get("checkoutFormUrl")
-    if url:
-        return {"checkout_url": url}
-    return {"checkout_form_html": res.get("checkoutFormContent", "")}
+    url = res.get("paymentPageUrl") or res.get("checkoutFormUrl") or hosted_page_url(str(token), payload["locale"])
+    return {"checkout_url": url}
 
 
 # ----------------------------- callback -----------------------------

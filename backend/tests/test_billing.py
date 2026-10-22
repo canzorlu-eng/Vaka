@@ -115,11 +115,13 @@ async def test_checkout_validation(client, iyzico_cfg):
     assert (await client.post("/api/billing/checkout", json=bad2)).status_code == 422
 
 
-async def test_checkout_creates_pending_and_returns_form(client, iyzico_cfg, pool, user):
+async def test_checkout_creates_pending_and_returns_hosted_page(client, iyzico_cfg, pool, user):
+    # The embeddable form needs inline scripts our CSP forbids, so we always send users to iyzico's hosted page.
     iyzico_cfg.on("POST", "/v2/subscription/checkoutform/initialize",
                   {"status": "success", "token": "tok-1234567", "checkoutFormContent": "<script>x</script>"})
     r = await client.post("/api/billing/checkout", json=checkout_body())
-    assert r.status_code == 200 and r.json() == {"checkout_form_html": "<script>x</script>"}
+    assert r.status_code == 200
+    assert r.json() == {"checkout_url": "https://sandbox-cpp.iyzipay.com/?token=tok-1234567&lang=en"}
     row = await pool.fetchrow("SELECT status, plan, provider_subscription_ref FROM subscriptions")
     assert (row["status"], row["plan"], row["provider_subscription_ref"]) == ("pending", "pro_monthly", "pending:tok-1234567")
     sent = json.loads(iyzico_cfg.calls[0][2])

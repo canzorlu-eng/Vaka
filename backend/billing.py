@@ -26,9 +26,10 @@ from urllib.parse import parse_qs, quote
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
-from fastapi.responses import RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel, Field, field_validator, model_validator
 
+import cache
 import db
 from auth import current_user
 from config import settings
@@ -46,6 +47,23 @@ PLACEHOLDER_IDENTITY = "11111111111"   # iyzico requires identityNumber; placeho
 RECONCILE_MIN_AGE = {"active": timedelta(hours=6), "past_due": timedelta(hours=6), "canceled": timedelta(hours=6),
                      "pending": timedelta(minutes=45)}
 PENDING_MAX_AGE = timedelta(days=1)
+FORM_TTL_S = 1800   # iyzico checkout tokens expire after 30 minutes
+FORM_CACHE_PREFIX = "billing:form:"
+# The checkout form is iyzico's inline bootstrap script plus bundles/iframes from *.iyzipay.com. It only runs under
+# a CSP that admits those, so it lives on its own page; the SPA keeps script-src 'self'. form-action is left open
+# because 3-D Secure posts the card holder to the issuing bank's page.
+PAY_PAGE_CSP = "; ".join([
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.iyzipay.com",
+    "style-src 'self' 'unsafe-inline' https://*.iyzipay.com https://fonts.googleapis.com",
+    "font-src 'self' data: https://*.iyzipay.com https://fonts.gstatic.com",
+    "img-src 'self' data: blob: https:",
+    "connect-src 'self' https://*.iyzipay.com",
+    "frame-src https://*.iyzipay.com",
+    "frame-ancestors 'none'",
+    "object-src 'none'",
+    "base-uri 'self'",
+])
 
 # Tests replace this to inject httpx.MockTransport.
 _TRANSPORT: Optional[httpx.AsyncBaseTransport] = None
@@ -169,13 +187,6 @@ def _redirect(ok: bool) -> RedirectResponse:
     return RedirectResponse("/account?checkout=success" if ok else _public_url_failed(), status_code=303)
 
 
-def hosted_page_url(token: str, locale: str) -> str:
-    """iyzico's hosted payment page for a checkout-form token. The embeddable form (checkoutFormContent) needs
-    inline scripts from iyzipay.com that our CSP blocks, so users are always redirected here instead."""
-    host = "sandbox-cpp.iyzipay.com" if "sandbox" in settings.iyzico_base_url else "cpp.iyzipay.com"
-    return f"https://{host}/?token={quote(token, safe='')}&lang={locale}"
-
-
 async def _lock_by(conn, where: str, *args):
     return await conn.fetchrow(f"SELECT * FROM subscriptions WHERE {where} FOR UPDATE", *args)
 
@@ -266,8 +277,37 @@ async def checkout(body: CheckoutIn, user: Dict[str, Any] = Depends(current_user
                        provider_customer_ref = $4, provider_subscription_ref = $5, updated_at = now()
                    WHERE id = $1""",
                 row["id"], body.plan, PROVIDER, conversation_id, PENDING_PREFIX + str(token))
-    url = res.get("paymentPageUrl") or res.get("checkoutFormUrl") or hosted_page_url(str(token), payload["locale"])
-    return {"checkout_url": url}
+    # iyzico's hosted page (paymentPageUrl / cpp) ignores subscription tokens, so the embeddable form is required.
+    await cache.set(FORM_CACHE_PREFIX + str(token), json.dumps(
+        {"html": res.get("checkoutFormContent", ""), "locale": payload["locale"]}), FORM_TTL_S)
+    return {"checkout_url": f"/api/billing/pay/{quote(str(token), safe='')}"}
+
+
+PAY_PAGE = """<!doctype html>
+<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vaka · {title}</title>
+<style>body{{margin:0;background:#f5f2ec;font-family:system-ui,sans-serif;color:#1f2a2a}}
+main{{max-width:560px;margin:0 auto;padding:24px 16px}}a{{color:#15695f;font-weight:600}}</style></head>
+<body><main><p><a href="/account">&larr; {back}</a></p>
+<div id="iyzipay-checkout-form" class="responsive"></div>
+{form}</main></body></html>"""
+
+
+@router.get("/pay/{token}", response_class=HTMLResponse)
+async def pay_page(token: str, user: Dict[str, Any] = Depends(current_user)):
+    if not re.fullmatch(r"[\w\-.]{8,200}", token):
+        raise HTTPException(status_code=404, detail="Checkout not found")
+    owner = await db.pool().fetchval(
+        "SELECT user_id FROM subscriptions WHERE provider_subscription_ref = $1 AND status = 'pending'",
+        PENDING_PREFIX + token)
+    cached = await cache.get(FORM_CACHE_PREFIX + token)
+    if owner != user["id"] or not cached:
+        raise HTTPException(status_code=404, detail="Checkout not found or expired")
+    form = json.loads(cached)
+    tr = form.get("locale") == "tr"
+    html = PAY_PAGE.format(lang="tr" if tr else "en", title="Ödeme" if tr else "Checkout",
+                           back="Vazgeç" if tr else "Cancel", form=form.get("html", ""))
+    return HTMLResponse(html, headers={"Content-Security-Policy": PAY_PAGE_CSP, "Cache-Control": "no-store"})
 
 
 # ----------------------------- callback -----------------------------

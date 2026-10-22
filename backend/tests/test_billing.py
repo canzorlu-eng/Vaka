@@ -4,6 +4,7 @@ import base64
 import hashlib
 import hmac
 import json
+import uuid
 
 import httpx
 import pytest
@@ -108,6 +109,32 @@ def checkout_body(**kw):
     return {"plan": "pro_monthly", "currency": "USD", "customer": {**CUSTOMER, "identity_number": None}, **kw}
 
 
+async def test_pay_page_embeds_form_with_scoped_csp(client, iyzico_cfg, user):
+    # iyzico's hosted page cannot take subscription tokens, so the embeddable form is served on its own page
+    # whose CSP admits iyzico scripts; the rest of the site keeps script-src 'self'.
+    iyzico_cfg.on("POST", "/v2/subscription/checkoutform/initialize",
+                  {"status": "success", "token": "tok-1234567", "checkoutFormContent": "<script>x</script>"})
+    await client.post("/api/billing/checkout", json=checkout_body())
+    r = await client.get("/api/billing/pay/tok-1234567")
+    assert r.status_code == 200 and "<script>x</script>" in r.text and 'id="iyzipay-checkout-form"' in r.text
+    csp = r.headers["content-security-policy"]
+    assert "https://*.iyzipay.com" in csp and "frame-ancestors 'none'" in csp
+    assert r.headers["cache-control"] == "no-store"
+    import middleware   # the middleware only fills in headers a route did not set, so the global CSP stays strict
+    assert "iyzipay" not in dict(middleware.SECURITY_HEADERS)[b"content-security-policy"].decode()
+
+
+async def test_pay_page_unknown_or_foreign_token_is_404(client, iyzico_cfg, pool, user):
+    assert (await client.get("/api/billing/pay/tok-unknown1")).status_code == 404
+    iyzico_cfg.on("POST", "/v2/subscription/checkoutform/initialize",
+                  {"status": "success", "token": "tok-1234567", "checkoutFormContent": "<script>x</script>"})
+    await client.post("/api/billing/checkout", json=checkout_body())
+    other = uuid.uuid4()
+    await pool.execute("INSERT INTO users (id, google_sub, email, role) VALUES ($1, 'sub-other', 'other@example.com', 'user')", other)
+    await pool.execute("UPDATE subscriptions SET user_id = $1", other)
+    assert (await client.get("/api/billing/pay/tok-1234567")).status_code == 404
+
+
 async def test_checkout_validation(client, iyzico_cfg):
     bad = checkout_body(currency="TRY")   # TRY needs identity_number
     assert (await client.post("/api/billing/checkout", json=bad)).status_code == 422
@@ -115,13 +142,11 @@ async def test_checkout_validation(client, iyzico_cfg):
     assert (await client.post("/api/billing/checkout", json=bad2)).status_code == 422
 
 
-async def test_checkout_creates_pending_and_returns_hosted_page(client, iyzico_cfg, pool, user):
-    # The embeddable form needs inline scripts our CSP forbids, so we always send users to iyzico's hosted page.
+async def test_checkout_creates_pending_and_returns_pay_page(client, iyzico_cfg, pool, user):
     iyzico_cfg.on("POST", "/v2/subscription/checkoutform/initialize",
                   {"status": "success", "token": "tok-1234567", "checkoutFormContent": "<script>x</script>"})
     r = await client.post("/api/billing/checkout", json=checkout_body())
-    assert r.status_code == 200
-    assert r.json() == {"checkout_url": "https://sandbox-cpp.iyzipay.com/?token=tok-1234567&lang=en"}
+    assert r.status_code == 200 and r.json() == {"checkout_url": "/api/billing/pay/tok-1234567"}
     row = await pool.fetchrow("SELECT status, plan, provider_subscription_ref FROM subscriptions")
     assert (row["status"], row["plan"], row["provider_subscription_ref"]) == ("pending", "pro_monthly", "pending:tok-1234567")
     sent = json.loads(iyzico_cfg.calls[0][2])
@@ -129,9 +154,9 @@ async def test_checkout_creates_pending_and_returns_hosted_page(client, iyzico_c
     assert sent["callbackUrl"].endswith("/api/billing/callback")
     # re-initiating replaces the stale pending row
     iyzico_cfg.on("POST", "/v2/subscription/checkoutform/initialize",
-                  {"status": "success", "data": {"token": "tok-7654321", "paymentPageUrl": "https://pay.example/x"}})
+                  {"status": "success", "data": {"token": "tok-7654321", "checkoutFormContent": "<script>y</script>"}})
     r = await client.post("/api/billing/checkout", json=checkout_body(plan="pro_yearly"))
-    assert r.json() == {"checkout_url": "https://pay.example/x"}
+    assert r.json() == {"checkout_url": "/api/billing/pay/tok-7654321"}
     assert await pool.fetchval("SELECT count(*) FROM subscriptions") == 1
 
 
